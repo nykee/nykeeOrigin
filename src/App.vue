@@ -1,23 +1,40 @@
 <template>
   <div id="app">
-
+    <NavBar></NavBar>
     <router-view></router-view>
+    <FootBar></FootBar>
   </div>
 </template>
 
 <script>
+  import NavBar from './components/NavBar.vue';
+  import FootBar from './components/FootBar.vue'
 export default {
-  name: 'app'
+
+  data(){
+    return {
+
+    }
+  },
+  methods:{
+
+
+  },
+  mounted:function () {
+
+  },
+  watch:{
+
+  },
+  components:{
+    NavBar,FootBar
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  /*通用样式*/
+  a,img{border:0;}
+  a{color: #666;text-decoration: none;}
+  li{list-style-type:none;}
 </style>

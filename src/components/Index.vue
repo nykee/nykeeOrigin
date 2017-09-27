@@ -1,14 +1,20 @@
 <template>
   <div>
-    <h3>{{name}}</h3>
+    <FeaturedTags></FeaturedTags>
+    <AboutMe></AboutMe>
+    <Friends></Friends>
+
   </div>
 </template>
 
 <script>
+  import AboutMe from './AboutMe.vue'
+  import FeaturedTags from './FeaturedTags.vue'
+  import Friends from './Friends.vue'
     export default {
         data() {
             return {
-              name:'nykee'
+
             }
         },
         methods: {},
@@ -18,7 +24,9 @@
         mounted() {
 
         },
-        components: {}
+        components: {
+          AboutMe,FeaturedTags,Friends
+        }
     }
 </script>
 <style>
