@@ -1,9 +1,14 @@
 <template>
   <div class="footBar">
-    <el-row>
-      <ContactIcons></ContactIcons>
+    <el-row type="flex" justify="center" class="icons">
+      <el-col :span="14" >
+        <ContactIcons style="height: 50px"></ContactIcons>
+      </el-col>
     </el-row>
-    <p>Copyright © nykee 2017 </p>
+    <el-row type="flex" justify="center" class="copyright">
+      <p>Copyright © nykee 2017 </p>
+    </el-row>
+
   </div>
 </template>
 
@@ -26,7 +31,8 @@
     }
 </script>
 <style>
-  .footBar{
-    width: 100px;
+
+  .icons,.copyright{
+    width: 400px;
   }
 </style>

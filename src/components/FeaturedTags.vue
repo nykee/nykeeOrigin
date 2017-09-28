@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <h5><router-link to="/Tags">FEATURED TAGS</router-link></h5>
-    <el-row >
+    <el-row  class="row">
       <el-col :span="8"><router-link to="/" class="tagBtn">前端</router-link></el-col>
       <el-col :span="8"><router-link  to="/" class="tagBtn">Git</router-link></el-col>
       <el-col :span="8"><router-link  to="/" class="tagBtn">JS</router-link></el-col>
-    </el-row>
-    <el-row>
+    </el-row >
+    <el-row class="row">
       <el-col :span="12"><router-link  to="/" class="tagBtn">前端</router-link></el-col>
       <el-col :span="12"><router-link  to="/" class="tagBtn">Git</router-link></el-col>
     </el-row>
-    <el-row>
+    <el-row class="row">
       <el-col :span="12"><router-link  to="/" class="tagBtn">前端</router-link></el-col>
       <el-col :span="12"><router-link  to="/" class="tagBtn">Git</router-link></el-col>
     </el-row>
@@ -44,5 +44,7 @@
     border: 1px solid #eee;
     border-radius: 20px;
     text-align: center;
-  }
+  }.row{
+       margin-top:8px;
+     }
 </style>
