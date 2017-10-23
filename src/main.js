@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-default/index.css'
+import iview from 'iview'
+import 'iview/dist/styles/iview.css'
 import 'font-awesome-webpack'
 
-Vue.config.productionTip = false
-Vue.use(ElementUI);
+Vue.config.productionTip = false;
+Vue.use(iview);
+
 
 /* eslint-disable no-new */
 new Vue({

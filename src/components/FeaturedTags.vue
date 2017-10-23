@@ -1,19 +1,19 @@
 <template>
   <div class="container">
     <h5><router-link to="/Tags">FEATURED TAGS</router-link></h5>
-    <el-row  class="row">
-      <el-col :span="8"><router-link to="/" class="tagBtn">前端</router-link></el-col>
-      <el-col :span="8"><router-link  to="/" class="tagBtn">Git</router-link></el-col>
-      <el-col :span="8"><router-link  to="/" class="tagBtn">JS</router-link></el-col>
-    </el-row >
-    <el-row class="row">
-      <el-col :span="12"><router-link  to="/" class="tagBtn">前端</router-link></el-col>
-      <el-col :span="12"><router-link  to="/" class="tagBtn">Git</router-link></el-col>
-    </el-row>
-    <el-row class="row">
-      <el-col :span="12"><router-link  to="/" class="tagBtn">前端</router-link></el-col>
-      <el-col :span="12"><router-link  to="/" class="tagBtn">Git</router-link></el-col>
-    </el-row>
+    <Row  class="row">
+      <i-col :span="8"><router-link to="/" class="tagBtn">前端</router-link></i-col>
+      <i-col :span="8"><router-link  to="/" class="tagBtn">Git</router-link></i-col>
+      <i-col :span="8"><router-link  to="/" class="tagBtn">JS</router-link></i-col>
+    </Row >
+    <Row class="row">
+      <i-col :span="12"><router-link  to="/" class="tagBtn">前端</router-link></i-col>
+      <i-col :span="12"><router-link  to="/" class="tagBtn">Git</router-link></i-col>
+    </Row>
+    <Row class="row">
+      <i-col :span="12"><router-link  to="/" class="tagBtn">前端</router-link></i-col>
+      <i-col :span="12"><router-link  to="/" class="tagBtn">Git</router-link></i-col>
+    </Row>
 
   </div>
 </template>

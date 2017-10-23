@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-row :gutter="2">
-      <el-col  :span="18">
+    <Row :gutter="2">
+      <i-col  :span="18">
         <h1>个人简介</h1>
         <p>前端初学者一枚，大学学的是网络工程。由于各种各样的原因毕业后没有从事IT相关的工作，干了4年不到一点的电气工程师o(╯□╰)o。
           后来公司走下坡路&&学不到东西了，在一次偶然的机会中接触到前端，便引发了兴趣。故而转向前端。不学不知道，一学下一跳，前端的东西
@@ -10,24 +10,26 @@
           2016开始往后的职业发展就是主前端，辅后端。希望能在programming的路上走得远一点吧。</p>
         <br>
         <h3>希望养恶鬼，热情喂狂风</h3>
-      </el-col>
-      <el-col :span="4">
+      </i-col>
+      <i-col :span="4">
         <FeaturedTags></FeaturedTags>
         <AboutMe></AboutMe>
         <Friends></Friends>
-      </el-col>
-    </el-row>
+      </i-col>
+    </Row>
 
   </div>
 </template>
 
 <script>
-  import AboutMe from './AboutMe.vue'
-  import FeaturedTags from './FeaturedTags.vue'
-  import Friends from './Friends.vue'
+  import AboutMe from '../components/AboutMe.vue'
+  import FeaturedTags from '../components/FeaturedTags.vue'
+  import Friends from '../components/Friends.vue'
     export default {
         data() {
-            return {}
+            return {
+
+            }
         },
         methods: {},
         created: function () {

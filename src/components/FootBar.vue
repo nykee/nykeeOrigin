@@ -1,13 +1,13 @@
 <template>
   <div class="footBar">
-    <el-row type="flex" justify="center" class="icons">
-      <el-col :span="14" >
+    <Row type="flex" justify="center" align="middle" class="icons">
+      <i-col>
         <ContactIcons style="height: 50px"></ContactIcons>
-      </el-col>
-    </el-row>
-    <el-row type="flex" justify="center" class="copyright">
+      </i-col>
+    </Row>
+    <Row type="flex" justify="center" align="middle" class="copyright">
       <p>Copyright © nykee 2017 </p>
-    </el-row>
+    </Row>
 
   </div>
 </template>
