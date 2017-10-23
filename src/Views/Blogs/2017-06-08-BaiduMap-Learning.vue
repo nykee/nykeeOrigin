@@ -1,0 +1,99 @@
+<template>
+  <div>
+    # 百度地图学习笔记
+
+      /* var map = new BMap.Map("container");
+       var point = new BMap.Point(116.331398,39.897445);
+       map.centerAndZoom(point, 5);  // 编写自定义函数，创建标注
+       /!*function addMarker(point, index){  // 创建图标对象
+           var myIcon = new BMap.Icon("markers.png", new BMap.Size(23, 25), {
+// 指定定位位置。
+// 当标注显示在地图上时，其所指向的地理位置距离图标左上
+// 角各偏移10像素和25像素。您可以看到在本例中该位置即是
+               // 图标中央下端的尖角位置。
+               offset: new BMap.Size(10, 25),
+               // 设置图片偏移。
+               // 当您需要从一幅较大的图片中截取某部分作为标注图标时，您
+               // 需要指定大图的偏移位置，此做法与css sprites技术类似。
+               imageOffset: new BMap.Size(0, 0 - index * 25)   // 设置图片偏移
+           });
+// 创建标注对象并添加到地图
+           var marker = new BMap.Marker(point, {icon: myIcon});
+           map.addOverlay(marker);
+       }
+       // 随机向地图添加10个标注
+       var bounds = map.getBounds();
+       var lngSpan = bounds.maxX - bounds.minX;
+       var latSpan = bounds.maxY - bounds.minY;
+       for (var i = 0; i < 10; i ++) {
+           var point = new BMap.Point(bounds.minX + lngSpan * (Math.random() * 0.7 + 0.15),
+               bounds.minY + latSpan * (Math.random() * 0.7 + 0.15));
+           addMarker(point, i);
+       }*!/
+
+       /!*信息窗口*!/
+       /!*var opts = {
+           width : 250,     // 信息窗口宽度
+           height: 100,     // 信息窗口高度
+           title : "Hello"  // 信息窗口标题
+       };
+       var infoWindow = new BMap.InfoWindow("World", opts);  // 创建信息窗口对象
+       map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口*!/
+
+       /!*折线*!/
+       /!*var polyline = new BMap.Polyline([
+               new BMap.Point(116.399, 39.910),
+               new BMap.Point(116.405, 39.920)
+           ],
+           {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
+       );
+       map.addOverlay(polyline);*!/
+       map.addEventListener("dragend", function(){
+           var center = map.getCenter();
+           console.log("地图中心点变更为：" + center.lng + ", " + center.lat);
+       });
+
+       map.addEventListener("click", function(e){
+           console.log(e.point.lng + ", " + e.point.lat);
+       });
+
+
+       var geolocation = new BMap.Geolocation();
+       geolocation.getCurrentPosition(function(r){
+           if(this.getStatus() == BMAP_STATUS_SUCCESS){
+               map.panTo(r.point);
+           }
+           else {
+               alert('failed'+this.getStatus());
+           }
+       },{enableHighAccuracy: true});
+       map.enableScrollWheelZoom();                   //允许鼠标滚轮缩放
+       map.addControl(new BMap.NavigationControl()); //地图平移缩放控件
+       map.addControl(new BMap.ScaleControl());      //比例尺控件
+       map.addControl(new BMap.OverviewMapControl());//缩略地图控件
+       map.addControl(new BMap.MapTypeControl());    //地图类型控件
+       map.setCurrentCity("上海"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用*/
+
+
+
+  </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {}
+        },
+        methods: {},
+        created: function () {
+
+        },
+        mounted() {
+
+        },
+        components: {}
+    }
+</script>
+<style>
+
+</style>
