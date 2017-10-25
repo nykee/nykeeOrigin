@@ -18,10 +18,10 @@
       </a>
     </i-col>
     <i-col :span="6" >
-      <a href="">
+      <a href="http://weibo.com/jasonz1989/profile?rightmod=1&wvr=6&mod=personinfo">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-wechat fa-stack-1x fa-inverse "></i>
+          <i class="fa fa-weibo fa-stack-1x fa-inverse "></i>
         </span>
       </a>
     </i-col>
