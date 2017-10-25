@@ -2,13 +2,13 @@
   <div class="container">
     <h5><router-link to="/About">ABOUT ME</router-link></h5>
     <div>
-      <img src="../../static/img/nykee.png" alt="" class="avatar">
-      <p>
+      <img src="../asserts/img/nykee.png" alt="" class="avatar">
+      <p class="slogan">
         keep Coding! <br>
         人生苦短，我用JS
       </p>
     </div>
-    <ContactIcons></ContactIcons>
+    <ContactIcons class="fTags"></ContactIcons>
   </div>
 </template>
 
@@ -37,6 +37,12 @@
   }
   .avatar{
     width: 200px;
+  }
+  .slogan{
+    margin-bottom:10px;
+  }
+  .fTags{
+    margin-bottom:15px;
   }
 
 </style>

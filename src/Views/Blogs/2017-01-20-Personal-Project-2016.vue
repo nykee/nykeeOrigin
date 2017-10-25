@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="list">
+    <ul class="title-list">
       <li ><h1 class="title">Node.js大众点评爬虫</h1></li>
       <li class="list-items">语言: Node.js</li>
       <li class="list-items">日期: 2016/11/04</li>

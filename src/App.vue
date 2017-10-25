@@ -5,7 +5,7 @@
     <div class="main-container">
       <router-view></router-view>
     </div>
-    <Row type="flex" justify="center" align="middle">
+    <Row type="flex" justify="center" align="middle" style="margin-top: 20px">
       <FootBar ></FootBar>
     </Row>
   </div>
@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style>
+
   /*通用样式*/
   a,img{border:0;}
   a{color: #666;text-decoration: none;}
@@ -45,7 +46,8 @@ export default {
   body, button, select, textarea, input, label, option, fieldset, legend{font-family: 微软雅黑E\8F6F\96C5\9ED1,Tahoma,Verdana;font-size: 12px;line-height: 18px;color: #444;}
   body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
   .main-container{
-    height: 700px;
+    height: auto;
+    width: auto;
     margin-top:20px;
   }
 </style>

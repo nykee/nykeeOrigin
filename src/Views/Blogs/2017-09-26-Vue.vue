@@ -1,17 +1,16 @@
 <template>
   <div>
-    ---
-    layout: post
-    title: Vue学习笔记
-    category: IT
-    keywords: echarts
-    ---
-
-    # Vue学习笔记
-    ## 1、Vue监听滚动事件
-    ### 在method里面写处理方法：
-
-    chkscroll(){
+    <ul class="title-list">
+      <li ><h1 class="title">Vue学习笔记</h1></li>
+    </ul>
+    <div class="main-body">
+      <div id="part1" class="part">
+        <div id="part1-section1" class="section">
+          <p class="title-lv2"> 1、Vue监听滚动事件</p>
+          <p class="title-lv3">1.1在method里面写处理方法：</p>
+          <pre class="code-text">
+            <code>
+              chkscroll(){
     this.isIndex = this.$route.path ==="/";
     this.scroll = document.body.scrollTop ||document.documentElement.scrollTop;
     if(this.isIndex&&(this.scroll>100)){
@@ -21,45 +20,55 @@
     this.isShow =false;
     }
     },
-    需要注意的是，各浏览器下获取 scrollTop 有所差异
+            </code>
+          </pre>
+          <ul>需要注意的是，各浏览器下获取 scrollTop 有所差异
+            <li>Chrome： document.body.scrollTop</li>
+            <li>Firefox： document.documentElement.scrollTop</li>
+          </ul>
+          <p class="title-lv3">1.2 在mounted钩子里面写添加监听：</p>
+          <pre class="code-text">
+            <code>
+              window.addEventListener('scroll', this.chkscroll)
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div id="part2" class="part">
+        <div id="part2-section1" class="section">
+          <p class="title-lv2"> 2、Vue父子组件之间通信</p>
+          <p class="title-lv3">2.1父到子</p>
+          <p>html:</p>
+          <pre class="code-text">
+            <code>
+              <span><</span>CommonChart ref ="commonchart" :chart-type="chartType"><span><</span>/CommonChart>
+            </code>
+          </pre>
+          <p>js:</p>
+          <pre class="code-text">
+            <code>
+        /*父组件通过$refs调用子组件的方法和属性*/
+        this.$refs.commonchart.drawChart();
+            </code>
+          </pre>
+          <p class="title-lv3">2.2子到父</p>
+          <p>js:</p>
+          <pre class="code-text">
+            <code>
+               /*子组件通过props属性接受父组件向下传递的数据*/
+            props:["chartType"],
+            </code>
+          </pre>
 
-    Chrome： document.body.scrollTop
-
-    Firefox： document.documentElement.scrollTop
-
-    ###  在mounted钩子里面写添加监听：
-    window.addEventListener('scroll', this.chkscroll)
-    ##  2、Vue父子组件之间通信
-    ###  2.1父到子
-    html:
-
-    <CommonChart ref ="commonchart" :chart-type="chartType"></CommonChart>
-    js:
-
-    /*父组件通过$refs调用子组件的方法和属性*/
-    this.$refs.commonchart.drawChart();
-
-
-    ###  2.2 子到父
-
-    js:
-
-    /*子组件通过props属性接受父组件向下传递的数据*/
-    props:["chartType"],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <p>1.2 在mounted钩子里面写添加监听：</p>
+          <pre class="code-text">
+            <code>
+              window.addEventListener('scroll', this.chkscroll)
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,15 +1,19 @@
 <template>
   <div>
-    # 百度地图学习笔记
-
-      /* var map = new BMap.Map("container");
+    <ul class="title-list">
+      <li ><h1 class="title">百度地图学习笔记</h1></li>
+    </ul>
+    <div class="main-body">
+       <pre class="code-text">
+            <code>
+       var map = new BMap.Map("container");
        var point = new BMap.Point(116.331398,39.897445);
        map.centerAndZoom(point, 5);  // 编写自定义函数，创建标注
-       /!*function addMarker(point, index){  // 创建图标对象
-           var myIcon = new BMap.Icon("markers.png", new BMap.Size(23, 25), {
-// 指定定位位置。
-// 当标注显示在地图上时，其所指向的地理位置距离图标左上
-// 角各偏移10像素和25像素。您可以看到在本例中该位置即是
+       function addMarker(point, index){
+              // 创建图标对象var myIcon = new BMap.Icon("markers.png", new BMap.Size(23, 25), {
+              // 指定定位位置。
+              // 当标注显示在地图上时，其所指向的地理位置距离图标左上
+              // 角各偏移10像素和25像素。您可以看到在本例中该位置即是
                // 图标中央下端的尖角位置。
                offset: new BMap.Size(10, 25),
                // 设置图片偏移。
@@ -73,6 +77,11 @@
        map.addControl(new BMap.OverviewMapControl());//缩略地图控件
        map.addControl(new BMap.MapTypeControl());    //地图类型控件
        map.setCurrentCity("上海"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用*/
+            </code>
+          </pre>
+    </div>
+
+
 
 
 

@@ -2,7 +2,7 @@
   <div class="footBar">
     <Row type="flex" justify="center" align="middle" class="icons">
       <i-col>
-        <ContactIcons style="height: 50px"></ContactIcons>
+        <ContactIcons style="height: 60px"></ContactIcons>
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="copyright">
@@ -31,7 +31,9 @@
     }
 </script>
 <style>
-
+  .icons{
+    font-size: 18px;
+  }
   .icons,.copyright{
     width: 400px;
   }

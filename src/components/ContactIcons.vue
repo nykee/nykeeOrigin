@@ -1,5 +1,5 @@
 <template>
-  <Row :gutter="20" style="height: 65px">
+  <Row :gutter="20" >
     <i-col :span="6" >
       <a href="https://www.zhihu.com/people/LighteningFE/activities">
         <span class="fa-stack fa-lg">
