@@ -39,81 +39,88 @@
         methods: {},
         created: function () {
 
+
         },
         mounted() {
-            function Typewriter(arg){
+          function Typewriter(arg){
 
-                //options
-                var el = arg.el;
-                var cursorFlash = arg.cursorFlash;
-                var wordFlash = arg.wordFlash instanceof Array? arg.wordFlash : [0,400];
-                var m = wordFlash[0];
-                var n = wordFlash[1];
+            //options
+            var el = arg.el;
+            var cursorFlash = arg.cursorFlash;
+            var wordFlash = arg.wordFlash instanceof Array? arg.wordFlash : [0,400];
+            var m = wordFlash[0];
+            var n = wordFlash[1];
 
-                //创建过就不要再创建了
-                if(!el.typewriter){
-                    el.typewriter = true;
-                }else{
-                    return false;
-                }
-
-                //初始化
-                var text = el.innerHTML;
-                var len = 0;
-
-                var text_box = document.createElement('span');
-                text_box.id = 'typewriter-text';
-
-                var cursor_box = document.createElement('span');
-                cursor_box.id = 'typewriter-cursor';
-                cursor_box.innerHTML = '|';
-
-                el.innerHTML = '';
-                el.appendChild(text_box);
-                el.appendChild(cursor_box);
-
-                //光标闪闪
-                setInterval(function (){
-                    if(cursor_box.show){
-                        cursor_box.style.opacity = 1;
-                        cursor_box.show = false;
-                    }else{
-                        cursor_box.style.opacity = 0;
-                        cursor_box.show = true;
-                    }
-                },cursorFlash);
-
-                //添加字符
-                function addWords(){
-                    if(len<=text.length){
-                        text_box.innerHTML = text.slice(0,len);
-                        len++;
-                        setTimeout(addWords,Math.random()*(n-m)+m);
-                    }
-                }
-                //API
-
-                this.startWrite = function(){
-                    if(!text_box.canadd){
-                        text_box.canadd = true;
-                        addWords();
-                    }
-                }
+            //创建过就不要再创建了
+            if(!el.typewriter){
+              el.typewriter = true;
+            }else{
+              return false;
             }
 
+            //初始化
+            var text = el.innerHTML;
+            var len = 0;
 
-            var wrap = document.querySelector('#wrap');
+            var text_box = document.createElement('span');
+            text_box.id = 'typewriter-text';
+
+            var cursor_box = document.createElement('span');
+            cursor_box.id = 'typewriter-cursor';
+            cursor_box.innerHTML = '|';
+
+            el.innerHTML = '';
+            el.appendChild(text_box);
+            el.appendChild(cursor_box);
+
+            //光标闪闪
+            var cursorInt=setInterval(function CursorFlash(){
+              if(cursor_box.show){
+                cursor_box.style.opacity = 1;
+                cursor_box.show = false;
+              }else{
+                cursor_box.style.opacity = 0;
+                cursor_box.show = true;
+              }
+            },cursorFlash);
 
 
-            //创建打字机
-            var tw = new Typewriter({
-                el: wrap,
-                cursorFlash: 400,
-                wordFlash: [0,400]
-            });
+            //添加字符
+            function addWords(){
+              if(len<=text.length){
+                text_box.innerHTML = text.slice(0,len);
+                len++;
+                setTimeout(addWords,Math.random()*(n-m)+m);
 
-            //开始
-            window.onload = tw.startWrite;
+              }
+              else {
+                clearInterval(cursorInt)
+              }
+            }
+            //API
+
+            this.startWrite = function(){
+              if(!text_box.canadd){
+                text_box.canadd = true;
+                addWords();
+              }
+            }
+          }
+
+
+          var wrap = document.querySelector('#wrap');
+
+
+          //创建打字机
+          var tw = new Typewriter({
+            el: wrap,
+            cursorFlash: 400,
+            wordFlash: [0,400]
+          });
+
+          //开始
+          window.onload = tw.startWrite();
+
 
 
         },
