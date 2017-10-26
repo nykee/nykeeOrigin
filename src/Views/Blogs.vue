@@ -1,6 +1,11 @@
 <template>
   <div >
-    <Row  >
+    <Row>
+      <i-col>
+        <IntroHeader></IntroHeader>
+      </i-col>
+    </Row>
+    <Row  class="blog-container">
       <i-col :span="5" >
         <Menu  theme="light" active-name="1" >
 
@@ -29,7 +34,7 @@
 </template>
 
 <script>
-
+  import IntroHeader from '../components/IntroHeader.vue'
     export default {
         data() {
             return {}
@@ -42,7 +47,9 @@
           this.$router.push('/_2017_01_22')
 
         },
-        components: {}
+        components: {
+          IntroHeader
+        }
     }
 </script>
 <style>
@@ -86,6 +93,9 @@
   }
   .section{
     margin-top:10px;
+  }
+  .blog-container{
+    margin-top:20px;
   }
 
 

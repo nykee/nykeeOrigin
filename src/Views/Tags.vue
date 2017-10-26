@@ -1,6 +1,10 @@
 <template>
   <div>
-
+    <Row>
+      <i-col>
+        <IntroHeader></IntroHeader>
+      </i-col>
+    </Row>
     <Row type="flex" justify="center" align="middle">
       <i-col>
         <Row>
@@ -32,6 +36,7 @@
 </template>
 
 <script>
+  import IntroHeader from '../components/IntroHeader.vue'
     export default {
         data() {
             return {}
@@ -43,7 +48,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {IntroHeader}
     }
 </script>
 <style>

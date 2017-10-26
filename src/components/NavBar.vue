@@ -1,7 +1,7 @@
 <template>
 
     <Row>
-        <Menu   mode="horizontal" theme="light" active-name="2" class="menu">
+        <Menu   mode="horizontal" theme="light" active-name="2" class="menu" >
          <i-col :span="6"> <router-link to="/">Nykee`s Blog</router-link></i-col>
           <i-col :span="6" :offset="12">
             <MenuItem name="2"><router-link to="/">HOME</router-link></MenuItem>
@@ -33,10 +33,25 @@
         components: {}
     }
 </script>
-<style>
+<style scoped="scoped">
   .menu{
     font-weight: 800;
     text-transform:uppercase;
     letter-spacing:1px;
+    background:0 0;
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+  }
+  .ivu-menu-horizontal.ivu-menu-light:after{
+    background: none !important;
+  }
+  a{
+    color: #fff !important;
+  }
+  a:hover{
+    color: #2D8CF0 !important;
   }
 </style>

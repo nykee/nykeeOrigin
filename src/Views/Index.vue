@@ -1,6 +1,12 @@
 <template>
   <div>
-    <Row >
+    <Row>
+      <i-col>
+        <IntroHeader></IntroHeader>
+      </i-col>
+    </Row>
+    <Row class="selfinfo-container">
+
       <i-col  :span="19" class="leftCol">
         <h1 class="intro">个人简介</h1>
 
@@ -30,6 +36,7 @@
   import AboutMe from '../components/AboutMe.vue'
   import FeaturedTags from '../components/FeaturedTags.vue'
   import Friends from '../components/Friends.vue'
+  import IntroHeader from '../components/IntroHeader.vue'
     export default {
         data() {
             return {
@@ -84,7 +91,7 @@
               }
             },cursorFlash);
 
-
+//style="background-image: url('../asserts/img/home-bg.jpg')"
             //添加字符
             function addWords(){
               if(len<=text.length){
@@ -125,7 +132,7 @@
 
         },
         components: {
-          AboutMe,FeaturedTags,Friends
+          AboutMe,FeaturedTags,Friends,IntroHeader
         }
     }
 </script>
@@ -139,5 +146,9 @@
   .slogan{
     margin-top:30px;
   }
+  .selfinfo-container{
+    margin-top:20px;
+  }
+
 
 </style>

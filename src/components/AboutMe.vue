@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h5><router-link to="/About">ABOUT ME</router-link></h5>
+    <h5>ABOUT ME</h5>
     <div>
       <img src="../asserts/img/nykee.png" alt="" class="avatar">
       <p class="slogan">
