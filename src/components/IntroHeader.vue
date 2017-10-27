@@ -20,7 +20,7 @@
               isIndex:true,
               isBlogs:false,
               isTags:false,
-              head:'Nykee Blog',
+              head:'About Me',
               subHead:'人生苦短，我用JS!'
             }
         },
@@ -32,15 +32,15 @@
               this.isBlogs = true;
               this.isIndex =false;
               this.isTags =false;
-              this.head ='About Me';
-              this.subHead ='This is nykee~'
+              this.head ='Nykee Blog';
+              this.subHead ='Talk is cheap,show me ur code~'
             }
             else if(path ==="/Tags"){
               this.isBlogs = true;
               this.isIndex =false;
               this.isTags =true;
               this.head ='Tags';
-              this.subHead ='Use different color!'
+              this.subHead ='Think Different!'
             }
           }
         },
@@ -56,21 +56,21 @@
 </script>
 <style>
   .intro-header-index{
-    background-image: url("../asserts/img/home-bg.jpg") !important;
+    background-image: url("../asserts/img/index.jpg") !important;
     background: no-repeat center center;
     background-attachment: scroll;
     background-color: #ccc;
     background-size: cover;
   }
   .intro-header-blogs{
-    background-image: url("../asserts/img/about-bg-walle.jpg") !important;
+    background-image: url("../asserts/img/blogs2.jpg") !important;
     background: no-repeat center center;
     background-attachment: scroll;
     background-color: #ccc;
     background-size: cover;
   }
   .intro-header-tags{
-    background-image: url("../asserts/img/tag-bg.jpg") !important;
+    background-image: url("../asserts/img/tags.jpg") !important;
     background: no-repeat center center;
     background-attachment: scroll;
     background-color: #ccc;
@@ -103,6 +103,7 @@
     line-height:1.1;
     font-weight: 300;
     margin: 10px 0 0 ;
+    display: inline-block;
   }
 
 </style>
