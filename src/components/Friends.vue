@@ -1,24 +1,17 @@
 <template>
   <div class="container">
-    <h5>FRIENDS LINKS</h5>
-    <Row>
-      <i-col :span="8"><a href="">1</a></i-col>
-      <i-col :span="8"><a href="">2</a></i-col>
-      <i-col :span="8"><a href="">3</a></i-col>
+    <h5 >FRIENDS LINKS</h5>
+    <Row class="f-content">
+      <i-col :span="8" class="flink"><a href="https://cn.vuejs.org/">Vue</a></i-col>
+      <i-col :span="8" class="flink"><a href="">热门</a></i-col>
+      <i-col :span="8" class="flink"><a href="">广告</a></i-col>
     </Row>
     <Row>
-      <i-col :span="12"><a href="">4</a></i-col>
-      <i-col :span="12"><a href="">5</a></i-col>
+      <i-col :span="8" class="flink"><a href="">位置</a></i-col>
+      <i-col :span="8" class="flink"><a href="">长期</a></i-col>
+      <i-col :span="8" class="flink"><a href="">出租</a></i-col>
     </Row>
-    <Row>
-      <i-col :span="12"><a href="">6</a></i-col>
-      <i-col :span="12"><a href="">7</a></i-col>
-    </Row>
-    <Row>
-      <i-col :span="12"><a href="">8</a></i-col>
-      <i-col :span="12"><a href="">9</a></i-col>
 
-    </Row>
 
   </div>
 </template>
@@ -44,5 +37,12 @@
     border-top:1px solid #271111;
   }
   h5{  color: #666;}
+  .flink{
+    font-size:16px;
+    margin-bottom:16px;
+  }
+  .f-content{
+    margin-top:15px;
+  }
 
 </style>

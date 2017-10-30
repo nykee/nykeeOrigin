@@ -7,11 +7,7 @@
     </Row>
     <Row type="flex" justify="center" align="middle">
       <i-col>
-        <Row>
-          <i-col>
-            <h1>tags</h1>
-          </i-col>
-        </Row>
+
         <Row>
           <i-col>
             <Tag color="blue">标签一</Tag>

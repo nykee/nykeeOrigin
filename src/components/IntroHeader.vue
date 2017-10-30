@@ -63,7 +63,7 @@
     background-size: cover;
   }
   .intro-header-blogs{
-    background-image: url("../asserts/img/blogs2.jpg") !important;
+    background-image: url("../asserts/img/code.jpg") !important;
     background: no-repeat center center;
     background-attachment: scroll;
     background-color: #ccc;

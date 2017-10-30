@@ -6,7 +6,7 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="copyright">
-      <p>Copyright © nykee 2017 </p>
+      <p class="copyright-content">Copyright © nykee 2017 </p>
     </Row>
 
   </div>
@@ -31,10 +31,16 @@
     }
 </script>
 <style>
+  .footBar{
+    margin-bottom:20px;
+  }
   .icons{
     font-size: 18px;
   }
   .icons,.copyright{
     width: 400px;
+  }
+  .copyright-content{
+    font-size: 16px;
   }
 </style>

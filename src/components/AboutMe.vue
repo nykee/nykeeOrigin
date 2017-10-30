@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h5>ABOUT ME</h5>
+    <h5 >ABOUT ME</h5>
     <div>
       <img src="../asserts/img/nykee.png" alt="" class="avatar">
       <p class="slogan">
@@ -40,9 +40,11 @@
   }
   .slogan{
     margin-bottom:10px;
+    text-align: center;
   }
   .fTags{
     margin-bottom:15px;
   }
+
 
 </style>
