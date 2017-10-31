@@ -60,12 +60,22 @@
             </code>
           </pre>
 
-          <p>1.2 在mounted钩子里面写添加监听：</p>
+
+        </div>
+      </div>
+      <div id="part3" class="part">
+        <div id="part3-section1" class="section">
+          <p class="title-lv2"> 3、vue获取当前页面的url</p>
+
           <pre class="code-text">
             <code>
-              window.addEventListener('scroll', this.chkscroll)
+              当前页面
+              完整url可以用 window.location.href
+              路由路径可以用 this.$route.path
+              路由路径参数 this.$route.params
             </code>
           </pre>
+
         </div>
       </div>
     </div>
