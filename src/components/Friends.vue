@@ -2,7 +2,7 @@
   <div class="container">
     <h5 >FRIENDS LINKS</h5>
     <Row class="f-content">
-      <i-col :span="8" class="flink"><a href="https://cn.vuejs.org/">Vue</a></i-col>
+      <i-col :span="8" class="flink"><a href="https://cn.vuejs.org/" class="f-link-vue">Vue</a></i-col>
       <i-col :span="8" class="flink"><a href="">热门</a></i-col>
       <i-col :span="8" class="flink"><a href="">广告</a></i-col>
     </Row>
@@ -43,6 +43,9 @@
   }
   .f-content{
     margin-top:15px;
+  }
+  .f-link-vue:hover{
+    color: #41B883 !important;
   }
 
 </style>
