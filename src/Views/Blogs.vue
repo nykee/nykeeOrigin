@@ -68,9 +68,10 @@
     margin-bottom:15px;
   }
   .code-text{
-    background-color: #F8F8F8;
+    background-color: #EAEEF3;
     font-family: Menlo,Monaco,Consolas,Courier New,monospace;
-    margin-top:5px;
+    margin-top:15px;
+    margin-bottom:15px;
     color:#333;
     word-break:normal;
     display: block;
@@ -78,15 +79,19 @@
     padding: 1px;
   }
   .title-lv1{
-    font-size: 18px;
+    font-size: 20px;
+    font-weight:bold;
+
   }
   .title-lv2{
-    font-size: 16px;
+    font-size: 18px;
+    font-weight:bold;
   }
   .title-lv3{
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 10px;
     margin-top:10px;
+    font-weight:bold;
   }
   .part{
     margin-bottom:10px;
@@ -96,6 +101,11 @@
   }
   .blog-container{
     margin-top:20px;
+  }
+  .descrp{
+    font-size: 16px;
+    line-height: 1.27rem;
+    margin-top:1rem;
   }
 
 

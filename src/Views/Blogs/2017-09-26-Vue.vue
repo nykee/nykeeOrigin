@@ -11,18 +11,18 @@
           <pre class="code-text">
             <code>
               chkscroll(){
-    this.isIndex = this.$route.path ==="/";
-    this.scroll = document.body.scrollTop ||document.documentElement.scrollTop;
-    if(this.isIndex&&(this.scroll>100)){
-    this.isShow = true;
-    }
-    else{
-    this.isShow =false;
-    }
-    },
+                this.isIndex = this.$route.path ==="/";
+                this.scroll = document.body.scrollTop ||document.documentElement.scrollTop;
+                if(this.isIndex&&(this.scroll>100)){
+                this.isShow = true;
+                }
+              else{
+                this.isShow =false;
+              }
+            }
             </code>
           </pre>
-          <ul>需要注意的是，各浏览器下获取 scrollTop 有所差异
+          <ul class="descrp">需要注意的是，各浏览器下获取 scrollTop 有所差异
             <li>Chrome： document.body.scrollTop</li>
             <li>Firefox： document.documentElement.scrollTop</li>
           </ul>
@@ -38,13 +38,13 @@
         <div id="part2-section1" class="section">
           <p class="title-lv2"> 2、Vue父子组件之间通信</p>
           <p class="title-lv3">2.1父到子</p>
-          <p>html:</p>
+          <p class="descrp">html:</p>
           <pre class="code-text">
             <code>
               <span><</span>CommonChart ref ="commonchart" :chart-type="chartType"><span><</span>/CommonChart>
             </code>
           </pre>
-          <p>js:</p>
+          <p class="descrp">js:</p>
           <pre class="code-text">
             <code>
         /*父组件通过$refs调用子组件的方法和属性*/
@@ -52,7 +52,7 @@
             </code>
           </pre>
           <p class="title-lv3">2.2子到父</p>
-          <p>js:</p>
+          <p class="descrp">js:</p>
           <pre class="code-text">
             <code>
                /*子组件通过props属性接受父组件向下传递的数据*/
@@ -79,13 +79,17 @@
         </div>
       </div>
     </div>
+    <PostTag :posttime="postTime"></PostTag>
   </div>
 </template>
 
 <script>
+  import PostTag from '../../components/PostTag.vue'
     export default {
         data() {
-            return {}
+            return {
+              postTime:'2017-09-26'
+            }
         },
         methods: {},
         created: function () {
@@ -94,7 +98,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {PostTag}
     }
 </script>
 <style>

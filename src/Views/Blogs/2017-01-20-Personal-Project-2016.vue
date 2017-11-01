@@ -9,16 +9,21 @@
       <li> 搜索了下网上的node.js爬虫，发现有个爬大众点评的，吃向来是中国人比较感兴趣的，就点进去逛了下</li>
       <li>自己照葫芦画瓢写了个爬上海的美食的小爬虫</li>
       <li>语言为Node.js,superagent发起请求,cheerio解析网页,async控制并发</li>
-  </ol>
-    - GitHub地址： <a href="https://github.com/nykee/dzdp_spider">[https://github.com/nykee/dzdp_spider]</a>
+      <li>- GitHub地址： <a href="https://github.com/nykee/dzdp_spider">https://github.com/nykee/dzdp_spider</a></li>
+    </ol>
+
+    <PostTag :posttime="postTime"></PostTag>
   </div>
 
 </template>
 
 <script>
+  import PostTag from '../../components/PostTag.vue'
     export default {
         data() {
-            return {}
+            return {
+              postTime:'2016-11-04'
+            }
         },
         methods: {},
         created: function () {
@@ -27,7 +32,9 @@
         mounted() {
 
         },
-        components: {}
+        components: {
+          PostTag
+        }
     }
 </script>
 <style>

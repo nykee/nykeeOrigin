@@ -116,13 +116,17 @@
             </code>
           </pre>
     </div>
+    <PostTag :posttime="postTime"></PostTag>
   </div>
 </template>
 
 <script>
+  import PostTag from '../../components/PostTag.vue'
     export default {
         data() {
-            return {}
+            return {
+              postTime:'2017-09-21'
+            }
         },
         methods: {},
         created: function () {
@@ -131,7 +135,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {PostTag}
     }
 </script>
 <style>

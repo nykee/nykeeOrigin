@@ -6,7 +6,7 @@
     <div class="main-body">
       <div id="part1" class="part">
         <div class="title-lv1"> 一、安装</div>
-        <p>window下安装，略过不表。</p>
+        <p class="descrp">window下安装，略过不表。</p>
         <p class="title-lv2"> 1.创建数据库目录：</p>
         <pre class="code-text">
             <code>
@@ -20,7 +20,7 @@
               --port yourPortNumber --serviceName "YourServiceName" --serviceDisplayName "YourServiceName" --install
             </code>
           </pre>
-        <ul>参数解释：
+        <ul class="descrp">参数解释：
           <li>--bind_ip： 绑定服务IP，若绑定127.0.0.1，则只能本机访问，不指定默认本地所有IP</li>
           <li>--logpath： 定MongoDB日志文件，注意是指定文件不是目录</li>
           <li>--dbpath:   指定数据库路径</li>
@@ -30,7 +30,7 @@
           <li>--install: 指定作为一个Windows服务安装。</li>
         </ul>
         <p class="title-lv2"> 3.MongoDB后台管理 Shell</p>
-        <p>切换至mongodb装目录的下的bin目录，执行</p>
+        <p class="descrp">切换至mongodb装目录的下的bin目录，执行</p>
         <pre class="code-text">
             <code>
               mongo
@@ -132,13 +132,17 @@
       </div>
 
     </div>
+    <PostTag :posttime="postTime"></PostTag>
   </div>
 </template>
 
 <script>
+  import PostTag from '../../components/PostTag.vue'
     export default {
         data() {
-            return {}
+            return {
+              postTime:'2017-02-14'
+            }
         },
         methods: {},
         created: function () {
@@ -147,7 +151,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {PostTag}
     }
 </script>
 <style>

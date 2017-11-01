@@ -6,7 +6,7 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="copyright">
-      <p class="copyright-content">Copyright © nykee 2017 </p>
+      <p class="copyright-content">Copyright © Nykee 2017 </p>
     </Row>
 
   </div>

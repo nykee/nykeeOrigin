@@ -9,7 +9,7 @@
         <div class="title-lv1">一、CSS部分</div>
         <div id="part1-section1" class="section">
           <p class="title-lv2"> 1.加载CDN文件时，可以省掉HTTP标识</p>
-          <p>现在很流行的CDN即从专门的服务器加载一些通用的JS和CSS文件，出于安全考虑有的CDN服务器使用HTTPS方式连接，而有的是传统的HTTP，其实我们在使用时可以忽略掉这个，将它从URL中省去。</p>
+          <p class="descrp">现在很流行的CDN即从专门的服务器加载一些通用的JS和CSS文件，出于安全考虑有的CDN服务器使用HTTPS方式连接，而有的是传统的HTTP，其实我们在使用时可以忽略掉这个，将它从URL中省去。</p>
           <pre class="code-text">
             <code>
               {{sc}}
@@ -20,7 +20,7 @@
 
         <div id="part1-section2" class="section">
           <p class="title-lv2"> 2.简单的文字模糊效果</p>
-          <p>以下两行简单的CSS3代码可达到将文字模糊化处理的目的，出来的效果有点像使用PS的滤镜，so cool!</p>
+          <p class="descrp">以下两行简单的CSS3代码可达到将文字模糊化处理的目的，出来的效果有点像使用PS的滤镜，so cool!</p>
           <pre class="code-text">
             <code>
               p {
@@ -32,7 +32,7 @@
         </div>
         <div id="part1-section3" class="section">
           <p class="title-lv2">3.创建长宽比固定的元素</p>
-          <p>通过设置父级窗口的 padding-bottom 可以达到让容器保持一定的长度比的目的，这在响应式页面设计中比较有用，能够保持元素不变形。</p>
+          <p class="descrp">通过设置父级窗口的 padding-bottom 可以达到让容器保持一定的长度比的目的，这在响应式页面设计中比较有用，能够保持元素不变形。</p>
           <pre class="code-text">
             <code>
               <span><</span>div style="width: 100%; position: relative; padding-bottom: 20%;">
@@ -48,7 +48,7 @@
         <div class="title-lv1">二、Javascript部分:</div>
         <div id="part2-section1" class="section">
           <p class="title-lv2"> 1.生成随机字符串</p>
-          <p>利用 Math.random 和 toString 生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了 toString 方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
+          <p class="descrp">利用 Math.random 和 toString 生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了 toString 方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
           <pre class="code-text">
             <code>
                function generateRandomAlphaNum(len) {
@@ -62,7 +62,7 @@
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
-          <p>JavaScript中是没有整型概念的，但利用好位操作符可以轻松处理，同时获得效率上的提升。</p>
+          <p class="descrp">JavaScript中是没有整型概念的，但利用好位操作符可以轻松处理，同时获得效率上的提升。</p>
           <p>|0 和 ~~ 是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的 parseInt , Math.round  要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
           <pre class="code-text">
             <code>
@@ -70,11 +70,11 @@
                 var bar = ~~(12.4 / 4.13);//结果为3
             </code>
           </pre>
-          <p>顺便说句， !! 将一个值方便快速转化为布尔值 !!window===true  。</p>
+          <p class="descrp">顺便说句， !! 将一个值方便快速转化为布尔值 !!window===true  。</p>
         </div>
         <div id="part2-section3" class="section">
           <p class="title-lv2"> 3.关于console的恶作剧</p>
-          <p>J关于重写原生方法，这里有个恶作剧大家可以拿去寻开心。Chrome的 console.log 是支持对文字添加样式的，甚至log图片都可以。于是可以重写掉默认的log方法，把将要log的文字应用到CSS的模糊效果，这样当有人试图调用console.log()的时候，出来的是模糊不清的文字。好冷，我表示没有笑。
+          <p class="descrp">关于重写原生方法，这里有个恶作剧大家可以拿去寻开心。Chrome的 console.log 是支持对文字添加样式的，甚至log图片都可以。于是可以重写掉默认的log方法，把将要log的文字应用到CSS的模糊效果，这样当有人试图调用console.log()的时候，出来的是模糊不清的文字。好冷，我表示没有笑。
 
             是从这篇G+帖子的评论里看到的。使用之后的效果是再次调用log会输出字迹模糊不清的文字。</p>
           <pre class="code-text">
@@ -88,7 +88,7 @@
         </div>
         <div id="part2-section4" class="section">
           <p class="title-lv2"> 4.不声明第三个变量的值交换</p>
-          <p>我们都知道交换两个变量值的常规做法，那就是声明一个中间变量来暂存。但鲜有人去挑战不声明中间变量的情况，下面的代码给出了这种实现。蛮有创意 的。</p>
+          <p class="descrp">我们都知道交换两个变量值的常规做法，那就是声明一个中间变量来暂存。但鲜有人去挑战不声明中间变量的情况，下面的代码给出了这种实现。蛮有创意 的。</p>
           <pre class="code-text">
             <code>
                var a=1,b=2;a=[b,b=a][0];
@@ -97,7 +97,7 @@
         </div>
         <div id="part2-section5" class="section">
           <p class="title-lv2"> 5.console.table</p>
-          <p>Chrome专属，IE绕道的 console 方法。可以将JavaScript关联数组以表格形式输出到浏览器 console ，效果很惊赞，界面很美观。</p>
+          <p class="descrp">Chrome专属，IE绕道的 console 方法。可以将JavaScript关联数组以表格形式输出到浏览器 console ，效果很惊赞，界面很美观。</p>
           <pre class="code-text">
             <code>
                //采购情况
@@ -138,7 +138,7 @@
           </pre>
         </div>
         <div id="part2-section7" class="section">
-          <p class="title-lv2"> 利用js计算当前设备的DPR，动态设置在html标签上，并动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小（这个方法很不错哦~）</p>
+          <p class="title-lv2"> 7.利用js计算当前设备的DPR，动态设置在html标签上，并动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小（这个方法很不错哦~）</p>
           <pre class="code-text">
             <code>
                !function(win, lib) {
@@ -344,17 +344,17 @@
         <div class="title-lv1">四、Vue学习总结 </div>
         <div id="part4-section1" class="section">
           <p class="title-lv2"> 1.Vue响应式原理： </p>
-          <p>将一个普通的javascript对象传递给Vue实例的data选项，Vue会遍历此对象的所有属性，并使用Object.defineProperty将这些属性转化为
+          <p class="descrp">将一个普通的javascript对象传递给Vue实例的data选项，Vue会遍历此对象的所有属性，并使用Object.defineProperty将这些属性转化为
             getter/setter。每个组件实例都有相应的watcher实例对象，它会在渲染过程中把属性记录为依赖，然后当它的依赖项的setter被调用后，会通知
             watcher进行重算，从而使它关联的组件得到更新。</p>
         </div>
         <div id="part4-section2" class="section">
           <p class="title-lv2"> 2.Vue组件化 </p>
-          <p>每个页面应用可抽象画为一颗组件树的模型</p>
+          <p class="descrp">每个页面应用可抽象画为一颗组件树的模型</p>
         </div>
         <div id="part4-section3" class="section">
           <p class="title-lv2"> 3.v-if对比v-show </p>
-          <p>v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+          <p class="descrp">v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
             >v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
             >相比之下， v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
             >一般来说， v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件不太可能改变，则使用 v-if 较好。
@@ -364,7 +364,7 @@
       </div>
       <div id="part5" class="part">
         <div class="title-lv1">五、webpack总结</div>
-        <ol>Webpack的核心原理：
+        <ol class="descrp">Webpack的核心原理：
           <li>一切皆模块：
             正如js文件可以是一个“模块（module）”一样，其他的（如css、image或html）文件也可视作模 块。因此，你可以require('myJSfile.js')亦可以require('myCSSfile.css')。这意味着我们可以将事物（业务）分割成更小的易于管理的片段，从而达到重复利用等的目的。
           </li>
@@ -379,6 +379,7 @@
 
 
     </div>
+    <PostTag :posttime="postTime"></PostTag>
 
 
 
@@ -388,10 +389,12 @@
 </template>
 
 <script>
+  import PostTag from '../../components/PostTag.vue'
     export default {
         data() {
             return {
-              sc:`<script src="//domain.com/path/to/script.js">`
+              sc:`<script src="//domain.com/path/to/script.js">`,
+              postTime:'2017-01-22'
             }
         },
         methods: {},
@@ -401,7 +404,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {PostTag}
     }
 </script>
 <style>
