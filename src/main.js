@@ -4,11 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import iview from 'iview'
+import locale from 'iview/dist/locale/en-US';
 import 'iview/dist/styles/iview.css'
 import 'font-awesome-webpack'
 
 Vue.config.productionTip = false;
-Vue.use(iview);
+Vue.use(iview,{locale});
 
 
 /* eslint-disable no-new */

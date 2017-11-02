@@ -30,5 +30,6 @@
     font-size: 18px;
     font-family:Lora,'Times New Roman',serif;
     font-style:italic;
+    margin-top:1.5rem;
   }
 </style>
