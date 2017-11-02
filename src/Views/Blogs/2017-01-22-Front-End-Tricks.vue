@@ -63,7 +63,7 @@
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
           <p class="descrp">JavaScript中是没有整型概念的，但利用好位操作符可以轻松处理，同时获得效率上的提升。</p>
-          <p>|0 和 ~~ 是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的 parseInt , Math.round  要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
+          <p class="descrp">|0 和 ~~ 是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的 parseInt , Math.round  要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
           <pre class="code-text">
             <code>
                var foo = (12.4 / 4.13) | 0;//结果为3

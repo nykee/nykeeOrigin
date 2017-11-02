@@ -7,7 +7,7 @@
       <i-col :span="8" class="flink"><a href="">广告</a></i-col>
     </Row>
     <Row>
-      <i-col :span="8" class="flink"><a href="">位置1</a></i-col>
+      <i-col :span="8" class="flink"><a href="">位置</a></i-col>
       <i-col :span="8" class="flink"><a href="">长期</a></i-col>
       <i-col :span="8" class="flink"><a href="">出租</a></i-col>
     </Row>
