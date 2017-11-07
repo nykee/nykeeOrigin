@@ -318,50 +318,12 @@
 
 
       </div>
-      <div id="part3" class="part">
-        <div class="title-lv1">三、Git常用命令</div>
-        <pre class="code-text">
-            <code>
-    git init   # 初始化一个git仓库
-    git config --global user.email "you@example.com" # 设置git账户邮箱地址
-    git config --global user.name "yourname" # 设置git用户名
-    git add <span><</span>file> # 将工作文件修改提交到本地暂存区
-    git add .  # 将所有修改过的工作文件提交暂存区
-    git add -A # 提交所有变化
-    git reset --hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改
-    git commit -m "ur message" //提交并且加注释
-    git remote add origin https://github.com/nykee/doubanFilm.git #设置远程仓库地址
-    git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)
-    git push origin master # 将本地主分支推到远程主分支
-    git rm <span><</span>file> # 从版本库中删除文件
-    git rm <span><</span>file> --cached # 从版本库中删除文件，但不删除文件
-    git config credential.helper 'cache --timeout=3600' # 设置记住密码1小时
-    git config --global credential.helper store # 长期存储Git密码
-            </code>
-          </pre>
-      </div>
-      <div id="part4" class="part">
-        <div class="title-lv1">四、Vue学习总结 </div>
-        <div id="part4-section1" class="section">
-          <p class="title-lv2"> 1.Vue响应式原理： </p>
-          <p class="descrp">将一个普通的javascript对象传递给Vue实例的data选项，Vue会遍历此对象的所有属性，并使用Object.defineProperty将这些属性转化为
-            getter/setter。每个组件实例都有相应的watcher实例对象，它会在渲染过程中把属性记录为依赖，然后当它的依赖项的setter被调用后，会通知
-            watcher进行重算，从而使它关联的组件得到更新。</p>
-        </div>
-        <div id="part4-section2" class="section">
-          <p class="title-lv2"> 2.Vue组件化 </p>
-          <p class="descrp">每个页面应用可抽象画为一颗组件树的模型</p>
-        </div>
-        <div id="part4-section3" class="section">
-          <p class="title-lv2"> 3.v-if对比v-show </p>
-          <p class="descrp">v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
-            >v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
-            >相比之下， v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
-            >一般来说， v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件不太可能改变，则使用 v-if 较好。
-          </p>
-        </div>
 
-      </div>
+      <!--<div id="part4" class="part">
+        <div class="title-lv1">四、Vue学习总结 </div>
+
+
+      </div>-->
       <div id="part5" class="part">
         <div class="title-lv1">五、webpack总结</div>
         <ol class="descrp">Webpack的核心原理：

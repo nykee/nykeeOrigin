@@ -78,6 +78,24 @@
 
         </div>
       </div>
+      <div id="part4-section1" class="section">
+        <p class="title-lv2"> 3.Vue响应式原理： </p>
+        <p class="descrp">将一个普通的javascript对象传递给Vue实例的data选项，Vue会遍历此对象的所有属性，并使用Object.defineProperty将这些属性转化为
+          getter/setter。每个组件实例都有相应的watcher实例对象，它会在渲染过程中把属性记录为依赖，然后当它的依赖项的setter被调用后，会通知
+          watcher进行重算，从而使它关联的组件得到更新。</p>
+      </div>
+      <div id="part4-section2" class="section">
+        <p class="title-lv2"> 4.Vue组件化 </p>
+        <p class="descrp">每个页面应用可抽象画为一颗组件树的模型</p>
+      </div>
+      <div id="part4-section3" class="section">
+        <p class="title-lv2"> 5.v-if对比v-show </p>
+        <p class="descrp">v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+          >v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+          >相比之下， v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+          >一般来说， v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件不太可能改变，则使用 v-if 较好。
+        </p>
+      </div>
     </div>
     <PostTag :posttime="postTime"></PostTag>
   </div>
