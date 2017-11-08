@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">前端技巧汇总，包括CSS,JS,Git</h1></li>
+      <li ><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
     </ul>
     <div class="main-body">
       <div id="part1" class="part">
@@ -325,7 +325,7 @@
 
       </div>-->
       <div id="part5" class="part">
-        <div class="title-lv1">五、webpack总结</div>
+        <div class="title-lv1">三、webpack总结</div>
         <ol class="descrp">Webpack的核心原理：
           <li>一切皆模块：
             正如js文件可以是一个“模块（module）”一样，其他的（如css、image或html）文件也可视作模 块。因此，你可以require('myJSfile.js')亦可以require('myCSSfile.css')。这意味着我们可以将事物（业务）分割成更小的易于管理的片段，从而达到重复利用等的目的。
