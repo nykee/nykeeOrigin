@@ -10,6 +10,7 @@ import _2017_06_18 from '../Views/Blogs/2017-06-08-BaiduMap-Learning.vue'
 import _2017_09_21 from '../Views/Blogs/2017-09-21-Echarts2.7.2.vue'
 import _2017_09_26 from '../Views/Blogs/2017-09-26-Vue.vue'
 import _2017_11_07 from '../Views/Blogs/2017-11-07-Git.vue'
+import _2017_11_08 from '../Views/Blogs/2017-11-08-React.vue'
 
 Vue.use(Router);
 
@@ -50,6 +51,10 @@ export default new Router({
         {
           path:'/_2017_11_07',
           component:_2017_11_07
+        },
+        {
+          path:'/_2017_11_08',
+          component:_2017_11_08
         },
       ]
     },
