@@ -35,11 +35,11 @@
               this.head ='Nykee Blog';
               this.subHead ='Talk is cheap,show me ur code~'
             }
-            else if(path ==="/Tags"){
+            else if(path ==="/Project"){
               this.isBlogs = true;
               this.isIndex =false;
               this.isTags =true;
-              this.head ='Tags';
+              this.head ='My Projects';
               this.subHead ='Think Different!'
             }
           }

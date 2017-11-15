@@ -6,7 +6,7 @@
           <i-col :span="6" :offset="12">
             <MenuItem name="2"><router-link to="/">HOME</router-link></MenuItem>
             <MenuItem name="3"><router-link to="/Blogs">BLOGS</router-link></MenuItem>
-            <MenuItem name="4"><router-link to="/Tags">TAGS</router-link></MenuItem>
+            <MenuItem name="4"><router-link to="/Project">Project</router-link></MenuItem>
 
           </i-col>
         </Menu>

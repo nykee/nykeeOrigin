@@ -8,24 +8,18 @@
     <Row type="flex" justify="center" align="middle">
       <i-col>
 
-        <Row>
-          <i-col>
-            <Tag color="blue">标签一</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-          </i-col>
-          <i-col>
-            <Tag>标签一</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-            <Tag>标签二</Tag>
-          </i-col>
-        </Row>
+
+          <ul>
+            <li>仿美骑首页</li>
+            <li>inno云平台 build by jq&boot</li>
+            <li>inno云平台 build by Vue</li>
+            <li>个人博客：nykee.github.io build by vue</li>
+            <li>FluoMotion build by vue</li>
+            <li>FluoMotion build by react</li>
+
+
+          </ul>
+
       </i-col>
     </Row>
   </div>
