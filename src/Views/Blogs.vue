@@ -8,20 +8,14 @@
     <Row  class="blog-container">
       <i-col :span="5" >
         <Menu  theme="light" active-name="1" >
-
-
-
-            <MenuItem name="1"><router-link to="/_2017_01_22">前端技巧汇总，包括CSS,JS</router-link></MenuItem>
-            <MenuItem name="7"><router-link to="/_2017_11_07">Git笔记</router-link></MenuItem>
-            <MenuItem name="2"><router-link to="/_2017_02_14">MongoDB学习笔记</router-link></MenuItem>
-            <MenuItem name="3"><router-link to="/_2017_06_18">百度地图学习笔记</router-link></MenuItem>
-            <MenuItem name="4"><router-link to="/_2017_09_21">Echarts2.7.2爬坑记录</router-link></MenuItem>
-            <MenuItem name="5"><router-link to="/_2017_09_26">Vue学习笔记</router-link></MenuItem>
-            <MenuItem name="6"><router-link to="/_2017_01_20">大众点评Node.js爬虫</router-link></MenuItem>
-            <MenuItem name="6"><router-link to="/_2017_11_08">React\react-router采坑记录</router-link></MenuItem>
-
-
-
+            <MenuItem name="1"><span @click="directTo('FrontEndTricks')">前端技巧汇总，包括CSS,JS</span></MenuItem>
+            <MenuItem name="7"><span @click="directTo('GitLearning')">Git笔记</span></MenuItem>
+            <MenuItem name="2"><span @click="directTo('MongoDBLearning')">MongoDB学习笔记</span></MenuItem>
+            <MenuItem name="3"><span @click="directTo('BaiduMapLearning')">百度地图学习笔记</span></MenuItem>
+            <MenuItem name="4"><span @click="directTo('EchartsLearning')">Echarts2.7.2爬坑记录</span></MenuItem>
+            <MenuItem name="5"><span @click="directTo('VueLearning')">Vue学习笔记</span></MenuItem>
+            <MenuItem name="6"><span @click="directTo('DZDPCrawlSpider')">大众点评Node.js爬虫</span></MenuItem>
+            <MenuItem name="8"><span @click="directTo('ReactLearning')">React\react-router采坑记录</span></MenuItem>
         </Menu>
       </i-col>
       <i-col :span="19" >
@@ -42,12 +36,16 @@
         data() {
             return {}
         },
-        methods: {},
+        methods: {
+          directTo(add){
+            this.$router.push('/Blogs/'+add);
+          }
+        },
         created: function () {
 
         },
         mounted() {
-          this.$router.push('/_2017_01_22')
+          this.$router.push('/Blogs/FrontEndTricks')
 
         },
         components: {

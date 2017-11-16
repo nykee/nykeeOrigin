@@ -2,17 +2,22 @@
   <div class="container">
     <h5><router-link to="/Tags">FEATURED TAGS</router-link></h5>
     <Row  class="row">
-      <i-col :span="8"><router-link to="/" class="tagBtn">前端</router-link></i-col>
-      <i-col :span="8"><router-link  to="/" class="tagBtn">Git</router-link></i-col>
-      <i-col :span="8"><router-link  to="/" class="tagBtn">JS</router-link></i-col>
+      <i-col :span="8"><router-link to="/Blogs/FrontEndTricks" class="tagBtn">前端</router-link></i-col>
+      <i-col :span="8"><router-link  to="/Blogs/GitLearning" class="tagBtn">Git</router-link></i-col>
+      <i-col :span="8"><router-link  to="/Blogs/FrontEndTricks" class="tagBtn">JS</router-link></i-col>
     </Row >
     <Row class="row">
-      <i-col :span="12"><router-link  to="/" class="tagBtn">MongoDB</router-link></i-col>
-      <i-col :span="12"><router-link  to="/" class="tagBtn">百度地图</router-link></i-col>
+      <i-col :span="12"><router-link  to="/Blogs/MongoDBLearning" class="tagBtn">MongoDB</router-link></i-col>
+      <i-col :span="12"><router-link  to="/Blogs/BaiduMapLearning" class="tagBtn">百度地图</router-link></i-col>
     </Row>
     <Row class="row">
-      <i-col :span="12"><router-link  to="/" class="tagBtn">echarts</router-link></i-col>
-      <i-col :span="12"><router-link  to="/" class="tagBtn">Vue</router-link></i-col>
+      <i-col :span="12"><router-link  to="/Blogs/EchartsLearning" class="tagBtn">echarts</router-link></i-col>
+      <i-col :span="12"><router-link  to="/Blogs/VueLearning" class="tagBtn">Vue</router-link></i-col>
+
+    </Row>
+    <Row class="row">
+      <i-col :span="12"><router-link  to="/Blogs/ReactLearning" class="tagBtn">React</router-link></i-col>
+
     </Row>
 
   </div>

@@ -1,8 +1,8 @@
 <template>
 
     <Row>
-        <Menu   mode="horizontal" theme="light" active-name="2" class="menu" >
-         <i-col :span="6" > <router-link to="/">Nykee`s Blog</router-link></i-col>
+        <Menu  ref="myMenu" mode="horizontal" theme="light" active-name="2" class="menu" >
+         <i-col :span="6" > <router-link to="/"><span @click="changeActive">Nykee`s Blog</span></router-link></i-col>
           <i-col :span="6" :offset="12">
             <MenuItem name="2"><router-link to="/">HOME</router-link></MenuItem>
             <MenuItem name="3"><router-link to="/Blogs">BLOGS</router-link></MenuItem>
@@ -22,7 +22,13 @@
             }
         },
         methods: {
+          changeActive(){
+            this.$nextTick(()=>{
+              this.$refs.myMenu.currentActiveName='2';
+            });
 
+
+          }
         },
         created: function () {
 

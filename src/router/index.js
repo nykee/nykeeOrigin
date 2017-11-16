@@ -3,14 +3,14 @@ import Router from 'vue-router'
 import Index from '../Views/Index.vue'
 import Blogs from '../Views/Blogs.vue'
 import Project from '../Views/Project.vue'
-import _2017_01_20 from '../Views/Blogs/2017-01-20-Personal-Project-2016.vue'
-import _2017_01_22 from '../Views/Blogs/2017-01-22-Front-End-Tricks.vue'
-import _2017_02_14 from '../Views/Blogs/2017-02-14-MongoDB-learning.vue'
-import _2017_06_18 from '../Views/Blogs/2017-06-08-BaiduMap-Learning.vue'
-import _2017_09_21 from '../Views/Blogs/2017-09-21-Echarts2.7.2.vue'
-import _2017_09_26 from '../Views/Blogs/2017-09-26-Vue.vue'
-import _2017_11_07 from '../Views/Blogs/2017-11-07-Git.vue'
-import _2017_11_08 from '../Views/Blogs/2017-11-08-React.vue'
+import DZDPCrawlSpider from '../Views/Blogs/2017-01-20-DZDP-Crawl-Spider.vue'
+import FrontEndTricks from '../Views/Blogs/2017-01-22-Front-End-Tricks.vue'
+import MongoDBLearning from '../Views/Blogs/2017-02-14-MongoDB-learning.vue'
+import BaiduMapLearning from '../Views/Blogs/2017-06-08-BaiduMap-Learning.vue'
+import EchartsLearning from '../Views/Blogs/2017-09-21-Echarts2.7.2.vue'
+import VueLearning from '../Views/Blogs/2017-09-26-Vue.vue'
+import GitLearning  from '../Views/Blogs/2017-11-07-Git.vue'
+import ReactLearning from '../Views/Blogs/2017-11-08-React.vue'
 
 Vue.use(Router);
 
@@ -27,34 +27,34 @@ export default new Router({
       component: Blogs,
       children:[
         {
-          path:'/_2017_01_20',
-          component:_2017_01_20
+          path:'DZDPCrawlSpider',
+          component:DZDPCrawlSpider
         },
         {
-          path:'/_2017_01_22',
-          component:_2017_01_22
+          path:'FrontEndTricks',
+          component:FrontEndTricks
         },
         {
-          path:'/_2017_02_14',
-          component:_2017_02_14
+          path:'MongoDBLearning',
+          component:MongoDBLearning
         }, {
-          path:'/_2017_06_18',
-          component:_2017_06_18
+          path:'BaiduMapLearning',
+          component:BaiduMapLearning
         }, {
-          path:'/_2017_09_21',
-          component:_2017_09_21
+          path:'EchartsLearning',
+          component:EchartsLearning
         },
         {
-          path:'/_2017_09_26',
-          component:_2017_09_26
+          path:'VueLearning',
+          component:VueLearning
         },
         {
-          path:'/_2017_11_07',
-          component:_2017_11_07
+          path:'GitLearning',
+          component:GitLearning
         },
         {
-          path:'/_2017_11_08',
-          component:_2017_11_08
+          path:'ReactLearning',
+          component:ReactLearning
         },
       ]
     },
