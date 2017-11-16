@@ -49,13 +49,49 @@
     export default {
         data() {
             return {
-              mq:{pName:'仿美骑首页',desc:``,github:'',stack:'BootStrap+Jquery'},
-              innoJQ:{pName:'inno云平台 build by jq&boot',desc:'inno云平台JQ',github:'',stack:'BootStrap+Jquery'},
-              innoVue:{pName:'inno云平台 build by Vue',desc:'inno云平台Vue',github:'https://github.com/nykee/innoVue',stack:'BootStrap+Jquery'},
-              FluoVue:{pName:'FluoMotion云平台 build by Vue',desc:'FluoMotion云平台Vue',github:'https://github.com/nykee/FluoMotion',stack:'BootStrap+Jquery'},
-              FluoReact:{pName:'FluoMotion云平台 build by React',desc:'Fluo云平台React',github:'https://github.com/nykee/FluoMotionVReact',stack:'BootStrap+Jquery'},
-              nykee:{pName:'nykee.github.io',desc:'nykee.github.io',github:'https://github.com/nykee/nykee.github.io',stack:'iview'},
-              dzdp:{pName:'大众点评NodeJS爬虫',desc:'大众点评描述',github:'https://github.com/nykee/dzdp_spider',stack:'NodeJs'},
+              mq:{
+                pName:'仿美骑首页',
+                desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                github:'',
+                stack:'BootStrap+Jquery'
+              },
+              innoJQ:{
+                pName:'inno云平台 build by jq&boot',
+               desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                github:'',
+                stack:'BootStrap+Jquery'
+              },
+              innoVue:{
+                pName:'inno云平台 build by Vue',
+               desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                github:'https://github.com/nykee/innoVue',
+                stack:'BootStrap+Jquery'
+              },
+              FluoVue:{
+                pName:'FluoMotion云平台 build by Vue',
+                desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                github:'https://github.com/nykee/FluoMotion',
+                stack:'BootStrap+Jquery'
+              },
+              FluoReact:{
+                pName:'FluoMotion云平台 build by React',
+                desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                github:'https://github.com/nykee/FluoMotionVReact',
+                stack:'BootStrap+Jquery'
+              },
+              nykee:{
+                pName:'nykee.github.io',
+                desc:['个人的Github Page','UI库使用iview'],
+                github:'https://github.com/nykee/nykee.github.io',
+                stack:'iview'
+              },
+              dzdp:{
+                pName:'大众点评NodeJS爬虫',
+                desc:['大众点评NodeJS爬虫','使用了JQuery+BootStrap'],
+                github:'https://github.com/nykee/dzdp_spider',
+                stack:'NodeJs'
+              },
+
 
             }
         },
