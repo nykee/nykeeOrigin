@@ -1,48 +1,13 @@
 <template>
   <div>
     <IntroHeader></IntroHeader>
-    <transition-group name="bounce" tag="p">
+
       <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem" v-for="proj in projs" v-bind:key="proj">
         <i-col  span="12">
           <ProjectCard :proj-name="proj.pName" :description="proj.desc" :stack="proj.stack" :github="proj.github"></ProjectCard>
         </i-col>
       </Row>
-    </transition-group>
-    <!--<Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col  span="12">
-        <ProjectCard :proj-name="mq.pName" :description="mq.desc" :stack="mq.stack" :github="mq.github"></ProjectCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col  span="12">
-        <ProjectCard :proj-name="innoJQ.pName" :description="innoJQ.desc" :stack="innoJQ.stack" :github="innoJQ.github"></ProjectCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col  span="12">
-        <ProjectCard :proj-name="innoVue.pName" :description="innoVue.desc" :stack="innoVue.stack" :github="innoVue.github"></ProjectCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col span="12" >
-        <ProjectCard :proj-name="nykee.pName" :description="nykee.desc" :stack="nykee.stack" :github="nykee.github"></ProjectCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col span="12" >
-        <ProjectCard :proj-name="FluoVue.pName" :description="FluoVue.desc" :stack="FluoVue.stack" :github="FluoVue.github"></ProjectCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col span="12" >
-        <ProjectCard :proj-name="FluoReact.pName" :description="FluoReact.desc" :stack="FluoReact.stack" :github="FluoReact.github"></ProjectCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem">
-      <i-col span="12" >
-        <ProjectCard :proj-name="dzdp.pName" :description="dzdp.desc" :stack="dzdp.stack" :github="dzdp.github"></ProjectCard>
-      </i-col>
-    </Row>-->
+
     <BackTop></BackTop>
 
 
@@ -65,27 +30,27 @@
                 },
                 {
                   pName:'inno云平台 build by jq&boot',
-                  desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                  desc:['公司云平台初版，前后端一个人承包','前台采用JQuery+BootStrap+css3，后台使用SSM框架','数据可视化采用百度echarts',"由这个项目大致了解了java后端开发"],
                   github:'',
                   stack:'BootStrap+Jquery'
                 },
                 {
                   pName:'inno云平台 build by Vue',
-                  desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap'],
+                  desc:['云平台项目试着用Vue重写，也算是入门下Vue.js',],
                   github:'https://github.com/nykee/innoVue',
-                  stack:'BootStrap+Jquery'
+                  stack:'Vue'
                 },
                 {
                   pName:'FluoMotion云平台 build by Vue',
-                  desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','iview'],
+                  desc:['FluoMotion云平台用Vue.js进行重写','iview'],
                   github:'https://github.com/nykee/FluoMotion',
-                  stack:'BootStrap+Jquery'
+                  stack:'Vue'
                 },
                 {
                   pName:'FluoMotion云平台 build by React',
                   desc:['react重写了FluoMotion平台，作为入门react','UI组件库使用的阿里的ant-d'],
                   github:'https://github.com/nykee/FluoMotionVReact',
-                  stack:'BootStrap+Jquery'
+                  stack:'Ant-d React'
                 },
                 {
                   pName:'nykee.github.io',
@@ -95,7 +60,7 @@
                 },
                 {
                   pName:'大众点评NodeJS爬虫',
-                  desc:['大众点评NodeJS爬虫','使用了JQuery+BootStrap'],
+                  desc:['NodeJS爬虫入门项目','使用大众点评的API','superagent发起请求,cheerio解析网页,async控制并发'],
                   github:'https://github.com/nykee/dzdp_spider',
                   stack:'NodeJs'
                 },
@@ -116,21 +81,5 @@
     }
 </script>
 <style>
-  .bounce-enter-active {
-    animation: bounce-in .5s;
-  }
-  .bounce-leave-active {
-    animation: bounce-in .5s reverse;
-  }
-  @keyframes bounce-in {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+
 </style>
