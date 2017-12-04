@@ -56,7 +56,7 @@
                   pName:'nykee.github.io',
                   desc:['个人的Github Page','UI库使用iview'],
                   github:'https://github.com/nykee/nykee.github.io',
-                  stack:'iview'
+                  stack:'Vue.js'
                 },
                 {
                   pName:'大众点评NodeJS爬虫',
