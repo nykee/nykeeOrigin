@@ -5,7 +5,7 @@
     </ul>
     <div class="main-body">
       <div class="title-lv1">echarts 2.7.2爬坑记录</div>
-      <p>echarts2.7.2比较坑，标注点的坐标的配置为{  name: '北京',
+      <p class="descrp">echarts2.7.2比较坑，标注点的坐标的配置为{  name: '北京',
         geoCoord:[116.46, 39.92], },要把geoCoord写在data里面，具体mapoption的配置如下：</p>
       <pre class="code-text">
             <code>
