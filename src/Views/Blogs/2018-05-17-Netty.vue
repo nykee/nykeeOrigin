@@ -129,6 +129,133 @@
 }
           </code>
         </pre>
+
+        我们看到在handler中调用了userEventTriggered方法，IdleStateEvent的state()方法一个有三个值：
+        <br>READER_IDLE，WRITER_IDLE，ALL_IDLE。正好对应读事件写事件和读写事件。
+
+        再来写一下客户端：<br>
+        <pre class="code-text">
+          <code>
+          public class HeartBeatsClient {
+    private  int port;
+    private  String address;
+
+    public HeartBeatsClient(int port, String address) {
+        this.port = port;
+        this.address = address;
+    }
+
+    public void start(){
+        EventLoopGroup group = new NioEventLoopGroup();
+
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap.group(group)
+                .channel(NioSocketChannel.class)
+                .handler(new HeartBeatsClientChannelInitializer());
+
+        try {
+            ChannelFuture future = bootstrap.connect(address,port).sync();
+            future.channel().closeFuture().sync();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            group.shutdownGracefully();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        HeartBeatsClient client = new HeartBeatsClient(7788,"127.0.0.1");
+        client.start();
+    }
+}
+          </code>
+        </pre>
+
+        客户端Initializer：<br>
+        <pre class="code-text">
+          <code>
+       public class HeartBeatsClientChannelInitializer extends  ChannelInitializer&lt;SocketChannel&gt; {
+
+    protected void initChannel(SocketChannel socketChannel) throws Exception {
+        ChannelPipeline pipeline = socketChannel.pipeline();
+
+        pipeline.addLast("handler", new IdleStateHandler(0, 3, 0, TimeUnit.SECONDS));
+        pipeline.addLast("decoder", new StringDecoder());
+        pipeline.addLast("encoder", new StringEncoder());
+        pipeline.addLast(new HeartBeatClientHandler());
+    }
+}
+          </code>
+        </pre>
+        这里我们设置了IdleStateHandler的写超时为3秒，客户端执行的动作为写消息到服务端，服务端执行读动作。<br>
+        客户端handler:
+        <pre class="code-text">
+          <code>
+       public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
+
+    private static final ByteBuf HEARTBEAT_SEQUENCE = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Heartbeat",
+            CharsetUtil.UTF_8));
+
+    private static final int TRY_TIMES = 3;
+
+    private int currentTime = 0;
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("激活时间是："+new Date());
+        System.out.println("链接已经激活");
+        ctx.fireChannelActive();
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("停止时间是："+new Date());
+        System.out.println("关闭链接");
+    }
+
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        System.out.println("当前轮询时间："+new Date());
+        if (evt instanceof IdleStateEvent) {
+                IdleStateEvent event = (IdleStateEvent) evt;
+            if (event.state() == IdleState.WRITER_IDLE) {
+                if(currentTime <= TRY_TIMES){
+                    System.out.println("currentTime:"+currentTime);
+                    currentTime++;
+                    ctx.channel().writeAndFlush(HEARTBEAT_SEQUENCE.duplicate());
+                }
+            }
+        }
+    }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        String message = (String) msg;
+        System.out.println(message);
+        if (message.equals("Heartbeat")) {
+            ctx.write("has read message from server");
+            ctx.flush();
+        }
+        ReferenceCountUtil.release(msg);
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        ctx.close();
+    }
+}
+          </code>
+        </pre>
+
+        我们再来屡一下思路：
+        <ul>
+          <li>1.首先客户端激活channel，因为客户端中并没有发送消息所以会触发客户端的IdleStateHandler，它设置的写超时时间为3s；</li>
+          <li>2.然后触发客户端的事件机制进入userEventTriggered方法，在触发器中计数并向客户端发送消息；</li>
+          <li>3.服务端接收消息；</li>
+          <li>4.客户端触发器继续轮询发送消息，直到计数器满不再向服务端发送消息；</li>
+          <li>5.服务端在IdleStateHandler设置的读消息超时时间5s内未收到消息，触发了服务端中handler的userEventTriggered方法，于是关闭客户端的链接。</li>
+        </ul>
       </section>
     </div>
 
