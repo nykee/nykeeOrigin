@@ -17,6 +17,7 @@
             <MenuItem name="6"><span @click="directTo('DZDPCrawlSpider')">大众点评Node.js爬虫</span></MenuItem>
             <MenuItem name="8"><span @click="directTo('ReactLearning')">React\react-router采坑记录</span></MenuItem>
             <MenuItem name="9"><span @click="directTo('D3Learning')">D3笔记</span></MenuItem>
+            <MenuItem name="10"><span @click="directTo('NettyLearning')">Netty心跳笔记</span></MenuItem>
         </Menu>
       </i-col>
       <i-col :span="19" >
@@ -81,18 +82,22 @@
     padding: 1px;
   }
   .title-lv1{
+    margin-top: .8rem;
     font-size: 20px;
     font-weight:bold;
+    padding-left: .4rem;
 
   }
   .title-lv2{
+    margin-top: .6rem;
     font-size: 18px;
     font-weight:bold;
+    padding-left: .8rem;
   }
   .title-lv3{
     font-size: 16px;
     margin-left: 10px;
-    margin-top:10px;
+    margin-top:.4rem;
     font-weight:bold;
   }
   .part{
@@ -108,6 +113,7 @@
     font-size: 16px;
     line-height: 1.27rem;
     margin-top:1rem;
+
   }
 
 

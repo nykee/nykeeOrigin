@@ -12,6 +12,7 @@ import VueLearning from '../Views/Blogs/2017-09-26-Vue.vue'
 import GitLearning  from '../Views/Blogs/2017-11-07-Git.vue'
 import ReactLearning from '../Views/Blogs/2017-11-08-React.vue'
 import D3Learning from '../Views/Blogs/2018-04-03-D3.jsV4.0'
+import NettyLearning from '../Views/Blogs/2018-05-17-Netty'
 
 Vue.use(Router);
 
@@ -60,6 +61,10 @@ export default new Router({
         {
           path:'D3Learning',
           component:D3Learning
+        },
+        {
+          path:'NettyLearning',
+          component:NettyLearning
         },
       ]
     },
