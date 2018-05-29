@@ -10,8 +10,9 @@ import BaiduMapLearning from '../Views/Blogs/2017-06-08-BaiduMap-Learning.vue'
 import EchartsLearning from '../Views/Blogs/2017-09-21-Echarts2.7.2.vue'
 import VueLearning from '../Views/Blogs/2017-09-26-Vue.vue'
 import GitLearning  from '../Views/Blogs/2017-11-07-Git.vue'
-import ReactLearning from '../Views/Blogs/2017-11-08-React.vue'
+import ReactTricks from '../Views/Blogs/2017-11-08-React.vue'
 import D3Learning from '../Views/Blogs/2018-04-03-D3.jsV4.0'
+import ReactLearning from '../Views/Blogs/2018-05-29-React'
 import NettyLearning from '../Views/Blogs/2018-05-17-Netty'
 
 Vue.use(Router);
@@ -55,8 +56,8 @@ export default new Router({
           component:GitLearning
         },
         {
-          path:'ReactLearning',
-          component:ReactLearning
+          path:'ReactTricks',
+          component:ReactTricks
         },
         {
           path:'D3Learning',
@@ -65,6 +66,10 @@ export default new Router({
         {
           path:'NettyLearning',
           component:NettyLearning
+        },
+        {
+          path:'ReactLearning',
+          component:ReactLearning
         },
       ]
     },

@@ -1,10 +1,10 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">React及React-router学习笔记</h1></li>
+      <li ><h1 class="title">React及React-router注意点</h1></li>
     </ul>
     <div class="main-body">
-      <div id="part3" class="part">
+      <div id="part1" class="part">
         <div class="title-lv1">1、React-router</div>
         <p class="descrp">React-router必须设置history={browserHistory}，否则路由无法显示</p>
         <img src="../../asserts/img/1510132269(1).jpg" alt="">
@@ -18,12 +18,9 @@
             子组件：<span><</span>div ><span><</span>img   src={require("../../images/swiper/"+this.props.imgSrc+".jpg")} alt=""/><span><</span>/div>
           </code>
         </pre>
-
       </div>
-
-
     </div>
-    <PostTag :posttime="postTime"></PostTag>
+    <PostTag :posttime="postTime"/>
   </div>
 </template>
 

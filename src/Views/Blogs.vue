@@ -15,9 +15,10 @@
             <MenuItem name="4"><span @click="directTo('EchartsLearning')">Echarts2.7.2爬坑记录</span></MenuItem>
             <MenuItem name="5"><span @click="directTo('VueLearning')">Vue学习笔记</span></MenuItem>
             <MenuItem name="6"><span @click="directTo('DZDPCrawlSpider')">大众点评Node.js爬虫</span></MenuItem>
-            <MenuItem name="8"><span @click="directTo('ReactLearning')">React\react-router采坑记录</span></MenuItem>
+            <MenuItem name="8"><span @click="directTo('ReactTricks')">React\react-router采坑记录</span></MenuItem>
             <MenuItem name="9"><span @click="directTo('D3Learning')">D3笔记</span></MenuItem>
             <MenuItem name="10"><span @click="directTo('NettyLearning')">Netty心跳笔记</span></MenuItem>
+            <MenuItem name="11"><span @click="directTo('ReactLearning')">React学习笔记</span></MenuItem>
         </Menu>
       </i-col>
       <i-col :span="19" >
