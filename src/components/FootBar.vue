@@ -6,7 +6,7 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="copyright">
-      <p class="copyright-content">Copyright © Nykee 2017-Now </p>
+      <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>
     </Row>
 
   </div>
@@ -16,7 +16,9 @@
   import ContactIcons from './ContactIcons.vue'
     export default {
         data() {
-            return {}
+            return {
+              yearCurrent:new Date().getFullYear()
+            }
         },
         methods: {},
         created: function () {
