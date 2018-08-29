@@ -5,9 +5,9 @@
         <IntroHeader></IntroHeader>
       </i-col>
     </Row>
-    <Row class="selfinfo-container">
+    <Row class="self-info-container">
 
-      <i-col  :span="20" class="leftCol">
+      <i-col  :lg="20"  :md="20" :sm="24" :xs="24" class="leftCol">
         <h1 class="intro">个人简介</h1>
 
 
@@ -24,10 +24,18 @@
 
 
       </i-col>
-      <i-col :span="4">
-        <FeaturedTags ></FeaturedTags>
-        <AboutMe></AboutMe>
-        <Friends></Friends>
+      <i-col :lg="4"  :md="4" :sm="24" :xs="24">
+        <Row>
+          <i-col  :lg="24"  :md="4" :sm="8" :xs="8">
+            <FeaturedTags ></FeaturedTags>
+          </i-col>
+          <i-col :lg="24"  :md="4" :sm="8" :xs="8">
+            <AboutMe></AboutMe>
+          </i-col>
+          <i-col :lg="24"  :md="4" :sm="8" :xs="8">
+            <Friends></Friends>
+          </i-col>
+        </Row>
       </i-col>
     </Row>
 
@@ -149,7 +157,7 @@
   .slogan{
     margin-top:30px;
   }
-  .selfinfo-container{
+  .self-info-container{
     margin-top:20px;
   }
   .Self-intro{
