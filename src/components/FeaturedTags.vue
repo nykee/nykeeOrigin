@@ -42,7 +42,6 @@
   .container{
     width: 200px;
     border-top:1px solid #271111;
-    margin-bottom:10px;
   }
   .tagBtn{
     display: inline-block;
@@ -60,4 +59,5 @@
   .row{
        margin-top:8px;
      }
+
 </style>

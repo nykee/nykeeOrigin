@@ -37,7 +37,7 @@
         },
 
         mounted() {
-        console.log(this.github);
+//        console.log(this.github);
           if(this.github.toString() ===''){
             this.hasGithub =false;
           }

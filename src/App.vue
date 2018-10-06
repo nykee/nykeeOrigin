@@ -54,4 +54,10 @@ export default {
   body{
     overflow-x:hidden;
   }
+  @media screen and (max-width: 425px){
+    .container{
+      margin-left: 29%;
+      margin-bottom:3rem
+    }
+  }
 </style>

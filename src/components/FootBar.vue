@@ -35,6 +35,7 @@
 <style>
   .footBar{
     margin-bottom:20px;
+    margin-top:1rem;
   }
   .icons{
     font-size: 18px;

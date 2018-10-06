@@ -11,7 +11,7 @@
         <h1 class="intro">个人简介</h1>
 
 
-        <pre id="wrap" class="Self-intro">
+        <pre id="wrap" class="self-intro">
           前端打杂一枚，大学学的是网络工程。目前在一家创业公司打杂，作为该公司云平台项目的负责人（创业公司你懂的，前端后端全包o(╥﹏╥),
           方案及项目进度都一人全包）。之前在上海金蝶做过java开发工程师。可以说后端也会(wan)一(quan)点(bu)点(hui)。
           但目前玩下来还是喜欢前端开发，毕竟所见即所得。目前的项目下来，累积的经验有：
@@ -27,13 +27,13 @@
       </i-col>
       <i-col :lg="4"  :md="4" :sm="24" :xs="24">
         <Row>
-          <i-col  :lg="24"  :md="4" :sm="8" :xs="8">
+          <i-col  :lg="24"  :md="24" :sm="24" :xs="24">
             <FeaturedTags ></FeaturedTags>
           </i-col>
-          <i-col :lg="24"  :md="4" :sm="8" :xs="8">
+          <i-col :lg="24"  :md="24" :sm="24" :xs="24">
             <AboutMe></AboutMe>
           </i-col>
-          <i-col :lg="24"  :md="4" :sm="8" :xs="8">
+          <i-col :lg="24"  :md="24" :sm="24" :xs="24">
             <Friends></Friends>
           </i-col>
         </Row>
@@ -160,10 +160,13 @@
   }
   .self-info-container{
     margin-top:20px;
+    width: 100%;
   }
-  .Self-intro{
+  .self-intro{
     font-size:14px;
     word-wrap: break-word;
+    height: 15.375rem;
+    width:100%
   }
 
 

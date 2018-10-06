@@ -3,8 +3,8 @@
     <header :class="{'intro-header-index':isIndex,'intro-header-blogs':isBlogs}" v-if="!isTags" >
       <div class="intro-container">
             <div class="site-heading">
-              <h1>{{head}}</h1>
-              <span class="sub-heading">{{subHead}}</span>
+              <h1 class="site-heading-title">{{head}}</h1>
+              <span class="site-heading-subtitle">{{subHead}}</span>
             </div>
       </div>
     </header>
@@ -13,8 +13,8 @@
         <div class="intro-container" style="position: relative">
 
               <div class="site-heading">
-                <h1>{{head}}</h1>
-                <span class="sub-heading">{{subHead}}</span>
+                <h1 class="site-heading-title">{{head}}</h1>
+                <span class="site-heading-subtitle">{{subHead}}</span>
               </div>
               <div id="particles"></div>
 
@@ -200,13 +200,6 @@
     background-color: #ccc;
     background-size: cover;
   }
-  ./*intro-header-tags{
-    !*background-image: url("../asserts/img/tags.jpg") !important;*!
-    background: no-repeat center center;
-    background-attachment: scroll;
-    background-color: #ccc;
-    background-size: cover;
-  }*/
   .intro-container{
     width: 100%;
     height: 400px;
@@ -215,24 +208,18 @@
     text-align: center;
   }
   header{display: block}
-  .sub-heading{
-    margin: 10px 0;
-  }
-  @media only screen and (min-width: 768px) {
-    .site-heading{
-      padding: 150px 0;
-    }
-  }
-  .site-heading>h1{
-    font-size: 60px;
+
+  .site-heading-title{
+    font-size: 3.75rem;
     color: #fff;
     line-height:1.1
   }
-  .sub-heading{
+  .site-heading-subtitle{
     color: #fff;
     font-size: 18px;
     line-height:1.1;
-    font-weight: 300;
+    font-weight: 400;
+      font-family: "宋体";
     margin: 10px 0 0 ;
     display: inline-block;
   }
@@ -247,4 +234,14 @@
     background:-moz-linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
   }
 
+  @media only screen and (min-width: 768px) {
+      .site-heading{
+          padding: 150px 0;
+      }
+  }
+    @media screen and (max-width: 425px){
+        .site-heading-title{
+            font-size: 2.5rem;
+        }
+    }
 </style>
