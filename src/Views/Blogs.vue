@@ -7,7 +7,7 @@
     </Row>
     <Row  class="blog-container">
       <i-col :lg="{span:5}" >
-        <Menu  theme="light" ref="blogMenu" active-name="1"  v-if="!isMobile">
+        <i-menu  theme="light" v-if="!isMobile" ref="bMenu" active-name="1"  >
             <MenuItem name="1">
                 <span @click="directTo('FrontEndTricks')">前端技巧汇总，包括CSS,JS</span>
             </MenuItem>
@@ -41,7 +41,7 @@
             <MenuItem name="11">
                 <span @click="directTo('ReactLearning')">React学习笔记</span>
             </MenuItem>
-        </Menu>
+        </i-menu>
 
           <Dropdown trigger="click"  v-if="isMobile" class="dropDownMenu">
               <a href="javascript:void(0)">
@@ -104,43 +104,38 @@
     export default {
         data() {
             return {
-                isMobile:false
+                isMobile:false,
+                current:'1',
+                _index:'1'
             }
         },
         methods: {
-          directTo(add){
+            directTo(add){
             this.$router.push('/Blogs/'+add);
           },
-            /*isMobileWatcher(){
-                let self =this;
-                window.onresize =function () {
-                    // console.log("bolg reseize事件触发")
-                    if(window.screen.width<430){self.isMobile = true}
-                    else {self.isMobile =false}
-                }
-            }*/
+
         },
         created: function () {
-        },
 
+        },
         mounted() {
-          let self =this;
-          // console.log(self.$refs.blogMenu.activeName);
-          bus.$on('tagRedirect',(args)=>{
-            // console.log("BLOGS 收到事件");
-            // console.log(args);
-            if(args.flag){
-              console.log(self.$refs.blogMenu.currentActiveName);
-              return
-            }
-            else {
-              this.$router.push('/Blogs/FrontEndTricks');
-            }
-          });
+
+            bus.$on("tagRedirect",(args)=>{
+                this._index =args.index +1+'';
+
+
+            });
+            this.$nextTick(() => {
+
+                this.$refs.bMenu.currentActiveName=this._index;
+            });
 
             if(window.screen.width<430){this.isMobile = true}
             else {this.isMobile =false}
 
+        
+        },
+        updated:function () {
 
         },
         components: {

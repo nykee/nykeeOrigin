@@ -71,7 +71,9 @@
         },
         mounted() {
           let self = this;
-          bus.$on("tagRedirect",()=>{
+          bus.$on("tagRedirect",(args)=>{
+              console.log(args);
+//              console.log(self.$refs);
             self.$nextTick(()=>{
               self.$refs.myMenu.currentActiveName='3';
             });
@@ -80,6 +82,9 @@
             else {this.isMobile =false}
 //            this.isPhoneWatcher();
 
+        },
+        beforeDestory(){
+            bus.$off('tagRedirect')
         },
 
         components: {}

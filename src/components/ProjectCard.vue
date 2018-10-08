@@ -36,7 +36,7 @@
             // window.location.href = path;
             path= String(path);
             if( path.indexOf("https://")=== -1){
-              console.log("不是链接");
+//              console.log("不是链接");
               return false
 
             }
