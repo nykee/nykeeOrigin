@@ -48,6 +48,7 @@
 </template>
 
 <script>
+  import bus from '../utils/EventBus'
     export default {
         data() {
             return {
@@ -64,18 +65,17 @@
 
 
           },
-            isPhoneWatcher(){
 
-                window.onresize =function () {
-                    console.log("navbar reseize事件触发")
-                    if(window.screen.width<430){this.isMobile = true}
-                    else {this.isMobile = false}
-                }
-            }
         },
         created: function () {
         },
         mounted() {
+          let self = this;
+          bus.$on("tagRedirect",()=>{
+            self.$nextTick(()=>{
+              self.$refs.myMenu.currentActiveName='3';
+            });
+          });
             if(window.screen.width<430){this.isMobile = true}
             else {this.isMobile =false}
 //            this.isPhoneWatcher();

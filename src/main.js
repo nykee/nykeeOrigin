@@ -11,7 +11,10 @@ import 'font-awesome-webpack'
 Vue.config.productionTip = false;
 Vue.use(iview,{locale});
 
-
+router.beforeEach(( from ,to, next)=>{
+  window.scrollTo(0,0);
+  next();
+});
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

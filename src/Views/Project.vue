@@ -45,21 +45,21 @@
                   id:3,
                   pName:'inno云平台 build by Vue',
                   desc:['云平台项目使用Vue重构'],
-                  github:'https://github.com/nykee/innoVue',
+                  github:'https://github.com/nykee/innooooVue',
                   stack:'Vue'
                 },
                 {
                   id:4,
                   pName:'FluoMotion云平台 build by Vue',
                   desc:['FluoMotion云平台用Vue.js进行重写','iview'],
-                  github:'https://github.com/nykee/FluoMotion',
+                  github:'https://github.com/nykee/nykeeMotion',
                   stack:'Vue'
                 },
                 {
                   id:5,
                   pName:'FluoMotion云平台 build by React',
                   desc:['react重写了FluoMotion平台，作为入门react','UI组件库使用的阿里的ant-d'],
-                  github:'https://github.com/nykee/FluoMotionVReact',
+                  github:'https://github.com/nykee/nykeeMotionVReact',
                   stack:'Ant-d React'
                 },
                 {

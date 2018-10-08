@@ -11,7 +11,12 @@
               <li v-for="des in description"><i class="fa fa-dot-circle-o vAlineMiddle" style="color:#2d8cf0"></i>{{des}}</li>
             </ul>
           </li>
-        <li v-if="hasGithub"><i class="fa fa-github fa-2x vAlineMiddle" ></i><span>Github地址：<a :href="github.toString()">{{github}}</a></span></li>
+        <li v-if="hasGithub">
+          <i class="fa fa-github fa-2x vAlineMiddle" ></i>
+          <span>
+            Github地址：<span @click="reDirectTo(github)" @mouseenter="changeActive" @mouseout="changeActive" :class="{active:isActive}">{{github}}</span>
+          </span>
+        </li>
       </ul>
     </Card>
   <!--</transition>-->
@@ -23,24 +28,40 @@
         data() {
             return {
               hasGithub:true,
-              isMouseEnter:false
+              isActive:false
             }
         },
         methods: {
-          handleMouseOver(){
-            this.isMouseEnter =true;
+          reDirectTo(path){
+            // window.location.href = path;
+            path= String(path);
+            if( path.indexOf("https://")=== -1){
+              console.log("不是链接");
+              return false
+
+            }
+            else{
+              window.open(path)
+            }
+          },
+          changeActive(){
+            this.isActive = !this.isActive
           }
         },
         created: function () {
 
 
         },
+      computed:{
+
+      },
 
         mounted() {
+        console.log(this.github);
 //        console.log(this.github);
-          if(this.github.toString() ===''){
+         /* if(this.github.toString() ===''){
             this.hasGithub =false;
-          }
+          }*/
 
         },
         components: {}
@@ -53,5 +74,9 @@
 }
   li{
     margin-top:0.5rem;
+  }
+  .active{
+    cursor: pointer;
+    color:#2b85e4;
   }
 </style>

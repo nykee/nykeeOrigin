@@ -16,8 +16,7 @@ import ReactLearning from '../Views/Blogs/2018-05-29-React'
 import NettyLearning from '../Views/Blogs/2018-05-17-Netty'
 
 Vue.use(Router);
-
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -80,4 +79,6 @@ export default new Router({
       component: Project
     }
   ]
-})
+});
+
+export default  router

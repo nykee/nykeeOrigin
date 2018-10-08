@@ -60,4 +60,12 @@ export default {
       margin-bottom:3rem
     }
   }
+  /*修改pre不换行的样式*/
+  pre{
+    white-space:pre-wrap;
+    white-space:-moz-pre-wrap;
+    white-space:pre-wrap;
+    white-space:-o-pre-wrap;
+    word-wrap:break-word;
+  }
 </style>

@@ -7,7 +7,7 @@
     </Row>
     <Row  class="blog-container">
       <i-col :lg="{span:5}" >
-        <Menu  theme="light" active-name="1"  v-if="!isMobile">
+        <Menu  theme="light" ref="blogMenu" active-name="1"  v-if="!isMobile">
             <MenuItem name="1">
                 <span @click="directTo('FrontEndTricks')">前端技巧汇总，包括CSS,JS</span>
             </MenuItem>
@@ -99,6 +99,7 @@
 </template>
 
 <script>
+  import bus from '../utils/EventBus'
   import IntroHeader from '../components/IntroHeader.vue'
     export default {
         data() {
@@ -110,24 +111,36 @@
           directTo(add){
             this.$router.push('/Blogs/'+add);
           },
-            isMobileWatcher(){
+            /*isMobileWatcher(){
                 let self =this;
                 window.onresize =function () {
-                    console.log("bolg reseize事件触发")
+                    // console.log("bolg reseize事件触发")
                     if(window.screen.width<430){self.isMobile = true}
                     else {self.isMobile =false}
                 }
-            }
+            }*/
         },
         created: function () {
-
         },
+
         mounted() {
-          this.$router.push('/Blogs/FrontEndTricks');
+          let self =this;
+          // console.log(self.$refs.blogMenu.activeName);
+          bus.$on('tagRedirect',(args)=>{
+            // console.log("BLOGS 收到事件");
+            // console.log(args);
+            if(args.flag){
+              console.log(self.$refs.blogMenu.currentActiveName);
+              return
+            }
+            else {
+              this.$router.push('/Blogs/FrontEndTricks');
+            }
+          });
+
             if(window.screen.width<430){this.isMobile = true}
             else {this.isMobile =false}
 
-//            this.isMobileWatcher();
 
         },
         components: {

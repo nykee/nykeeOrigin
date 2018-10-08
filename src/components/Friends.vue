@@ -3,7 +3,7 @@
     <h5 >FRIENDS LINKS</h5>
     <Row class="f-content">
       <i-col :span="8" class="f-link"><a href="https://cn.vuejs.org/" class="f-link-vue"  target="view_window">Vue</a></i-col>
-      <i-col :span="8" class="f-link"><a href="">热门</a></i-col>
+      <i-col :span="8" class="f-link"><a href="http://annwyn.top/" target="view_window">Annwyn's BLOG</a></i-col>
       <i-col :span="8" class="f-link"><a href="">广告</a></i-col>
     </Row>
     <Row>
@@ -38,7 +38,7 @@
   }
   h5{  color: #666;}
   .f-link{
-    font-size:16px;
+    font-size:.8rem;
     margin-bottom:16px;
   }
   .f-content{
