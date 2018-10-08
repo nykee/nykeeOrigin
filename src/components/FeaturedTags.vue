@@ -42,6 +42,7 @@
   .container{
     width: 200px;
     border-top:1px solid #271111;
+    padding-bottom: 1rem;
   }
   .tagBtn{
     display: inline-block;

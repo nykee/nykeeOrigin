@@ -18,7 +18,7 @@
                 <router-link to="/">HOME</router-link>
             </MenuItem>
             <MenuItem name="3">
-                <router-link to="/Blogs">BLOGS</router-link>
+                <router-link to="/Blogs/FrontEndTricks">BLOGS</router-link>
             </MenuItem>
             <MenuItem name="4">
                 <router-link to="/Project">PROJECTS</router-link>
@@ -35,7 +35,7 @@
                     <router-link to="/" style="color:#000!important;">HOME</router-link>
                 </DropdownItem>
                 <DropdownItem>
-                    <router-link to="/Blogs" style="color:#000!important;">BLOGS</router-link>
+                    <router-link to="/Blogs/FrontEndTricks" style="color:#000!important;">BLOGS</router-link>
                 </DropdownItem>
                 <DropdownItem>
                     <router-link to="/Project" style="color:#000!important;">PROJECTS</router-link>

@@ -123,9 +123,10 @@
 
         },
         mounted() {
+          this.$router.push('/Blogs/FrontEndTricks');
             if(window.screen.width<430){this.isMobile = true}
             else {this.isMobile =false}
-          this.$router.push('/Blogs/FrontEndTricks');
+
 //            this.isMobileWatcher();
 
         },
@@ -134,7 +135,7 @@
         }
     }
 </script>
-<style scoped>
+<style >
   .title{
     margin-bottom:15px;
   }

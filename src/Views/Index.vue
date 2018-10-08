@@ -61,6 +61,7 @@
         },
         mounted() {
           function Typewriter(arg){
+            let screenWidth = window.screen.width;
 
             //options
             var el = arg.el;
@@ -82,10 +83,15 @@
 
             var text_box = document.createElement('span');
             text_box.id = 'typewriter-text';
+            text_box.style.wordWrap ="break-word";
+            text_box.style.wordBreak ="break-all";
+            text_box.style.display = "inline-block";
+            text_box.style.width = screenWidth+'px';
 
             var cursor_box = document.createElement('span');
             cursor_box.id = 'typewriter-cursor';
             cursor_box.innerHTML = '|';
+
 
             el.innerHTML = '';
             el.appendChild(text_box);
@@ -166,7 +172,12 @@
     font-size:14px;
     word-wrap: break-word;
     height: 15.375rem;
-    width:100%
+    width:100%;
+    word-break:break-all;
+  }
+  #typewriter-text{
+    word-wrap: break-word;
+    word-break:break-all;
   }
 
 
