@@ -54,10 +54,22 @@ export default {
   body{
     overflow-x:hidden;
   }
+  .container{margin-bottom:3rem}
   @media screen and (max-width: 425px){
     .container{
       margin-left: 29%;
-      margin-bottom:3rem
+    }
+  }
+  @media screen and (max-width:320px) {
+    .container{
+      margin-left: 22%;
+
+    }
+  }
+  @media screen and (max-width:768px) and (min-width: 426px){
+    .container{
+      margin-left: 37%;
+
     }
   }
   /*修改pre不换行的样式*/

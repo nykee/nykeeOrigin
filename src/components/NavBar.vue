@@ -3,16 +3,16 @@
     <Row>
         <Menu v-if="!isMobile" ref="myMenu" mode="horizontal" theme="light" active-name="2" class="menu" >
          <i-col :lg="{span:6}"
-                :md="{span:6}"
-                :sm="{span:6}"
+                :md="{span:4}"
+                :sm="{span:4}"
                 :xs="{span:4}">
              <router-link to="/">
-                 <span @click="changeActive">Nykee`s Blog</span>
+                 <span @click="changeActive" style="padding-left: .2rem">Nykee`s Blog</span>
              </router-link>
          </i-col>
           <i-col :lg="{span:6,offset:12}"
-                 :md="{span:6,offset:12}"
-                 :sm="{span:6,offset:12}"
+                 :md="{span:8,offset:12}"
+                 :sm="{span:10,offset:10}"
                  :xs="{span:4,offset:12}">
             <MenuItem name="2">
                 <router-link to="/">HOME</router-link>
@@ -78,7 +78,7 @@
               self.$refs.myMenu.currentActiveName='3';
             });
           });
-            if(window.screen.width<430){this.isMobile = true}
+            if(window.screen.width<769){this.isMobile = true}
             else {this.isMobile =false}
 //            this.isPhoneWatcher();
 

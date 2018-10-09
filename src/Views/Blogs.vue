@@ -6,7 +6,10 @@
       </i-col>
     </Row>
     <Row  class="blog-container">
-      <i-col :lg="{span:5}" >
+      <i-col :lg="{span:5}"
+             :md="{span:7}"
+             :sm="{span:24}"
+             :xs="{span:24}">
         <Menu  theme="light" v-show="!isMobile" ref="bMenu" :activeName="activeName"  >
             <MenuItem name="1">
                 <span @click="directTo('FrontEndTricks')">前端技巧汇总，包括CSS,JS</span>
@@ -86,7 +89,10 @@
               </DropdownMenu>
           </Dropdown>
       </i-col>
-      <i-col :lg="{span:19}" >
+      <i-col :lg="{span:19}"
+             :md="{span:17}"
+             :sm="{span:24}"
+             :xs="{span:24}">
 
 
           <router-view></router-view>
@@ -165,7 +171,7 @@
 
 
 
-            if(window.screen.width<430){this.isMobile = true}
+            if(window.screen.width<769){this.isMobile = true}
             else {
               this.isMobile =false;
             }

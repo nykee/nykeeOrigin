@@ -167,7 +167,8 @@
   .self-intro{
     font-size:14px;
     word-wrap: break-word;
-    height: 15.375rem;
+    height: auto;
+    max-height: 26rem;
     width:100%;
     word-break:break-all;
   }
