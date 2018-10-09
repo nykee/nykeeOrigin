@@ -7,12 +7,9 @@
     </Row>
     <Row  class="blog-container">
       <i-col :lg="{span:5}" >
-        <i-menu  theme="light" v-if="!isMobile" ref="bMenu" active-name="1"  >
+        <Menu  theme="light" v-show="!isMobile" ref="bMenu" :activeName="activeName"  >
             <MenuItem name="1">
                 <span @click="directTo('FrontEndTricks')">前端技巧汇总，包括CSS,JS</span>
-            </MenuItem>
-            <MenuItem name="7">
-                <span @click="directTo('GitLearning')">Git笔记</span>
             </MenuItem>
             <MenuItem name="2">
                 <span @click="directTo('MongoDBLearning')">MongoDB学习笔记</span>
@@ -29,6 +26,9 @@
             <MenuItem name="6">
                 <span @click="directTo('DZDPCrawlSpider')">大众点评Node.js爬虫</span>
             </MenuItem>
+          <MenuItem name="7">
+            <span @click="directTo('GitLearning')">Git笔记</span>
+          </MenuItem>
             <MenuItem name="8">
                 <span @click="directTo('ReactTricks')">React\react-router采坑记录</span>
             </MenuItem>
@@ -41,9 +41,9 @@
             <MenuItem name="11">
                 <span @click="directTo('ReactLearning')">React学习笔记</span>
             </MenuItem>
-        </i-menu>
+        </Menu>
 
-          <Dropdown trigger="click"  v-if="isMobile" class="dropDownMenu">
+          <Dropdown trigger="click"  v-show="isMobile" class="dropDownMenu">
               <a href="javascript:void(0)">
                   BLOG目录
                   <i class="fa fa-reorder fa-2x"></i>
@@ -101,42 +101,79 @@
 <script>
   import bus from '../utils/EventBus'
   import IntroHeader from '../components/IntroHeader.vue'
+  import { mapState, mapActions } from 'vuex'
     export default {
         data() {
             return {
                 isMobile:false,
-                current:'1',
-                _index:'1'
+              _index :"1"
             }
         },
         methods: {
             directTo(add){
             this.$router.push('/Blogs/'+add);
+
           },
+          hendleEvent(args){
+
+          }
 
         },
         created: function () {
+          /*let self= this;
+          bus.$on("tagRedirect",(args)=>{
+            self.$nextTick(()=>{
+              console.log();
+            })
 
+
+          });*/
         },
+      computed(){
+       /* mapState({
+          activeName: state => state.blogMenuActiveName
+        })*/
+      },
         mounted() {
 
-            bus.$on("tagRedirect",(args)=>{
-                this._index =args.index +1+'';
+          mapState({
+            activeName: state => state.blogMenuActiveName
+          });
+          this.$nextTick(()=>{
+            console.log(this.$refs.bMenu);
+            this.$refs.bMenu.updateActiveName();
+          });
+          // this._index ="3";
+
+              /*bus.$on("tagRedirect",(args)=>{
+                self.$nextTick(()=>{
+
+                  console.log(self.$refs);
+                })
 
 
-            });
-            this.$nextTick(() => {
+              });*/
+          /*console.log(this._index);
+          this.$nextTick(()=>{
 
-                this.$refs.bMenu.currentActiveName=this._index;
-            });
+            console.log(this.$refs);
+
+            console.log(this.$refs.bMenu.currentActiveName);
+          });*/
+
+
+
+
 
             if(window.screen.width<430){this.isMobile = true}
-            else {this.isMobile =false}
+            else {
+              this.isMobile =false;
+            }
 
-        
+
         },
-        updated:function () {
 
+        updated:function () {
         },
         components: {
           IntroHeader

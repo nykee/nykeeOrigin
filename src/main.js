@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/store'
 import iview from 'iview'
 import locale from 'iview/dist/locale/en-US';
 import 'iview/dist/styles/iview.css'
@@ -19,6 +20,7 @@ router.beforeEach(( from ,to, next)=>{
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 });

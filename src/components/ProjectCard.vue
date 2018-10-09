@@ -1,6 +1,6 @@
 <template>
   <!--<transition name="fade">-->
-    <Card>
+    <Card class="proj-card">
       <p slot="title" style="text-align: center;font-size: 1.0rem" >{{projName}}</p>
       <ul>
         <li><i class="fa fa-code fa-2x vAlineMiddle"></i><span>技术栈：{{stack}}</span></li>
@@ -57,11 +57,7 @@
       },
 
         mounted() {
-        console.log(this.github);
-//        console.log(this.github);
-         /* if(this.github.toString() ===''){
-            this.hasGithub =false;
-          }*/
+
 
         },
         components: {}
@@ -79,4 +75,7 @@
     cursor: pointer;
     color:#2b85e4;
   }
+.proj-card{
+  margin: 0 1rem;
+}
 </style>

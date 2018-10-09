@@ -16,7 +16,7 @@
             2、对前端数据可视化有一定经验（echarts、D3)
             3、可以独立得完成一个项目（后端到前端）
           最喜欢喝着咖啡，听着电音，敲代码^_^
-          Anyway,人的精力是有限的。现在希望能在前端方面巩固专注下去吧！
+          Anyway,人的精力是有限的。希望能在前端方面有所沉淀！
         <h3 class="slogan">希望养恶鬼，热情喂狂风</h3>
         </pre>
 
@@ -80,10 +80,9 @@
 
             var text_box = document.createElement('span');
             text_box.id = 'typewriter-text';
-            text_box.style.wordWrap ="break-word";
-            text_box.style.wordBreak ="break-all";
+            /*text_box.style.wordBreak ="break-all";
             text_box.style.display = "inline-block";
-            text_box.style.width = screenWidth+'px';
+            text_box.style.width = screenWidth+'px';*/
 
             var cursor_box = document.createElement('span');
             cursor_box.id = 'typewriter-cursor';
@@ -172,9 +171,8 @@
     width:100%;
     word-break:break-all;
   }
-  #typewriter-text{
-    word-wrap: break-word;
-    word-break:break-all;
+  #wrap{
+    padding-right: .8rem;
   }
 
 

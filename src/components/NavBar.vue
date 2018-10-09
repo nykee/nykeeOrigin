@@ -72,7 +72,7 @@
         mounted() {
           let self = this;
           bus.$on("tagRedirect",(args)=>{
-              console.log(args);
+              // console.log(args);
 //              console.log(self.$refs);
             self.$nextTick(()=>{
               self.$refs.myMenu.currentActiveName='3';

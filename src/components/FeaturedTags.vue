@@ -2,9 +2,9 @@
   <div class="container">
     <h5><router-link to="/Tags">FEATURED TAGS</router-link></h5>
     <Row  class="row">
-      <i-col :span="8"><span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,0)" class="tagBtn">前端</span></i-col>
-      <i-col :span="8"><span   @click="emitFromTagEvent('/Blogs/GitLearning',true ,1)" class="tagBtn">Git</span></i-col>
-      <i-col :span="8"><span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,0)" class="tagBtn">JS</span></i-col>
+      <i-col :span="8"><span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,1)" class="tagBtn">前端</span></i-col>
+      <i-col :span="8"><span   @click="emitFromTagEvent('/Blogs/GitLearning',true ,7)" class="tagBtn">Git</span></i-col>
+      <i-col :span="8"><span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,1)" class="tagBtn">JS</span></i-col>
     </Row >
     <Row class="row">
       <i-col :span="12"><span   @click="emitFromTagEvent('/Blogs/MongoDBLearning',true ,2)" class="tagBtn">MongoDB</span></i-col>
@@ -17,9 +17,9 @@
 
     </Row>
     <Row class="row">
-      <i-col :span="6"><span   @click="emitFromTagEvent('/Blogs/ReactLearning',true ,7)" class="tagBtn">React</span></i-col>
-      <i-col :span="7"><span   @click="emitFromTagEvent('/Blogs/D3Learning',true ,8)" class="tagBtn">D3</span></i-col>
-      <i-col :span="11"><span   @click="emitFromTagEvent('/Blogs/DZDPCrawlSpider',true ,6)" class="tagBtn">Node爬虫</span></i-col>
+      <i-col :span="6"><span   @click="emitFromTagEvent('/Blogs/ReactLearning',true ,11)" class="tagBtn">React</span></i-col>
+      <i-col :span="7"><span   @click="emitFromTagEvent('/Blogs/D3Learning',true ,9)" class="tagBtn">D3</span></i-col>
+      <i-col :span="11"><span   @click="emitFromTagEvent('/Blogs/DZDPCrawlSpider',true ,7)" class="tagBtn">Node爬虫</span></i-col>
 
     </Row>
 
@@ -65,6 +65,8 @@
   }
   .tagBtn:hover{
     border-color: #2b85e4;
+    cursor: pointer;
+    color:#2b85e4
   }
   .row{
        margin-top:8px;
