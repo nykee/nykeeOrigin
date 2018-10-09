@@ -140,7 +140,7 @@
             activeName: state => state.blogMenuActiveName
           });
           this.$nextTick(()=>{
-            console.log(this.$refs.bMenu);
+            // console.dir(this.$refs.bMenu);
             this.$refs.bMenu.updateActiveName();
           });
           // this._index ="3";
@@ -233,6 +233,7 @@
   }
   .blog-container{
     margin-top:20px;
+    padding-right: .8rem;
   }
   .descrp{
     font-size: 16px;

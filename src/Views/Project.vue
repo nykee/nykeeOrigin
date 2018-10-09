@@ -26,7 +26,7 @@
                   id:1,
                 pName:'仿美骑首页',
                 desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap',"电商页面，实现了商品放大镜显示等效果"],
-                github:'那时候还不会用github，2333',
+                github:'那时候还不会用github...',
                 stack:'BootStrap+Jquery'
                 },
                 {
@@ -65,7 +65,8 @@
                 {
                   id:6,
                   pName:'nykee.github.io',
-                  desc:['个人的Github Page SPA','UI库使用iview',"icon使用font-awesome"],
+                  desc:['个人的Github Page SPA','UI库使用iview',
+                    "icon使用font-awesome","使用Vue、vue-router"],
                   github:'https://github.com/nykee/nykee.github.io',
                   stack:'Vue.js'
                 },
