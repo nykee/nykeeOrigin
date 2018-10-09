@@ -18,7 +18,7 @@
     </Row>
     <Row class="row">
       <i-col :span="6"><span   @click="emitFromTagEvent('/Blogs/ReactLearning',true ,11)" class="tagBtn">React</span></i-col>
-      <i-col :span="7"><span   @click="emitFromTagEvent('/Blogs/D3Learning',true ,9)" class="tagBtn">D3</span></i-col>
+      <i-col :span="6" :offset="1"><span   @click="emitFromTagEvent('/Blogs/D3Learning',true ,9)" class="tagBtn">D3</span></i-col>
       <i-col :span="11"><span   @click="emitFromTagEvent('/Blogs/DZDPCrawlSpider',true ,7)" class="tagBtn">Node爬虫</span></i-col>
 
     </Row>
