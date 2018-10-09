@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h5 >FRIENDS LINKS</h5>
+    <!--<h5 >FRIENDS LINKS</h5>-->
+    <commonTitle title-name="FRIENDS LINKS"/>
     <Row class="f-content">
       <i-col :span="8" class="f-link"><a href="https://cn.vuejs.org/" class="f-link-vue"  target="view_window">Vue</a></i-col>
       <i-col :span="8" class="f-link"><a href="http://annwyn.top/" target="view_window">Annwyn's BLOG</a></i-col>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+  import  commonTitle from '../components/common-right-col-title'
     export default {
         data() {
             return {}
@@ -28,7 +30,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {commonTitle}
     }
 </script>
 <style scoped>

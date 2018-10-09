@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h5><router-link to="/Tags">FEATURED TAGS</router-link></h5>
+    <commonTitle title-name="FEATURED TAGS"/>
     <Row  class="row">
       <i-col :span="8"><span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,1)" class="tagBtn">前端</span></i-col>
       <i-col :span="8"><span   @click="emitFromTagEvent('/Blogs/GitLearning',true ,7)" class="tagBtn">Git</span></i-col>
@@ -27,16 +27,20 @@
 </template>
 
 <script>
+  import  commonTitle from '../components/common-right-col-title'
   import bus from '../utils/EventBus'
     export default {
         data() {
-            return {}
+            return {
+              isActive:false
+            }
         },
         methods: {
           emitFromTagEvent(path, flag, index){
             bus.$emit("tagRedirect",{flag:flag,index:index});
             this.$router.push(path)
-          }
+          },
+
         },
         created: function () {
 
@@ -44,7 +48,7 @@
         mounted() {
 
         },
-        components: {}
+        components: {commonTitle}
     }
 </script>
 <style scoped>

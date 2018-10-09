@@ -23,6 +23,7 @@
 </template>
 
 <script>
+
     export default {
       props : ['projName','stack','description','github'],
         data() {
@@ -60,7 +61,8 @@
 
 
         },
-        components: {}
+        components: {
+        }
     }
 </script>
 <style scoped="scoped">

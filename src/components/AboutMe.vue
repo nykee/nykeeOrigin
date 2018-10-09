@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h5 >ABOUT ME</h5>
+    <!--<h5 >ABOUT ME</h5>-->
+    <commonTitle title-name="ABOUT ME"/>
     <div>
       <img src="../asserts/img/nykee.png" alt="" class="avatar">
       <p class="slogan">
@@ -13,7 +14,8 @@
 </template>
 
 <script>
-  import ContactIcons from './ContactIcons.vue'
+  import ContactIcons from './ContactIcons.vue';
+  import  commonTitle from '../components/common-right-col-title'
     export default {
         data() {
             return {}
@@ -26,7 +28,8 @@
 
         },
         components: {
-          ContactIcons
+          ContactIcons,
+          commonTitle
         }
     }
 </script>
