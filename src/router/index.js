@@ -17,6 +17,7 @@ import NettyLearning from '../Views/Blogs/2018-05-17-Netty'
 
 Vue.use(Router);
 const router = new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
