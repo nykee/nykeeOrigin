@@ -5,7 +5,7 @@
     <Row class="f-content">
       <i-col :span="8" class="f-link"><a href="https://cn.vuejs.org/" class="f-link-vue"  target="view_window">Vue</a></i-col>
       <i-col :span="8" class="f-link"><a href="http://annwyn.top/" target="view_window">Annwyn's BLOG</a></i-col>
-      <i-col :span="8" class="f-link"><a href="">广告</a></i-col>
+      <i-col :span="8" class="f-link"><a href="https://2heng.xin/">樱花庄的白猫</a></i-col>
     </Row>
     <Row>
       <i-col :span="8" class="f-link"><a href="">位置</a></i-col>
