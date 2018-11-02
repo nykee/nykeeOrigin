@@ -2,18 +2,10 @@
   <div class="container">
     <!--<h5 >FRIENDS LINKS</h5>-->
     <commonTitle title-name="FRIENDS LINKS"/>
-    <Row class="f-content">
-      <i-col :span="8" class="f-link"><a href="https://cn.vuejs.org/" class="f-link-vue"  target="view_window">Vue</a></i-col>
+    <Row class="f-content" gutter="10">
       <i-col :span="8" class="f-link"><a href="http://annwyn.top/" target="view_window">Annwyn's BLOG</a></i-col>
-      <i-col :span="8" class="f-link"><a href="">广告</a></i-col>
+      <i-col :span="8" class="f-link"><a href="https://2heng.xin/" target="view_window">樱花庄的白猫</a></i-col>
     </Row>
-    <Row>
-      <i-col :span="8" class="f-link"><a href="">位置</a></i-col>
-      <i-col :span="8" class="f-link"><a href="">长期</a></i-col>
-      <i-col :span="8" class="f-link"><a href="">出租</a></i-col>
-    </Row>
-
-
   </div>
 </template>
 
@@ -41,7 +33,7 @@
   h5{  color: #666;}
   .f-link{
     font-size:.8rem;
-    margin-bottom:16px;
+    margin-bottom:1rem;
   }
   .f-content{
     margin-top:15px;

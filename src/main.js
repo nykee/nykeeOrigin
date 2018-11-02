@@ -13,9 +13,28 @@ Vue.config.productionTip = false;
 Vue.use(iview,{locale});
 
 router.beforeEach(( from ,to, next)=>{
-  window.scrollTo(0,0);
+  // window.scrollTo(0,0);
+  easeScroll(16);
   next();
 });
+function easeScroll(ms) {
+  let scrollY = window.scrollY,
+      step=50;
+  // console.log(scrollY);;
+
+    let  timer =setInterval(function () {
+      if(scrollY>0){
+        scrollY -=step;
+        window.scrollTo(0,scrollY);
+      }
+      else {clearInterval(timer)}
+
+    },ms)
+
+
+
+
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
