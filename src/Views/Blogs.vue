@@ -239,7 +239,8 @@
   }
   .blog-container{
     margin-top:20px;
-    padding-right: .8rem;
+    padding-right: .4rem;
+    padding-left: .4rem;
   }
   .descrp{
     font-size: 16px;
