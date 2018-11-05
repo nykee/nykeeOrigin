@@ -8,9 +8,11 @@ import iview from 'iview'
 import locale from 'iview/dist/locale/en-US';
 import 'iview/dist/styles/iview.css'
 import 'font-awesome-webpack'
+import VueI18n from 'vue-i18n'
 
 Vue.config.productionTip = false;
 Vue.use(iview,{locale});
+Vue.use(VueI18n);
 
 router.beforeEach(( from ,to, next)=>{
   // window.scrollTo(0,0);
