@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <commonTitle title-name="FEATURED TAGS"/>
+    <commonTitle :title-name="this.$t('message.featuredTags')"/>
     <Row  class="row">
       <i-col :span="8"><span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,1)" class="tagBtn">前端</span></i-col>
       <i-col :span="8"><span   @click="emitFromTagEvent('/Blogs/GitLearning',true ,7)" class="tagBtn">Git</span></i-col>

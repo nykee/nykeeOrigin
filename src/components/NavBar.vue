@@ -7,7 +7,7 @@
                 :sm="{span:4}"
                 :xs="{span:4}">
              <router-link to="/">
-                 <span @click="changeActive" style="padding-left: .2rem">Nykee`s Blog</span>
+                 <span @click="changeActive" style="padding-left: .2rem">{{$t("message.nykee")}}</span>
              </router-link>
          </i-col>
           <i-col :lg="{span:6,offset:12}"
@@ -15,14 +15,17 @@
                  :sm="{span:10,offset:10}"
                  :xs="{span:4,offset:12}">
             <MenuItem name="2">
-                <router-link to="/">HOME</router-link>
+                <router-link to="/">{{ $t("message.home")}}</router-link>
             </MenuItem>
             <MenuItem name="3">
-                <router-link to="/Blogs/FrontEndTricks">BLOGS</router-link>
+                <router-link to="/Blogs/FrontEndTricks">{{ $t("message.blog")}}</router-link>
             </MenuItem>
             <MenuItem name="4">
-                <router-link to="/Project">PROJECTS</router-link>
+                <router-link to="/Project">{{ $t("message.projects")}}</router-link>
             </MenuItem>
+            <Select v-model="lanSel" size="small" style="width:100px">
+              <Option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
           </i-col>
         </Menu>
 
@@ -32,18 +35,17 @@
             </a>
             <DropdownMenu slot="list">
                 <DropdownItem>
-                    <router-link to="/" style="color:#000!important;">HOME</router-link>
+                    <router-link to="/" style="color:#000!important;">{{ $t("message.home")}}</router-link>
                 </DropdownItem>
                 <DropdownItem>
-                    <router-link to="/Blogs/FrontEndTricks" style="color:#000!important;">BLOGS</router-link>
+                    <router-link to="/Blogs/FrontEndTricks" style="color:#000!important;">{{ $t("message.blog")}}</router-link>
                 </DropdownItem>
                 <DropdownItem>
-                    <router-link to="/Project" style="color:#000!important;">PROJECTS</router-link>
+                    <router-link to="/Project" style="color:#000!important;">{{ $t("message.projects")}}</router-link>
                 </DropdownItem>
 
             </DropdownMenu>
         </Dropdown>
-
     </Row>
 
 </template>
@@ -53,7 +55,22 @@
     export default {
         data() {
             return {
-                isMobile:false
+                isMobile:false,
+              lanSel:'Chinese',
+              languages:[
+                {
+                  value: 'Chinese',
+                  label: '中文'
+                },
+                {
+                  value: 'English',
+                  label: 'English'
+                },
+                {
+                  value: 'Japanese',
+                  label: '日本語'
+                },
+              ]
 
             }
         },
@@ -69,6 +86,7 @@
 
         },
         created: function () {
+//          this.$i18n.locale = 'cn'
         },
         mounted() {
           let self = this;
@@ -87,6 +105,26 @@
         beforeDestory(){
             bus.$off('tagRedirect')
         },
+      watch:{
+          lanSel:function (val) {
+//            console.log(val);
+            switch (val.toString()){
+              case "Chinese":
+                this.$i18n.locale = "zh";
+                break;
+              case "English":
+                this.$i18n.locale = "en";
+                break;
+              case "Japanese":
+                this.$i18n.locale = "ja";
+                break;
+              default:
+                this.$i18n.locale = "zh";
+                break;
+            }
+
+          }
+      },
 
         components: {}
     }

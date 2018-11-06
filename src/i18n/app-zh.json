@@ -1,0 +1,25 @@
+{
+  "message": {
+    "home": "首页",
+    "projects": "项目",
+    "nykee": "Nykee的博客",
+    "blog":"博客",
+    "aboutMe":"个人简介",
+    "selfIntro":" 前端打杂一枚，大学学的是网络工程，热爱前端开发，喜欢所见即所得的感觉。目前在一家创业公司打杂，作为该公司云平台项目的负责人。",
+    "selfIntro2":"目前的项目下来，累积的经验有： ",
+    "selfIntro3":"1、了解后端（SSM框架）",
+    "selfIntro4":"2、对前端数据可视化有一定经验（echarts、D3)",
+    "selfIntro5":"3、可以独立得完成一个项目（后端到前端）",
+    "selfIntro6":"最喜欢喝着咖啡，听着电音，敲代码^_^",
+    "selfIntroSlogan":"希望养恶鬼，热情喂狂风",
+    "aboutMeSlogan":"人生苦短，我用JS",
+
+
+
+
+    "friendsLinks":"友情链接",
+    "featuredTags":"标签"
+
+
+  }
+}
