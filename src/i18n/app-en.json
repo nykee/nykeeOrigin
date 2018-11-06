@@ -14,6 +14,9 @@
     "friendsLinks":"FRIENDS LINKS",
     "featuredTags":"FEATURED TAGS",
     "aboutMeSlogan":"Talk is cheap. Show me the code.",
-    "selfIntroSlogan":"Stay hungry,Stay foolish"
+    "selfIntroSlogan":"Stay hungry,Stay foolish",
+    "baiduMap":"BaiduMap",
+    "nodeSpider":"nodeSpider",
+    "webFE":"webFE"
   }
 }

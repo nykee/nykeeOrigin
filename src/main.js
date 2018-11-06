@@ -13,7 +13,9 @@ Vue.config.productionTip = false;
 Vue.use(iview);
 
 Vue.use(VueI18n);
+Vue.locale = (locale) => {
 
+};
 
 
 const i18n = new VueI18n({

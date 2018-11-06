@@ -5,15 +5,18 @@
     "nykee": "Nykeeのブログ",
     "blog":"ブログ",
     "aboutMe":"私について",
-    "selfIntro":" Hi,my name is nykee .And i am interested in Web front-end!I am working at a start-up company as a web developer",
-    "selfIntro2":"My skills about web development is as followed： ",
-    "selfIntro3":"1、know a little bit of Java Web development skills eg: Mysql,Spring,SpringMVC,Mybatis ",
-    "selfIntro4":"2、interested and have some experience in web front-end data visualization（wiz lib eg: echarts、D3)",
-    "selfIntro5":"3、able to develop a project from back-end to front-end",
-    "selfIntro6":"And I am glad to code wiz coffee and electronic music",
+    "selfIntro":" そして、私はウェブフロントエンドに興味があります！私は、ウェブ開発者としてスタートアップ会社で働いています",
+    "selfIntro2":"Web開発についての私のスキルは以下の通りです： ",
+    "selfIntro3":"1、Java Web開発スキルを少し知っている eg: Mysql,Spring,SpringMVC,Mybatis ",
+    "selfIntro4":"2、Webフロントエンドデータ可視化に興味があり、いくつかの経験がある（wiz lib eg: echarts、D3)",
+    "selfIntro5":"3、バックエンドからフロントエンドまでプロジェクトを展開できる",
+    "selfIntro6":"そして、私は、ウィズコーヒーと電子音楽をコード化してうれしいです",
     "friendsLinks":"友情リンク",
     "featuredTags":"特色ラベル",
     "aboutMeSlogan":"Talk is cheap. Show me the code.",
-    "selfIntroSlogan":"Stay hungry,Stay foolish"
+    "selfIntroSlogan":"Stay hungry,Stay foolish",
+    "baiduMap":"BaiduMap",
+    "nodeSpider":"nodeSpider",
+    "webFE":"webFE"
   }
 }

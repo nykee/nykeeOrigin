@@ -13,12 +13,11 @@
     "selfIntro6":"最喜欢喝着咖啡，听着电音，敲代码^_^",
     "selfIntroSlogan":"希望养恶鬼，热情喂狂风",
     "aboutMeSlogan":"人生苦短，我用JS",
-
-
-
-
     "friendsLinks":"友情链接",
-    "featuredTags":"标签"
+    "featuredTags":"标签",
+    "baiduMap":"百度地图",
+    "nodeSpider":"node爬虫",
+    "webFE":"前端"
 
 
   }
