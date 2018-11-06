@@ -8,16 +8,15 @@
     <Row class="self-info-container">
 
       <i-col  :lg="20"  :md="20" :sm="24" :xs="24" class="leftCol">
-        <h1 class="intro">个人简介</h1>
+        <h1 class="intro">{{ $t("message.aboutMe")}}</h1>
         <pre id="wrap" class="self-intro">
-          前端打杂一枚，大学学的是网络工程，热爱前端开发，喜欢所见即所得的感觉。目前在一家创业公司打杂，作为该公司云平台项目的负责人。
-          目前的项目下来，累积的经验有：
-            1、了解后端（SSM框架）
-            2、对前端数据可视化有一定经验（echarts、D3)
-            3、可以独立得完成一个项目（后端到前端）
-          最喜欢喝着咖啡，听着电音，敲代码^_^
-          Anyway,人的精力是有限的。希望能在前端方面有所沉淀！
-        <h3 class="slogan">希望养恶鬼，热情喂狂风</h3>
+          {{$t("message.selfIntro")}}
+          {{$t("message.selfIntro2")}}
+          {{$t("message.selfIntro3")}}
+          {{$t("message.selfIntro4")}}
+          {{$t("message.selfIntro5")}}
+          {{$t("message.selfIntro6")}}
+        <h3 class="slogan">{{ $t("message.selfIntroSlogan")}}</h3>
         </pre>
 
 
@@ -57,7 +56,7 @@
 
         },
         mounted() {
-          function Typewriter(arg){
+          /*function Typewriter(arg){
             let screenWidth = window.screen.width;
 
             //options
@@ -80,9 +79,9 @@
 
             var text_box = document.createElement('span');
             text_box.id = 'typewriter-text';
-            /*text_box.style.wordBreak ="break-all";
+            /!*text_box.style.wordBreak ="break-all";
             text_box.style.display = "inline-block";
-            text_box.style.width = screenWidth+'px';*/
+            text_box.style.width = screenWidth+'px';*!/
 
             var cursor_box = document.createElement('span');
             cursor_box.id = 'typewriter-cursor';
@@ -140,7 +139,7 @@
           });
 
           //开始
-          window.onload = tw.startWrite();
+          window.onload = tw.startWrite();*/
 
 
 

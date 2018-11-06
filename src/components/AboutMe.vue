@@ -1,12 +1,11 @@
 <template>
   <div class="container">
     <!--<h5 >ABOUT ME</h5>-->
-    <commonTitle title-name="ABOUT ME"/>
+    <commonTitle :title-name="this.$t('message.aboutMe')"/>
     <div>
       <img src="../asserts/img/nykee.png" alt="" class="avatar">
       <p class="slogan">
-        keep Coding! <br>
-        人生苦短，我用JS
+        {{$t("message.aboutMeSlogan")}}
       </p>
     </div>
     <ContactIcons class="fTags"></ContactIcons>
