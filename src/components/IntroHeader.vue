@@ -36,7 +36,7 @@
               isBlogs:false,
               isTags:false,
               head:'About Me',
-              subHead:'人生苦短，我用JS!'
+              subHead:this.$t("message.homeSlogan")
             }
         },
         methods: {
