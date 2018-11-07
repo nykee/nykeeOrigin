@@ -44,6 +44,9 @@
             <MenuItem name="11">
                 <span @click="directTo('ReactLearning')">React学习笔记</span>
             </MenuItem>
+          <MenuItem name="12">
+            <span @click="directTo('VueI18n')">VueI18n国际化</span>
+          </MenuItem>
         </Menu>
 
           <Dropdown trigger="click"  v-show="isMobile" class="dropDownMenu">
@@ -246,12 +249,20 @@
     font-size: 16px;
     line-height: 1.27rem;
     margin-top:1rem;
+    padding-left: 1rem;
 
   }
     .dropDownMenu{
         margin-left:30%;
         margin-bottom:2rem;
     }
+
+  .steps{
+    margin-top: .5rem;
+  }
+  .steps-item{
+    margin-top: .5rem;
+  }
 
 
 </style>

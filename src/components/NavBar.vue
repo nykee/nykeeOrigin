@@ -10,7 +10,7 @@
                  <span @click="changeActive" style="padding-left: .2rem">{{$t("message.nykee")}}</span>
              </router-link>
          </i-col>
-          <i-col :lg="{span:6,offset:12}"
+          <i-col :lg="{span:7,offset:11}"
                  :md="{span:6,offset:12}"
                  :sm="{span:6,offset:12}"
                  :xs="{span:6,offset:12}">
@@ -30,7 +30,7 @@
                    :sm="{span:2}"
                    :xs="{span:2}">
                 <Select v-model="lanSel" size="small" style="width: 5rem">
-                    <Option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                    <Option v-for="lan in languages" :value="lan.value" :key="lan.value">{{ lan.label }}</Option>
                 </Select>
             </i-col>
         </Menu>

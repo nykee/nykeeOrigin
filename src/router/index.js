@@ -14,6 +14,7 @@ import ReactTricks from '../views/Blogs/2017-11-08-React.vue'
 import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0'
 import ReactLearning from '../views/Blogs/2018-05-29-React'
 import NettyLearning from '../views/Blogs/2018-05-17-Netty'
+import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n'
 
 Vue.use(Router);
 const router = new Router({
@@ -71,6 +72,10 @@ const router = new Router({
         {
           path:'ReactLearning',
           component:ReactLearning
+        },
+        {
+          path:'VueI18n',
+          component:VueI18n
         },
       ]
     },
