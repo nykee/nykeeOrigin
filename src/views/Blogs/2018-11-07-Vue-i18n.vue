@@ -119,7 +119,7 @@
           </ul>
         </div>
       </div>  <div id="part4" class="part">
-      <div class="title-lv1">Step3 动态切换语言</div>
+      <div class="title-lv1">Step4 动态切换语言</div>
       <div class="descrp">
         <ul>
           <li>
