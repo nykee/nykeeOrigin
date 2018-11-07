@@ -18,7 +18,25 @@
     "baiduMap":"百度地图",
     "nodeSpider":"node爬虫",
     "webFE":"前端",
-    "homeSlogan":"人生苦短，我用JS!"
+    "homeSlogan":"人生苦短，我用JS!",
+    "proj_stack":"技术栈",
+    "proj_discri":"项目描述",
+    "proj_git":"Github地址",
+    "projects_iRide":{
+      "name":"仿美骑首页",
+      "description_1":"仿照美骑网首页，制作了一个首页+一个商品详情页 ",
+      "description_2":"使用了JQuery+BootStrap ",
+      "description_3":"电商页面，实现了商品放大镜显示等效果",
+      "githubAdd":"那时候还不会用github... "
+    },
+    "projects_inno":{
+      "name":"逸动云平台",
+      "description_1":"公司云平台初版，负责前后端架构设计与搭建 ",
+      "description_2":"前台采用JQuery+BootStrap+css3，后台使用SSM框架",
+      "description_3":"数据可视化采用百度echarts",
+      "description_4":"参与前后端的架构搭建，完成功能开发：用户web端上传文件后，后台分析公司特有的.opt文件中的数据，写入后台后进行前端数据可视化的展示",
+      "githubAdd":"无"
+    }
 
 
   }

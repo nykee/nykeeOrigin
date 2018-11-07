@@ -18,6 +18,24 @@
     "baiduMap":"BaiduMap",
     "nodeSpider":"nodeSpider",
     "webFE":"webFE",
-    "homeSlogan":"Life is short,so I use javascript！"
+    "homeSlogan":"Life is short,so I use javascript！",
+    "proj_stack":"Stack",
+    "proj_discri":"Project Description",
+    "proj_git":"Github Address",
+    "projects_iRide":{
+      "name":"iRide",
+      "description_1":"according to Biketo.com , I programed two html pages(Home page and a product details page) ",
+      "description_2":"wiz lib :jquery and bootstrap use css3 ",
+      "description_3":"product details page with a zoom for product image",
+      "githubAdd":"not learned how to use git at that time "
+    },
+    "projects_inno":{
+      "name":"inno cloud platform",
+      "description_1":"The first version of the Company cloud platform,and i am responsible for the design and construction of the front and rear architecture. ",
+      "description_2":"wiz lib :jquery and bootstrap use css3 and java wiz spring,springMVC and Mybatis",
+      "description_3":"Data visualization using Baidu echarts",
+      "description_4":"Participate in the front-end and back-end architecture",
+      "githubAdd":"no git address"
+    }
   }
 }

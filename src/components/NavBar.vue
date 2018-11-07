@@ -29,9 +29,9 @@
                    :md="{span:2}"
                    :sm="{span:2}"
                    :xs="{span:2}">
-                <Select v-model="lanSel" size="small" style="width: 5rem">
-                    <Option v-for="lan in languages" :value="lan.value" :key="lan.value">{{ lan.label }}</Option>
-                </Select>
+                <select v-model="lanSel"  style="width: 5rem" >
+                    <option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</option>
+                </select>
             </i-col>
         </Menu>
 
@@ -89,31 +89,8 @@
 
 
           },
-
-        },
-        created: function () {
-//          this.$i18n.locale = 'cn'
-        },
-        mounted() {
-          let self = this;
-          bus.$on("tagRedirect",(args)=>{
-              // console.log(args);
-//              console.log(self.$refs);
-            self.$nextTick(()=>{
-              self.$refs.myMenu.currentActiveName='3';
-            });
-          });
-            if(window.screen.width<769){this.isMobile = true}
-            else {this.isMobile =false}
-//            this.isPhoneWatcher();
-
-        },
-        beforeDestory(){
-            bus.$off('tagRedirect')
-        },
-      watch:{
-          lanSel:function (val) {
-//            console.log(val);
+          handleLanSel(val){
+            // console.log(val);
             switch (val.toString()){
               case "Chinese":
                 this.$i18n.locale = "zh";
@@ -128,8 +105,34 @@
                 this.$i18n.locale = "zh";
                 break;
             }
+          },
 
-          }
+        },
+        created: function () {
+//          this.$i18n.locale = 'cn'
+        },
+        mounted() {
+          // console.log(this.$i18n.locale);
+          let self = this;
+          bus.$on("tagRedirect",(args)=>{
+              // console.log(args);
+//              console.log(self.$refs);
+            self.$nextTick(()=>{
+              self.$refs.myMenu.currentActiveName='3';
+            });
+          });
+            if(window.screen.width<769){this.isMobile = true}
+            else {this.isMobile =false}
+//            this.isPhoneWatcher();
+
+        },
+        beforeDestroy(){
+            bus.$off('tagRedirect')
+        },
+      watch:{
+          lanSel:"handleLanSel"
+
+
       },
 
         components: {}

@@ -3,10 +3,10 @@
     <Card class="proj-card">
       <p slot="title" style="text-align: center;font-size: 1.0rem" >{{projName}}</p>
       <ul>
-        <li><i class="fa fa-code fa-2x vAlineMiddle"></i><span>技术栈：{{stack}}</span></li>
+        <li><i class="fa fa-code fa-2x vAlineMiddle"></i><span>{{$t("message.proj_stack")}}：{{stack}}</span></li>
         <li>
           <i class="fa fa-hand-o-right fa-2x vAlineMiddle"></i>
-          <span>项目描述：</span>
+          <span>{{$t("message.proj_discri")}}：</span>
             <ul style="margin-left: 1.5rem">
               <li v-for="des in description"><i class="fa fa-dot-circle-o vAlineMiddle" style="color:#2d8cf0"></i>{{des}}</li>
             </ul>
@@ -14,7 +14,7 @@
         <li v-if="hasGithub">
           <i class="fa fa-github fa-2x vAlineMiddle" ></i>
           <span>
-            Github地址：<span @click="reDirectTo(github)" @mouseenter="changeActive" @mouseout="changeActive" :class="{active:isActive}">{{github}}</span>
+            {{$t("message.proj_git")}}：<span @click="reDirectTo(github)" @mouseenter="changeActive" @mouseout="changeActive" :class="{active:isActive}">{{github}}</span>
           </span>
         </li>
       </ul>

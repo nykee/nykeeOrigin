@@ -20,25 +20,26 @@
   import IntroHeader from '../components/IntroHeader.vue'
     export default {
         data() {
+          console.log(this.$t("message.projects_iRide.name"));
             return {
               projs:[
                 {
                   id:1,
-                pName:'仿美骑首页',
-                desc:['仿照美骑网首页，制作了一个首页+一个商品详情页','使用了JQuery+BootStrap',"电商页面，实现了商品放大镜显示等效果"],
-                github:'那时候还不会用github...',
+                pName:this.$t("message.projects_iRide.name"),
+                desc:[this.$t("message.projects_iRide.description_1"),this.$t("message.projects_iRide.description_2"),this.$t("message.projects_iRide.description_3")],
+                github:this.$t("message.projects_iRide.githubAdd"),
                 stack:'BootStrap+Jquery'
                 },
                 {
                   id:2,
-                  pName:'逸动云平台',
+                  pName:this.$t("message.projects_inno.name"),
                   desc:[
-                    '公司云平台初版，负责前后端架构设计与搭建',
-                    '前台采用JQuery+BootStrap+css3，后台使用SSM框架',
-                    '数据可视化采用百度echarts',
-                    "参与前后端的架构搭建，完成功能开发：用户web端上传文件后，后台分析公司特有的.opt文件中的数据，写入后台后进行前端数据可视化的展示"
+                    this.$t("message.projects_inno.description_1"),
+                    this.$t("message.projects_inno.description_2"),
+                    this.$t("message.projects_inno.description_3"),
+                    this.$t("message.projects_inno.description_4"),
                   ],
-                  github:'无',
+                  github:this.$t("message.projects_inno.githubAdd"),
                   stack:'Spring、SpringMVC、Mybatis、mysql、BootStrap、Jquery'
                 },
                 {

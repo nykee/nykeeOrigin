@@ -18,6 +18,24 @@
     "baiduMap":"BaiduMap",
     "nodeSpider":"nodeSpider",
     "webFE":"webFE",
-    "homeSlogan":"人生は短くて、私はJSを使う！"
+    "homeSlogan":"人生は短くて、私はJSを使う！",
+    "proj_stack":"技術倉庫",
+    "proj_discri":"プロジェクトの説明",
+    "proj_git":"Github URL",
+    "projects_iRide":{
+      "name":"iRide",
+      "description_1":"Biketo . comによると、私は2つのHTMLページ（ホームページと製品詳細ページ）をプログラムしました ",
+      "description_2":"Wiz Lib : jQueryとブートストラップを使用するCSS 3 ",
+      "description_3":"製品の詳細ページの製品イメージのズーム",
+      "githubAdd":"その時gitを使う方法を学ばなかった"
+    },
+    "projects_inno":{
+      "name":"inno cloud platform",
+      "description_1":"会社のクラウドプラットフォームの最初のバージョンであり、私は、フロントとリアのアーキテクチャの設計と建設に責任があります ",
+      "description_2":"Wiz Lib : jQueryとブートストラップは、CSS 3とJava Wiz Spring、SpringMVCとMybatisを使用します",
+      "description_3":"Baidu echartを用いたデータ可視化",
+      "description_4":"前後端の構築に参加して、機能開発",
+      "githubAdd":"なし"
+    }
   }
 }

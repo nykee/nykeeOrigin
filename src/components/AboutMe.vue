@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!--<h5 >ABOUT ME</h5>-->
     <commonTitle :title-name="this.$t('message.aboutMe')"/>
     <div>
       <img src="../asserts/img/nykee.png" alt="" class="avatar">
