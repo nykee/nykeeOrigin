@@ -9,15 +9,17 @@
 
       <i-col  :lg="20"  :md="20" :sm="24" :xs="24" class="leftCol">
         <h1 class="intro">{{ $t("message.aboutMe")}}</h1>
-        <pre id="wrap" class="self-intro">
-          {{$t("message.selfIntro")}}
-          {{$t("message.selfIntro2")}}
-          {{$t("message.selfIntro3")}}
-          {{$t("message.selfIntro4")}}
-          {{$t("message.selfIntro5")}}
-          {{$t("message.selfIntro6")}}
-        <h3 class="slogan">{{ $t("message.selfIntroSlogan")}}</h3>
+        <pre  class="self-intro" >
+            {{$t("message.selfIntro[0]")}}
+          {{$t("message.selfIntro[1]")}}
+            {{$t("message.selfIntro[2]")}}
+            {{$t("message.selfIntro[3]")}}
+            {{$t("message.selfIntro[4]")}}
+            {{$t("message.selfIntro[5]")}}
+        {{$t("message.selfIntro[6]")}}
+          <h3 class="slogan">{{ $t("message.selfIntroSlogan")}}</h3>
         </pre>
+
 
 
       </i-col>
@@ -54,14 +56,21 @@
         created: function () {
 
 
+
         },
         mounted() {
 
-
+      // console.log(this.$t("message.selfIntro").length);
 
 
 
         },
+      computed:{
+         /* slefIntro:function () {
+
+
+          }*/
+      },
         components: {
           AboutMe,FeaturedTags,Friends,IntroHeader
         }
@@ -87,7 +96,7 @@
     height: auto;
     max-height: 26rem;
     width:100%;
-    word-break:break-all;
+    word-break:keep-all;
   }
   #wrap{
     padding-right: .8rem;

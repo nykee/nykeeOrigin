@@ -88,6 +88,9 @@
                   <DropdownItem>
                       <span @click="directTo('ReactLearning')">React学习笔记</span>
                   </DropdownItem>
+                <DropdownItem>
+                  <span @click="directTo('VueI18n')">VueI18n国际化</span>
+                </DropdownItem>
 
               </DropdownMenu>
           </Dropdown>

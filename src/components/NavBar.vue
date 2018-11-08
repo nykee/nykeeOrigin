@@ -49,9 +49,16 @@
                 <DropdownItem>
                     <router-link to="/Project" style="color:#000!important;">{{ $t("message.projects")}}</router-link>
                 </DropdownItem>
+              <DropdownItem>
+                <select v-model="lanSel"  style="width: 5rem" >
+                  <option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</option>
+                </select>
+              </DropdownItem>
 
             </DropdownMenu>
+
         </Dropdown>
+
     </Row>
 
 </template>
