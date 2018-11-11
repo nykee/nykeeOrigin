@@ -1,9 +1,10 @@
 {
   "message": {
-    "home": "トップページ",
-    "projects": "プロジェクト",
+    "home": "首页",
+    "projects": "项目",
     "nykee": "Nykeeのブログ",
     "blog":"ブログ",
+    "photograph":"随拍",
     "aboutMe":"私について",
     "selfIntro":[
       " そして、私はウェブフロントエンドに興味があります！私は、ウェブ開発者としてスタートアップ会社で働いています",

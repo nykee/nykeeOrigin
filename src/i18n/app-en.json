@@ -4,6 +4,7 @@
     "projects": "PROJECTS",
     "nykee": "NYKEE`S BLOG",
     "blog":"BLOGS",
+    "photograph":"PHOTOGRAPH",
     "aboutMe":"About Me",
     "selfIntro":[
       " Hi,my name is nykee .And i am interested in Web front-end!I am working at a start-up company as a web developer",
@@ -67,9 +68,9 @@
       "githubAdd":"https://github.com/nykee/nykee.github.io"
     },
     "projects_dzdp":{
-      "name":"大众点评(similar to groupon) NodeJS Spider",
+      "name":"dianping.com(similar to groupon) NodeJS Spider",
       "description_1":"NodeJS Spider Project",
-      "description_2":"use OpenApi provided by 大众点评",
+      "description_2":"use OpenApi provided by dianping.com",
       "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
       "githubAdd":"https://github.com/nykee/dzdp_spider"
     }

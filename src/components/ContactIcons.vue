@@ -9,13 +9,15 @@
       </a>
     </i-col>
     <i-col :span="6">
-      <a href="mailto:nykee@sina.com">
+      <Tooltip content="nykee@sina.com" placement="top-start">
+        <a href="mailto:nykee@sina.com">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-envelope fa-stack-1x fa-inverse "></i>
         </span>
-        <i ></i>
-      </a>
+        </a>
+      </Tooltip>
+
     </i-col>
     <i-col :span="6" >
 
@@ -28,12 +30,15 @@
       </a>
     </i-col>
     <i-col :span="6" >
-      <a href="https://github.com/nykee"  target="_blank">
+      <Tooltip content="github.com/nykee" placement="top-start">
+        <a href="https://github.com/nykee"  target="_blank">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-github fa-stack-1x fa-inverse "></i>
         </span>
-      </a>
+        </a>
+      </Tooltip>
+
     </i-col>
   </Row>
 </template>

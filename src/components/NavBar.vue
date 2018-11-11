@@ -10,7 +10,7 @@
                  <span @click="changeActive" style="padding-left: .2rem">{{$t("message.nykee")}}</span>
              </router-link>
          </i-col>
-          <i-col :lg="{span:7,offset:11}"
+          <i-col :lg="{span:9,offset:9}"
                  :md="{span:6,offset:12}"
                  :sm="{span:6,offset:12}"
                  :xs="{span:6,offset:12}">
@@ -22,6 +22,9 @@
             </MenuItem>
             <MenuItem name="4">
                 <router-link to="/Project">{{ $t("message.projects")}}</router-link>
+            </MenuItem>
+            <MenuItem name="5">
+              <router-link to="/Photograph">{{ $t("message.photograph")}}</router-link>
             </MenuItem>
 
           </i-col>
@@ -156,7 +159,8 @@
 <style scoped="scoped">
   .menu{
     font-weight: 800;
-    text-transform:uppercase;
+    /*font-weight: bold;*/
+    /*text-transform:uppercase;*/
     letter-spacing:1px;
     background:0 0;
     position:absolute;
@@ -164,6 +168,9 @@
     left: 0;
     z-index: 3;
     width: 100%;
+    /*font-size: 2rem;*/
+    /*font-family:  Helvetica, Tahoma, Arial, STXihei, “华文细黑”, “Microsoft YaHei”, “微软雅黑”, sans-serif;*/
+    /*font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;*/
   }
   .dropDownMenu{
       position: absolute;
