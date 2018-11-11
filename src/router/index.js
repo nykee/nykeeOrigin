@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '../views/Index.vue'
 import Blogs from '../views/Blogs.vue'
 import Project from '../views/Project.vue'
+import Photo from '../views/Photo.vue'
 import DZDPCrawlSpider from '../views/Blogs/2017-01-20-DZDP-Crawl-Spider.vue'
 import FrontEndTricks from '../views/Blogs/2017-01-22-Front-End-Tricks.vue'
 import MongoDBLearning from '../views/Blogs/2017-02-14-MongoDB-learning.vue'
@@ -11,10 +12,10 @@ import EchartsLearning from '../views/Blogs/2017-09-21-Echarts2.7.2.vue'
 import VueLearning from '../views/Blogs/2017-09-26-Vue.vue'
 import GitLearning  from '../views/Blogs/2017-11-07-Git.vue'
 import ReactTricks from '../views/Blogs/2017-11-08-React.vue'
-import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0'
-import ReactLearning from '../views/Blogs/2018-05-29-React'
-import NettyLearning from '../views/Blogs/2018-05-17-Netty'
-import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n'
+import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0.vue'
+import ReactLearning from '../views/Blogs/2018-11-07-Vue-i18n.vue'
+import NettyLearning from '../views/Blogs/2018-11-07-Vue-i18n.vue'
+import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
 
 Vue.use(Router);
 const router = new Router({
@@ -83,6 +84,11 @@ const router = new Router({
       path: '/Project',
       name: 'Project',
       component: Project
+    },
+    {
+      path: '/Photograph',
+      name: 'Photo',
+      component: Photo
     }
   ]
 });

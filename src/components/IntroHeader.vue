@@ -1,6 +1,6 @@
 <template>
   <div >
-    <header :class="{'intro-header-index':isIndex,'intro-header-blogs':isBlogs}" v-if="!isTags" >
+    <header :class="{'intro-header-index':isIndex,'intro-header-blogs':isBlogs,'intro-header-photo':isPhoto}" v-if="!isTags" >
       <div class="intro-container">
             <div class="site-heading">
               <h1 class="site-heading-title">{{head}}</h1>
@@ -36,6 +36,7 @@
               isIndex:true,
               isBlogs:false,
               isTags:false,
+                isPhoto:false,
               head:'About Me',
               subHead:this.$t("message.homeSlogan")
             }
@@ -49,15 +50,25 @@
               this.isBlogs = true;
               this.isIndex =false;
               this.isTags =false;
+                this.isPhoto =false;
               this.head ='Nykee Blog';
               this.subHead ='Talk is cheap,show me ur code~'
             }
             else if(path ==="/Project"){
-              this.isBlogs = true;
+              this.isBlogs = false;
               this.isIndex =false;
               this.isTags =true;
+                this.isPhoto =false;
               this.head ='My Projects';
               this.subHead ='Think Different!'
+            }
+            else if(path ==="/Photograph"){
+                this.isBlogs = false;
+                this.isIndex =false;
+                this.isTags =false;
+                this.isPhoto =true;
+                this.head ='To see the world';
+                this.subHead ='Wiz my eyes and my camera!'
             }
           },
           myParticles(){
@@ -187,19 +198,22 @@
     }
 </script>
 <style>
+    .intro-header-index,.intro-header-blogs,.intro-header-photo{
+        background: no-repeat center center;
+        background-attachment: scroll;
+        background-color: #ccc;
+        background-size: cover;
+    }
   .intro-header-index{
     background-image: url("../asserts/img/index.jpg") !important;
-    background: no-repeat center center;
-    background-attachment: scroll;
-    background-color: #ccc;
-    background-size: cover;
+
   }
   .intro-header-blogs{
     background-image: url("../asserts/img/code.jpg") !important;
-    background: no-repeat center center;
-    background-attachment: scroll;
-    background-color: #ccc;
-    background-size: cover;
+
+  }
+  .intro-header-photo{
+      background-image: url("../asserts/img/photoBG.jpg") !important;
   }
   .intro-container{
     width: 100%;
