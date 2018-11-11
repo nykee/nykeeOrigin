@@ -48,6 +48,39 @@
       "description_3":"数据可视化采用百度echarts",
       "description_4":"参与前后端的架构搭建，完成功能开发：用户web端上传文件后，后台分析公司特有的.opt文件中的数据，写入后台后进行前端数据可视化的展示",
       "githubAdd":"无"
+    },
+    "projects_innoVue":{
+      "name":"inno云平台 build by Vue",
+      "description_1":"云平台项目使用Vue重构",
+      "githubAdd":"https://github.com/nykee/innooooVue"
+    },
+    "projects_fluoVue":{
+      "name":"FluoMotion云平台 build by Vue",
+      "description_1":"FluoMotion云平台用Vue.js进行重写",
+      "description_2":"iview",
+      "githubAdd":"https://github.com/nykee/innooooVue"
+    },
+    "projects_fluoReact":{
+      "name":"FluoMotion云平台 build by React",
+      "description_1":"react重写了FluoMotion平台，作为react练手",
+      "description_2":"UI组件库使用的阿里的ant-d",
+      "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
+    },
+    "projects_nykee":{
+      "name":"www.nykee.cn",
+      "description_1":"个人的Github Page SPA",
+      "description_2":"UI库使用iview",
+      "description_3":"icon使用font-awesome",
+      "description_4":"使用Vue、vue-router",
+      "description_5":"www.nykee.cn",
+      "githubAdd":"https://github.com/nykee/nykee.github.io"
+    },
+    "projects_dzdp":{
+      "name":"大众点评NodeJS爬",
+      "description_1":"NodeJS爬虫娱乐项目",
+      "description_2":"使用大众点评的API",
+      "description_3":"superagent发起请求,cheerio解析网页,async控制并发",
+      "githubAdd":"https://github.com/nykee/dzdp_spider"
     }
 
 

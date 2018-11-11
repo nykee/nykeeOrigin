@@ -78,13 +78,13 @@
 </script>
 <style scoped="scoped">
   .intro{
-    margin-bottom:18px;
+    margin-bottom:1rem;
   }
   .leftCol{
-    padding-left: 10px;
+    padding-left: 0.625rem;
   }
   .slogan{
-    margin-top:30px;
+    /*margin-top:30px;*/
   }
   .self-info-container{
     margin-top:20px;

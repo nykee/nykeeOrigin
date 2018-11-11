@@ -5,6 +5,7 @@
             <div class="site-heading">
               <h1 class="site-heading-title">{{head}}</h1>
               <span class="site-heading-subtitle">{{subHead}}</span>
+              <!--<span class="site-heading-subtitle">{{$t("message.homeSlogan")}}</span>-->
             </div>
       </div>
     </header>

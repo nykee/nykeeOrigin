@@ -1,10 +1,10 @@
 {
   "message": {
-    "home": "home",
-    "projects": "projects",
-    "nykee": "Nykee`s blog",
-    "blog":"blogs",
-    "aboutMe":"AboutMe",
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "nykee": "NYKEE`S BLOG",
+    "blog":"BLOGS",
+    "aboutMe":"About Me",
     "selfIntro":[
       " Hi,my name is nykee .And i am interested in Web front-end!I am working at a start-up company as a web developer",
       "My skills about web development are as followed： ",
@@ -40,6 +40,38 @@
       "description_3":"Data visualization using Baidu echarts",
       "description_4":"Participate in the front-end and back-end architecture",
       "githubAdd":"no git address"
+    },
+    "projects_innoVue":{
+      "name":"inno cloud platform build by Vue",
+      "description_1":"inno cloud platform reconstitute by Vue",
+      "githubAdd":"https://github.com/nykee/innooooVue"
+    },
+    "projects_fluoVue":{
+      "name":"FluoMotion cloud platform reconstitute by Vue",
+      "description_1":"FluoMotion cloud platform reconstitute by Vue",
+      "description_2":"iview",
+      "githubAdd":"https://github.com/nykee/innooooVue"
+    },
+    "projects_fluoReact":{
+      "name":"FluoMotion cloud platform reconstitute by React",
+      "description_1":"reconstitute FluoMotion cloud platform wiz react",
+      "description_2":"UI lib use ant-design",
+      "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
+    },
+    "projects_nykee":{
+      "name":"www.nykee.cn",
+      "description_1":"Personal website deploy at github",
+      "description_2":"UI lib use iview",
+      "description_3":"icon use font-awesome",
+      "description_4":"use Vue and vue-router",
+      "githubAdd":"https://github.com/nykee/nykee.github.io"
+    },
+    "projects_dzdp":{
+      "name":"大众点评(similar to groupon) NodeJS Spider",
+      "description_1":"NodeJS Spider Project",
+      "description_2":"use OpenApi provided by 大众点评",
+      "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
+      "githubAdd":"https://github.com/nykee/dzdp_spider"
     }
   }
 }

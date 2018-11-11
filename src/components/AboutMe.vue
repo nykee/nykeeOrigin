@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <commonTitle :title-name="this.$t('message.aboutMe')"/>
+    <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
       <img src="../asserts/img/nykee.png" alt="" class="avatar">
       <p class="slogan">

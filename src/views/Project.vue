@@ -20,7 +20,7 @@
   import IntroHeader from '../components/IntroHeader.vue'
     export default {
         data() {
-          console.log(this.$t("message.projects_iRide.name"));
+          // console.log(this.$t("message.projects_iRide.name"));
             return {
               projs:[
                 {
@@ -44,39 +44,42 @@
                 },
                 {
                   id:3,
-                  pName:'inno云平台 build by Vue',
-                  desc:['云平台项目使用Vue重构'],
+                  pName:this.$t("message.projects_innoVue.name"),
+                  desc:[this.$t("message.projects_innoVue.description_1"),],
                   github:'https://github.com/nykee/innooooVue',
                   stack:'Vue'
                 },
                 {
                   id:4,
-                  pName:'FluoMotion云平台 build by Vue',
-                  desc:['FluoMotion云平台用Vue.js进行重写','iview'],
+                  pName:this.$t("message.projects_fluoVue.name"),
+                  desc:[this.$t("message.projects_fluoVue.description_1"),this.$t("message.projects_fluoVue.description_2"),],
                   github:'https://github.com/nykee/nykeeMotion',
                   stack:'Vue'
                 },
                 {
                   id:5,
-                  pName:'FluoMotion云平台 build by React',
-                  desc:['react重写了FluoMotion平台，作为入门react','UI组件库使用的阿里的ant-d'],
+                  pName:this.$t("message.projects_fluoReact.name"),
+                  desc:[this.$t("message.projects_fluoReact.description_1"),this.$t("message.projects_fluoReact.description_2"),],
                   github:'https://github.com/nykee/nykeeMotionVReact',
                   stack:'Ant-d React'
                 },
                 {
                   id:6,
-                  pName:'nykee.github.io',
-                  desc:['个人的Github Page SPA','UI库使用iview',
-                    "icon使用font-awesome","使用Vue、vue-router"],
+                  pName:this.$t("message.projects_nykee.name"),
+                  desc:[this.$t("message.projects_nykee.description_1"),
+                    this.$t("message.projects_nykee.description_2"),
+                    this.$t("message.projects_nykee.description_3"),],
                   github:'https://github.com/nykee/nykee.github.io',
                   stack:'Vue.js'
                 },
                 {
                   id:7,
-                  pName:'大众点评NodeJS爬虫',
-                  desc:['NodeJS爬虫娱乐项目','使用大众点评的API','superagent发起请求,cheerio解析网页,async控制并发'],
+                  pName:this.$t("message.projects_dzdp.name"),
+                  desc:[this.$t("message.projects_dzdp.description_1"),
+                    this.$t("message.projects_dzdp.description_2"),
+                    this.$t("message.projects_dzdp.description_3"),],
                   github:'https://github.com/nykee/dzdp_spider',
-                  stack:'NodeJs'
+                  stack:'NodeJS'
                 },
               ],
 

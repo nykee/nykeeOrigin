@@ -97,26 +97,34 @@
 
           },
           handleLanSel(val){
-            // console.log(val);
+            /*利用window.sessionStorage存储locale防止刷新页面后locale重置*/
             switch (val.toString()){
               case "Chinese":
                 this.$i18n.locale = "zh";
+                window.sessionStorage.setItem("locale","zh");
                 break;
               case "English":
                 this.$i18n.locale = "en";
+                window.sessionStorage.setItem("locale","en");
                 break;
               case "Japanese":
                 this.$i18n.locale = "ja";
+                window.sessionStorage.setItem("locale","ja");
                 break;
               default:
                 this.$i18n.locale = "zh";
+                window.sessionStorage.setItem("locale","ja");
                 break;
             }
           },
 
         },
         created: function () {
-//          this.$i18n.locale = 'cn'
+          /*利用window.sessionStorage存储locale防止刷新页面后locale重置*/
+          let locale =window.sessionStorage.getItem("locale");
+          if(!locale){window.sessionStorage.setItem("locale","zh");}
+          else {this.$i18n.locale =locale}
+
         },
         mounted() {
           // console.log(this.$i18n.locale);

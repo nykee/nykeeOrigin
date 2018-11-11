@@ -41,6 +41,38 @@
       "description_3":"Baidu echartを用いたデータ可視化",
       "description_4":"前後端の構築に参加して、機能開発",
       "githubAdd":"なし"
+    },
+    "projects_innoVue":{
+      "name":"inno cloud platform Vueによって再構成する",
+      "description_1":"inno cloud platform Vueによって再構成する",
+      "githubAdd":"https://github.com/nykee/innooooVue"
+    },
+    "projects_fluoVue":{
+      "name":"FluoMotion cloud platform Vueによって再構成する",
+      "description_1":"FluoMotion cloud platform Vueによって再構成する",
+      "description_2":"iview",
+      "githubAdd":"https://github.com/nykee/innooooVue"
+    },
+    "projects_fluoReact":{
+      "name":"FluoMotion cloud platform Reactによって再構成する",
+      "description_1":"FluoMotion cloud platform Reactによって再構成する",
+      "description_2":"UI lib use ant-design",
+      "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
+    },
+    "projects_nykee":{
+      "name":"www.nykee.cn",
+      "description_1":"Githubで展開された個人ウェブサイト",
+      "description_2":"UI lib use iview",
+      "description_3":"icon use font-awesome",
+      "description_4":"use Vue and vue-router",
+      "githubAdd":"https://github.com/nykee/nykee.github.io"
+    },
+    "projects_dzdp":{
+      "name":"大众点评(similar to groupon) NodeJS Spider",
+      "description_1":"NodeJS Spider Project",
+      "description_2":"use OpenApi provided by 大众点评",
+      "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
+      "githubAdd":"https://github.com/nykee/dzdp_spider"
     }
   }
 }
