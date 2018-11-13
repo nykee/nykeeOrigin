@@ -11,13 +11,13 @@
              :sm="{span:24}"
              :xs="{span:24}">
         <div v-show="!isMobile">
-          <BlogMenu></BlogMenu>
+          <BlogMenu/>
         </div>
 
         <div v-show="isMobile">
           <Button @click="value1 = true" type="primary" class="blog-dict-btn">文章目录</Button>
           <Drawer title="文章目录" placement="left" :closable="false" v-model="value1">
-            <BlogMenu></BlogMenu>
+            <BlogMenu/>
           </Drawer>
         </div>
       </i-col>

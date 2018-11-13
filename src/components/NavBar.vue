@@ -32,14 +32,14 @@
                  :md="{span:2}"
                  :sm="{span:2}"
                  :xs="{span:2}">
-            <select v-model="lanSel"  style="width: 5rem" >
+            <select v-model="lanSel"  class="lanSel" >
               <option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</option>
             </select>
           </i-col>
           </Menu>
         </Row>
-        <div v-if="isMobile" style="overflow: hidden">
-          <Dropdown trigger="click" style="margin-left: 2rem"  class="dropDownMenu">
+        <div v-if="isMobile" >
+          <Dropdown trigger="click"   class="dropDownMenu">
             <a href="javascript:void(0)">
               <i class="fa fa-reorder fa-2x"></i>
             </a>
@@ -57,7 +57,7 @@
                 <router-link to="/Photograph" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
               </DropdownItem>
               <DropdownItem>
-                <select v-model="lanSel"  style="width: 5rem" >
+                <select v-model="lanSel"   class="lanSel">
                   <option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</option>
                 </select>
               </DropdownItem>
@@ -65,7 +65,7 @@
             </DropdownMenu>
 
           </Dropdown>
-          <span class="logoName">Nykee Blog</span>
+          <span class="logoName"><router-link to="/">Nykee Blog</router-link></span>
         </div>
 
       </div>
@@ -149,9 +149,7 @@
 //            this.isPhoneWatcher();
 
         },
-        beforeDestroy(){
-            bus.$off('tagRedirect')
-        },
+
       watch:{
           lanSel:"handleLanSel"
 
@@ -177,6 +175,7 @@
       top:10px;
       left:5px;
       z-index: 3;
+    margin-left:2rem;
   }
   .ivu-menu-horizontal.ivu-menu-light:after{
     background: none !important;
@@ -189,11 +188,15 @@
   }
   .logoName{
     position: absolute;
-    top:2%;
+    top:3%;
     right:3%;
     color:#fff;
     font-weight: 800;
     font-size: 1.1rem;
+  }
+  .lanSel{
+    width: 5rem;
+    color: #fff;
   }
 
 </style>

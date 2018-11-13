@@ -4,10 +4,10 @@
       <div class=" flexContainer" >
         <ul class="photo-intro">
           <li class="photo-intro-items">我曾经跨过山和大海 也穿过人山人海</li>
-          <li class="photo-intro-items">我曾经拥有着的一切 转眼都飘散如烟</li>
-          <li class="photo-intro-items">我曾经失落失望 失掉所有方向</li>
-          <li class="photo-intro-items">直到看见平凡 才是唯一的答案</li>
           <li class="photo-intro-items">--&nbsp;朴树 《平凡之路》</li>
+          <li class="photo-intro-items">生活不止眼前的苟且</li>
+          <li class="photo-intro-items">还有诗和远方</li>
+          <li class="photo-intro-items">江河湖海，唯有用眼见证用脚丈量</li>
         </ul>
       </div>
       <div v-for="photo in photoData">

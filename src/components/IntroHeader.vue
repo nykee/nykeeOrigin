@@ -5,13 +5,12 @@
             <div class="site-heading">
               <h1 class="site-heading-title">{{head}}</h1>
               <span class="site-heading-subtitle">{{subHead}}</span>
-              <!--<span class="site-heading-subtitle">{{$t("message.homeSlogan")}}</span>-->
             </div>
       </div>
     </header>
 
     <header v-if="isTags" >
-        <div class="intro-container" style="position: relative">
+        <div class="intro-container" >
 
               <div class="site-heading">
                 <h1 class="site-heading-title">{{head}}</h1>
@@ -36,7 +35,7 @@
               isIndex:true,
               isBlogs:false,
               isTags:false,
-                isPhoto:false,
+              isPhoto:false,
               head:'About Me',
               subHead:this.$t("message.homeSlogan")
             }
@@ -44,8 +43,6 @@
         methods: {
           changeBG(){
             let path = String(this.$route.path);
-
-//            console.log(path.substring(0,path.lastIndexOf('/')));
             if(path ==="/Blogs"||path.substring(0,path.lastIndexOf('/')) ==="/Blogs"){
               this.isBlogs = true;
               this.isIndex =false;
@@ -222,10 +219,10 @@
   .site-heading {
     text-align: center;
     position: absolute;
-    left: 11.8125rem;
-    top: 10rem;
+    top: 20%;
+    left: 30%;
   }
-  header{display: block}
+  /*header{display: block}*/
 
   .site-heading-title{
     font-size: 3.75rem;
@@ -258,9 +255,7 @@
     .site-heading-subtitle{
       font-size: .9rem;
     }
-    .site-heading{
-      left: 3.5rem;
-    }
+    .intro-container{height: 15rem}
   }
     @media screen and (min-width: 321px) and (max-width:375px ){
       .site-heading-title{
@@ -269,26 +264,22 @@
       .site-heading-subtitle{
         font-size: 1rem;
       }
-      .site-heading{
-        left: 4.5rem;
-      }
+        .intro-container{height: 15rem}
     }
     @media screen and (min-width: 376px) and (max-width:425px ){
       .site-heading-title{
         font-size: 2.8rem;
-        width: 19.5rem;
+        /*width: 19.5rem;*/
       }
       .site-heading-subtitle{
         font-size: 1.2rem;
       }
-      .site-heading{
-        left: 3.7rem;
-      }
+        .intro-container{height: 18rem}
     }
     @media screen and (min-width: 426px) and (max-width: 1440px){
       .site-heading-title{
         font-size: 3.5rem;
-        width: 24.375rem;
+        /*width: 24.375rem;*/
       }
       .site-heading-subtitle{
         font-size: 1.2rem;
@@ -297,18 +288,20 @@
     @media screen and (min-width: 426px) and (max-width:768px ){
 
       .site-heading{
-        left: 11.8125rem;
+          top:30%;
       }
     }
     @media screen and (min-width: 769px) and (max-width:1024px ){
 
       .site-heading{
-        left: 18.8125rem;
+          top:35%;
+          left:35%;
       }
     }
     @media screen and (min-width: 1025px) and (max-width:1440px ){
       .site-heading{
-        left: 31.8125rem;
+          top:35%;
+          left:35%;
       }
     }
     @media screen and (min-width: 1441px) and (max-width:2560px ){
@@ -320,7 +313,9 @@
         font-size: 2rem;
       }
       .site-heading{
-        left: 65rem;
+          top:35%;
+          left:35%;
       }
+        .intro-container{height: 40rem}
     }
 </style>
