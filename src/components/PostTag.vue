@@ -1,5 +1,5 @@
 <template>
-  <div class="post-tag">Posted by Nykee on {{posttime}}</div>
+  <div class="post-tag">Posted by Nykee on {{postTime}}</div>
 </template>
 
 <script>
@@ -10,7 +10,7 @@
 
             }
         },
-      props: ['posttime'],
+      props: ['postTime'],
         methods: {},
         created: function () {
 

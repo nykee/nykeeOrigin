@@ -1,5 +1,5 @@
 <template>
-  <h5 @mouseenter="changeActive" @mouseout="changeActive" :class="{hover:isActive}">{{titleName}}</h5>
+  <h5 class="common-title" @mouseenter="changeActive" @mouseout="changeActive" :class="{hover:isActive}">{{titleName}}</h5>
 </template>
 
 <script>
@@ -31,5 +31,9 @@
   .hover{
     cursor: pointer;
     color:#2b85e4;
+  }
+  .common-title{
+    font-size: 0.9rem;
+    margin-top: .2rem;
   }
 </style>

@@ -69,19 +69,60 @@
     },
     "projects_nykee":{
       "name":"www.nykee.cn",
-      "description_1":"个人的Github Page SPA",
+      "description_1":"个人网站用来写写博客随便记录点什么东西",
       "description_2":"UI库使用iview",
       "description_3":"icon使用font-awesome",
-      "description_4":"使用Vue、vue-router",
-      "description_5":"www.nykee.cn",
+      "description_4":"使用Vue、vue-router、Vuex全家桶开发，进行了i18n国际化适配及响应式适配",
+      "description_5":"购买了域名www.nykee.cn进行绑定",
+      "description_6":"前期部署于github上，目前已迁移至阿里云",
+      "description_7":"Todo:目前为静态的，后期打算进行动态开发，用Node或者java写下后端",
       "githubAdd":"https://github.com/nykee/nykee.github.io"
     },
     "projects_dzdp":{
-      "name":"大众点评NodeJS爬",
+      "name":"大众点评NodeJS爬虫",
       "description_1":"NodeJS爬虫娱乐项目",
       "description_2":"使用大众点评的API",
       "description_3":"superagent发起请求,cheerio解析网页,async控制并发",
       "githubAdd":"https://github.com/nykee/dzdp_spider"
+    },
+    "photoPage":{
+
+      "intro":"记录曾经走过的地方",
+      "photos":[
+        {
+          "title":"古朴与现代的交融",
+          "time":"拍摄于2017年04月22日",
+          "location":"上海豫园"
+        },
+        {
+          "title":"金色麦浪",
+          "time":"拍摄于2017年05月29日",
+          "location":"上海南汇"
+        },
+        {
+          "title":"夜雨下班路",
+          "time":"拍摄于2018年04月23日",
+          "location":"上海松江"
+        },
+        {
+          "title":"阳光小奶狗",
+          "time":"拍摄于2018年02月17日",
+          "location":"浙江绍兴"
+        },
+        {
+          "title":"贝聿铭的山与水",
+          "time":"拍摄于2018年10月27日",
+          "location":"苏州博物馆"
+        }
+      ,
+        {
+          "title":"樱花飘落的速度",
+          "time":"拍摄于2017年04月04日",
+          "location":"日本九州熊本县"
+        }
+      ]
+
+
     }
 
 

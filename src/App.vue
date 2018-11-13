@@ -5,9 +5,10 @@
     <div class="main-container">
       <router-view></router-view>
     </div>
-    <Row type="flex" justify="center" align="middle" style="margin-top: 20px">
+    <Row type="flex" justify="center" align="middle" >
       <FootBar ></FootBar>
     </Row>
+    <BackTop></BackTop>
   </div>
 </template>
 
@@ -54,24 +55,6 @@ export default {
   body{
     overflow-x:hidden;
   }
-  .container{margin-bottom:3rem}
-  @media screen and (max-width: 425px){
-    .container{
-      margin-left: 29%;
-    }
-  }
-  @media screen and (max-width:320px) {
-    .container{
-      margin-left: 22%;
-
-    }
-  }
-  @media screen and (max-width:768px) and (min-width: 426px){
-    .container{
-      margin-left: 37%;
-
-    }
-  }
   /*修改pre不换行的样式*/
   pre{
     white-space:pre-wrap;
@@ -79,5 +62,32 @@ export default {
     white-space:pre-wrap;
     white-space:-o-pre-wrap;
     word-wrap:break-word;
+  }
+  .flexContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px){
+    body{font-size: 18px}
+  } /*>=1024的设备*/
+  @media (min-width: 1100px) {
+    body{font-size: 20px}
+  } /*>=1024的设备*/
+  @media (min-width: 1280px) {
+    body{font-size: 22px;}
+  }
+  @media (min-width: 1366px) {
+    body{font-size: 24px;}
+  }
+  @media (min-width: 1440px) {
+    body{font-size: 25px}
+  }
+  @media (min-width: 1680px) {
+    body{font-size: 28px;}
+  }
+  @media (min-width: 1920px) {
+    body{font-size: 33px;}
   }
 </style>

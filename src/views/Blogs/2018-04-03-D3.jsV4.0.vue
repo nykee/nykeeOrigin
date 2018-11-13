@@ -264,18 +264,11 @@ class Index {
     }
 
 
-
-
-
-
           </code>
         </pre>
-        <!--<p class="descrp">完整代码请参见</p>-->
       </div>
-
-
     </div>
-    <PostTag :posttime="postTime"></PostTag>
+    <PostTag :postTime="postTime"/>
   </div>
 </template>
 

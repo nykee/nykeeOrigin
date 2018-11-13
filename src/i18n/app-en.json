@@ -64,7 +64,10 @@
       "description_1":"Personal website deploy at github",
       "description_2":"UI lib use iview",
       "description_3":"icon use font-awesome",
-      "description_4":"use Vue and vue-router",
+      "description_4":"use Vue and vue-router and Vuex",
+      "description_5":"Purchased the domain name www.nykee.cn for binding",
+      "description_6":"Previously deployed on github, it has been migrated to Alibaba Cloud.",
+      "description_7":"Todo: Currently my site is still static, I plan to make my site dynamically later, write backend with Node or java.",
       "githubAdd":"https://github.com/nykee/nykee.github.io"
     },
     "projects_dzdp":{
@@ -73,6 +76,45 @@
       "description_2":"use OpenApi provided by dianping.com",
       "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
       "githubAdd":"https://github.com/nykee/dzdp_spider"
+    },
+    "photoPage":{
+
+      "intro":"Record where you have been",
+      "photos":[
+        {
+          "title":"The blend of simplicity and modernity",
+          "time":"Photographed on April 22, 2017",
+          "location":"Yu Garden Shanghai"
+        },
+        {
+          "title":"Golden wave of wheat",
+          "time":"Photographed on May 29, 2017",
+          "location":"Nanhui District Shanghai"
+        },
+        {
+          "title":"Night rain, work road",
+          "time":"Photographed on April 23, 2018",
+          "location":"Songjiang District Shanghai"
+        },
+        {
+          "title":"Sunny puppy",
+          "time":"Photographed on February 17, 2018",
+          "location":"Shaoxin Zhejiang Province"
+        },
+        {
+          "title":"Pei's mountain and water",
+          "time":"Photographed on October 27, 2018",
+          "location":"Suzhou Museum"
+        }
+      ,
+        {
+          "title":"The speed at which the cherry blossoms fall",
+          "time":"Photographed on April 04, 2017",
+          "location":"Kumamoto Prefecture, Kyushu, Japan"
+        }
+      ]
+
+
     }
   }
 }

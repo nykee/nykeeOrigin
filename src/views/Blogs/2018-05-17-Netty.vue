@@ -258,20 +258,8 @@
         </ul>
       </section>
     </div>
-
-
-
-
-
-
-    <PostTag :posttime="postTime"></PostTag>
-
+    <PostTag :postTime="postTime"/>
   </div>
-
-
-
-
-
 </template>
 
 <script>

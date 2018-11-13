@@ -66,6 +66,9 @@
       "description_2":"UI lib use iview",
       "description_3":"icon use font-awesome",
       "description_4":"use Vue and vue-router",
+      "description_5":"製本のためにドメイン名www.nykee.cnを購入",
+      "description_6":"以前はgithubにデプロイされ、Alibaba Cloudに移行されました。",
+      "description_7":"Todo：現在のWebサイトは静的なので、後で動的に開発する予定です。ノードまたはJavaでバックエンドを記述してください。",
       "githubAdd":"https://github.com/nykee/nykee.github.io"
     },
     "projects_dzdp":{
@@ -74,6 +77,46 @@
       "description_2":"use OpenApi provided by 大众点评",
       "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
       "githubAdd":"https://github.com/nykee/dzdp_spider"
+    },
+    "photoPage":{
+
+      "intro":"あなたがどこにいたか記録する",
+      "photos":[
+        {
+          "title":"シンプルさとモダンさの融合",
+          "time":"2017年04月22日撮影",
+          "location":"上海豫園"
+        },
+        {
+          "title":"ゴールデンコム",
+          "time":"2017年05月29日撮影",
+          "location":"上海南匯"
+        },
+        {
+          "title":"夜の雨、作業道路",
+          "time":"2018年04月23日撮影",
+          "location":"上海松江"
+        },
+        {
+          "title":"阳光小奶狗",
+          "time":"2018年02月17日撮影",
+          "location":"紹興、浙江省"
+        },
+        {
+          "title":"ペイの山と水",
+          "time":"2018年10月27日撮影",
+          "location":"蘇州博物館"
+        }
+      ,
+        {
+          "title":"桜が咲く速さ",
+          "time":"2017年04月04日撮影",
+          "location":"熊本県、九州、日本"
+        }
+      ]
+
+
     }
+
   }
 }

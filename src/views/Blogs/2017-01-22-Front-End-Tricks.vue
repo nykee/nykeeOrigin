@@ -58,7 +58,7 @@
                 }
             </code>
           </pre>
-          <img src="../../asserts/img/string.jpg">
+          <img src="../../../static/img/string.jpg">
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
@@ -105,7 +105,7 @@
     console.table(data);
             </code>
           </pre>
-          <img src="../../asserts/img/console.table.jpg" :style="{width: this.screenWidth+'px'}">
+          <img src="../../../static/img/console.table.jpg" :style="{width: this.screenWidth+'px'}">
         </div>
         <div id="part2-section6" class="section">
           <p class="title-lv2"> 6.用媒体查询来设置html的font-size：</p>
@@ -362,7 +362,7 @@
 
 
     </div>
-    <PostTag :posttime="postTime"></PostTag>
+    <PostTag :postTime="postTime"/>
 
 
 

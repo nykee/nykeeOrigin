@@ -132,7 +132,7 @@
       </div>
 
     </div>
-    <PostTag :posttime="postTime"></PostTag>
+    <PostTag :postTime="postTime"/>
   </div>
 </template>
 

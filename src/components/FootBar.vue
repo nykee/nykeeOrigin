@@ -2,7 +2,7 @@
   <div class="footBar">
     <Row type="flex" justify="center" align="middle" class="icons">
       <i-col>
-        <ContactIcons style="height: 60px"></ContactIcons>
+        <ContactIcons class="c-icon-foot" />
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="copyright">
@@ -34,16 +34,18 @@
 </script>
 <style>
   .footBar{
-    margin-bottom:20px;
-    margin-top:1rem;
+   margin: 1.5rem 0 1rem 0;
   }
   .icons{
-    font-size: 18px;
+    font-size: 1rem;
   }
   .icons,.copyright{
-    width: 400px;
+    width: 25rem;
   }
   .copyright-content{
-    font-size: 16px;
+    font-size: 1rem;
+  }
+  .c-icon-foot{
+    margin-bottom: .9rem;
   }
 </style>

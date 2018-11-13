@@ -67,8 +67,8 @@
                 this.isIndex =false;
                 this.isTags =false;
                 this.isPhoto =true;
-                this.head ='To see the world';
-                this.subHead ='Wiz my eyes and my camera!'
+                this.head ='See the world';
+                this.subHead ='With my eyes and my camera!'
             }
           },
           myParticles(){
@@ -205,22 +205,25 @@
         background-size: cover;
     }
   .intro-header-index{
-    background-image: url("../asserts/img/index.jpg") !important;
+    background-image: url("../../static/img/index.jpg");
 
   }
   .intro-header-blogs{
-    background-image: url("../asserts/img/code.jpg") !important;
+    background-image: url("../../static/img/code.jpg") ;
 
   }
   .intro-header-photo{
-      background-image: url("../asserts/img/photoBG.jpg") !important;
+      background-image: url("../../static/img/lishui.jpg") ;
   }
   .intro-container{
     width: 100%;
-    height: 400px;
+    height: 25rem;
   }
   .site-heading {
     text-align: center;
+    position: absolute;
+    left: 11.8125rem;
+    top: 10rem;
   }
   header{display: block}
 
@@ -231,32 +234,93 @@
   }
   .site-heading-subtitle{
     color: #fff;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height:1.1;
     font-weight: 400;
-      font-family: "宋体";
-    margin: 10px 0 0 ;
+    margin: .625rem 0 0 ;
     display: inline-block;
   }
   #particles {
     position: absolute;
     top:0;
     width: 100%;
-    height: 396px;
+    height: 24.75rem;
     z-index: -1;
     background:linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
     background:-webkit-linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
     background:-moz-linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
   }
 
-  @media only screen and (min-width: 768px) {
-      .site-heading{
-          padding: 150px 0;
-      }
+  @media screen and (min-width: 200px) and (max-width:320px ){
+    .site-heading-title{
+      font-size: 2rem;
+    }
+    .site-heading-subtitle{
+      font-size: .9rem;
+    }
+    .site-heading{
+      left: 3.5rem;
+    }
   }
-    @media screen and (max-width: 425px){
-        .site-heading-title{
-            font-size: 2.5rem;
-        }
+    @media screen and (min-width: 321px) and (max-width:375px ){
+      .site-heading-title{
+        font-size: 2.5rem;
+      }
+      .site-heading-subtitle{
+        font-size: 1rem;
+      }
+      .site-heading{
+        left: 4.5rem;
+      }
+    }
+    @media screen and (min-width: 376px) and (max-width:425px ){
+      .site-heading-title{
+        font-size: 2.8rem;
+        width: 19.5rem;
+      }
+      .site-heading-subtitle{
+        font-size: 1.2rem;
+      }
+      .site-heading{
+        left: 3.7rem;
+      }
+    }
+    @media screen and (min-width: 426px) and (max-width: 1440px){
+      .site-heading-title{
+        font-size: 3.5rem;
+        width: 24.375rem;
+      }
+      .site-heading-subtitle{
+        font-size: 1.2rem;
+      }
+    }
+    @media screen and (min-width: 426px) and (max-width:768px ){
+
+      .site-heading{
+        left: 11.8125rem;
+      }
+    }
+    @media screen and (min-width: 769px) and (max-width:1024px ){
+
+      .site-heading{
+        left: 18.8125rem;
+      }
+    }
+    @media screen and (min-width: 1025px) and (max-width:1440px ){
+      .site-heading{
+        left: 31.8125rem;
+      }
+    }
+    @media screen and (min-width: 1441px) and (max-width:2560px ){
+      .site-heading-title{
+        font-size: 5rem;
+        width: 35rem;
+      }
+      .site-heading-subtitle{
+        font-size: 2rem;
+      }
+      .site-heading{
+        left: 65rem;
+      }
     }
 </style>

@@ -12,7 +12,7 @@
       <li><i class="fa fa-github fa-2x"></i>GitHub地址： <a href="https://github.com/nykee/dzdp_spider">https://github.com/nykee/dzdp_spider</a></li>
     </ol>
 
-    <PostTag :posttime="postTime" ></PostTag>
+    <PostTag :postTime="postTime" />
   </div>
 
 </template>

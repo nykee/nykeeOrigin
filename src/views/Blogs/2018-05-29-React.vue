@@ -37,9 +37,6 @@ render(&lt;HelloMessage name="John" />, mountNode);
           </code>
         </pre>
         </div>
-
-
-
         <div class="title-lv2">组件</div>
         <div class="descrp">
 React 应用都是构建在组件之上。
@@ -59,9 +56,7 @@ props 是组件包含的两个核心概念之一，另一个是 state（这个�
         <div class="descrp">
           “单向数据绑定”是 React 推崇的一种应用架构的方式。当应用足够复杂时才能体会到它的好处，虽然在一般应用场景下你可能不会意识到它的存在，也不会影响你开始使用 React，你只要先知道有这么个概念。
         </div>
-
-
-        <PostTag :posttime="postTime"/>
+        <PostTag :postTime="postTime"/>
     </div>
     </section>
   </div>

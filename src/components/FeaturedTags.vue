@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="ft-container">
     <commonTitle :title-name="this.$t('message.featuredTags')"/>
     <Row  class="row">
       <i-col :span="8">
@@ -103,20 +103,19 @@
     }
 </script>
 <style scoped>
-  .container{
-    width: 200px;
+  .ft-container{
+    width: 12.5rem;
     border-top:1px solid #271111;
     padding-bottom: 1rem;
   }
   .tagBtn{
     display: inline-block;
-    /*width: 65px;*/
-    padding: 0 10px;
+    padding: 0 .625rem;
     border: 1px solid #BFBFBF;
     border-radius: 999rem;
     text-align: center;
-    font-size: 12px;
-    line-height:24px;
+    font-size: .75rem;
+    line-height:1.5rem;
   }
   .tagBtn:hover{
     border-color: #2b85e4;

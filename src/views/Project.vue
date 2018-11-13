@@ -7,11 +7,6 @@
           <ProjectCard :proj-name="proj.pName" :description="proj.desc" :stack="proj.stack" :github="proj.github"></ProjectCard>
         </i-col>
       </Row>
-
-    <BackTop></BackTop>
-
-
-
   </div>
 </template>
 
@@ -68,7 +63,12 @@
                   pName:this.$t("message.projects_nykee.name"),
                   desc:[this.$t("message.projects_nykee.description_1"),
                     this.$t("message.projects_nykee.description_2"),
-                    this.$t("message.projects_nykee.description_3"),],
+                    this.$t("message.projects_nykee.description_3"),
+                    this.$t("message.projects_nykee.description_4"),
+                    this.$t("message.projects_nykee.description_5"),
+                    this.$t("message.projects_nykee.description_6"),
+                    this.$t("message.projects_nykee.description_7"),
+                  ],
                   github:'https://github.com/nykee/nykee.github.io',
                   stack:'Vue.js'
                 },

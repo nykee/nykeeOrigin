@@ -19,13 +19,13 @@
                   webpack.base.conf.js中的loader指向了Vue-loader于是在Vue-loader.conf.js中修改
                 </li>
                 <li class="steps-item">
-                  <img class="blog-img" src="../../asserts/img/webapck.base.jpg" alt="">
+                  <img class="blog-img" src="../../../static/img/webapck.base.jpg" alt="">
                 </li>
                 <li class="steps-item">
                   在loader中添加{ i18n: '@kazupon/vue-i18n-loader' } ，修改后的loader配置如下：
                 </li>
                 <li class="steps-item">
-                  <img class="blog-img" src="../../asserts/img/vue-loader.conf.jpg" alt="">
+                  <img class="blog-img" src="../../../static/img/vue-loader.conf.jpg" alt="">
                 </li>
               </ul>
             </li>
@@ -157,21 +157,11 @@
       },
               </code>
             </pre>
-
           </li>
         </ul>
       </div>
     </div>
-
-
-
-
-
-
-
-
-        <PostTag :posttime="postTime"/>
-
+        <PostTag :postTime="postTime"/>
     </section>
   </div>
 </template>

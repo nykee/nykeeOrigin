@@ -1,13 +1,13 @@
 <template>
-  <div class="container">
+  <div class="abm-container">
     <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
-      <img src="../asserts/img/nykee.png" alt="" class="avatar">
+      <img src="../../static/img/nykee.png" alt="" class="avatar">
       <p class="slogan">
         {{$t("message.aboutMeSlogan")}}
       </p>
     </div>
-    <ContactIcons class="fTags"></ContactIcons>
+    <ContactIcons class="fTags"/>
   </div>
 </template>
 
@@ -31,20 +31,26 @@
         }
     }
 </script>
-<style scoped>
-  .container{
-    width: 200px;
+<style scoped="scoped">
+  .abm-container{
+    width: 12.5rem;
     border-top:1px solid #271111;
   }
   .avatar{
-    width: 200px;
+    width: 12.5rem;
   }
   .slogan{
-    margin-bottom:10px;
+    margin-bottom:.6rem;
     text-align: center;
+
   }
   .fTags{
-    margin-bottom:15px;
+    margin-bottom:0.6rem;
+  }
+  @media screen and(max-width: 1280px) and(max-width: 1440px){
+    .slogan{
+      font-size: 0.8rem;
+    }
   }
 
 
