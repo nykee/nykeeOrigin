@@ -38,7 +38,7 @@
           </i-col>
           </Menu>
         </Row>
-        <div v-if="isMobile">
+        <div v-if="isMobile" style="overflow: hidden">
           <Dropdown trigger="click" style="margin-left: 2rem"  class="dropDownMenu">
             <a href="javascript:void(0)">
               <i class="fa fa-reorder fa-2x"></i>
@@ -190,7 +190,7 @@
   .logoName{
     position: absolute;
     top:2%;
-    right:2%;
+    right:3%;
     color:#fff;
     font-weight: 800;
     font-size: 1.1rem;

@@ -2,7 +2,7 @@
   <div >
     <Row>
       <i-col>
-        <IntroHeader></IntroHeader>
+        <IntroHeader/>
       </i-col>
     </Row>
     <Row  class="blog-container">
@@ -15,8 +15,8 @@
         </div>
 
         <div v-show="isMobile">
-          <Button @click="value1 = true" type="primary" class="blog-dict-btn">博客目录</Button>
-          <Drawer title="博客目录" placement="left" :closable="false" v-model="value1">
+          <Button @click="value1 = true" type="primary" class="blog-dict-btn">文章目录</Button>
+          <Drawer title="文章目录" placement="left" :closable="false" v-model="value1">
             <BlogMenu></BlogMenu>
           </Drawer>
         </div>
