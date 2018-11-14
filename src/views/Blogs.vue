@@ -11,7 +11,7 @@
         </div>
 
         <div v-show="isMobile">
-          <Button @click="drawerShow = true" type="primary" class="blog-dict-btn">文章目录</Button>
+          <div @click="drawerShow = true" class="mbNav-box"><i class="fa fa-navicon fa-2x"><span class="mbNav-name">文章目录</span></i></div>
           <Drawer title="文章目录" placement="left" :closable="false" v-model="drawerShow">
             <BlogMenu/>
           </Drawer>
@@ -142,8 +142,11 @@
   .steps-item{
     margin-top: .5rem;
   }
-  .blog-dict-btn{
+  .mbNav-box{
     margin-bottom: 1rem;
+  }
+  .mbNav-name{
+    margin-left:.5rem;
   }
 
 
