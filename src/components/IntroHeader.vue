@@ -1,13 +1,21 @@
 <template>
   <div >
-    <header :class="{'intro-header-index':isIndex,'intro-header-blogs':isBlogs,'intro-header-photo':isPhoto}" v-if="!isTags" >
-      <div class="intro-container">
-            <div class="site-heading">
-              <h1 class="site-heading-title">{{head}}</h1>
-              <span class="site-heading-subtitle">{{subHead}}</span>
-            </div>
-      </div>
-    </header>
+
+        <header :class="{'intro-header-index':isIndex,'intro-header-blogs':isBlogs,'intro-header-photo':isPhoto}" v-if="!isTags" >
+          <div class="intro-container">
+
+                <div class="site-heading">
+                  <h1 class="site-heading-title">{{head}}</h1>
+                  <span class="site-heading-subtitle">{{subHead}}</span>
+                </div>
+
+
+          </div>
+        </header>
+
+
+
+
 
     <header v-if="isTags" >
         <div class="intro-container" >
@@ -37,7 +45,7 @@
               isTags:false,
               isPhoto:false,
               head:'About Me',
-              subHead:this.$t("message.homeSlogan")
+              subHead:"Life`s short,I use js"
             }
         },
         methods: {
@@ -210,7 +218,7 @@
 
   }
   .intro-header-photo{
-      background-image: url("../../static/img/lishui.jpg") ;
+      background-image: url("../../static/img/lishui-c.jpg") ;
   }
   .intro-container{
     width: 100%;
@@ -219,10 +227,7 @@
   .site-heading {
     text-align: center;
     position: absolute;
-    top: 20%;
-    left: 30%;
   }
-  /*header{display: block}*/
 
   .site-heading-title{
     font-size: 3.75rem;
@@ -255,7 +260,14 @@
     .site-heading-subtitle{
       font-size: .9rem;
     }
-    .intro-container{height: 15rem}
+    .site-heading{
+      width: 14rem;
+      top: 14%;
+      left: 17%;
+    }
+    .intro-container,#particles {
+      height: 15rem;
+    }
   }
     @media screen and (min-width: 321px) and (max-width:375px ){
       .site-heading-title{
@@ -264,43 +276,59 @@
       .site-heading-subtitle{
         font-size: 1rem;
       }
-        .intro-container{height: 15rem}
+      .site-heading{
+        width: 18rem;
+        top: 16%;
+        left: 12%;
+      }
+      .intro-container,#particles {
+        height: 18rem;
+      }
     }
     @media screen and (min-width: 376px) and (max-width:425px ){
       .site-heading-title{
         font-size: 2.8rem;
-        /*width: 19.5rem;*/
       }
       .site-heading-subtitle{
         font-size: 1.2rem;
       }
-        .intro-container{height: 18rem}
-    }
-    @media screen and (min-width: 426px) and (max-width: 1440px){
-      .site-heading-title{
-        font-size: 3.5rem;
-        /*width: 24.375rem;*/
+      .site-heading{
+        width: 20rem;
+        top: 16%;
+        left: 13%;
       }
-      .site-heading-subtitle{
-        font-size: 1.2rem;
-      }
+      .intro-container,#particles{height: 18rem}
     }
     @media screen and (min-width: 426px) and (max-width:768px ){
-
+      .site-heading-title{
+        font-size: 3.5rem;
+      }
+      .site-heading-subtitle{
+        font-size: 1.2rem;
+      }
       .site-heading{
-          top:30%;
+        width: 25rem;
+        top: 22%;
+        left: 27%;
       }
     }
     @media screen and (min-width: 769px) and (max-width:1024px ){
-
+      .site-heading-title{
+        font-size: 3rem;
+      }
+      .site-heading-subtitle{
+        font-size: 1.1rem;
+      }
       .site-heading{
-          top:35%;
-          left:35%;
+        width: 25rem;
+        top: 20%;
+        left: 30%;
       }
     }
     @media screen and (min-width: 1025px) and (max-width:1440px ){
       .site-heading{
-          top:35%;
+          width: 28rem;
+          top:18%;
           left:35%;
       }
     }
@@ -313,7 +341,8 @@
         font-size: 2rem;
       }
       .site-heading{
-          top:35%;
+        width: 35rem;
+          top:18%;
           left:35%;
       }
         .intro-container{height: 40rem}

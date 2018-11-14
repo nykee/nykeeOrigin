@@ -13,8 +13,8 @@
           </li>
         <li v-if="hasGithub">
           <i class="fa fa-github fa-2x vAlineMiddle" ></i>
-          <span>
-            {{$t("message.proj_git")}}：<span @click="reDirectTo(github)" @mouseenter="changeActive" @mouseout="changeActive" :class="{active:isActive}">{{github}}</span>
+          <span >
+            {{$t("message.proj_git")}}：<span  style="text-overflow: ellipsis;" @click="reDirectTo(github)" @mouseenter="changeActive" @mouseout="changeActive" :class="{active:isActive}">{{github}}</span>
           </span>
         </li>
       </ul>
@@ -58,7 +58,7 @@
       },
 
         mounted() {
-
+          this.hasGithub =(this.github.length !== 0);
 
         },
         components: {
@@ -80,4 +80,8 @@
 .proj-card{
   margin: 0 1rem;
 }
+
+
+
+
 </style>

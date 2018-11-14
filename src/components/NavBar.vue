@@ -7,7 +7,7 @@
                  :sm="{span:4}"
                  :xs="{span:4}" >
               <router-link to="/">
-                <span @click="changeActive" style="padding-left: .2rem">{{$t("message.nykee")}}</span>
+                <span @click="changeActive" style="padding-left: .5rem">{{$t("message.nykee")}}</span>
               </router-link>
             </i-col>
             <i-col :lg="{span:9,offset:9}"
@@ -65,7 +65,7 @@
             </DropdownMenu>
 
           </Dropdown>
-          <span class="logoName"><router-link to="/">Nykee Blog</router-link></span>
+          <span class="logoName" @click="directToIndex">Nykee Blog</span>
         </div>
 
       </div>
@@ -103,6 +103,9 @@
             });
 
 
+          },
+          directToIndex(){
+            this.$router.push("/")
           },
           handleLanSel(val){
             /*利用window.sessionStorage存储locale防止刷新页面后locale重置*/
@@ -196,7 +199,7 @@
   }
   .lanSel{
     width: 5rem;
-    color: #fff;
+    /*color: #fff;*/
   }
 
 </style>

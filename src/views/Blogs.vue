@@ -1,10 +1,6 @@
 <template>
   <div >
-    <Row>
-      <i-col>
-        <IntroHeader/>
-      </i-col>
-    </Row>
+    <IntroHeader/>
     <Row  class="blog-container">
       <i-col :lg="{span:5}"
              :md="{span:7}"
@@ -15,8 +11,8 @@
         </div>
 
         <div v-show="isMobile">
-          <Button @click="value1 = true" type="primary" class="blog-dict-btn">文章目录</Button>
-          <Drawer title="文章目录" placement="left" :closable="false" v-model="value1">
+          <Button @click="drawerShow = true" type="primary" class="blog-dict-btn">文章目录</Button>
+          <Drawer title="文章目录" placement="left" :closable="false" v-model="drawerShow">
             <BlogMenu/>
           </Drawer>
         </div>
@@ -39,7 +35,7 @@
         data() {
             return {
                 isMobile:false,
-              value1:false
+              drawerShow:false
             }
         },
         methods: {
@@ -52,11 +48,17 @@
       computed(){
 
       },
+      beforeRouteUpdate(to,from,next){
+        this.drawerShow = !this.drawerShow;
+        next();
+      },
         mounted() {
           if(window.screen.width<769){this.isMobile = true}
           else {
             this.isMobile =false;
           }
+
+
         },
 
         updated:function () {
