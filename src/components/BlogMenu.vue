@@ -52,15 +52,20 @@
           },
         },
         created: function () {
-
-        },
-        mounted() {
           mapState({
             activeName: state => state.blogMenuActiveName
           });
           this.$nextTick(()=>{
             this.$refs.bMenu.updateActiveName();
           });
+        },
+        mounted() {
+         /* mapState({
+            activeName: state => state.blogMenuActiveName
+          });
+          this.$nextTick(()=>{
+            this.$refs.bMenu.updateActiveName();
+          });*/
 
         },
         components: {}

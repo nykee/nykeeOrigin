@@ -55,6 +55,12 @@ export default {
   body{
     overflow-x:hidden;
   }
+  /*浮动*/
+  .fl{float: left;}
+  .fr{float: right}
+  .clearfix{*zoom:1}
+  .clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
+
   /*修改pre不换行的样式*/
   pre{
     white-space:pre-wrap;

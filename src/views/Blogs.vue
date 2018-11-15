@@ -49,7 +49,7 @@
 
       },
       beforeRouteUpdate(to,from,next){
-        this.drawerShow = !this.drawerShow;
+        if(this.isMobile)this.drawerShow = !this.drawerShow;
         next();
       },
         mounted() {

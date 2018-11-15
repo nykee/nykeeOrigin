@@ -78,7 +78,11 @@
     },
     "photoPage":{
 
-      "intro":"Record where you have been",
+      "intro":["I used to cross the mountains and the sea.",
+        "I yearn for the wind and freedom",
+        "Life is more than just in front of you.",
+        "There are also poems and distant places",
+        "To see the world with my eyes and camera! "],
       "photos":[
         {
           "title":"The blend of simplicity and modernity",

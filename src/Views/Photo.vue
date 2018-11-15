@@ -3,11 +3,11 @@
       <IntroHeader/>
       <div class=" flexContainer" >
         <ul class="photo-intro">
-          <li class="photo-intro-items">我曾经跨过山和大海 也穿过人山人海</li>
-          <li class="photo-intro-items">我向往风和自由</li>
-          <li class="photo-intro-items">生活不止眼前的苟且</li>
-          <li class="photo-intro-items">还有诗和远方</li>
-          <li class="photo-intro-items">江河湖海，唯有用眼见证用脚丈量</li>
+          <li class="photo-intro-items">{{$t("message.photoPage.intro[0]")}}</li>
+          <li class="photo-intro-items">{{$t("message.photoPage.intro[1]")}}</li>
+          <li class="photo-intro-items">{{$t("message.photoPage.intro[2]")}}</li>
+          <li class="photo-intro-items">{{$t("message.photoPage.intro[3]")}}</li>
+          <li class="photo-intro-items">{{$t("message.photoPage.intro[4]")}}</li>
         </ul>
       </div>
       <div v-for="photo in photoData">
