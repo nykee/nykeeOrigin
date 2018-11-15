@@ -11,6 +11,7 @@ import VueI18n from 'vue-i18n'
 
 Vue.config.productionTip = false;
 Vue.use(iView);
+Vue.use(VueLazyload,{ loading:'../static/img/loading.gif'});
 
 Vue.use(VueI18n);
 

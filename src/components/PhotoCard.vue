@@ -2,7 +2,7 @@
   <Card class="photo-card ">
     <div class="photo-card-box">
       <div style="position: relative">
-        <img :src="imgSrc" class="photo-card-img"/>
+        <img v-lazy="imgSrc" class="photo-card-img"/>
         <div class="img-expand-box" >
           <i class="fa img-expand" :class="{'fa-arrows-alt':!isModalShow,'fa-2x':!isMobile}" @click="changeImgExpand" ></i>
         </div>

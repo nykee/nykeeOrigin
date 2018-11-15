@@ -12,7 +12,7 @@
       </div>
       <div v-for="photo in photoData">
         <div class="flexContainer">
-          <PhotoCard :description="photo.desc" :imgSrc="photo.imgSrc" :photoTime="photo.photoTime":photoLocation="photo.photoLocation"/>
+          <PhotoCard :description="photo.desc" :imgSrc="photo.imgSrc" :photoTime="photo.photoTime" :photoLocation="photo.photoLocation"/>
         </div>
       </div>
     </div>
