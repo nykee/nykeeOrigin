@@ -177,7 +177,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: .5rem ;
+    padding: .5rem;
     /*background-color: pink;*/
   }
   .mobileModal-title{
@@ -189,8 +189,9 @@
   }
   .mb-fullScreenImg{
     width: 100%;
-    height: 60%;
-    padding: 0 .3rem;
+    height: 50%;
+    /*padding: 0 .3rem;*/
+    padding: 0;
     margin-top: 20%;
     margin-bottom: 10%;
 
@@ -203,19 +204,28 @@
   .mModal-header{
     margin-bottom: .8rem;
   }
-  .mModal-footer{margin-top: .8rem;
+  .mModal-footer{
+    margin-top: 10%;
+    /*margin-bottom: 10%;*/
   }
   .likeBtn{
     color:#fff;
     padding-right: .2rem;
   }
   .mModal-footer-time,.mModal-footer-pos{color:#808080;}
+  @media screen and (min-width: 200px) and (max-width:425px ){
+    .img-expand-box{
+      padding: .2rem .3rem;
+      border-radius: 1px;}
+
+  }
   @media screen and (min-width: 200px) and (max-width:320px ){
     /*.photo-card-desc{font-size: 1.2rem;}*/
     .photo-card{margin-top: .5rem;}
     .photo-card-desc-time{font-size: .8rem}
     .photo-card-desc-pos{font-size: .6rem}
     .photo-card-box{padding-bottom: .3rem}
+
   }
   @media screen and (min-width: 321px) and (max-width:375px ){
     .photo-card{margin-top: .8rem;}

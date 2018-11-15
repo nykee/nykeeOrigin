@@ -61,6 +61,36 @@
                     "photoTime":this.$t("message.photoPage.photos[5].time"),
                     "photoLocation":this.$t("message.photoPage.photos[5].location"),
                   },
+                  {
+                    "desc":this.$t("message.photoPage.photos[6].title"),
+                    "imgSrc":"../../static/img/sea.jpg",
+                    "photoTime":this.$t("message.photoPage.photos[6].time"),
+                    "photoLocation":this.$t("message.photoPage.photos[6].location"),
+                  },
+                  {
+                    "desc":this.$t("message.photoPage.photos[7].title"),
+                    "imgSrc":"../../static/img/boat.jpg",
+                    "photoTime":this.$t("message.photoPage.photos[7].time"),
+                    "photoLocation":this.$t("message.photoPage.photos[7].location"),
+                  },
+                  {
+                    "desc":this.$t("message.photoPage.photos[8].title"),
+                    "imgSrc":"../../static/img/bird.jpg",
+                    "photoTime":this.$t("message.photoPage.photos[8].time"),
+                    "photoLocation":this.$t("message.photoPage.photos[8].location"),
+                  },
+                  {
+                    "desc":this.$t("message.photoPage.photos[9].title"),
+                    "imgSrc":"../../static/img/car.jpg",
+                    "photoTime":this.$t("message.photoPage.photos[9].time"),
+                    "photoLocation":this.$t("message.photoPage.photos[9].location"),
+                  },
+                  {
+                    "desc":this.$t("message.photoPage.photos[10].title"),
+                    "imgSrc":"../../static/img/sky.jpg",
+                    "photoTime":this.$t("message.photoPage.photos[10].time"),
+                    "photoLocation":this.$t("message.photoPage.photos[10].location"),
+                  }
                 ]
             }
         },
