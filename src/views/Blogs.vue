@@ -2,7 +2,7 @@
   <div >
     <IntroHeader/>
     <Row  class="blog-container">
-      <i-col :lg="{span:5}"
+      <Col :lg="{span:5}"
              :md="{span:7}"
              :sm="{span:24}"
              :xs="{span:24}">
@@ -16,13 +16,13 @@
             <BlogMenu/>
           </Drawer>
         </div>
-      </i-col>
-      <i-col :lg="{span:19}"
+      </Col>
+      <Col :lg="{span:19}"
              :md="{span:17}"
              :sm="{span:24}"
              :xs="{span:24}">
           <router-view></router-view>
-      </i-col>
+      </Col>
     </Row>
   </div>
 </template>

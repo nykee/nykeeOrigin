@@ -13,8 +13,8 @@ import VueLearning from '../views/Blogs/2017-09-26-Vue.vue'
 import GitLearning  from '../views/Blogs/2017-11-07-Git.vue'
 import ReactTricks from '../views/Blogs/2017-11-08-React.vue'
 import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0.vue'
-import ReactLearning from '../views/Blogs/2018-05-29-React'
-import NettyLearning from '../views/Blogs/2018-05-17-Netty'
+import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
+import NettyLearning from '../views/Blogs/2018-05-17-Netty.vue'
 import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
 
 Vue.use(Router);
