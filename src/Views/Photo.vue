@@ -27,17 +27,17 @@
                 photoData:[
                   {
                     "desc":this.$t("message.photoPage.photos[0].title"),
-                    "imgSrc":"../../static/img/yuyuan.jpg",
+                    "imgSrc":"//g-search3.alicdn.com/img/bao/uploaded/i4/TB1gHyppIfpK1RjSZFOXXa6nFXa_640x640",
                     "photoTime":this.$t("message.photoPage.photos[0].time"),
                     "photoLocation":this.$t("message.photoPage.photos[0].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[1].title"),
-                    "imgSrc":"../../static/img/maitian.jpg",
+                    "imgSrc":"//g-search2.alicdn.com/img/bao/uploaded/i4/TB1nrappQvoK1RjSZFDXXXY3pXa_640x640",
                     "photoTime":this.$t("message.photoPage.photos[1].time"),
                     "photoLocation":this.$t("message.photoPage.photos[1].location"),
                   },
-                  {
+                  /*{
                     "desc":this.$t("message.photoPage.photos[2].title"),
                     "imgSrc":"../../static/img/nightrain.jpg",
                     "photoTime":this.$t("message.photoPage.photos[2].time"),
@@ -90,7 +90,7 @@
                     "imgSrc":"../../static/img/sky.jpg",
                     "photoTime":this.$t("message.photoPage.photos[10].time"),
                     "photoLocation":this.$t("message.photoPage.photos[10].location"),
-                  }
+                  }*/
                 ]
             }
         },

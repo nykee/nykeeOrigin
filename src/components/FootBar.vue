@@ -8,6 +8,9 @@
     <Row type="flex" justify="center" align="middle" class="copyright">
       <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>
     </Row>
+    <Row type="flex" justify="center" align="middle" class="copyright">
+      <p class="beian-content">沪ICP备18042752号</p>
+    </Row>
 
   </div>
 </template>
@@ -44,8 +47,12 @@
   }
   .copyright-content{
     font-size: 1rem;
+    margin-bottom: .5rem;
   }
   .c-icon-foot{
     margin-bottom: .9rem;
+  }
+  .copyright-content,.beian-content{
+    color:#B9B9B9
   }
 </style>

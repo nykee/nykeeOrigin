@@ -6,7 +6,7 @@ import router from './router'
 import store from './store/store'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
-import 'font-awesome-webpack'
+// import 'font-awesome-webpack'
 import VueI18n from 'vue-i18n'
 
 Vue.config.productionTip = false;
