@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 import Index from '../views/Index.vue'
 import Blogs from '../views/Blogs.vue'
 import Project from '../views/Project.vue'
@@ -17,8 +17,9 @@ import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
 import NettyLearning from '../views/Blogs/2018-05-17-Netty.vue'
 import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
 
-Vue.use(Router);
-const router = new Router({
+// Vue.use(VueRouter);
+
+const router = new VueRouter({
   mode:'history',
   routes: [
     {
