@@ -8,8 +8,11 @@
     <Row type="flex" justify="center" align="middle" class="copyright">
       <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>
     </Row>
-    <Row type="flex" justify="center" align="middle" class="copyright">
+    <Row type="flex" justify="center" align="middle" class="beian">
       <p class="beian-content">沪ICP备18042752号</p>
+    </Row>
+    <Row type="flex" justify="center" align="middle" class="supporter" >
+      <img src="../../static/img/ypy.webp" alt="" class="logo-ypy">
     </Row>
 
   </div>
@@ -54,5 +57,8 @@
   }
   .copyright-content,.beian-content{
     color:#B9B9B9
+  }
+  .logo-ypy{
+    width: 8rem;
   }
 </style>

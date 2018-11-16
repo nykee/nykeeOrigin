@@ -2,7 +2,7 @@
   <div class="abm-container">
     <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
-      <img src="../../static/img/nykee.png" alt="" class="avatar">
+      <img src="../../static/img/nykee.webp" alt="" class="avatar">
       <p class="slogan">
         {{$t("message.aboutMeSlogan")}}
       </p>

@@ -31,10 +31,9 @@ module.exports = {
         'vue': 'Vue',
         'vue-router': 'VueRouter',
         'vuex': 'Vuex',
-        // 'axios': 'axios',
         'vue-lazyload': 'VueLazyload',
-        // 'moment': 'moment',
-        // 'element-ui': 'element-ui'
+      'vue-i18n':'VueI18n',
+      "particles":"particles.js"
     },
   module: {
     rules: [
@@ -46,10 +45,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test'),resolve('/node_modules/iview/src'),resolve('/node_modules/iview/packages')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,

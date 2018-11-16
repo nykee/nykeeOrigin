@@ -7,7 +7,7 @@
       <div id="part1" class="part">
         <div class="title-lv1">1、React-router</div>
         <p class="descrp">React-router必须设置history={browserHistory}，否则路由无法显示</p>
-        <img src="../../../static/img/1510132269(1).jpg" alt="">
+        <img src="../../../static/img/history.webp" alt="">
 
 
         <div class="title-lv1">2、React图片引入</div>

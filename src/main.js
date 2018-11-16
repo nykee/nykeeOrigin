@@ -9,7 +9,7 @@ import {Row,Col,Tooltip,Menu,MenuItem,BackTop,Dropdown,
 // import {RouterLink} from "VueRouter"
 import 'iview/dist/styles/iview.css'
 // import 'font-awesome-webpack'
-import VueI18n from 'vue-i18n'
+import vueI18n from 'vue-i18n'
 
 Vue.config.productionTip = false;
 // Vue.use(iview);
@@ -26,10 +26,10 @@ Vue.component("LoadingBar",LoadingBar);
 Vue.component("Modal",Modal);
 Vue.component("Card",Card);
 Vue.component("Drawer",Drawer);
-Vue.use(VueI18n);
+// Vue.use(VueI18n);
 
 
-const i18n = new VueI18n({
+const i18n = new vueI18n({
   locale:'zh',
   messages:{
     zh: require('./i18n/app-zh.json'),

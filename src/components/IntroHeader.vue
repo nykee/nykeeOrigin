@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  import "particles.js"
+  // import particlesJS from "particles.js"
     export default {
         data() {
             return {
@@ -210,15 +210,15 @@
         background-size: cover;
     }
   .intro-header-index{
-    background-image: url("../../static/img/index.jpg");
+    background-image: url("../../static/img/index.webp");
 
   }
   .intro-header-blogs{
-    background-image: url("../../static/img/code.jpg") ;
+    background-image: url("../../static/img/code.webp") ;
 
   }
   .intro-header-photo{
-      background-image: url("../../static/img/lishui-c.jpg") ;
+      background-image: url("../../static/img/lishui.webp") ;
   }
   .intro-container{
     width: 100%;

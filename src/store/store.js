@@ -1,9 +1,9 @@
 import Vuex from 'vuex'
-import Vue from 'vue';
+// import Vue from 'vue';
 
 import {CHANGE_BLOGMENU_ACTIVENAME} from './mutation-types'
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 export default new Vuex.Store(
   {
     state:{
