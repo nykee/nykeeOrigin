@@ -1,10 +1,10 @@
 <template>
   <div class="footBar">
-    <Row type="flex" justify="center" align="middle" class="icons">
-      <Col>
-        <ContactIcons class="c-icon-foot" />
-      </Col>
-    </Row>
+    <!--<Row type="flex" justify="center" align="middle" class="icons">-->
+      <!--<Col>-->
+        <!--<ContactIcons class="c-icon-foot" />-->
+      <!--</Col>-->
+    <!--</Row>-->
     <Row type="flex" justify="center" align="middle" class="copyright">
       <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>
     </Row>
@@ -12,7 +12,11 @@
       <p class="beian-content">沪ICP备18042752号</p>
     </Row>
     <Row type="flex" justify="center" align="middle" class="supporter" >
-      <img src="../../static/img/ypy.webp" alt="" class="logo-ypy">
+      <picture>
+        <source type="image/webp" srcset="../../static/img/ypy.webp" class="logo-ypy">
+        <img src="../../static/img/ypy.png" alt="" class="logo-ypy"/>
+      </picture>
+
     </Row>
 
   </div>

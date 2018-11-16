@@ -1,7 +1,15 @@
 <template>
   <div >
 
-        <header :class="{'intro-header-index':isIndex,'intro-header-blogs':isBlogs,'intro-header-photo':isPhoto}" v-if="!isTags" >
+        <header v-if="!isTags" :class="{
+        'intro-header-index':isIndex&&!canUseWebp,
+        'intro-header-blogs':isBlogs&&!canUseWebp,
+        'intro-header-photo':isPhoto&&!canUseWebp,
+        'intro-header-index-webp':isIndex&&canUseWebp,
+        'intro-header-blogs-webp':isBlogs&&canUseWebp,
+        'intro-header-photo-webp':isPhoto&&canUseWebp,
+
+        }"  >
           <div class="intro-container">
 
                 <div class="site-heading">
@@ -37,9 +45,11 @@
 
 <script>
   // import particlesJS from "particles.js"
+  import {checkWebp} from "../utils/WebPutil"
     export default {
         data() {
             return {
+              canUseWebp:false,
               isIndex:true,
               isBlogs:false,
               isTags:false,
@@ -49,6 +59,7 @@
             }
         },
         methods: {
+
           changeBG(){
             let path = String(this.$route.path);
             if(path ==="/Blogs"||path.substring(0,path.lastIndexOf('/')) ==="/Blogs"){
@@ -192,10 +203,13 @@
           }
         },
         created: function () {
+
+          this.canUseWebp =checkWebp();
           this.changeBG();
         },
         mounted() {
 //          this.changeBG();
+
           this.myParticles();
 
         },
@@ -203,21 +217,35 @@
     }
 </script>
 <style>
-    .intro-header-index,.intro-header-blogs,.intro-header-photo{
+    .intro-header-index,
+    .intro-header-blogs,
+    .intro-header-photo,
+    .intro-header-index-webp,
+    .intro-header-blogs-webp,
+    .intro-header-photo-webp
+    {
         background: no-repeat center center;
         background-attachment: scroll;
         background-color: #ccc;
         background-size: cover;
     }
   .intro-header-index{
-    background-image: url("../../static/img/index.webp");
+    background-image: url("../../static/img/index.jpg");
+  }.intro-header-index-webp{
+     background-image: url("../../static/img/index.webp");
+   }
+    .intro-header-blogs{
+      background-image: url("../../static/img/code.jpg") ;
 
-  }
-  .intro-header-blogs{
+    }
+  .intro-header-blogs-webp{
     background-image: url("../../static/img/code.webp") ;
 
   }
-  .intro-header-photo{
+    .intro-header-photo{
+      background-image: url("../../static/img/lishui.jpg") ;
+    }
+  .intro-header-photo-webp{
       background-image: url("../../static/img/lishui.webp") ;
   }
   .intro-container{

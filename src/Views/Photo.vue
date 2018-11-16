@@ -12,7 +12,7 @@
       </div>
       <div v-for="photo in photoData">
         <div class="flexContainer">
-          <PhotoCard :description="photo.desc" :imgSrc="photo.imgSrc" :photoTime="photo.photoTime" :photoLocation="photo.photoLocation"/>
+          <PhotoCard :description="photo.desc" :webpSrc="photo.webpSrc" :imgSrc="photo.imgSrc" :photoTime="photo.photoTime" :photoLocation="photo.photoLocation"/>
         </div>
       </div>
     </div>
@@ -27,67 +27,78 @@
                 photoData:[
                   {
                     "desc":this.$t("message.photoPage.photos[0].title"),
-                    "imgSrc":"../../static/img/yuyuan.webp",
+                    "webpSrc":"../../static/img/yuyuan.webp",
+                    "imgSrc":"../../static/img/yuyuan.jpg",
                     "photoTime":this.$t("message.photoPage.photos[0].time"),
                     "photoLocation":this.$t("message.photoPage.photos[0].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[1].title"),
-                    "imgSrc":"../../static/img/maitian.webp",
+                    "webpSrc":"../../static/img/maitian.webp",
+                    "imgSrc":"../../static/img/maitian.jpg",
                     "photoTime":this.$t("message.photoPage.photos[1].time"),
                     "photoLocation":this.$t("message.photoPage.photos[1].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[2].title"),
-                    "imgSrc":"../../static/img/nightrain.webp",
+                    "webpSrc":"../../static/img/nightrain.webp",
+                    "imgSrc":"../../static/img/nightrain.jpg",
                     "photoTime":this.$t("message.photoPage.photos[2].time"),
                     "photoLocation":this.$t("message.photoPage.photos[2].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[3].title"),
-                    "imgSrc":"../../static/img/puppy.webp",
+                    "webpSrc":"../../static/img/puppy.webp",
+                    "imgSrc":"../../static/img/puppy.jpg",
                     "photoTime":this.$t("message.photoPage.photos[3].time"),
                     "photoLocation":this.$t("message.photoPage.photos[3].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[4].title"),
-                    "imgSrc":"../../static/img/szmuseum.webp",
+                    "webpSrc":"../../static/img/szmuseum.webp",
+                    "imgSrc":"../../static/img/szmuseum.jpg",
                     "photoTime":this.$t("message.photoPage.photos[4].time"),
                     "photoLocation":this.$t("message.photoPage.photos[4].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[5].title"),
-                    "imgSrc":"../../static/img/sakura.webp",
+                    "webpSrc":"../../static/img/sakura.webp",
+                    "imgSrc":"../../static/img/sakura.jpg",
                     "photoTime":this.$t("message.photoPage.photos[5].time"),
                     "photoLocation":this.$t("message.photoPage.photos[5].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[6].title"),
-                    "imgSrc":"../../static/img/sea.webp",
+                    "webpSrc":"../../static/img/sea.webp",
+                    "imgSrc":"../../static/img/sea.jpg",
                     "photoTime":this.$t("message.photoPage.photos[6].time"),
                     "photoLocation":this.$t("message.photoPage.photos[6].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[7].title"),
-                    "imgSrc":"../../static/img/boat.webp",
+                    "webpSrc":"../../static/img/boat.webp",
+                    "imgSrc":"../../static/img/boat.jpg",
                     "photoTime":this.$t("message.photoPage.photos[7].time"),
                     "photoLocation":this.$t("message.photoPage.photos[7].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[8].title"),
-                    "imgSrc":"../../static/img/bird.webp",
+                    "webpSrc":"../../static/img/bird.webp",
+                    "imgSrc":"../../static/img/bird.jpg",
                     "photoTime":this.$t("message.photoPage.photos[8].time"),
                     "photoLocation":this.$t("message.photoPage.photos[8].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[9].title"),
-                    "imgSrc":"../../static/img/car.webp",
+                    "webpSrc":"../../static/img/car.webp",
+                    "imgSrc":"../../static/img/car.jpg",
                     "photoTime":this.$t("message.photoPage.photos[9].time"),
                     "photoLocation":this.$t("message.photoPage.photos[9].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[10].title"),
-                    "imgSrc":"../../static/img/sky.webp",
+                    "webpSrc":"../../static/img/sky.webp",
+                    "imgSrc":"../../static/img/sky.jpg",
                     "photoTime":this.$t("message.photoPage.photos[10].time"),
                     "photoLocation":this.$t("message.photoPage.photos[10].location"),
                   }

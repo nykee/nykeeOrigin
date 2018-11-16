@@ -2,7 +2,13 @@
   <Card class="photo-card ">
     <div class="photo-card-box">
       <div style="position: relative">
-        <img v-lazy="imgSrc" class="photo-card-img"/>
+
+        <picture>
+          <source type="image/webp" v-lazy="webpSrc" class="photo-card-img"/>
+          <img v-lazy="imgSrc" class="photo-card-img"/>
+        </picture>
+        <!--<CustomPicture class-name="photo-card-img" :vLaazy="webpSrc"/>-->
+
         <div class="img-expand-box" >
           <i class="fa img-expand" :class="{'fa-arrows-alt':!isModalShow,'fa-2x':!isMobile}" @click="changeImgExpand" ></i>
         </div>
@@ -20,7 +26,10 @@
       <Modal v-model="isModalShow" footer-hide fullscreen >
         <div>
           <span class="modal-title">{{description}}</span>
-          <img :src="imgSrc" alt="" class="fullScreenImg">
+
+          <CustomPicture :imgSrc="imgSrc"
+                         className="fullScreenImg"
+                         :srcSet="webpSrc"/>
           <ul class="modal-footer">
             <li>{{photoTime}}</li>
             <li><i class="fa fa-location-arrow"></i>{{photoLocation}}</li>
@@ -33,7 +42,9 @@
         <div class="mModal-header clearfix">
           <i class="fa fa-close fa-2x mModal-close fr"  @click="closeMmodal"></i>
         </div>
-        <img :src="imgSrc" alt="" class="mb-fullScreenImg"/>
+        <CustomPicture :imgSrc="imgSrc"
+                       className="mb-fullScreenImg"
+                       :srcSet="webpSrc"/>
         <div class="mModal-footer clearfix">
           <ul class="fl">
             <li><span class="mobileModal-title">{{description}}</span></li>
@@ -50,8 +61,9 @@
 </template>
 
 <script>
+  import CustomPicture from '../components/CustomPicture'
     export default {
-      props:["imgSrc","description","photoTime","photoLocation"],
+      props:["imgSrc","webpSrc","description","photoTime","photoLocation"],
         data() {
             return {
               isExpand:false,
@@ -81,7 +93,7 @@
             this.isMobile =false;
           }
         },
-        components: {}
+        components: {CustomPicture}
     }
 </script>
 <style>

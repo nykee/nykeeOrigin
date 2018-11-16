@@ -10,7 +10,7 @@
                 <span @click="changeActive" style="padding-left: .5rem">{{$t("message.nykee")}}</span>
               </router-link>
             </Col>
-            <Col :lg="{span:9,offset:9}"
+            <Col :lg="{span:11,offset:7}"
                  :md="{span:11,offset:7}"
                  :sm="{span:6,offset:12}"
                  :xs="{span:6,offset:12}">
@@ -25,6 +25,9 @@
             </MenuItem>
             <MenuItem name="5">
               <router-link to="/Photograph">{{ $t("message.photograph")}}</router-link>
+            </MenuItem>
+            <MenuItem name="6">
+              <router-link to="/About">{{ $t("message.about")}}</router-link>
             </MenuItem>
 
           </Col>
@@ -55,6 +58,9 @@
               </DropdownItem>
               <DropdownItem>
                 <router-link to="/Photograph" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
+              </DropdownItem>
+              <DropdownItem>
+                <router-link to="/About" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
               </DropdownItem>
               <DropdownItem>
                 <select v-model="lanSel"   class="lanSel">
@@ -199,7 +205,6 @@
   }
   .lanSel{
     width: 5rem;
-    /*color: #fff;*/
   }
 
 </style>

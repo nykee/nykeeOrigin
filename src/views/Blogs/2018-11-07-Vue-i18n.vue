@@ -25,7 +25,9 @@
                   在loader中添加{ i18n: '@kazupon/vue-i18n-loader' } ，修改后的loader配置如下：
                 </li>
                 <li class="steps-item">
-                  <img class="blog-img" src="../../../static/img/vue-loader.conf.webp" alt="">
+                  <CustomPicture imgSrc="../../../static/img/vue-loader.conf.jpg"
+                                 className="blog-img"
+                                 srcSet="../../../static/img/vue-loader.conf.webp"/>
                 </li>
               </ul>
             </li>
@@ -168,6 +170,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import CustomPicture from "../../components/CustomPicture"
     export default {
         data() {
             return {
@@ -182,7 +185,7 @@
         mounted() {
 
         },
-        components: {PostTag}
+        components: {PostTag,CustomPicture}
     }
 </script>
 <style>

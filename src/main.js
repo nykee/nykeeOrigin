@@ -13,7 +13,13 @@ import vueI18n from 'vue-i18n'
 
 Vue.config.productionTip = false;
 // Vue.use(iview);
-Vue.use(VueLazyload,{ loading:'../static/img/loading.gif'});
+Vue.use(VueLazyload,{
+  preLoad: 1.3,
+  loading:'../static/img/loading.gif',
+  attempt: 1,
+  // the default is ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend']
+  listenEvents: [ 'scroll' ]
+});
 Vue.component("Row",Row);
 Vue.component("Col",Col);
 Vue.component("Tooltip",Tooltip);

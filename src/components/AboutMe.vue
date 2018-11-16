@@ -2,7 +2,10 @@
   <div class="abm-container">
     <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
-      <img src="../../static/img/nykee.webp" alt="" class="avatar">
+
+      <CustomPicture imgSrc="../../static/img/nykee.png"
+                     className="avatar"
+                     srcSet="../../static/img/nykee.webp"/>
       <p class="slogan">
         {{$t("message.aboutMeSlogan")}}
       </p>
@@ -14,6 +17,7 @@
 <script>
   import ContactIcons from './ContactIcons.vue';
   import  commonTitle from '../components/common-right-col-title'
+  import  CustomPicture from '../components/CustomPicture'
     export default {
         data() {
             return {}
@@ -27,7 +31,8 @@
         },
         components: {
           ContactIcons,
-          commonTitle
+          commonTitle,
+          CustomPicture
         }
     }
 </script>
@@ -36,9 +41,7 @@
     width: 12.5rem;
     border-top:1px solid #271111;
   }
-  .avatar{
-    width: 12.5rem;
-  }
+
   .slogan{
     margin-bottom:.6rem;
     text-align: center;
@@ -52,6 +55,7 @@
       font-size: 0.8rem;
     }
   }
+
 
 
 </style>

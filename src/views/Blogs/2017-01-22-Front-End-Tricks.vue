@@ -58,7 +58,8 @@
                 }
             </code>
           </pre>
-          <img src="../../../static/img/string.jpg">
+          <CustomPicture imgSrc="../../../static/img/string.webp"
+                         srcSet="../../../static/img/string.jpg"/>
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
@@ -105,7 +106,13 @@
     console.table(data);
             </code>
           </pre>
-          <img src="../../../static/img/console.table.webp" :style="{width: this.screenWidth+'px'}">
+          <CustomPicture imgSrc="../../../static/img/console.table.jpg"
+                         srcSet="../../../static/img/console.table.webp"/>
+          <!--<picture>
+            <source type="image/webp" srcset="../../../static/img/console.table.webp" :style="{width: this.screenWidth+'px'}" >
+            <img src="../../../static/img/console.table.jpg" :style="{width: this.screenWidth+'px'}"/>
+          </picture>-->
+
         </div>
         <div id="part2-section6" class="section">
           <p class="title-lv2"> 6.用媒体查询来设置html的font-size：</p>
@@ -373,6 +380,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import CustomPicture from "../../components/CustomPicture"
     export default {
         data() {
             return {
@@ -393,7 +401,7 @@
 
 
         },
-        components: {PostTag}
+        components: {PostTag,CustomPicture}
     }
 </script>
 <style scoped>
