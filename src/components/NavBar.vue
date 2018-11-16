@@ -60,7 +60,7 @@
                 <router-link to="/Photograph" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
               </DropdownItem>
               <DropdownItem>
-                <router-link to="/About" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
+                <router-link to="/About" style="color:#000!important;">{{ $t("message.about")}}</router-link>
               </DropdownItem>
               <DropdownItem>
                 <select v-model="lanSel"   class="lanSel">

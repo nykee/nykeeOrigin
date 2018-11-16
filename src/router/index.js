@@ -4,6 +4,7 @@ import Index from '../views/Index.vue'
 import Blogs from '../views/Blogs.vue'
 import Project from '../views/Project.vue'
 import Photo from '../views/Photo.vue'
+import About from '../views/About.vue'
 import DZDPCrawlSpider from '../views/Blogs/2017-01-20-DZDP-Crawl-Spider.vue'
 import FrontEndTricks from '../views/Blogs/2017-01-22-Front-End-Tricks.vue'
 import MongoDBLearning from '../views/Blogs/2017-02-14-MongoDB-learning.vue'
@@ -16,6 +17,7 @@ import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0.vue'
 import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
 import NettyLearning from '../views/Blogs/2018-05-17-Netty.vue'
 import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
+
 
 // Vue.use(VueRouter);
 
@@ -90,7 +92,12 @@ const router = new VueRouter({
       path: '/Photograph',
       name: 'Photo',
       component: Photo
-    }
+    },
+    {
+      path: '/About',
+      name: 'About',
+      component: About
+    },
   ]
 });
 
