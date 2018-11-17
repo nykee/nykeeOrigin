@@ -266,10 +266,10 @@
       background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp") ;
   }
     .intro-header-about{
-      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.jpg") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/qdh.jpg") ;
     }
     .intro-header-about-webp{
-      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/qdh.webp") ;
     }
   .intro-container{
     width: 100%;

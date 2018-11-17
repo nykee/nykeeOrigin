@@ -156,9 +156,11 @@
 
   }
   .fullScreenImg{
-    display: inline-block;
+   /* display: inline-block;
     height: auto;
-    max-width: 100%;
+    max-width: 100%;*/
+    /*height: 100%;*/
+    width:100%;height:auto;max-width:100%;display:block;
   }
   .img-expand-box{
     position: absolute;
