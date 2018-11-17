@@ -74,6 +74,12 @@ export default {
     justify-content: center;
     align-items: center;
   }
+  .resp-img{
+    width:100%;
+    height:auto;
+    max-width:100%;
+    display:block;
+  }
 
   @media (min-width: 1024px){
     body{font-size: 18px}

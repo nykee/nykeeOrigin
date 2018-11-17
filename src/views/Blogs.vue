@@ -2,7 +2,7 @@
   <div >
     <IntroHeader/>
     <Row  class="blog-container">
-      <Col :lg="{span:5}"
+      <i-col :lg="{span:5}"
              :md="{span:7}"
              :sm="{span:24}"
              :xs="{span:24}">
@@ -16,13 +16,13 @@
             <BlogMenu/>
           </Drawer>
         </div>
-      </Col>
-      <Col :lg="{span:19}"
+      </i-col>
+      <i-col :lg="{span:19}"
              :md="{span:17}"
              :sm="{span:24}"
              :xs="{span:24}">
           <router-view></router-view>
-      </Col>
+      </i-col>
     </Row>
   </div>
 </template>
@@ -147,6 +147,9 @@
   }
   .mbNav-name{
     margin-left:.5rem;
+  }
+  .consoleImg{
+    width:100%;height:auto;max-width:100%;display:block;
   }
 
 

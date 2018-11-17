@@ -19,15 +19,22 @@
                   webpack.base.conf.js中的loader指向了Vue-loader于是在Vue-loader.conf.js中修改
                 </li>
                 <li class="steps-item">
-                  <img class="blog-img" src="../../../static/img/webapck.base.webp" alt="">
+                  <picture>
+                    <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/webapck.base.webp" class="resp-img" >
+                    <img class="blog-img" src="http://imagenykeecn.test.upcdn.net/webapck.base.jpg" alt="">
+                  </picture>
                 </li>
                 <li class="steps-item">
                   在loader中添加{ i18n: '@kazupon/vue-i18n-loader' } ，修改后的loader配置如下：
                 </li>
                 <li class="steps-item">
-                  <CustomPicture imgSrc="../../../static/img/vue-loader.conf.jpg"
+                 <!-- <CustomPicture imgSrc="../../../static/img/vue-loader.conf.jpg"
                                  className="blog-img"
-                                 srcSet="../../../static/img/vue-loader.conf.webp"/>
+                                 srcSet="../../../static/img/vue-loader.conf.webp"/>-->
+                  <picture>
+                    <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/vue-loader.conf.webp" class="resp-img" >
+                    <img src="http://imagenykeecn.test.upcdn.net/vue-loader.conf.jpg" class="resp-img"/>
+                  </picture>
                 </li>
               </ul>
             </li>
@@ -170,7 +177,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-  import CustomPicture from "../../components/CustomPicture"
+//  import CustomPicture from "../../components/CustomPicture"
     export default {
         data() {
             return {
@@ -185,7 +192,7 @@
         mounted() {
 
         },
-        components: {PostTag,CustomPicture}
+        components: {PostTag,}
     }
 </script>
 <style>

@@ -1,9 +1,9 @@
 <template>
   <div class="footBar">
     <!--<Row type="flex" justify="center" align="middle" class="icons">-->
-      <!--<Col>-->
+      <!--<i-col>-->
         <!--<ContactIcons class="c-icon-foot" />-->
-      <!--</Col>-->
+      <!--</i-col>-->
     <!--</Row>-->
     <Row type="flex" justify="center" align="middle" class="copyright">
       <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>
@@ -13,8 +13,8 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="supporter" >
       <picture>
-        <source type="image/webp" srcset="../../static/img/ypy.webp" class="logo-ypy">
-        <img src="../../static/img/ypy.png" alt="" class="logo-ypy"/>
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/ypy.webp" class="logo-ypy">
+        <img src="http://imagenykeecn.test.upcdn.net/ypy.png" alt="" class="logo-ypy"/>
       </picture>
 
     </Row>

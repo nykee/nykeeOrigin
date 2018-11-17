@@ -3,11 +3,15 @@
     <div class="photo-card-box">
       <div style="position: relative">
 
-        <picture>
+       <!-- <picture>
           <source type="image/webp" v-lazy="webpSrc" class="photo-card-img"/>
           <img v-lazy="imgSrc" class="photo-card-img"/>
-        </picture>
-        <!--<CustomPicture class-name="photo-card-img" :vLaazy="webpSrc"/>-->
+        </picture>-->
+        <!--<div class="photo-card-img-box">-->
+          <!--<img :src="imgSrc" alt=""  style="display: none;" class="photo-card-img" v-on:load="getSomething($event)" >-->
+          <CustomPicture class-name="resp-img"  :imgSrc="imgSrc" :srcSet="webpSrc" />
+        <!--</div>-->
+
 
         <div class="img-expand-box" >
           <i class="fa img-expand" :class="{'fa-arrows-alt':!isModalShow,'fa-2x':!isMobile}" @click="changeImgExpand" ></i>
@@ -27,9 +31,14 @@
         <div>
           <span class="modal-title">{{description}}</span>
 
-          <CustomPicture :imgSrc="imgSrc"
+          <!--<CustomPicture :imgSrc="imgSrc"
                          className="fullScreenImg"
-                         :srcSet="webpSrc"/>
+                         :srcSet="webpSrc"/>-->
+
+          <picture>
+            <source :srcset="webpSrc"  type="image/webp" class="fullScreenImg" >
+            <img :src="imgSrc" alt="" class="fullScreenImg"  />
+          </picture>
           <ul class="modal-footer">
             <li>{{photoTime}}</li>
             <li><i class="fa fa-location-arrow"></i>{{photoLocation}}</li>
@@ -42,9 +51,13 @@
         <div class="mModal-header clearfix">
           <i class="fa fa-close fa-2x mModal-close fr"  @click="closeMmodal"></i>
         </div>
-        <CustomPicture :imgSrc="imgSrc"
+       <!-- <CustomPicture :imgSrc="imgSrc"
                        className="mb-fullScreenImg"
-                       :srcSet="webpSrc"/>
+                       :srcSet="webpSrc"/>-->
+        <picture>
+          <source :srcset="webpSrc"  type="image/webp" class="fullScreenImg" >
+          <img :src="imgSrc" alt="" class="mb-fullScreenImg"  />
+        </picture>
         <div class="mModal-footer clearfix">
           <ul class="fl">
             <li><span class="mobileModal-title">{{description}}</span></li>
@@ -82,7 +95,8 @@
           },
           closeMmodal(){
             this.isMobileModalShow =false
-          }
+          },
+
         },
         created: function () {
           // console.log(this.description);
@@ -108,8 +122,13 @@
     padding-bottom: 2rem;
     /*position: relative;*/
   }
+  /*.photo-card-img-box{*/
+
+    /*width: 100%;*/
+    /*height: 100%;*/
+  /*}*/
   .photo-card-img{
-    width: 100%;
+    width:100%;height:auto;max-width:100%;display:block;
   }
   .photo-card-desc{
     margin-top: .5rem;
@@ -137,8 +156,9 @@
 
   }
   .fullScreenImg{
-    width: 100%;
-    height: 100%;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
   }
   .img-expand-box{
     position: absolute;
@@ -237,22 +257,43 @@
     .photo-card-desc-time{font-size: .8rem}
     .photo-card-desc-pos{font-size: .6rem}
     .photo-card-box{padding-bottom: .3rem}
+    .photo-card-img-box{
+      width: 14rem;
+      height: 10rem;
+    }
 
   }
   @media screen and (min-width: 321px) and (max-width:375px ){
     .photo-card{margin-top: .8rem;}
-    .photo-card-img{height: 12rem;}
+    /*.photo-card-img{height: 12rem;}*/
     .photo-card-box{padding-bottom: .5rem}
+    .photo-card-img-box{
+      width: 17rem;
+      height: 13rem;
+    }
+
   }
   @media screen and (min-width: 376px) and (max-width:425px ){
     .photo-card{margin-top: .8rem;}
     .photo-card-box{padding-bottom: .8rem}
+    .photo-card-img-box{
+      width: 19rem;
+      height: 14rem;
+    }
   }
   @media screen and (min-width: 426px) and (max-width:768px ){
     .photo-card{margin-top: 1rem;}
+    .photo-card-img-box{
+      width: 36rem;
+      height: 24rem;
+    }
   }
   @media screen and (min-width: 769px) and (max-width:1024px ){
     .photo-card{margin-top: 1rem;}
+    .photo-card-img-box{
+      width: 49rem;
+      height: 32.5rem;
+    }
   }
   @media screen and (min-width: 1025px) and (max-width:1440px ){
     .photo-card{margin-top: 1rem;}
@@ -264,6 +305,10 @@
     .photo-card-desc-pos{
       font-size: .8rem;
       margin-top: .4rem;
+    }
+    .photo-card-img-box{
+      width: 10rem;
+      height: 10rem;
     }
   }
   @media screen and (min-width: 1441px) and (max-width:2560px ){
@@ -282,6 +327,10 @@
     }
     .photo-card-box{
       margin-bottom:3rem;}
+    .photo-card-img-box{
+      width: 10rem;
+      height: 10rem;
+    }
 
   }
 </style>

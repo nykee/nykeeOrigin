@@ -2,75 +2,75 @@
   <div class="ft-container">
     <commonTitle :title-name="this.$t('message.featuredTags')"/>
     <Row  class="row">
-      <Col :span="8">
+      <i-col :span="8">
         <span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,1)"
                class="tagBtn">
           {{$t("message.webFE")}}
         </span>
-      </Col>
-      <Col :span="8">
+      </i-col>
+      <i-col :span="8">
         <span   @click="emitFromTagEvent('/Blogs/GitLearning',true ,7)"
                 class="tagBtn">
           Git
         </span>
-      </Col>
-      <Col :span="8">
+      </i-col>
+      <i-col :span="8">
         <span  @click="emitFromTagEvent('/Blogs/FrontEndTricks',true ,1)"
                class="tagBtn">
           JS
         </span>
-      </Col>
+      </i-col>
     </Row >
     <Row class="row">
-      <Col :span="12">
+      <i-col :span="12">
         <span   @click="emitFromTagEvent('/Blogs/MongoDBLearning',true ,2)"
                 class="tagBtn">
           MongoDB
         </span>
-      </Col>
-      <Col :span="12">
+      </i-col>
+      <i-col :span="12">
 
         <span   @click="emitFromTagEvent('/Blogs/BaiduMapLearning',true ,3)"
                 class="tagBtn">
           {{$t("message.baiduMap")}}
         </span>
-      </Col>
+      </i-col>
 
     </Row>
     <Row class="row">
-      <Col :span="12">
+      <i-col :span="12">
         <span  @click="emitFromTagEvent('/Blogs/EchartsLearning',true ,4)"
                class="tagBtn">
           echarts
         </span>
-      </Col>
-      <Col :span="12">
+      </i-col>
+      <i-col :span="12">
         <span   @click="emitFromTagEvent('/Blogs/VueLearning',true ,5)"
                 class="tagBtn">
           Vue
         </span>
-      </Col>
+      </i-col>
 
     </Row>
     <Row class="row">
-      <Col :span="6">
+      <i-col :span="6">
         <span   @click="emitFromTagEvent('/Blogs/ReactLearning',true ,11)"
                 class="tagBtn">
         React
         </span>
-      </Col>
-      <Col :span="6" :offset="1">
+      </i-col>
+      <i-col :span="6" :offset="1">
         <span   @click="emitFromTagEvent('/Blogs/D3Learning',true ,9)"
                 class="tagBtn">
           D3
         </span>
-      </Col>
-      <Col :span="11">
+      </i-col>
+      <i-col :span="11">
         <span   @click="emitFromTagEvent('/Blogs/DZDPCrawlSpider',true ,7)"
                 class="tagBtn">
           {{$t("message.nodeSpider")}}
         </span>
-      </Col>
+      </i-col>
 
     </Row>
 

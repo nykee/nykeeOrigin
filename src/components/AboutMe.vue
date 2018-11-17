@@ -3,9 +3,14 @@
     <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
 
-      <CustomPicture imgSrc="../../static/img/nykee.png"
+     <!-- <CustomPicture imgSrc="http://imagenykeecn.test.upcdn.net/nykee.png"
                      className="avatar"
-                     srcSet="../../static/img/nykee.webp"/>
+                     srcSet="http://imagenykeecn.test.upcdn.net/nykee.webp"/>-->
+
+      <picture>
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/nykee.webp" class="resp-img" >
+        <img src="http://imagenykeecn.test.upcdn.net/nykee.png" class="resp-img"/>
+      </picture>
       <p class="slogan">
         {{$t("message.aboutMeSlogan")}}
       </p>
@@ -17,7 +22,7 @@
 <script>
   import ContactIcons from './ContactIcons.vue';
   import  commonTitle from '../components/common-right-col-title'
-  import  CustomPicture from '../components/CustomPicture'
+//  import  CustomPicture from '../components/CustomPicture'
     export default {
         data() {
             return {}
@@ -32,7 +37,7 @@
         components: {
           ContactIcons,
           commonTitle,
-          CustomPicture
+//          CustomPicture
         }
     }
 </script>

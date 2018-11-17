@@ -2,15 +2,15 @@
       <div>
         <Row>
           <Menu v-if="!isMobile" ref="myMenu" mode="horizontal" theme="light" active-name="2" class="menu" >
-            <Col :lg="{span:4}"
+            <i-col :lg="{span:4}"
                  :md="{span:4}"
                  :sm="{span:4}"
                  :xs="{span:4}" >
               <router-link to="/">
                 <span @click="changeActive" style="padding-left: .5rem">{{$t("message.nykee")}}</span>
               </router-link>
-            </Col>
-            <Col :lg="{span:11,offset:7}"
+            </i-col>
+            <i-col :lg="{span:11,offset:7}"
                  :md="{span:12,offset:4}"
                  :sm="{span:11,offset:7}"
                  :xs="{span:6,offset:12}">
@@ -30,15 +30,15 @@
               <router-link to="/About">{{ $t("message.about")}}</router-link>
             </MenuItem>
 
-          </Col>
-            <Col :lg="{span:2}"
+          </i-col>
+            <i-col :lg="{span:2}"
                  :md="{span:1}"
                  :sm="{span:2}"
                  :xs="{span:2}">
             <select v-model="lanSel"  class="lanSel" >
               <option v-for="item in languages" :value="item.value" :key="item.value">{{ item.label }}</option>
             </select>
-          </Col>
+          </i-col>
           </Menu>
         </Row>
         <div v-if="isMobile" >

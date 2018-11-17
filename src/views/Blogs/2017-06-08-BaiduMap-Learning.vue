@@ -49,7 +49,7 @@
                new BMap.Point(116.399, 39.910),
                new BMap.Point(116.405, 39.920)
            ],
-           {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
+           {strokei-color:"blue", strokeWeight:6, strokeOpacity:0.5}
        );
        map.addOverlay(polyline);*!/
        map.addEventListener("dragend", function(){

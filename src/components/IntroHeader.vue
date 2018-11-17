@@ -247,29 +247,29 @@
         background-size: cover;
     }
   .intro-header-index{
-    background-image: url("../../static/img/index.jpg");
+    background-image: url("http://imagenykeecn.test.upcdn.net/index.jpg");
   }.intro-header-index-webp{
-     background-image: url("../../static/img/index.webp");
+     background-image: url("http://imagenykeecn.test.upcdn.net/index.webp");
    }
     .intro-header-blogs{
-      background-image: url("../../static/img/code.jpg") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/code.jpg") ;
 
     }
   .intro-header-blogs-webp{
-    background-image: url("../../static/img/code.webp") ;
+    background-image: url("http://imagenykeecn.test.upcdn.net/code.webp") ;
 
   }
     .intro-header-photo{
-      background-image: url("../../static/img/lishui.jpg") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.jpg") ;
     }
   .intro-header-photo-webp{
-      background-image: url("../../static/img/lishui.webp") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp") ;
   }
     .intro-header-about{
-      background-image: url("../../static/img/lishui.jpg") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.jpg") ;
     }
     .intro-header-about-webp{
-      background-image: url("../../static/img/lishui.webp") ;
+      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp") ;
     }
   .intro-container{
     width: 100%;

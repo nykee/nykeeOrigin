@@ -3,15 +3,14 @@
     <IntroHeader></IntroHeader>
 
       <Row type="flex" justify="center" align="middle"  style="margin-top: 1rem" v-for="proj in projs" v-bind:key="proj.id">
-        <Col  :xs={span:24} :sm={span:24} :md={span:12} :lg={span:12}>
+        <i-col  :xs={span:24} :sm={span:24} :md={span:12} :lg={span:12}>
           <ProjectCard :proj-name="proj.pName" :description="proj.desc" :stack="proj.stack" :github="proj.github"></ProjectCard>
-        </Col>
+        </i-col>
       </Row>
   </div>
 </template>
 
 <script>
-//  import {Row,Col} from 'iview'
   import ProjectCard from '../components/ProjectCard.vue'
   import IntroHeader from '../components/IntroHeader.vue'
     export default {

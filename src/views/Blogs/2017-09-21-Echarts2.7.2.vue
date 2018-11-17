@@ -26,7 +26,7 @@
                      itemStyle:{
                        normal: {
                          // borderWidth: 2,
-                         // borderColor: '#025192',
+                         // borderi-color: '#025192',
                          color: '#003156',
                          label: {
                            show: false
@@ -44,7 +44,7 @@
                            color: '#00c1de'
                          },
                          emphasis: {
-                           borderColor: '#1e90ff',
+                           borderi-color: '#1e90ff',
                            borderWidth: 5,
                            label: {
                              show: false
@@ -59,7 +59,7 @@
                          scaleSize : 2,
                          bounceDistance: 10,
                          color :'#00c1de',
-                         shadowColor : null,
+                         shadowi-color : null,
                          shadowBlur : 0
 
                        },

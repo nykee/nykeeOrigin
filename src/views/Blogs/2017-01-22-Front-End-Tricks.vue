@@ -58,8 +58,8 @@
                 }
             </code>
           </pre>
-          <CustomPicture imgSrc="../../../static/img/string.webp"
-                         srcSet="../../../static/img/string.jpg"/>
+          <CustomPicture imgSrc="http://imagenykeecn.test.upcdn.net/string.webp"
+                         srcSet="http://imagenykeecn.test.upcdn.net/string.jpg"/>
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
@@ -106,12 +106,12 @@
     console.table(data);
             </code>
           </pre>
-          <CustomPicture imgSrc="../../../static/img/console.table.jpg"
-                         srcSet="../../../static/img/console.table.webp"/>
-          <!--<picture>
-            <source type="image/webp" srcset="../../../static/img/console.table.webp" :style="{width: this.screenWidth+'px'}" >
-            <img src="../../../static/img/console.table.jpg" :style="{width: this.screenWidth+'px'}"/>
-          </picture>-->
+          <!--<CustomPicture imgSrc="http://imagenykeecn.test.upcdn.net/console.table.jpg"-->
+                         <!--srcSet="http://imagenykeecn.test.upcdn.net/console.table.webp" className="resp-img"/>-->
+          <picture>
+            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/console.table.webp" class="resp-img" >
+            <img src="http://imagenykeecn.test.upcdn.net/console.table.jpg" class="resp-img"/>
+          </picture>
 
         </div>
         <div id="part2-section6" class="section">
@@ -380,7 +380,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-  import CustomPicture from "../../components/CustomPicture"
+//  import CustomPicture from "../../components/CustomPicture"
     export default {
         data() {
             return {
@@ -401,11 +401,11 @@
 
 
         },
-        components: {PostTag,CustomPicture}
+        components: {PostTag,}
     }
 </script>
 <style scoped>
-@media screen and (max-width: 420px){
 
-}
+
+
 </style>

@@ -31,6 +31,7 @@ module.exports = {
         'vue': 'Vue',
         'vue-router': 'VueRouter',
         'vuex': 'Vuex',
+        'iview':'iview',
         'vue-lazyload': 'VueLazyload',
       'vue-i18n':'VueI18n',
       "particles":"particles.js"

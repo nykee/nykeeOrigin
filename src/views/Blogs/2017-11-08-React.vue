@@ -8,8 +8,13 @@
         <div class="title-lv1">1、React-router</div>
         <p class="descrp">React-router必须设置history={browserHistory}，否则路由无法显示</p>
 
-        <CustomPicture srcSet="../../../static/img/history.webp"
-                       img-src="../../../static/img/history.jpg"/>
+       <!-- <CustomPicture srcSet="http://imagenykeecn.test.upcdn.net/history.webp"
+                       img-src="http://imagenykeecn.test.upcdn.net/history.jpg"/>-->
+
+        <picture>
+          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/history.webp" class="resp-img" >
+          <img src="http://imagenykeecn.test.upcdn.net/history.jpg" class="resp-img"/>
+        </picture>
 
         <div class="title-lv1">2、React图片引入</div>
         <p class="descrp">React图片地址由父组件通过props的方式传递给子组件时，必须使用字符串拼接的方式，否则图片无法加载</p>
@@ -27,7 +32,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-  import CustomPicture from '../../components/CustomPicture'
+//  import CustomPicture from '../../components/CustomPicture'
     export default {
         data() {
             return {
@@ -41,7 +46,7 @@
         mounted() {
 
         },
-        components: {PostTag,CustomPicture}
+        components: {PostTag,}
     }
 </script>
 <style>

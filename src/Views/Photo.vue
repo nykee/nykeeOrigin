@@ -1,7 +1,7 @@
 <template>
     <div>
       <IntroHeader/>
-      <div class=" flexContainer" >
+      <div class="flexContainer" >
         <ul class="photo-intro">
           <li class="photo-intro-items">{{$t("message.photoPage.intro[0]")}}</li>
           <li class="photo-intro-items">{{$t("message.photoPage.intro[1]")}}</li>
@@ -27,78 +27,78 @@
                 photoData:[
                   {
                     "desc":this.$t("message.photoPage.photos[0].title"),
-                    "webpSrc":"../../static/img/yuyuan.webp",
-                    "imgSrc":"../../static/img/yuyuan.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/yuyuan.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/yuyuan.jpg",
                     "photoTime":this.$t("message.photoPage.photos[0].time"),
                     "photoLocation":this.$t("message.photoPage.photos[0].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[1].title"),
-                    "webpSrc":"../../static/img/maitian.webp",
-                    "imgSrc":"../../static/img/maitian.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/maitian.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/maitian.jpg",
                     "photoTime":this.$t("message.photoPage.photos[1].time"),
                     "photoLocation":this.$t("message.photoPage.photos[1].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[2].title"),
-                    "webpSrc":"../../static/img/nightrain.webp",
-                    "imgSrc":"../../static/img/nightrain.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/nightrain.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/nightrain.jpg",
                     "photoTime":this.$t("message.photoPage.photos[2].time"),
                     "photoLocation":this.$t("message.photoPage.photos[2].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[3].title"),
-                    "webpSrc":"../../static/img/puppy.webp",
-                    "imgSrc":"../../static/img/puppy.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/puppy.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/puppy.jpg",
                     "photoTime":this.$t("message.photoPage.photos[3].time"),
                     "photoLocation":this.$t("message.photoPage.photos[3].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[4].title"),
-                    "webpSrc":"../../static/img/szmuseum.webp",
-                    "imgSrc":"../../static/img/szmuseum.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/szmuseum.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/szmuseum.jpg",
                     "photoTime":this.$t("message.photoPage.photos[4].time"),
                     "photoLocation":this.$t("message.photoPage.photos[4].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[5].title"),
-                    "webpSrc":"../../static/img/sakura.webp",
-                    "imgSrc":"../../static/img/sakura.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/sakura.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/sakura.jpg",
                     "photoTime":this.$t("message.photoPage.photos[5].time"),
                     "photoLocation":this.$t("message.photoPage.photos[5].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[6].title"),
-                    "webpSrc":"../../static/img/sea.webp",
-                    "imgSrc":"../../static/img/sea.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/sea.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/sea.jpg",
                     "photoTime":this.$t("message.photoPage.photos[6].time"),
                     "photoLocation":this.$t("message.photoPage.photos[6].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[7].title"),
-                    "webpSrc":"../../static/img/boat.webp",
-                    "imgSrc":"../../static/img/boat.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/boat.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/boat.jpg",
                     "photoTime":this.$t("message.photoPage.photos[7].time"),
                     "photoLocation":this.$t("message.photoPage.photos[7].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[8].title"),
-                    "webpSrc":"../../static/img/bird.webp",
-                    "imgSrc":"../../static/img/bird.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/bird.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/bird.jpg",
                     "photoTime":this.$t("message.photoPage.photos[8].time"),
                     "photoLocation":this.$t("message.photoPage.photos[8].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[9].title"),
-                    "webpSrc":"../../static/img/car.webp",
-                    "imgSrc":"../../static/img/car.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/car.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/car.jpg",
                     "photoTime":this.$t("message.photoPage.photos[9].time"),
                     "photoLocation":this.$t("message.photoPage.photos[9].location"),
                   },
                   {
                     "desc":this.$t("message.photoPage.photos[10].title"),
-                    "webpSrc":"../../static/img/sky.webp",
-                    "imgSrc":"../../static/img/sky.jpg",
+                    "webpSrc":"http://imagenykeecn.test.upcdn.net/sky.webp",
+                    "imgSrc":"http://imagenykeecn.test.upcdn.net/sky.jpg",
                     "photoTime":this.$t("message.photoPage.photos[10].time"),
                     "photoLocation":this.$t("message.photoPage.photos[10].location"),
                   }
