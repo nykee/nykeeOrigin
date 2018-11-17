@@ -120,9 +120,9 @@
     margin-top:10px;
   }
   .blog-container{
-    margin-top:20px;
-    padding-right: .4rem;
-    padding-left: .4rem;
+    margin-top:1rem;
+    padding: 0 .6rem;
+
   }
   .descrp{
     font-size: 16px;

@@ -125,7 +125,7 @@
   }
   .info-expand{
     position: absolute;
-    bottom:2%;
+    bottom:1%;
     right:2%;
     color:rgba(132,134,136,0.8);
   }
@@ -280,6 +280,8 @@
       font-size: 1.4rem;
       margin-top: 1.4rem;
     }
+    .photo-card-box{
+      margin-bottom:3rem;}
 
   }
 </style>

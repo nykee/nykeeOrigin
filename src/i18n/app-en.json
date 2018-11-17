@@ -1,11 +1,11 @@
 {
   "message": {
     "home": "HOME",
-    "projects": "PROJECTS",
-    "nykee": "NYKEE`S BLOG",
-    "blog":"BLOGS",
+    "projects": "PROJECT",
+    "nykee": "Nykee Blog",
+    "blog":"BLOG",
     "about":"ABOUT",
-    "photograph":"PHOTOGRAPH",
+    "photograph":"PHOTO",
     "aboutMe":"About Me",
     "selfIntro":[
       " Hi,my name is nykee .And i am interested in Web front-end!I am working at a start-up company as a web developer",

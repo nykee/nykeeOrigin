@@ -11,8 +11,8 @@
               </router-link>
             </Col>
             <Col :lg="{span:11,offset:7}"
-                 :md="{span:11,offset:7}"
-                 :sm="{span:6,offset:12}"
+                 :md="{span:12,offset:4}"
+                 :sm="{span:11,offset:7}"
                  :xs="{span:6,offset:12}">
             <MenuItem name="2">
               <router-link to="/">{{ $t("message.home")}}</router-link>
@@ -32,7 +32,7 @@
 
           </Col>
             <Col :lg="{span:2}"
-                 :md="{span:2}"
+                 :md="{span:1}"
                  :sm="{span:2}"
                  :xs="{span:2}">
             <select v-model="lanSel"  class="lanSel" >
@@ -60,7 +60,7 @@
                 <router-link to="/Photograph" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
               </DropdownItem>
               <DropdownItem>
-                <router-link to="/About" style="color:#000!important;">{{ $t("message.photograph")}}</router-link>
+                <router-link to="/About" style="color:#000!important;">{{ $t("message.about")}}</router-link>
               </DropdownItem>
               <DropdownItem>
                 <select v-model="lanSel"   class="lanSel">
