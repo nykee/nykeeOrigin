@@ -11,6 +11,9 @@ import 'iview/dist/styles/iview.css'
 // import 'font-awesome-webpack'
 import vueI18n from 'vue-i18n'
 
+import Axios from 'axios';
+// Vue.prototype.$http =Axios;
+
 Vue.config.productionTip = false;
 // Vue.use(iview);
 // Vue.use(VueLazyload,{

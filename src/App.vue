@@ -9,12 +9,14 @@
       <FootBar ></FootBar>
     </Row>
     <BackTop></BackTop>
+    <MusicPlayer ></MusicPlayer>
   </div>
 </template>
 
 <script>
   import NavBar from './components/NavBar.vue';
   import FootBar from './components/FootBar.vue'
+  import MusicPlayer from './components/MusicPlayer'
 export default {
 
   data(){
@@ -33,7 +35,9 @@ export default {
 
   },
   components:{
-    NavBar,FootBar
+    NavBar,
+    FootBar,
+    MusicPlayer
   }
 }
 </script>
@@ -102,4 +106,5 @@ export default {
   @media (min-width: 1920px) {
     body{font-size: 33px;}
   }
+
 </style>

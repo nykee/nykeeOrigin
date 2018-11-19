@@ -34,7 +34,8 @@ module.exports = {
         'iview':'iview',
         'vue-lazyload': 'VueLazyload',
       'vue-i18n':'VueI18n',
-      "particles":"particles.js"
+      "particles":"particles.js",
+      "axios":"axios"
     },
   module: {
     rules: [

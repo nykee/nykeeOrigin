@@ -43,7 +43,9 @@
   import { mapState } from 'vuex'
     export default {
         data() {
-            return {}
+            return {
+
+            }
         },
         methods: {
           directTo(add){
@@ -60,6 +62,7 @@
           });
         },
         mounted() {
+          // console.log(this.activeName);
          /* mapState({
             activeName: state => state.blogMenuActiveName
           });
