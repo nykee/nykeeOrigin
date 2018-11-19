@@ -30,7 +30,7 @@ module.exports = {
     externals: {
         'vue': 'Vue',
         'vue-router': 'VueRouter',
-        'vuex': 'Vuex',
+        // 'vuex': 'Vuex',
         'iview':'iview',
         'vue-lazyload': 'VueLazyload',
       'vue-i18n':'VueI18n',

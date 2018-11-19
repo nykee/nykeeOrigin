@@ -20,7 +20,7 @@
             </ul>
           </i-col>
           <i-col  :span="8" class="mPlayer-main-board-block">
-            <img src="../../static/img/300_albumpic_1853252_0.jpg" alt="" class="mPlayer-album">
+            <img :src="currentSong.pic" alt="" class="mPlayer-album">
           </i-col>
           <i-col :span="2" class="mPlayer-main-board-block">
             <ul>
@@ -28,6 +28,7 @@
               <li @click="changePlayMode" class="ctrlIcons"><i class="fa fa-random" ></i></li>
             </ul>
           </i-col>
+          <audio :src="currentSong.url" class="mscAudio" ref="mscAudio"></audio>
         </Row>
 
 
@@ -64,6 +65,7 @@
               // albumPicSrc:'',
               songLists:[],
               // playStatus:''
+              currentSong:[]
             }
         },
         methods: {
@@ -113,6 +115,9 @@
           },
           changePlayStatus(){
             this.$store.commit("CHANGE_PLAYSTATUS");
+            if(this.playStatus ==="paused"){
+              this.$ref.mscAudio.play();
+            }
           }
         },
       computed: {
@@ -120,7 +125,8 @@
           //   return this.$store.state.playStatus
           // }
         ...mapState({
-          playStatus:state => state.playStatus
+          playStatus:state => state.playStatus,
+          songLists: state => state.songLists
         })
       }
       ,
@@ -133,14 +139,18 @@
               // console.log(res.data.data.songs[i]);
             }
             this.$store.dispatch('initialSongLists',res.data.data.songs);
-            // this.songLists =res.data.data.songs;
+             this.songLists =res.data.data.songs;
+             this.currentSong = res.data.data.songs[0]
           }).catch((err)=>{
             console.warn(err)
           });
+//        this.$store.dispatch('initialSongLists');
+//        console.log(this.$store.dispatch('initialSongLists'));
 
         },
         mounted() {
-          this.songLists=this.$store.dispatch('getSongLists');
+          console.log(this.currentSong);
+//         this.$store.commit("GET_SONGLISTS");
 
           // console.log(this.playStatus);
 
@@ -239,6 +249,9 @@
   }
   .toggleListBtn{
     margin-bottom: .4rem;
+  }
+  .mscAudio{
+    display: none;
   }
 
 </style>
