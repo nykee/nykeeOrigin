@@ -1,5 +1,5 @@
 <template>
-  <div class="mPlayer-box"  style="top: 90%;left: -25%" ref="mPlayer">
+  <div class="mPlayer-box"  style="top: 90%;left: -23%" ref="mPlayer">
 
     <!--<div class="clearfix mPlayer-main-board-box">-->
 
@@ -82,7 +82,7 @@
 
           if(left ===0){
             let timer= setInterval(function () {
-              if(left<=-25){
+              if(left<=-23){
                 clearInterval(timer);
                 self.isToggle =true;
                 return
@@ -186,7 +186,7 @@
     position: absolute;
     top:0;
     left:99%;
-    background-color: rgba(237,237,237,.75);
+    background-color: rgba(137,137,137,.75);
     border-radius: 2px;
     text-align: center;
   }

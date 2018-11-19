@@ -55,7 +55,7 @@
                        className="mb-fullScreenImg"
                        :srcSet="webpSrc"/>-->
         <picture>
-          <source :srcset="webpSrc"  type="image/webp" class="fullScreenImg" >
+          <source :srcset="webpSrc"  type="image/webp" class="mb-fullScreenImg" >
           <img :src="imgSrc" alt="" class="mb-fullScreenImg"  />
         </picture>
         <div class="mModal-footer clearfix">
