@@ -10,13 +10,13 @@
             <i class="fa  fa-2x playBtn ctrlIcons"
                :class="{'fa-pause':playStatus==='playing',
                'fa-play':playStatus==='paused'}" @click="changePlayStatus"></i>
-            <i class="fa fa-step-backward ctrlIcons"></i>
-            <i class="fa fa-step-forward ctrlIcons"></i>
+            <i class="fa fa-step-backward ctrlIcons" @click="playPrev"></i>
+            <i class="fa fa-step-forward ctrlIcons" @click="playNext"></i>
           </i-col>
           <i-col  :span="7" class="mPlayer-main-board-block">
             <ul>
-              <li class="mPlayer-song-name">Alone</li>
-              <li class="mPlayer-artist">MashMallo</li>
+              <li class="mPlayer-song-name">{{currentSong.name}}</li>
+              <li class="mPlayer-artist">{{currentSong.singer}}</li>
             </ul>
           </i-col>
           <i-col  :span="8" class="mPlayer-main-board-block">
@@ -39,7 +39,7 @@
     </div>
     <!--<keep-alive>-->
       <div class="mPlayer-playlist" v-if="isSongListShow" >
-        <ul v-for="song in songLists" class="clearfix mPlayer-playlist-items ">
+        <ul v-for="song in songLists" class="clearfix mPlayer-playlist-items " @click="clickToPlay(song.index)" :key="song.index">
           <li class="fl playlist-cur "></li>
           <li class="fl playlist-index ">{{song.index}}</li>
           <li class="fl playlist-songname">{{song.name}}</li>
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  // import { mapState } from 'vuex'
     export default {
         data() {
             return {
@@ -64,8 +64,10 @@
               // songSrc:'',
               // albumPicSrc:'',
               songLists:[],
-              // playStatus:''
-              currentSong:[]
+              playStatus:'paused',
+              currentSong:[],
+              curSongIndex:1
+              // curSongIndex:this.currentSong.index
             }
         },
         methods: {
@@ -75,6 +77,7 @@
           changePlayMode(){
 
           },
+
           toggleMini(){
 
             let self= this;
@@ -114,31 +117,88 @@
 
           },
           changePlayStatus(){
-            this.$store.commit("CHANGE_PLAYSTATUS");
+            // this.$store.commit("CHANGE_PLAYSTATUS");
+            // this.playStatus = (this.playStatus ==="paused")?"playing" :"paused";
             if(this.playStatus ==="paused"){
-              this.$ref.mscAudio.play();
+              this.playStatus ="playing";
+              this.$refs.mscAudio.play();
+              // this.$refs.mscAudio.stop();
             }
-          }
+            else {
+              this.playStatus ="paused";
+              this.$refs.mscAudio.pause();
+              // this.$refs.mscAudio.play();
+
+            }
+          },
+
+          playPrev(){
+            let idx =this.currentSong.index;
+            idx-=1;
+            if(idx !==1){
+              this.currentSong = this.songLists[idx];
+              this.curSongIndex = idx;
+            }
+            this.$refs.mscAudio.play();
+          },
+          playNext(){
+            let idx =this.currentSong.index;
+            // console.log(idx);
+            if(idx === this.songLists.length){
+              this.currentSong = this.songLists[0]
+            }
+            else{
+              this.currentSong = this.songLists[idx]
+            }
+            // console.log(this.currentSong );
+            console.log(this.playStatus);
+            this.$refs.mscAudio.play();
+          },
+          clickToPlay(index){
+            console.log(this.playStatus);
+            this.currentSong = this.songLists[index-1];
+            this.playStatus="playing";
+            console.log(this.playStatus);
+            this.$refs.mscAudio.play();
+            console.log(index);
+            let playLists =document.querySelectorAll('.mPlayer-playlist>.mPlayer-playlist-items');
+            // console.log(playLists[index-1]);
+            // playLists[index]
+            for(let i=0,len =playLists.length;i<len;i++){
+              console.log(i ===(index-1));
+              if(i ===(index-1)){ playLists[i].classList.add("curSong");}
+              else{
+                playLists[i].classList.remove("curSong");
+              }
+
+            }
+
+
+
+            // this.$refs.mscAudio.play();
+          },
+
+
         },
       computed: {
           // playStatus(){
           //   return this.$store.state.playStatus
           // }
-        ...mapState({
+        /*...mapState({
           playStatus:state => state.playStatus,
           songLists: state => state.songLists
-        })
+        })*/
       }
       ,
         created: function () {
           // let self= this;
-          axios.get("https://api.bzqll.com/music/tencent/songList?key=579621905&id=5471246374").then((res)=>{
+          axios.get("https://api.bzqll.com/music/tencent/songList?key=579621905&id=5632041384").then((res)=>{
 
             for(let i=0,len =res.data.data.songs.length;i<len;i++){
               res.data.data.songs[i].index = i+1;
               // console.log(res.data.data.songs[i]);
             }
-            this.$store.dispatch('initialSongLists',res.data.data.songs);
+            // this.$store.dispatch('initialSongLists',res.data.data.songs);
              this.songLists =res.data.data.songs;
              this.currentSong = res.data.data.songs[0]
           }).catch((err)=>{
@@ -149,10 +209,9 @@
 
         },
         mounted() {
-          console.log(this.currentSong);
-//         this.$store.commit("GET_SONGLISTS");
+          this.$refs.mscAudio.volume =.3;
 
-          // console.log(this.playStatus);
+
 
         },
         components: {}
@@ -160,7 +219,7 @@
 </script>
 <style scoped>
   .mPlayer-box{
-  z-index: 1000;
+  z-index: 10;
     position: fixed;
     /*bottom:1%;*/
     /*right: 80%;*/
@@ -195,7 +254,7 @@
     width: 1.8rem;
     position: absolute;
     top:0;
-    left:99%;
+    left:100%;
     background-color: rgba(137,137,137,.75);
     border-radius: 2px;
     text-align: center;
@@ -208,11 +267,11 @@
     position: absolute;
     bottom:100%;
     /*background-color: rgba(146,146,146,0.35);*/
-    background-color: #fff;
+    background-color: rgba(255,255,255,.75);
     border: 2px solid #eee;
     /*border-top: 2px solid #eee;*/
     padding: 0 .5rem;
-    border-radius: 8px;
+    border-radius: 2px;
     width: 19.5rem;
     margin-bottom: .2rem;
   }
@@ -222,6 +281,12 @@
   }
   .playlist-songname{
     margin-right: 2rem;
+
+  }
+  .playlist-artist{
+    text-overflow: ellipsis;
+    width: 7rem;
+    white-space:nowrap;
   }
   .playlist-index,.playlist-songname,.playlist-artist,.playlist-cur,.ctrlIcons{cursor: pointer}
   .mPlayer-playlist-items{
@@ -242,7 +307,7 @@
     background-color: rgba(146,146,146,0.35);
   }
   .curSong{
-    background-color: #F8F8F8;
+    background-color: #d4d3da;
   }
   .playBtn{
     width: 2rem;
@@ -251,7 +316,7 @@
     margin-bottom: .4rem;
   }
   .mscAudio{
-    display: none;
+    /*display: none;*/
   }
 
 </style>
