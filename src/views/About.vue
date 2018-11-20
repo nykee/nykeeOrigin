@@ -1,6 +1,7 @@
 <template>
   <div>
     <IntroHeader/>
+
     <div class="flexContainer">
       <Timeline style="margin-top: 5rem;">
         <TimelineItem color="#73E4C9">
@@ -29,6 +30,8 @@
         </TimelineItem>
       </Timeline>
     </div>
+
+
   </div>
 </template>
 

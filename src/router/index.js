@@ -18,6 +18,7 @@ import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
 import NettyLearning from '../views/Blogs/2018-05-17-Netty.vue'
 import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
 
+
 // Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -95,7 +96,12 @@ const router = new VueRouter({
       path: '/Photograph',
       name: 'Photo',
       component: Photo
-    }
+    },
+    {
+      path: '/About',
+      name: 'About',
+      component: About
+    },
   ]
 });
 

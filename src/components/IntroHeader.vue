@@ -1,7 +1,8 @@
 <template>
   <div >
 
-        <header v-if="!isTags" :class="{
+        <header v-if="!isTags"
+                :class="{
         'intro-header-index':isIndex&&!canUseWebp,
         'intro-header-blogs':isBlogs&&!canUseWebp,
         'intro-header-photo':isPhoto&&!canUseWebp,
@@ -9,7 +10,7 @@
         'intro-header-index-webp':isIndex&&canUseWebp,
         'intro-header-blogs-webp':isBlogs&&canUseWebp,
         'intro-header-photo-webp':isPhoto&&canUseWebp,
-        'intro-header-about-webp':isAbout&&canUseWebp,
+        'intro-header-about-webp':isAbout&&canUseWebp
 
         }"  >
           <div class="intro-container">
@@ -99,7 +100,11 @@
               this.isPhoto =false;
               this.isAbout =true;
               this.head ='TimeLine';
+
               this.subHead ='Big Event Record'
+
+
+
             }
           },
           myParticles(){
@@ -239,6 +244,9 @@
     .intro-header-index-webp,
     .intro-header-blogs-webp,
     .intro-header-photo-webp,
+
+    .intro-header-about,
+
     .intro-header-about-webp
     {
         background: no-repeat center center;
@@ -265,12 +273,17 @@
   .intro-header-photo-webp{
       background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp") ;
   }
+
     .intro-header-about{
       background-image: url("http://imagenykeecn.test.upcdn.net/qdh.jpg") ;
     }
     .intro-header-about-webp{
       background-image: url("http://imagenykeecn.test.upcdn.net/qdh.webp") ;
     }
+
+
+
+
   .intro-container{
     width: 100%;
     height: 25rem;
@@ -393,7 +406,10 @@
       }
       .site-heading{
         width: 35rem;
+
           top:28%;
+
+
           left:35%;
       }
         .intro-container,#particles{height: 40rem}
