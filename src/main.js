@@ -7,6 +7,7 @@ import store from './store/store'
 import {Row,Col,Tooltip,Menu,MenuItem,BackTop,Dropdown,
     DropdownItem,LoadingBar,Modal,Card,Drawer} from 'iview'
 // import {RouterLink} from "VueRouter"
+// import iview from "iView"
 import 'iview/dist/styles/iview.css'
 // import 'font-awesome-webpack'
 import vueI18n from 'vue-i18n'

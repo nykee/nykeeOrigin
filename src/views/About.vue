@@ -28,6 +28,10 @@
           <p class="time">2018.11.15</p>
           <p class="content">首屏优化：第三方库使用CDN,iView按需加载</p>
         </TimelineItem>
+        <TimelineItem>
+          <p class="time">2018.11.20</p>
+          <p class="content">加入音乐播放功能(半成品，完善ing)</p>
+        </TimelineItem>
       </Timeline>
     </div>
 

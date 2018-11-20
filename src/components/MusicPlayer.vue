@@ -219,7 +219,7 @@
 </script>
 <style scoped>
   .mPlayer-box{
-  z-index: 10;
+  z-index: 8;
     position: fixed;
     /*bottom:1%;*/
     /*right: 80%;*/

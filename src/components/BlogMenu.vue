@@ -36,6 +36,9 @@
     <MenuItem name="12">
       <span @click="directTo('VueI18n')">VueI18n国际化</span>
     </MenuItem>
+    <MenuItem name="13">
+      <span @click="directTo('FeOPT')">前端性能优化</span>
+    </MenuItem>
   </Menu>
 </template>
 
