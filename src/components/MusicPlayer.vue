@@ -27,13 +27,18 @@
 
               <!--<Slider v-model="volume" :step="10" class="volume-slider" v-if="isVolumeSliderShow"></Slider>-->
               <i class="fa fa-volume-up volume-btn ctrlIcons" @click="showVSlider"></i>
-              <div class="volume-slider" v-if="isVolumeSliderShow">
+              <div class="volume-slider" v-if="isVolumeSliderShow" >
+                <!--<input type="range" class="slide-range" min="0" max="100" step="1" v-model="volumeNum">-->
                 <div class="volume-slider-wrap">
-                  <input type="range" class="slide-range">
-                  <div class="volume-slider-bar"></div>
-                  <div class="volume-slider-btn"></div>
+                  <input type="range" class="slide-range" min="0" max="100" step="1" v-model="volumeNum">
+                  <div class="volume-slider-bar"  v-bind:style="{height:volumeNum+'%'}"></div>
+                  <div class="volume-slider-btn"  v-bind:style="{bottom:volumeNum+'%'}"
+                       @mousedown="handleMouseDown($event)"
+                       @mousemove="handleMouseMove($event)"
+                  @mouseup="handleMouseUp($event)"
+                  draggable="true"></div>
                 </div>
-
+<!---->
 
               </div>
 
@@ -43,8 +48,8 @@
           </i-col>
           <i-col :span="1" class="mPlayer-main-board-block">
             <ul>
-              <li @click="changeSongListShow" class="ctrlIcons toggleListBtn"> <i class="fa fa-reorder" ></i></li>
-              <li @click="changePlayMode" class="ctrlIcons"><i class="fa fa-random" ></i></li>
+              <li @click="changeSongListShow" class="ctrlIcons toggleListBtn"> <i class="fa " :class="{'fa-caret-up':!isSongListShow,'fa-caret-down':isSongListShow}"></i></li>
+              <li @click="changePlayMode" class="ctrlIcons"><i class="fa " :class="{'fa-random':isRandom,'fa-reorder':!isRandom}"></i></li>
               <li  v-if="isMobile" class="ctrlIcons" @click="toggleMobileMini"><i class="fa fa-toggle-left" ></i></li>
             </ul>
           </i-col>
@@ -60,7 +65,7 @@
       <!--<keep-alive>-->
       <div id="mPlayer-playlist" class="mPlayer-playlist" v-if="isSongListShow" >
         <ul v-for="song in songLists" class="clearfix mPlayer-playlist-items " @click="clickToPlay(song.index)" :key="song.index">
-          <li class="fl playlist-cur "></li>
+          <li class="fl playlist-cur " :class="{'curIdx':song.index === isPlayingIndex}"></li>
           <li class="fl playlist-index ">{{song.index}}</li>
           <li class="fl playlist-songname">{{song.name}}</li>
           <li class="fr playlist-artist">{{song.singer}}</li>
@@ -101,8 +106,11 @@
               isMobile:false,
               isMini:false,
               isPlayingIndex:1,
-              volume:30,
-              isVolumeSliderShow:false
+              volumeNum:30,
+              isVolumeSliderShow:false,
+              mouseY:0,
+              moveDistance:0,
+              isRandom:false
             }
         },
         methods: {
@@ -110,7 +118,7 @@
             this.isSongListShow =!this.isSongListShow
           },
           changePlayMode(){
-
+            this.isRandom =!this.isRandom
           },
 
           toggleMini(){
@@ -127,6 +135,7 @@
                 return
               }
               self.isSongListShow =false;
+              self.isVolumeSliderShow =false;
               left -=10;
               // console.log(left);
               self.$refs.mPlayer.style.left =left +"px";
@@ -166,6 +175,7 @@
               // this.$refs.mscAudio.play();
               // this.$refs.mscAudio.stop();
               mscAudio.play();
+              this.isPlayingIndex =this.currentSong.index;
             }
             else {
               this.playStatus ="paused";
@@ -200,13 +210,15 @@
             // console.log(this.songLists.length);
             // console.log(idx);
             if(idx === this.songLists.length){
-              this.currentSong = this.songLists[0]
+              this.currentSong = this.songLists[0];
+
             }
             else{
               this.currentSong = this.songLists[idx];
+//              this.isPlayingIndex = idx;
               // console.log(this.currentSong);
             }
-            this.isPlayingIndex = idx;
+            this.isPlayingIndex = this.currentSong.index;
             // console.log(this.currentSong );
             // console.log(this.playStatus);
             // this.playStatus ="playing";
@@ -220,17 +232,37 @@
             this.playStatus="playing";
             mscAudio.play();
             this.isPlayingIndex =index;
-            console.log(this.isPlayingIndex);
+//            console.log(this.isPlayingIndex);
           },
           showVSlider(){
             this.isVolumeSliderShow = !this.isVolumeSliderShow
+          },
+          /*changeVolume(){
+
+          }*/
+          handleMouseDown(e){
+            console.log("MouseDown");
+            console.log(e.clientY);
+//            console.log(e.clientX);
+            this.mouseY=e.clientY;
+          },
+          handleMouseMove(e){
+            console.log("MouseMove");
+//            console.log(e.clientY);
+            console.log(e.clientY-this.mouseY);
+
+          },
+          handleMouseUp(e){
+            console.log("MouseUp");
+//            console.log(e);
+            console.log(e.clientY);
           }
 
 
         },
       computed: {
           isMute(){
-            return this.volume ===0
+            return this.volumeNum ===0
           }
           // playStatus(){
           //   return this.$store.state.playStatus
@@ -263,17 +295,17 @@
         },
         mounted() {
           let mscAudio= document.getElementById("mscAudio");
-          // console.log(mscAudio);
-          // console.log(mscAudio.volume);
-          mscAudio.volume = .3;
-          // console.log(mscAudio.volume);
-
+//          console.log(this.volumeNum);
+          mscAudio.volume = parseFloat(parseInt(this.volumeNum)/100);
+//           console.log(mscAudio.volume);
+//          console.log(window.screen.width);
           if(window.screen.width<=425){
+//            console.log("手机页面！！！");
             this.isMobile = true;
             this.isMini =true;
             // console.log( document.getElementById('msc-player').style);
-            document.getElementById('msc-player').style.width = window.screen.width +'px';
-            document.getElementById('mPlayer-playlist').style.width = window.screen.width +'px'
+//            document.getElementById('msc-player').style.width = window.screen.width +'px';
+//            document.getElementById('mPlayer-playlist').style.width = window.screen.width +'px'
             // document.getElementById('msc-player').style.setProperty('width', screen.width+'px', '!important');
           }
           else {
@@ -296,7 +328,7 @@
 
   }
   .mPlayer-main-board{
-    background:rgba(146,146,146,0.65);
+    background:rgba(146,146,146,.85);
     border-radius: 4px;
     padding: .5rem .9rem .5rem .4rem;
     width: 20rem;
@@ -345,14 +377,14 @@
     bottom:100%;
     /*background-color: rgba(146,146,146,0.35);*/
     /*background-color: rgba(255,255,255,.65);*/
-    background:rgba(146,146,146,0.65);
+    background:rgba(146,146,146,.85);
     color:#f6f6f6;
-    border: 2px solid #f6f6f6;
+    /*border: 2px solid #f6f6f6;*/
     /*border-top: 2px solid #eee;*/
     padding: .3rem;
     border-radius: 4px;
     width: 20rem;
-    /*margin-bottom: .2rem;*/
+    margin-bottom: .2rem;
   }
   .playlist-index{
     padding-right: .5rem;
@@ -386,7 +418,9 @@
     background-color: orange;
   }
   .mPlayer-playlist-items:hover{
-    background-color: rgba(146,146,146,0.35);
+    background-color: #fff;
+    opacity: .5;
+    color: #A9A9A9;
   }
   .curSong{
     background-color: #d4d3da;
@@ -470,7 +504,7 @@
     background-color: #57a3f3;
     border-radius: 3px;
     width: 4px;
-    height: 30%;
+    /*height: 30%;*/
     position: absolute;
     bottom:0;
   }
@@ -489,7 +523,7 @@
     outline: 0;
     position: absolute;
     left: -3px;
-    bottom:30%;
+    /*bottom:30%;*/
     cursor: pointer;
   }
 </style>
