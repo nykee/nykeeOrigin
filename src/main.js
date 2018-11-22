@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store/store'
 import {Row,Col,Tooltip,Menu,MenuItem,BackTop,Dropdown,
-    DropdownItem,LoadingBar,Modal,Card,Drawer} from 'iview'
+    DropdownItem,LoadingBar,Modal,Card,Drawer,Slider} from 'iview'
 // import {RouterLink} from "VueRouter"
 // import iview from "iView"
 import 'iview/dist/styles/iview.css'
@@ -36,6 +36,7 @@ Vue.component("LoadingBar",LoadingBar);
 Vue.component("Modal",Modal);
 Vue.component("Card",Card);
 Vue.component("Drawer",Drawer);
+Vue.component("Slider",Slider);
 // Vue.use(VueI18n);
 
 
