@@ -11,7 +11,7 @@ import MongoDBLearning from '../views/Blogs/2017-02-14-MongoDB-learning.vue'
 import BaiduMapLearning from '../views/Blogs/2017-06-08-BaiduMap-Learning.vue'
 import EchartsLearning from '../views/Blogs/2017-09-21-Echarts2.7.2.vue'
 import VueLearning from '../views/Blogs/2017-09-26-Vue.vue'
-import GitLearning  from '../views/Blogs/2017-11-07-Git.vue'
+import GitLearning from '../views/Blogs/2017-11-07-Git.vue'
 import ReactTricks from '../views/Blogs/2017-11-08-React.vue'
 import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0.vue'
 import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
@@ -23,13 +23,13 @@ import FeOPT from '../views/Blogs/2018-11-20-FE-Optimize'
 // Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Index',
       component: Index
-    },{
+    }, {
       path: '/About',
       name: ' About',
       component: About
@@ -39,56 +39,56 @@ const router = new VueRouter({
       path: '/Blogs',
       name: 'Blogs',
       component: Blogs,
-      children:[
+      children: [
         {
-          path:'DZDPCrawlSpider',
-          component:DZDPCrawlSpider
+          path: 'DZDPCrawlSpider',
+          component: DZDPCrawlSpider
         },
         {
-          path:'FrontEndTricks',
-          component:FrontEndTricks
+          path: 'FrontEndTricks',
+          component: FrontEndTricks
         },
         {
-          path:'MongoDBLearning',
-          component:MongoDBLearning
+          path: 'MongoDBLearning',
+          component: MongoDBLearning
         }, {
-          path:'BaiduMapLearning',
-          component:BaiduMapLearning
+          path: 'BaiduMapLearning',
+          component: BaiduMapLearning
         }, {
-          path:'EchartsLearning',
-          component:EchartsLearning
+          path: 'EchartsLearning',
+          component: EchartsLearning
         },
         {
-          path:'VueLearning',
-          component:VueLearning
+          path: 'VueLearning',
+          component: VueLearning
         },
         {
-          path:'GitLearning',
-          component:GitLearning
+          path: 'GitLearning',
+          component: GitLearning
         },
         {
-          path:'ReactTricks',
-          component:ReactTricks
+          path: 'ReactTricks',
+          component: ReactTricks
         },
         {
-          path:'D3Learning',
-          component:D3Learning
+          path: 'D3Learning',
+          component: D3Learning
         },
         {
-          path:'NettyLearning',
-          component:NettyLearning
+          path: 'NettyLearning',
+          component: NettyLearning
         },
         {
-          path:'ReactLearning',
-          component:ReactLearning
+          path: 'ReactLearning',
+          component: ReactLearning
         },
         {
-          path:'VueI18n',
-          component:VueI18n
+          path: 'VueI18n',
+          component: VueI18n
         },
         {
-          path:'FeOPT',
-          component:FeOPT
+          path: 'FeOPT',
+          component: FeOPT
         },
       ]
     },
@@ -110,4 +110,4 @@ const router = new VueRouter({
   ]
 });
 
-export default  router
+export default router

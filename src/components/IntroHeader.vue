@@ -1,8 +1,8 @@
 <template>
-  <div >
+  <div>
 
-        <header v-if="!isTags"
-                :class="{
+    <header v-if="!isTags"
+            :class="{
         'intro-header-index':isIndex&&!canUseWebp,
         'intro-header-blogs':isBlogs&&!canUseWebp,
         'intro-header-photo':isPhoto&&!canUseWebp,
@@ -12,32 +12,29 @@
         'intro-header-photo-webp':isPhoto&&canUseWebp,
         'intro-header-about-webp':isAbout&&canUseWebp
 
-        }"  >
-          <div class="intro-container">
+        }">
+      <div class="intro-container">
 
-                <div class="site-heading">
-                  <h1 class="site-heading-title">{{head}}</h1>
-                  <span class="site-heading-subtitle">{{subHead}}</span>
-                </div>
-
-
-          </div>
-        </header>
-
-
-
-
-
-    <header v-if="isTags" >
-        <div class="intro-container" >
-
-              <div class="site-heading">
-                <h1 class="site-heading-title">{{head}}</h1>
-                <span class="site-heading-subtitle">{{subHead}}</span>
-              </div>
-              <div id="particles"></div>
-
+        <div class="site-heading">
+          <h1 class="site-heading-title">{{head}}</h1>
+          <span class="site-heading-subtitle">{{subHead}}</span>
         </div>
+
+
+      </div>
+    </header>
+
+
+    <header v-if="isTags">
+      <div class="intro-container">
+
+        <div class="site-heading">
+          <h1 class="site-heading-title">{{head}}</h1>
+          <span class="site-heading-subtitle">{{subHead}}</span>
+        </div>
+        <div id="particles"></div>
+
+      </div>
 
     </header>
 
@@ -49,369 +46,399 @@
 <script>
   // import particlesJS from "particles.js"
   import {checkWebp} from "../utils/WebPutil"
-    export default {
-        data() {
-            return {
-              canUseWebp:false,
-              isIndex:true,
-              isBlogs:false,
-              isTags:false,
-              isPhoto:false,
-              isAbout:false,
-              head:'About Me',
-              subHead:"Life`s short,I use js"
-            }
-        },
-        methods: {
 
-          changeBG(){
-            let path = String(this.$route.path);
-            if(path ==="/Blogs"||path.substring(0,path.lastIndexOf('/')) ==="/Blogs"){
-              this.isBlogs = true;
-              this.isIndex =false;
-              this.isTags =false;
-                this.isPhoto =false;
-                this.isAbout =false;
-              this.head ='Nykee Blog';
-              this.subHead ='Talk is cheap,show me ur code~'
-            }
-            else if(path ==="/Project"){
-              this.isBlogs = false;
-              this.isIndex =false;
-              this.isTags =true;
-                this.isPhoto =false;
-                this.isAbout =false;
-              this.head ='My Projects';
-              this.subHead ='Think Different!'
-            }
-            else if(path ==="/Photograph"){
-                this.isBlogs = false;
-                this.isIndex =false;
-                this.isTags =false;
-                this.isPhoto =true;
-                this.isAbout =false;
-                this.head ='See the world';
-                this.subHead ='With my eyes and my camera!'
-            }
-            else if(path ==="/About"){
-              this.isBlogs = false;
-              this.isIndex =false;
-              this.isTags =false;
-              this.isPhoto =false;
-              this.isAbout =true;
-              this.head ='TimeLine';
+  export default {
+    data() {
+      return {
+        canUseWebp: false,
+        isIndex: true,
+        isBlogs: false,
+        isTags: false,
+        isPhoto: false,
+        isAbout: false,
+        head: 'About Me',
+        subHead: "Life`s short,I use js"
+      }
+    },
+    methods: {
 
-              this.subHead ='Big Event Record'
+      changeBG() {
+        let path = String(this.$route.path);
+        if (path === "/Blogs" || path.substring(0, path.lastIndexOf('/')) === "/Blogs") {
+          this.isBlogs = true;
+          this.isIndex = false;
+          this.isTags = false;
+          this.isPhoto = false;
+          this.isAbout = false;
+          this.head = 'Nykee Blog';
+          this.subHead = 'Talk is cheap,show me ur code~'
+        }
+        else if (path === "/Project") {
+          this.isBlogs = false;
+          this.isIndex = false;
+          this.isTags = true;
+          this.isPhoto = false;
+          this.isAbout = false;
+          this.head = 'My Projects';
+          this.subHead = 'Think Different!'
+        }
+        else if (path === "/Photograph") {
+          this.isBlogs = false;
+          this.isIndex = false;
+          this.isTags = false;
+          this.isPhoto = true;
+          this.isAbout = false;
+          this.head = 'See the world';
+          this.subHead = 'With my eyes and my camera!'
+        }
+        else if (path === "/About") {
+          this.isBlogs = false;
+          this.isIndex = false;
+          this.isTags = false;
+          this.isPhoto = false;
+          this.isAbout = true;
+          this.head = 'TimeLine';
+
+          this.subHead = 'Big Event Record'
 
 
-
+        }
+      },
+      myParticles() {
+        particlesJS('particles', {
+          "particles": {
+            "number": {
+              "value": 30,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 10,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 50,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 300,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 2
+            },
+            "move": {
+              "enable": true,
+              "speed": 8,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
             }
           },
-          myParticles(){
-            particlesJS('particles', {
-              "particles": {
-                "number": {
-                  "value": 30,
-                  "density": {
-                    "enable": true,
-                    "value_area": 800
-                  }
-                },
-                "color": {
-                  "value": "#ffffff"
-                },
-                "shape": {
-                  "type": "circle",
-                  "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                  },
-                  "polygon": {
-                    "nb_sides": 5
-                  },
-                  "image": {
-                    "src": "img/github.svg",
-                    "width": 100,
-                    "height": 100
-                  }
-                },
-                "opacity": {
-                  "value": 0.5,
-                  "random": false,
-                  "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                  }
-                },
-                "size": {
-                  "value": 10,
-                  "random": true,
-                  "anim": {
-                    "enable": false,
-                    "speed": 50,
-                    "size_min": 0.1,
-                    "sync": false
-                  }
-                },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": false,
+                "mode": "repulse"
+              },
+              "onclick": {
+                "enable": false,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 800,
                 "line_linked": {
-                  "enable": true,
-                  "distance": 300,
-                  "color": "#ffffff",
-                  "opacity": 0.4,
-                  "width": 2
-                },
-                "move": {
-                  "enable": true,
-                  "speed": 8,
-                  "direction": "none",
-                  "random": false,
-                  "straight": false,
-                  "out_mode": "out",
-                  "bounce": false,
-                  "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                  }
+                  "opacity": 1
                 }
               },
-              "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                  "onhover": {
-                    "enable": false,
-                    "mode": "repulse"
-                  },
-                  "onclick": {
-                    "enable": false,
-                    "mode": "push"
-                  },
-                  "resize": true
-                },
-                "modes": {
-                  "grab": {
-                    "distance": 800,
-                    "line_linked": {
-                      "opacity": 1
-                    }
-                  },
-                  "bubble": {
-                    "distance": 800,
-                    "size": 80,
-                    "duration": 2,
-                    "opacity": 0.8,
-                    "speed": 3
-                  },
-                  "repulse": {
-                    "distance": 400,
-                    "duration": 0.4
-                  },
-                  "push": {
-                    "particles_nb": 4
-                  },
-                  "remove": {
-                    "particles_nb": 2
-                  }
-                }
+              "bubble": {
+                "distance": 800,
+                "size": 80,
+                "duration": 2,
+                "opacity": 0.8,
+                "speed": 3
               },
-              "retina_detect": true
-            }, function() {
-              console.log('callback - particles.js config loaded');
-            });
-          }
-        },
-        created: function () {
+              "repulse": {
+                "distance": 400,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        }, function () {
+          console.log('callback - particles.js config loaded');
+        });
+      }
+    },
+    created: function () {
 
-          this.canUseWebp =checkWebp();
-          this.changeBG();
-        },
-        mounted() {
+      this.canUseWebp = checkWebp();
+      this.changeBG();
+    },
+    mounted() {
 //          this.changeBG();
 
-          this.myParticles();
+      this.myParticles();
 
-        },
-        components: {}
-    }
+    },
+    components: {}
+  }
 </script>
 <style>
-    .intro-header-index,
-    .intro-header-blogs,
-    .intro-header-photo,
-    .intro-header-about,
-    .intro-header-index-webp,
-    .intro-header-blogs-webp,
-    .intro-header-photo-webp,
+  .intro-header-index,
+  .intro-header-blogs,
+  .intro-header-photo,
+  .intro-header-about,
+  .intro-header-index-webp,
+  .intro-header-blogs-webp,
+  .intro-header-photo-webp,
+  .intro-header-about,
+  .intro-header-about-webp {
+    background: no-repeat center center;
+    background-attachment: scroll;
+    background-color: #ccc;
+    background-size: cover;
+  }
 
-    .intro-header-about,
-
-    .intro-header-about-webp
-    {
-        background: no-repeat center center;
-        background-attachment: scroll;
-        background-color: #ccc;
-        background-size: cover;
-    }
-  .intro-header-index{
+  .intro-header-index {
     background-image: url("http://imagenykeecn.test.upcdn.net/index.jpg");
-  }.intro-header-index-webp{
-     background-image: url("http://imagenykeecn.test.upcdn.net/index.webp");
-   }
-    .intro-header-blogs{
-      background-image: url("http://imagenykeecn.test.upcdn.net/code.jpg") ;
-
-    }
-  .intro-header-blogs-webp{
-    background-image: url("http://imagenykeecn.test.upcdn.net/code.webp") ;
-
-  }
-    .intro-header-photo{
-      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.jpg") ;
-    }
-  .intro-header-photo-webp{
-      background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp") ;
   }
 
-    .intro-header-about{
-      background-image: url("http://imagenykeecn.test.upcdn.net/qdh.jpg") ;
-    }
-    .intro-header-about-webp{
-      background-image: url("http://imagenykeecn.test.upcdn.net/qdh.webp") ;
-    }
+  .intro-header-index-webp {
+    background-image: url("http://imagenykeecn.test.upcdn.net/index.webp");
+  }
 
+  .intro-header-blogs {
+    background-image: url("http://imagenykeecn.test.upcdn.net/code.jpg");
 
+  }
 
+  .intro-header-blogs-webp {
+    background-image: url("http://imagenykeecn.test.upcdn.net/code.webp");
 
-  .intro-container{
+  }
+
+  .intro-header-photo {
+    background-image: url("http://imagenykeecn.test.upcdn.net/lishui.jpg");
+  }
+
+  .intro-header-photo-webp {
+    background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp");
+  }
+
+  .intro-header-about {
+    background-image: url("http://imagenykeecn.test.upcdn.net/qdh.jpg");
+  }
+
+  .intro-header-about-webp {
+    background-image: url("http://imagenykeecn.test.upcdn.net/qdh.webp");
+  }
+
+  .intro-container {
     width: 100%;
     height: 25rem;
   }
+
   .site-heading {
     text-align: center;
     position: absolute;
   }
 
-  .site-heading-title{
+  .site-heading-title {
     font-size: 3.75rem;
     color: #fff;
-    line-height:1.1
+    line-height: 1.1
   }
-  .site-heading-subtitle{
+
+  .site-heading-subtitle {
     color: #fff;
     font-size: 1.125rem;
-    line-height:1.1;
+    line-height: 1.1;
     font-weight: 400;
-    margin: .625rem 0 0 ;
+    margin: .625rem 0 0;
     display: inline-block;
   }
+
   #particles {
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
     height: 24.75rem;
     z-index: -1;
-    background:linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
-    background:-webkit-linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
-    background:-moz-linear-gradient(to right,#213862 0%,#1E7890 50%,#213862 100%);
+    background: linear-gradient(to right, #213862 0%, #1E7890 50%, #213862 100%);
+    background: -webkit-linear-gradient(to right, #213862 0%, #1E7890 50%, #213862 100%);
+    background: -moz-linear-gradient(to right, #213862 0%, #1E7890 50%, #213862 100%);
   }
 
-  @media screen and (min-width: 200px) and (max-width:320px ){
-    .site-heading-title{
+  @media screen and (min-width: 200px) and (max-width: 320px ) {
+    .site-heading-title {
       font-size: 2rem;
     }
-    .site-heading-subtitle{
+
+    .site-heading-subtitle {
       font-size: .9rem;
     }
-    .site-heading{
+
+    .site-heading {
       width: 14rem;
       top: 14%;
       left: 17%;
     }
-    .intro-container,#particles {
+
+    .intro-container, #particles {
       height: 15rem;
     }
   }
-    @media screen and (min-width: 321px) and (max-width:375px ){
-      .site-heading-title{
-        font-size: 2.5rem;
-      }
-      .site-heading-subtitle{
-        font-size: 1rem;
-      }
-      .site-heading{
-        width: 18rem;
-        top: 16%;
-        left: 12%;
-      }
-      .intro-container,#particles {
-        height: 18rem;
-      }
-    }
-    @media screen and (min-width: 376px) and (max-width:425px ){
-      .site-heading-title{
-        font-size: 2.8rem;
-      }
-      .site-heading-subtitle{
-        font-size: 1.2rem;
-      }
-      .site-heading{
-        width: 20rem;
-        top: 16%;
-        left: 13%;
-      }
-      .intro-container,#particles{height: 18rem}
-    }
-    @media screen and (min-width: 426px) and (max-width:768px ){
-      .site-heading-title{
-        font-size: 3.5rem;
-      }
-      .site-heading-subtitle{
-        font-size: 1.2rem;
-      }
-      .site-heading{
-        width: 25rem;
-        top: 22%;
-        left: 27%;
-      }
-    }
-    @media screen and (min-width: 769px) and (max-width:1024px ){
-      .site-heading-title{
-        font-size: 3rem;
-      }
-      .site-heading-subtitle{
-        font-size: 1.1rem;
-      }
-      .site-heading{
-        width: 25rem;
-        top: 20%;
-        left: 30%;
-      }
-    }
-    @media screen and (min-width: 1025px) and (max-width:1440px ){
-      .site-heading{
-          width: 28rem;
-          top:18%;
-          left:35%;
-      }
-    }
-    @media screen and (min-width: 1441px) and (max-width:2560px ){
-      .site-heading-title{
-        font-size: 5rem;
-        width: 35rem;
-      }
-      .site-heading-subtitle{
-        font-size: 2rem;
-      }
-      .site-heading{
-        width: 35rem;
 
-          top:28%;
-
-
-          left:35%;
-      }
-        .intro-container,#particles{height: 40rem}
+  @media screen and (min-width: 321px) and (max-width: 375px ) {
+    .site-heading-title {
+      font-size: 2.5rem;
     }
+
+    .site-heading-subtitle {
+      font-size: 1rem;
+    }
+
+    .site-heading {
+      width: 18rem;
+      top: 16%;
+      left: 12%;
+    }
+
+    .intro-container, #particles {
+      height: 18rem;
+    }
+  }
+
+  @media screen and (min-width: 376px) and (max-width: 425px ) {
+    .site-heading-title {
+      font-size: 2.8rem;
+    }
+
+    .site-heading-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .site-heading {
+      width: 20rem;
+      top: 16%;
+      left: 13%;
+    }
+
+    .intro-container, #particles {
+      height: 18rem
+    }
+  }
+
+  @media screen and (min-width: 426px) and (max-width: 768px ) {
+    .site-heading-title {
+      font-size: 3.5rem;
+    }
+
+    .site-heading-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .site-heading {
+      width: 25rem;
+      top: 22%;
+      left: 27%;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px ) {
+    .site-heading-title {
+      font-size: 3rem;
+    }
+
+    .site-heading-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .site-heading {
+      width: 25rem;
+      top: 20%;
+      left: 30%;
+    }
+  }
+
+  @media screen and (min-width: 1025px) and (max-width: 1440px ) {
+    .site-heading {
+      width: 28rem;
+      top: 18%;
+      left: 35%;
+    }
+  }
+
+  @media screen and (min-width: 1441px) and (max-width: 2560px ) {
+    .site-heading-title {
+      font-size: 5rem;
+      width: 35rem;
+    }
+
+    .site-heading-subtitle {
+      font-size: 2rem;
+    }
+
+    .site-heading {
+      width: 35rem;
+
+      top: 28%;
+
+      left: 35%;
+    }
+
+    .intro-container, #particles {
+      height: 40rem
+    }
+  }
 </style>

@@ -3,12 +3,12 @@
     <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
 
-     <!-- <CustomPicture imgSrc="http://imagenykeecn.test.upcdn.net/nykee.png"
-                     className="avatar"
-                     srcSet="http://imagenykeecn.test.upcdn.net/nykee.webp"/>-->
+      <!-- <CustomPicture imgSrc="http://imagenykeecn.test.upcdn.net/nykee.png"
+                      className="avatar"
+                      srcSet="http://imagenykeecn.test.upcdn.net/nykee.webp"/>-->
 
       <picture>
-        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/nykee.webp" class="resp-img" >
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/nykee.webp" class="resp-img">
         <img src="http://imagenykeecn.test.upcdn.net/nykee.png" class="resp-img"/>
       </picture>
       <p class="slogan">
@@ -21,46 +21,47 @@
 
 <script>
   import ContactIcons from './ContactIcons.vue';
-  import  commonTitle from '../components/common-right-col-title'
-//  import  CustomPicture from '../components/CustomPicture'
-    export default {
-        data() {
-            return {}
-        },
-        methods: {},
-        created: function () {
+  import commonTitle from './CommonRightColTitle'
+  //  import  CustomPicture from '../components/CustomPicture'
+  export default {
+    data() {
+      return {}
+    },
+    methods: {},
+    created: function () {
 
-        },
-        mounted() {
+    },
+    mounted() {
 
-        },
-        components: {
-          ContactIcons,
-          commonTitle,
+    },
+    components: {
+      ContactIcons,
+      commonTitle,
 //          CustomPicture
-        }
     }
+  }
 </script>
 <style scoped="scoped">
-  .abm-container{
+  .abm-container {
     width: 12.5rem;
-    border-top:1px solid #271111;
+    border-top: 1px solid #271111;
   }
 
-  .slogan{
-    margin-bottom:.6rem;
+  .slogan {
+    margin-bottom: .6rem;
     text-align: center;
 
   }
-  .fTags{
-    margin-bottom:0.6rem;
+
+  .fTags {
+    margin-bottom: 0.6rem;
   }
-  @media screen and(max-width: 1280px) and(max-width: 1440px){
-    .slogan{
+
+  @media screen and(max-width: 1280px) and(max-width: 1440px) {
+    .slogan {
       font-size: 0.8rem;
     }
   }
-
 
 
 </style>

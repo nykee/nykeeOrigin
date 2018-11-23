@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">D3 V4.0学习笔记</h1></li>
+      <li><h1 class="title">D3 V4.0学习笔记</h1></li>
     </ul>
     <div class="main-body">
       <div id="part1" class="part">
@@ -274,10 +274,11 @@ class Index {
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+
   export default {
     data() {
       return {
-        postTime:'2017-11-08'
+        postTime: '2017-11-08'
       }
     },
     methods: {},

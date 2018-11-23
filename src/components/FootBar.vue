@@ -1,9 +1,9 @@
 <template>
   <div class="footBar">
     <!--<Row type="flex" justify="center" align="middle" class="icons">-->
-      <!--<i-col>-->
-        <!--<ContactIcons class="c-icon-foot" />-->
-      <!--</i-col>-->
+    <!--<i-col>-->
+    <!--<ContactIcons class="c-icon-foot" />-->
+    <!--</i-col>-->
     <!--</Row>-->
     <Row type="flex" justify="center" align="middle" class="copyright">
       <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>

@@ -3,33 +3,30 @@
 </template>
 
 <script>
-  import  '../utils/DateFormat.js'
-    export default {
-        data() {
-            return {
+  import '../utils/DateFormat.js'
 
-            }
-        },
-      props: ['postTime'],
-        methods: {},
-        created: function () {
+  export default {
+    data() {
+      return {}
+    },
+    props: ['postTime'],
+    methods: {},
+    created: function () {
 
-        },
-        mounted() {
+    },
+    mounted() {
 
-        },
-        components: {},
-      computed:{
-
-      }
-    }
+    },
+    components: {},
+    computed: {}
+  }
 </script>
 <style>
-  .post-tag{
+  .post-tag {
     color: #CCCCCC;
     font-size: 18px;
-    font-family:Lora,'Times New Roman',serif;
-    font-style:italic;
-    margin-top:1.5rem;
+    font-family: Lora, 'Times New Roman', serif;
+    font-style: italic;
+    margin-top: 1.5rem;
   }
 </style>

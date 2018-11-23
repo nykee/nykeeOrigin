@@ -11,34 +11,38 @@
 </template>
 
 <script>
-  import  commonTitle from '../components/common-right-col-title'
-    export default {
-        data() {
-            return {}
-        },
-        methods: {},
-        created: function () {
+  import commonTitle from './CommonRightColTitle'
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {}
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {commonTitle}
-    }
+    },
+    mounted() {
+
+    },
+    components: {commonTitle}
+  }
 </script>
 <style scoped>
-  .fl-container{
+  .fl-container {
     width: 12.5rem;
-    border-top:1px solid #271111;
+    border-top: 1px solid #271111;
   }
-  .f-link{
-    font-size:.8rem;
-    margin-bottom:1rem;
+
+  .f-link {
+    font-size: .8rem;
+    margin-bottom: 1rem;
   }
-  .f-content{
-    margin-top:15px;
+
+  .f-content {
+    margin-top: 15px;
   }
-  .hux:hover{
+
+  .hux:hover {
     color: #41B883;
   }
 

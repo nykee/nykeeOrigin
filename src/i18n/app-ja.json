@@ -3,151 +3,176 @@
     "home": "首页",
     "projects": "项目",
     "nykee": "Nykeeのブログ",
-    "blog":"ブログ",
-    "about":"关于",
-    "photograph":"随拍",
-    "aboutMe":"私について",
-    "selfIntro":[
+    "blog": "ブログ",
+    "about": "关于",
+    "photograph": "随拍",
+    "aboutMe": "私について",
+    "selfIntro": [
       " そして、私はウェブフロントエンドに興味があります！私は、ウェブ開発者としてスタートアップ会社で働いています",
       "Web開発についての私のスキルは以下の通りです： ",
-
       "1、Web先端常用フレームVue、React",
       "2、Webフロントエンドデータ可視化に興味があり、いくつかの経験がある（wiz lib eg: echarts、D3)",
       "3、Java Web開発スキルを少し知っている eg: Mysql,Spring,SpringMVC,Mybatis ",
       "4、バックエンドからフロントエンドまでプロジェクトを展開できる",
       "そして、私は、ウィズコーヒーと電子音楽をコード化してうれしいです"
-
     ],
-    "friendsLinks":"友情リンク",
-    "featuredTags":"特色ラベル",
-    "aboutMeSlogan":"Talk is cheap. Show me the code.",
-    "selfIntroSlogan":"Stay hungry,Stay foolish",
-    "baiduMap":"BaiduMap",
-    "nodeSpider":"nodeSpider",
-    "webFE":"webFE",
-    "proj_stack":"技術倉庫",
-    "proj_discri":"プロジェクトの説明",
-    "proj_git":"Github URL",
-    "projects_iRide":{
-      "name":"iRide",
-      "description_1":"Biketo . comによると、私は2つのHTMLページ（ホームページと製品詳細ページ）をプログラムしました ",
-      "description_2":"Wiz Lib : jQueryとブートストラップを使用するCSS 3 ",
-      "description_3":"製品の詳細ページの製品イメージのズーム",
-      "githubAdd":"その時gitを使う方法を学ばなかった"
+    "friendsLinks": "友情リンク",
+    "featuredTags": "特色ラベル",
+    "aboutMeSlogan": "Talk is cheap. Show me the code.",
+    "selfIntroSlogan": "Stay hungry,Stay foolish",
+    "baiduMap": "BaiduMap",
+    "nodeSpider": "nodeSpider",
+    "webFE": "webFE",
+    "proj_stack": "技術倉庫",
+    "proj_discri": "プロジェクトの説明",
+    "proj_git": "Github URL",
+    "projects_iRide": {
+      "name": "iRide",
+      "description_1": "Biketo . comによると、私は2つのHTMLページ（ホームページと製品詳細ページ）をプログラムしました ",
+      "description_2": "Wiz Lib : jQueryとブートストラップを使用するCSS 3 ",
+      "description_3": "製品の詳細ページの製品イメージのズーム",
+      "githubAdd": "その時gitを使う方法を学ばなかった"
     },
-    "projects_inno":{
-      "name":"inno cloud platform",
-      "description_1":"会社のクラウドプラットフォームの最初のバージョンであり、私は、フロントとリアのアーキテクチャの設計と建設に責任があります ",
-      "description_2":"Wiz Lib : jQueryとブートストラップは、CSS 3とJava Wiz Spring、SpringMVCとMybatisを使用します",
-      "description_3":"Baidu echartを用いたデータ可視化",
-      "description_4":"前後端の構築に参加して、機能開発",
-      "githubAdd":"なし"
+    "projects_inno": {
+      "name": "inno cloud platform",
+      "description_1": "会社のクラウドプラットフォームの最初のバージョンであり、私は、フロントとリアのアーキテクチャの設計と建設に責任があります ",
+      "description_2": "Wiz Lib : jQueryとブートストラップは、CSS 3とJava Wiz Spring、SpringMVCとMybatisを使用します",
+      "description_3": "Baidu echartを用いたデータ可視化",
+      "description_4": "前後端の構築に参加して、機能開発",
+      "githubAdd": "なし"
     },
-    "projects_innoVue":{
-      "name":"inno cloud platform Vueによって再構成する",
-      "description_1":"inno cloud platform Vueによって再構成する",
-      "githubAdd":"https://github.com/nykee/innooooVue"
+    "projects_innoVue": {
+      "name": "inno cloud platform Vueによって再構成する",
+      "description_1": "inno cloud platform Vueによって再構成する",
+      "githubAdd": "https://github.com/nykee/innooooVue"
     },
-    "projects_fluoVue":{
-      "name":"FluoMotion cloud platform Vueによって再構成する",
-      "description_1":"FluoMotion cloud platform Vueによって再構成する",
-      "description_2":"iview",
-      "githubAdd":"https://github.com/nykee/innooooVue"
+    "projects_fluoVue": {
+      "name": "FluoMotion cloud platform Vueによって再構成する",
+      "description_1": "FluoMotion cloud platform Vueによって再構成する",
+      "description_2": "iview",
+      "githubAdd": "https://github.com/nykee/innooooVue"
     },
-    "projects_fluoReact":{
-      "name":"FluoMotion cloud platform Reactによって再構成する",
-      "description_1":"FluoMotion cloud platform Reactによって再構成する",
-      "description_2":"UI lib use ant-design",
-      "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
+    "projects_fluoReact": {
+      "name": "FluoMotion cloud platform Reactによって再構成する",
+      "description_1": "FluoMotion cloud platform Reactによって再構成する",
+      "description_2": "UI lib use ant-design",
+      "githubAdd": "https://github.com/nykee/nykeeMotionVReact"
     },
-    "projects_nykee":{
-      "name":"www.nykee.cn",
-      "description_1":"Githubで展開された個人ウェブサイト",
-      "description_2":"UI lib use iview",
-      "description_3":"icon use font-awesome",
-      "description_4":"use Vue and vue-router",
-      "description_5":"製本のためにドメイン名www.nykee.cnを購入",
-      "description_6":"以前はgithubにデプロイされ、Alibaba Cloudに移行されました。",
-      "description_7":"Todo：現在のWebサイトは静的なので、後で動的に開発する予定です。ノードまたはJavaでバックエンドを記述してください。",
-      "githubAdd":"https://github.com/nykee/nykee.github.io"
+    "projects_nykee": {
+      "name": "www.nykee.cn",
+      "description_1": "Githubで展開された個人ウェブサイト",
+      "description_2": "Vue、iview、vue-router、Vuexファミリーバケット開発、国際適応と適応的適応を使用する",
+      "description_3": "最初の画面読み込みを最適化する：iviewロードオンデマンド、第三者はCDNを使用し、イメージ圧縮はWebp形式を使用し、クラウド、Webpackおよびバックエンドの設定で展開するGzip圧縮",
+      "description_4": "use Vue and vue-router",
+      "description_5": "製本のためにドメイン名www.nykee.cnを購入",
+      "description_6": "以前はgithubにデプロイされ、Alibaba Cloudに移行されました。",
+      "description_7": "Todo：現在のWebサイトは静的なので、後で動的に開発する予定です。ノードまたはJavaでバックエンドを記述してください。",
+      "githubAdd": "https://github.com/nykee/nykee.github.io"
     },
-    "projects_dzdp":{
-      "name":"大众点评(similar to groupon) NodeJS Spider",
-      "description_1":"NodeJS Spider Project",
-      "description_2":"use OpenApi provided by 大众点评",
-      "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
-      "githubAdd":"https://github.com/nykee/dzdp_spider"
+    "projects_dzdp": {
+      "name": "大众点评(similar to groupon) NodeJS Spider",
+      "description_1": "NodeJS Spider Project",
+      "description_2": "use OpenApi provided by 大众点评",
+      "description_3": "use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
+      "githubAdd": "https://github.com/nykee/dzdp_spider"
     },
-    "photoPage":{
-
-      "intro":["私は山と海を渡っていました",
+    "photoPage": {
+      "intro": [
+        "私は山と海を渡っていました",
         "私は風と自由を夢見ている",
         "人生はあなたの目の前だけではありません",
         "詩と遠い場所があります",
-        "川と湖、唯一の目の証言の使用"],
-      "photos":[
+        "川と湖、唯一の目の証言の使用"
+      ],
+      "photos": [
         {
-          "title":"シンプルさとモダンさの融合",
-          "time":"2017年04月22日撮影",
-          "location":"上海豫園"
+          "title": "シンプルさとモダンさの融合",
+          "time": "2017年04月22日撮影",
+          "location": "上海豫園"
         },
         {
-          "title":"ゴールデンコム",
-          "time":"2017年05月29日撮影",
-          "location":"上海南匯"
+          "title": "ゴールデンコム",
+          "time": "2017年05月29日撮影",
+          "location": "上海南匯"
         },
         {
-          "title":"夜の雨、作業道路",
-          "time":"2018年04月23日撮影",
-          "location":"上海松江"
+          "title": "夜の雨、作業道路",
+          "time": "2018年04月23日撮影",
+          "location": "上海松江"
         },
         {
-          "title":"阳光小奶狗",
-          "time":"2018年02月17日撮影",
-          "location":"紹興、浙江省"
+          "title": "阳光小奶狗",
+          "time": "2018年02月17日撮影",
+          "location": "紹興、浙江省"
         },
         {
-          "title":"ペイの山と水",
-          "time":"2018年10月27日撮影",
-          "location":"蘇州博物館"
-        }
-      ,
-        {
-          "title":"桜が咲く速さ",
-          "time":"2017年04月04日撮影",
-          "location":"熊本県、九州、日本"
-        }
-      ,
-        {
-          "title":"シークルーズ",
-          "time":"拍摄于2017年04月03日",
-          "location":"海洋量子号"
-        }
-      ,
-        {
-          "title":"失われた時間",
-          "time":"2017年04月04日撮影",
-          "location":"海洋量子号"
+          "title": "ペイの山と水",
+          "time": "2018年10月27日撮影",
+          "location": "蘇州博物館"
         },
         {
-          "title":"赤いカモメ",
-          "time":"2018年01月22日撮影",
-          "location":"无锡鼋头渚"
+          "title": "桜が咲く速さ",
+          "time": "2017年04月04日撮影",
+          "location": "熊本県、九州、日本"
         },
         {
-          "title":"下の会社",
-          "time":"2018年07月10日撮影",
-          "location":"上海松江"
+          "title": "シークルーズ",
+          "time": "拍摄于2017年04月03日",
+          "location": "海洋量子号"
         },
         {
-          "title":"青",
-          "time":"2018年07月19日撮影",
-          "location":"上海松江"
+          "title": "失われた時間",
+          "time": "2017年04月04日撮影",
+          "location": "海洋量子号"
+        },
+        {
+          "title": "赤いカモメ",
+          "time": "2018年01月22日撮影",
+          "location": "无锡鼋头渚"
+        },
+        {
+          "title": "下の会社",
+          "time": "2018年07月10日撮影",
+          "location": "上海松江"
+        },
+        {
+          "title": "青",
+          "time": "2018年07月19日撮影",
+          "location": "上海松江"
         }
       ]
-
-
+    },
+    "aboutPage": {
+      "timeLine": [
+        {
+          "time": "2017.09.26",
+          "activity": "最初のバージョンが書かれ始め、gitリポジトリの初期化"
+        },
+        {
+          "time": "2018.11.06",
+          "activity": "i18n国際適応を追加する"
+        },
+        {
+          "time": "2018.11.12",
+          "activity": "Alibaba Cloudの移行"
+        },
+        {
+          "time": "2018.11.13",
+          "activity": "Vue-lazyloadを追加"
+        },
+        {
+          "time": "2018.11.15",
+          "activity": "ICP出願の完了"
+        },
+        {
+          "time": "2018.11.15",
+          "activity": "フロントエンドのパフォーマンスの最適化：第1画面の読み込みの最適化と画像の最適化"
+        },
+        {
+          "time": "2018.11.20",
+          "activity": "音楽再生を追加する"
+        }
+      ]
     }
-
   }
 }

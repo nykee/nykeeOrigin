@@ -1,18 +1,18 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">React及React-router注意点</h1></li>
+      <li><h1 class="title">React及React-router注意点</h1></li>
     </ul>
     <div class="main-body">
       <div id="part1" class="part">
         <div class="title-lv1">1、React-router</div>
         <p class="descrp">React-router必须设置history={browserHistory}，否则路由无法显示</p>
 
-       <!-- <CustomPicture srcSet="http://imagenykeecn.test.upcdn.net/history.webp"
-                       img-src="http://imagenykeecn.test.upcdn.net/history.jpg"/>-->
+        <!-- <CustomPicture srcSet="http://imagenykeecn.test.upcdn.net/history.webp"
+                        img-src="http://imagenykeecn.test.upcdn.net/history.jpg"/>-->
 
         <picture>
-          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/history.webp" class="resp-img" >
+          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/history.webp" class="resp-img">
           <img src="http://imagenykeecn.test.upcdn.net/history.jpg" class="resp-img"/>
         </picture>
 
@@ -32,22 +32,22 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-//  import CustomPicture from '../../components/CustomPicture'
-    export default {
-        data() {
-            return {
-              postTime:'2017-11-08'
-            }
-        },
-        methods: {},
-        created: function () {
+  //  import CustomPicture from '../../components/CustomPicture'
+  export default {
+    data() {
+      return {
+        postTime: '2017-11-08'
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        mounted() {
+    },
+    mounted() {
 
-        },
-        components: {PostTag,}
-    }
+    },
+    components: {PostTag,}
+  }
 </script>
 <style>
 

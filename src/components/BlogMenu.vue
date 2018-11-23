@@ -1,5 +1,5 @@
 <template>
-  <Menu  theme="light"  ref="bMenu" :activeName="activeName">
+  <Menu theme="light" ref="bMenu" :activeName="activeName">
     <MenuItem name="1">
       <span @click="directTo('FrontEndTricks')">前端技巧汇总，包括CSS,JS</span>
     </MenuItem>
@@ -43,39 +43,38 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-    export default {
-        data() {
-            return {
+  import {mapState} from 'vuex'
 
-            }
-        },
-        methods: {
-          directTo(add){
-            this.$router.push('/Blogs/'+add);
+  export default {
+    data() {
+      return {}
+    },
+    methods: {
+      directTo(add) {
+        this.$router.push('/Blogs/' + add);
 
-          },
-        },
-        created: function () {
-          mapState({
-            activeName: state => state.blogMenuActiveName
-          });
-          this.$nextTick(()=>{
-            this.$refs.bMenu.updateActiveName();
-          });
-        },
-        mounted() {
-          // console.log(this.activeName);
-         /* mapState({
-            activeName: state => state.blogMenuActiveName
-          });
-          this.$nextTick(()=>{
-            this.$refs.bMenu.updateActiveName();
-          });*/
+      },
+    },
+    created: function () {
+      mapState({
+        activeName: state => state.blogMenuActiveName
+      });
+      this.$nextTick(() => {
+        this.$refs.bMenu.updateActiveName();
+      });
+    },
+    mounted() {
+      // console.log(this.activeName);
+      /* mapState({
+         activeName: state => state.blogMenuActiveName
+       });
+       this.$nextTick(()=>{
+         this.$refs.bMenu.updateActiveName();
+       });*/
 
-        },
-        components: {}
-    }
+    },
+    components: {}
+  }
 </script>
 <style>
 

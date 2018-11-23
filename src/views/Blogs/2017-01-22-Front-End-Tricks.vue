@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
+      <li><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
     </ul>
     <div class="main-body">
       <div id="part1" class="part">
@@ -9,7 +9,8 @@
         <div class="title-lv1">一、CSS部分</div>
         <div id="part1-section1" class="section">
           <p class="title-lv2"> 1.加载CDN文件时，可以省掉HTTP标识</p>
-          <p class="descrp">现在很流行的CDN即从专门的服务器加载一些通用的JS和CSS文件，出于安全考虑有的CDN服务器使用HTTPS方式连接，而有的是传统的HTTP，其实我们在使用时可以忽略掉这个，将它从URL中省去。</p>
+          <p class="descrp">
+            现在很流行的CDN即从专门的服务器加载一些通用的JS和CSS文件，出于安全考虑有的CDN服务器使用HTTPS方式连接，而有的是传统的HTTP，其实我们在使用时可以忽略掉这个，将它从URL中省去。</p>
           <pre class="code-text">
             <code>
               {{sc}}
@@ -42,13 +43,14 @@
               <span><</span>/div>
             </code>
           </pre>
-        </div >
+        </div>
       </div>
-      <div id="part2" class="part" >
+      <div id="part2" class="part">
         <div class="title-lv1">二、Javascript部分:</div>
         <div id="part2-section1" class="section">
           <p class="title-lv2"> 1.生成随机字符串</p>
-          <p class="descrp">利用 Math.random 和 toString 生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了 toString 方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
+          <p class="descrp">利用 Math.random 和 toString 生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了 toString
+            方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
           <pre class="code-text">
             <code>
                function generateRandomAlphaNum(len) {
@@ -64,18 +66,20 @@
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
           <p class="descrp">JavaScript中是没有整型概念的，但利用好位操作符可以轻松处理，同时获得效率上的提升。</p>
-          <p class="descrp">|0 和 ~~ 是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的 parseInt , Math.round  要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
+          <p class="descrp">|0 和 ~~ 是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的 parseInt , Math.round
+            要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
           <pre class="code-text">
             <code>
                var foo = (12.4 / 4.13) | 0;//结果为3
                 var bar = ~~(12.4 / 4.13);//结果为3
             </code>
           </pre>
-          <p class="descrp">顺便说句， !! 将一个值方便快速转化为布尔值 !!window===true  。</p>
+          <p class="descrp">顺便说句， !! 将一个值方便快速转化为布尔值 !!window===true 。</p>
         </div>
         <div id="part2-section3" class="section">
           <p class="title-lv2"> 3.关于console的恶作剧</p>
-          <p class="descrp">关于重写原生方法，这里有个恶作剧大家可以拿去寻开心。Chrome的 console.log 是支持对文字添加样式的，甚至log图片都可以。于是可以重写掉默认的log方法，把将要log的文字应用到CSS的模糊效果，这样当有人试图调用console.log()的时候，出来的是模糊不清的文字。好冷，我表示没有笑。
+          <p class="descrp">关于重写原生方法，这里有个恶作剧大家可以拿去寻开心。Chrome的 console.log
+            是支持对文字添加样式的，甚至log图片都可以。于是可以重写掉默认的log方法，把将要log的文字应用到CSS的模糊效果，这样当有人试图调用console.log()的时候，出来的是模糊不清的文字。好冷，我表示没有笑。
 
             是从这篇G+帖子的评论里看到的。使用之后的效果是再次调用log会输出字迹模糊不清的文字。</p>
           <pre class="code-text">
@@ -107,9 +111,9 @@
             </code>
           </pre>
           <!--<CustomPicture imgSrc="http://imagenykeecn.test.upcdn.net/console.table.jpg"-->
-                         <!--srcSet="http://imagenykeecn.test.upcdn.net/console.table.webp" className="resp-img"/>-->
+          <!--srcSet="http://imagenykeecn.test.upcdn.net/console.table.webp" className="resp-img"/>-->
           <picture>
-            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/console.table.webp" class="resp-img" >
+            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/console.table.webp" class="resp-img">
             <img src="http://imagenykeecn.test.upcdn.net/console.table.jpg" class="resp-img"/>
           </picture>
 
@@ -145,7 +149,8 @@
           </pre>
         </div>
         <div id="part2-section7" class="section">
-          <p class="title-lv2"> 7.利用js计算当前设备的DPR，动态设置在html标签上，并动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小（这个方法很不错哦~）</p>
+          <p class="title-lv2">
+            7.利用js计算当前设备的DPR，动态设置在html标签上，并动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小（这个方法很不错哦~）</p>
           <pre class="code-text">
             <code>
                !function(win, lib) {
@@ -356,56 +361,51 @@
         <div class="title-lv1">三、webpack总结</div>
         <ol class="descrp">Webpack的核心原理：
           <li>一切皆模块：
-            正如js文件可以是一个“模块（module）”一样，其他的（如css、image或html）文件也可视作模 块。因此，你可以require('myJSfile.js')亦可以require('myCSSfile.css')。这意味着我们可以将事物（业务）分割成更小的易于管理的片段，从而达到重复利用等的目的。
+            正如js文件可以是一个“模块（module）”一样，其他的（如css、image或html）文件也可视作模
+            块。因此，你可以require('myJSfile.js')亦可以require('myCSSfile.css')。这意味着我们可以将事物（业务）分割成更小的易于管理的片段，从而达到重复利用等的目的。
           </li>
           <li>按需加载：
-            传统的模块打包工具（module bundlers）最终将所有的模块编译生成一个庞大的bundle.js文件。但是在真实的app里边，“bundle.js”文件可能有10M到15M之大可能会导致应用一直处于加载中状态。
+            传统的模块打包工具（module
+            bundlers）最终将所有的模块编译生成一个庞大的bundle.js文件。但是在真实的app里边，“bundle.js”文件可能有10M到15M之大可能会导致应用一直处于加载中状态。
             因此Webpack使用许多特性来分割代码然后生成多个“bundle”文件，而且异步加载部分代码以实现按需加载。
           </li>
         </ol>
       </div>
 
 
-
-
     </div>
     <PostTag :postTime="postTime"/>
 
 
-
-
-
-  </div  >
+  </div>
 </template>
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-//  import CustomPicture from "../../components/CustomPicture"
-    export default {
-        data() {
-            return {
-              sc:`<script src="//domain.com/path/to/script.js">`,
-              postTime:'2017-01-22',
-              screenWidth:0
-            }
-        },
-        methods: {},
-        created: function () {
-          if(window.screen.width<420){
-            this.screenWidth = window.screen.width-20;
-          }
+  //  import CustomPicture from "../../components/CustomPicture"
+  export default {
+    data() {
+      return {
+        sc: `<script src="//domain.com/path/to/script.js">`,
+        postTime: '2017-01-22',
+        screenWidth: 0
+      }
+    },
+    methods: {},
+    created: function () {
+      if (window.screen.width < 420) {
+        this.screenWidth = window.screen.width - 20;
+      }
 
-        },
-        mounted() {
+    },
+    mounted() {
 
 
-
-        },
-        components: {PostTag,}
-    }
+    },
+    components: {PostTag,}
+  }
 </script>
 <style scoped>
-
 
 
 </style>

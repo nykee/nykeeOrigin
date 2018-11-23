@@ -61,9 +61,9 @@
     "projects_nykee":{
       "name":"www.nykee.cn",
       "description_1":"个人网站用来写写博客随便记录点什么东西",
-      "description_2":"UI库使用iview",
-      "description_3":"icon使用font-awesome",
-      "description_4":"使用Vue、vue-router、Vuex全家桶开发，进行了i18n国际化适配及响应式适配",
+      "description_2":"使用Vue、iview、vue-router、Vuex全家桶开发，进行了i18n国际化适配及响应式适配",
+      "description_3":"优化首屏加载：iview按需加载，第三方依赖CDN引入，图片压缩使用Webp格式并部署在又拍云，webpack与后端配置Gzip压缩",
+      "description_4":"",
       "description_5":"购买了域名www.nykee.cn进行绑定",
       "description_6":"前期部署于github上，目前已迁移至阿里云",
       "description_7":"Todo:目前为静态的，后期打算进行动态开发，用Node或者java写下后端",
@@ -146,6 +146,38 @@
       ]
 
 
+    },
+    "aboutPage":{
+      "timeLine":[
+        {
+          "time":"2017.09.26",
+          "activity":"初版开始编写，git仓库初始化"
+        },
+        {
+          "time":"2018.11.06",
+          "activity":"添加i18n国际化适配"
+        },
+        {
+          "time":"2018.11.12",
+          "activity":"迁移阿里云"
+        },
+        {
+          "time":"2018.11.13",
+          "activity":"添加Vue-lazyload"
+        },
+        {
+          "time":"2018.11.15",
+          "activity":"完成ICP备案"
+        },
+        {
+          "time":"2018.11.15",
+          "activity":"前端性能优化：首屏加载优化及图片优化"
+        },
+        {
+          "time":"2018.11.22",
+          "activity":"加入音乐播放功能"
+        }
+      ]
     }
 
 

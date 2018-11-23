@@ -3,149 +3,176 @@
     "home": "HOME",
     "projects": "PROJECT",
     "nykee": "Nykee Blog",
-    "blog":"BLOG",
-    "about":"ABOUT",
-    "photograph":"PHOTO",
-    "aboutMe":"About Me",
-    "selfIntro":[
+    "blog": "BLOG",
+    "about": "ABOUT",
+    "photograph": "PHOTO",
+    "aboutMe": "About Me",
+    "selfIntro": [
       " Hi,my name is nykee .And i am interested in Web front-end!I am working at a start-up company as a web developer",
       "My skills about web development are as followed： ",
-
       "1、Familiar with Web front end common framework ",
       "2、interested and have some experience in web front-end data visualization（wiz lib eg: echarts、D3)",
       "3、know a little bit of Java Web development skills eg: Mysql,Spring,SpringMVC,Mybatis ",
       "4、able to develop a project from back-end to front-end",
       "And I am glad to code wiz coffee and electronic music"
     ],
-    "friendsLinks":"FRIENDS LINKS",
-    "featuredTags":"FEATURED TAGS",
-    "aboutMeSlogan":"Talk is cheap. Show me the code.",
-    "selfIntroSlogan":"Stay hungry,Stay foolish",
-    "baiduMap":"BaiduMap",
-    "nodeSpider":"nodeSpider",
-    "webFE":"webFE",
-    "proj_stack":"Stack",
-    "proj_discri":"Project Description",
-    "proj_git":"Github Address",
-    "projects_iRide":{
-      "name":"iRide",
-      "description_1":"according to Biketo.com , I programed two html pages(Home page and a product details page) ",
-      "description_2":"wiz lib :jquery and bootstrap use css3 ",
-      "description_3":"product details page with a zoom for product image",
-      "githubAdd":"not learned how to use git at that time "
+    "friendsLinks": "FRIENDS LINKS",
+    "featuredTags": "FEATURED TAGS",
+    "aboutMeSlogan": "Talk is cheap. Show me the code.",
+    "selfIntroSlogan": "Stay hungry,Stay foolish",
+    "baiduMap": "BaiduMap",
+    "nodeSpider": "nodeSpider",
+    "webFE": "webFE",
+    "proj_stack": "Stack",
+    "proj_discri": "Project Description",
+    "proj_git": "Github Address",
+    "projects_iRide": {
+      "name": "iRide",
+      "description_1": "according to Biketo.com , I programed two html pages(Home page and a product details page) ",
+      "description_2": "wiz lib :jquery and bootstrap use css3 ",
+      "description_3": "product details page with a zoom for product image",
+      "githubAdd": "not learned how to use git at that time "
     },
-    "projects_inno":{
-      "name":"inno cloud platform",
-      "description_1":"The first version of the Company cloud platform,and i am responsible for the design and construction of the front and rear architecture. ",
-      "description_2":"wiz lib :jquery and bootstrap use css3 and java wiz spring,springMVC and Mybatis",
-      "description_3":"Data visualization using Baidu echarts",
-      "description_4":"Participate in the front-end and back-end architecture",
-      "githubAdd":"no git address"
+    "projects_inno": {
+      "name": "inno cloud platform",
+      "description_1": "The first version of the Company cloud platform,and i am responsible for the design and construction of the front and rear architecture. ",
+      "description_2": "wiz lib :jquery and bootstrap use css3 and java wiz spring,springMVC and Mybatis",
+      "description_3": "Data visualization using Baidu echarts",
+      "description_4": "Participate in the front-end and back-end architecture",
+      "githubAdd": "no git address"
     },
-    "projects_innoVue":{
-      "name":"inno cloud platform build by Vue",
-      "description_1":"inno cloud platform reconstitute by Vue",
-      "githubAdd":"https://github.com/nykee/innooooVue"
+    "projects_innoVue": {
+      "name": "inno cloud platform build by Vue",
+      "description_1": "inno cloud platform reconstitute by Vue",
+      "githubAdd": "https://github.com/nykee/innooooVue"
     },
-    "projects_fluoVue":{
-      "name":"FluoMotion cloud platform reconstitute by Vue",
-      "description_1":"FluoMotion cloud platform reconstitute by Vue",
-      "description_2":"iview",
-      "githubAdd":"https://github.com/nykee/innooooVue"
+    "projects_fluoVue": {
+      "name": "FluoMotion cloud platform reconstitute by Vue",
+      "description_1": "FluoMotion cloud platform reconstitute by Vue",
+      "description_2": "iview",
+      "githubAdd": "https://github.com/nykee/innooooVue"
     },
-    "projects_fluoReact":{
-      "name":"FluoMotion cloud platform reconstitute by React",
-      "description_1":"reconstitute FluoMotion cloud platform wiz react",
-      "description_2":"UI lib use ant-design",
-      "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
+    "projects_fluoReact": {
+      "name": "FluoMotion cloud platform reconstitute by React",
+      "description_1": "reconstitute FluoMotion cloud platform wiz react",
+      "description_2": "UI lib use ant-design",
+      "githubAdd": "https://github.com/nykee/nykeeMotionVReact"
     },
-    "projects_nykee":{
-      "name":"www.nykee.cn",
-      "description_1":"Personal website deploy at github",
-      "description_2":"UI lib use iview",
-      "description_3":"icon use font-awesome",
-      "description_4":"use Vue and vue-router and Vuex",
-      "description_5":"Purchased the domain name www.nykee.cn for binding",
-      "description_6":"Previously deployed on github, it has been migrated to Alibaba Cloud.",
-      "description_7":"Todo: Currently my site is still static, I plan to make my site dynamically later, write backend with Node or java.",
-      "githubAdd":"https://github.com/nykee/nykee.github.io"
+    "projects_nykee": {
+      "name": "www.nykee.cn",
+      "description_1": "Personal website deployed at alicloud",
+      "description_2": "Using Vue, iview, vue-router, Vuex family bucket development, i18n international adaptation and responsive adaptation",
+      "description_3": "Optimize the first screen loading: iview loads on demand, third party relies on CDN, image compression uses Webp format and deploys in cloud, webpack and backend configuration Gzip compression",
+      "description_4": "use Vue and vue-router and Vuex",
+      "description_5": "Purchased the domain name www.nykee.cn for binding",
+      "description_6": "Previously deployed on github,recently it has been migrated to Alibaba Cloud.",
+      "description_7": "Todo: Currently my site is still static, I plan to make my site dynamically later, write backend with Node or java.",
+      "githubAdd": "https://github.com/nykee/nykeeOrgin"
     },
-    "projects_dzdp":{
-      "name":"dianping.com(similar to groupon) NodeJS Spider",
-      "description_1":"NodeJS Spider Project",
-      "description_2":"use OpenApi provided by dianping.com",
-      "description_3":"use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
-      "githubAdd":"https://github.com/nykee/dzdp_spider"
+    "projects_dzdp": {
+      "name": "dianping.com(similar to groupon) NodeJS Spider",
+      "description_1": "NodeJS Spider Project",
+      "description_2": "use OpenApi provided by dianping.com",
+      "description_3": "use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
+      "githubAdd": "https://github.com/nykee/dzdp_spider"
     },
-    "photoPage":{
-
-      "intro":["I used to cross the mountains and the sea.",
+    "photoPage": {
+      "intro": [
+        "I used to cross the mountains and the sea.",
         "I yearn for the wind and freedom",
         "Life is more than just in front of you.",
         "There are also poems and distant places",
-        "To see the world with my eyes and camera! "],
-      "photos":[
+        "To see the world with my eyes and camera! "
+      ],
+      "photos": [
         {
-          "title":"The blend of simplicity and modernity",
-          "time":"Photographed on April 22, 2017",
-          "location":"Yu Garden Shanghai"
+          "title": "The blend of simplicity and modernity",
+          "time": "Photographed on April 22, 2017",
+          "location": "Yu Garden Shanghai"
         },
         {
-          "title":"Golden wave of wheat",
-          "time":"Photographed on May 29, 2017",
-          "location":"Nanhui District Shanghai"
+          "title": "Golden wave of wheat",
+          "time": "Photographed on May 29, 2017",
+          "location": "Nanhui District Shanghai"
         },
         {
-          "title":"Night rain, work road",
-          "time":"Photographed on April 23, 2018",
-          "location":"Songjiang District Shanghai"
+          "title": "Night rain, work road",
+          "time": "Photographed on April 23, 2018",
+          "location": "Songjiang District Shanghai"
         },
         {
-          "title":"Sunny puppy",
-          "time":"Photographed on February 17, 2018",
-          "location":"Shaoxin Zhejiang Province"
+          "title": "Sunny puppy",
+          "time": "Photographed on February 17, 2018",
+          "location": "Shaoxin Zhejiang Province"
         },
         {
-          "title":"Pei's mountain and water",
-          "time":"Photographed on October 27, 2018",
-          "location":"Suzhou Museum"
-        }
-      ,
-        {
-          "title":"The speed at which the cherry blossoms fall",
-          "time":"Photographed on April 04, 2017",
-          "location":"Kumamoto Prefecture, Kyushu, Japan"
-        }
-      ,
-        {
-          "title":"Sea cruise",
-          "time":"Photographed on April 3, 2017",
-          "location":"Quantum of the sea"
-        }
-      ,
-        {
-          "title":"Lost time",
-          "time":"Photographed on April 4, 2017",
-          "location":"Quantum of the sea"
+          "title": "Pei's mountain and water",
+          "time": "Photographed on October 27, 2018",
+          "location": "Suzhou Museum"
         },
         {
-          "title":"Red-billed Gull",
-          "time":"Photographed on January 22, 2018",
-          "location":"Yuantouzhu Wuxi"
+          "title": "The speed at which the cherry blossoms fall",
+          "time": "Photographed on April 04, 2017",
+          "location": "Kumamoto Prefecture, Kyushu, Japan"
         },
         {
-          "title":"Company downstairs",
-          "time":"Photographed on July 10, 2018",
-          "location":"Songjiang District Shanghai"
+          "title": "Sea cruise",
+          "time": "Photographed on April 3, 2017",
+          "location": "Quantum of the sea"
         },
         {
-          "title":"TEN",
-          "time":"Photographed on July 19, 2018",
-          "location":"Songjiang District Shanghai"
+          "title": "Lost time",
+          "time": "Photographed on April 4, 2017",
+          "location": "Quantum of the sea"
+        },
+        {
+          "title": "Red-billed Gull",
+          "time": "Photographed on January 22, 2018",
+          "location": "Yuantouzhu Wuxi"
+        },
+        {
+          "title": "Company downstairs",
+          "time": "Photographed on July 10, 2018",
+          "location": "Songjiang District Shanghai"
+        },
+        {
+          "title": "TEN",
+          "time": "Photographed on July 19, 2018",
+          "location": "Songjiang District Shanghai"
         }
       ]
-
-
+    },
+    "aboutPage": {
+      "timeLine": [
+        {
+          "time": "September 26, 2017",
+          "activity": "The first version begins to be written, git repository initialization"
+        },
+        {
+          "time": "November 06, 2018",
+          "activity": "Add i18n international adaptation"
+        },
+        {
+          "time": "November 12, 2018",
+          "activity": "Migrating Alibaba Cloud"
+        },
+        {
+          "time": "November 13, 2018",
+          "activity": "Add Vue-lazyload"
+        },
+        {
+          "time": "November 15, 2018",
+          "activity": "Complete ICP filing"
+        },
+        {
+          "time": "November 15, 2018",
+          "activity": "Front-end performance optimization: first-screen loading optimization and image optimization"
+        },
+        {
+          "time": "November 22, 2018",
+          "activity": "Add music play function"
+        }
+      ]
     }
   }
 }

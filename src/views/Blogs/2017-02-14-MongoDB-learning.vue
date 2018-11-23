@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">MongoDB学习笔记</h1></li>
+      <li><h1 class="title">MongoDB学习笔记</h1></li>
     </ul>
     <div class="main-body">
       <div id="part1" class="part">
@@ -23,8 +23,8 @@
         <ul class="descrp">参数解释：
           <li>--bind_ip： 绑定服务IP，若绑定127.0.0.1，则只能本机访问，不指定默认本地所有IP</li>
           <li>--logpath： 定MongoDB日志文件，注意是指定文件不是目录</li>
-          <li>--dbpath:   指定数据库路径</li>
-          <li>--port:     指定服务端口号，默认端口27017</li>
+          <li>--dbpath: 指定数据库路径</li>
+          <li>--port: 指定服务端口号，默认端口27017</li>
           <li>--serviceName: 指定服务名称</li>
           <li>--serviceDisplayName: 指定服务名称，有多个mongodb服务时执行。</li>
           <li>--install: 指定作为一个Windows服务安装。</li>
@@ -138,21 +138,22 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-    export default {
-        data() {
-            return {
-              postTime:'2017-02-14'
-            }
-        },
-        methods: {},
-        created: function () {
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {
+        postTime: '2017-02-14'
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {PostTag}
-    }
+    },
+    mounted() {
+
+    },
+    components: {PostTag}
+  }
 </script>
 <style>
 

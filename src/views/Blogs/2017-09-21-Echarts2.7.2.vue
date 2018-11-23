@@ -1,11 +1,11 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">echarts学习笔记</h1></li>
+      <li><h1 class="title">echarts学习笔记</h1></li>
     </ul>
     <div class="main-body">
       <div class="title-lv1">echarts 2.7.2爬坑记录</div>
-      <p class="descrp">echarts2.7.2比较坑，标注点的坐标的配置为{  name: '北京',
+      <p class="descrp">echarts2.7.2比较坑，标注点的坐标的配置为{ name: '北京',
         geoCoord:[116.46, 39.92], },要把geoCoord写在data里面，具体mapoption的配置如下：</p>
       <pre class="code-text">
             <code>
@@ -122,21 +122,22 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-    export default {
-        data() {
-            return {
-              postTime:'2017-09-21'
-            }
-        },
-        methods: {},
-        created: function () {
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {
+        postTime: '2017-09-21'
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {PostTag}
-    }
+    },
+    mounted() {
+
+    },
+    components: {PostTag}
+  }
 </script>
 <style>
 

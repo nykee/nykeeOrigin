@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">百度地图学习笔记</h1></li>
+      <li><h1 class="title">百度地图学习笔记</h1></li>
     </ul>
     <div class="main-body">
        <pre class="code-text">
@@ -82,7 +82,6 @@
     </div>
 
 
-
     <PostTag :postTime="postTime"/>
 
   </div>
@@ -90,21 +89,22 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-    export default {
-        data() {
-            return {
-              postTime:'2017-06-08'
-            }
-        },
-        methods: {},
-        created: function () {
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {
+        postTime: '2017-06-08'
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {PostTag}
-    }
+    },
+    mounted() {
+
+    },
+    components: {PostTag}
+  }
 </script>
 <style>
 

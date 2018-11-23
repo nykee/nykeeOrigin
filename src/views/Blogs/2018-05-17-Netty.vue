@@ -1,27 +1,29 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">Netty心跳机制</h1></li>
+      <li><h1 class="title">Netty心跳机制</h1></li>
     </ul>
     <div class="main-body">
       <br id="part3" class="part">
-        <div class="title-lv1">1、Netty应用心跳和重连的整个过程:</div>
-        <p  class="descrp">
-          <p class="descrp">1）客户端连接服务端</p>
+      <div class="title-lv1">1、Netty应用心跳和重连的整个过程:</div>
+      <p class="descrp">
+      <p class="descrp">1）客户端连接服务端</p>
 
-          <p class="descrp">2）在客户端的的ChannelPipeline中加入一个比较特殊的IdleStateHandler，设置一下客户端的写空闲时间，例如5s</p>
+      <p class="descrp">2）在客户端的的ChannelPipeline中加入一个比较特殊的IdleStateHandler，设置一下客户端的写空闲时间，例如5s</p>
 
-          <p class="descrp">3）当客户端的所有ChannelHandler中4s内没有write事件，则会触发userEventTriggered方法（上文介绍过）</p>
+      <p class="descrp">3）当客户端的所有ChannelHandler中4s内没有write事件，则会触发userEventTriggered方法（上文介绍过）</p>
 
-          <p class="descrp">4）我们在客户端的userEventTriggered中对应的触发事件下发送一个心跳包给服务端，检测服务端是否还存活，防止服务端已经宕机，客户端还不知道</p>
+      <p class="descrp">4）我们在客户端的userEventTriggered中对应的触发事件下发送一个心跳包给服务端，检测服务端是否还存活，防止服务端已经宕机，客户端还不知道</p>
 
-          <p class="descrp">5）同样，服务端要对心跳包做出响应，其实给客户端最好的回复就是“不回复”，这样可以服务端的压力，假如有10w个空闲Idle的连接，那么服务端光发送心跳回复，则也是费事的事情，那么怎么才能告诉客户端它还活着呢，其实很简单，因为5s服务端都会收到来自客户端的心跳信息，那么如果10秒内收不到，服务端可以认为客户端挂了，可以close链路</p>
+      <p class="descrp">
+        5）同样，服务端要对心跳包做出响应，其实给客户端最好的回复就是“不回复”，这样可以服务端的压力，假如有10w个空闲Idle的连接，那么服务端光发送心跳回复，则也是费事的事情，那么怎么才能告诉客户端它还活着呢，其实很简单，因为5s服务端都会收到来自客户端的心跳信息，那么如果10秒内收不到，服务端可以认为客户端挂了，可以close链路</p>
 
-          <p class="descrp">6）加入服务端因为什么因素导致宕机的话，就会关闭所有的链路链接，所以作为客户端要做的事情就是断线重连</p>
+      <p class="descrp">6）加入服务端因为什么因素导致宕机的话，就会关闭所有的链路链接，所以作为客户端要做的事情就是断线重连</p>
 
       <section class="descrp">
         <div class="title-lv1">2、Netty具体详解:</div>
-        <p class="descrp">在Netty中提供了IdleStateHandler类来进行心跳的处理，它可以对一个 Channel 的 读/写设置定时器, 当 Channel 在一定事件间隔内没有数据交互时(即处于 idle 状态), 就会触发指定的事件。</p>
+        <p class="descrp">在Netty中提供了IdleStateHandler类来进行心跳的处理，它可以对一个 Channel 的 读/写设置定时器, 当 Channel 在一定事件间隔内没有数据交互时(即处于
+          idle 状态), 就会触发指定的事件。</p>
 
         <p class="descrp">该类可以对三种类型的超时做心跳机制检测：</p>
         <pre class="code-text">
@@ -264,22 +266,23 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-    export default {
-        data() {
 
-            return {
-              postTime:'2017-05-17'
-            }
-        },
-        methods: {},
-        created: function () {
+  export default {
+    data() {
 
-        },
-        mounted() {
+      return {
+        postTime: '2017-05-17'
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {PostTag}
-    }
+    },
+    mounted() {
+
+    },
+    components: {PostTag}
+  }
 </script>
 <style>
 

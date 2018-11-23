@@ -3,34 +3,34 @@
     <IntroHeader/>
 
     <div class="flexContainer">
-      <Timeline style="margin-top: 5rem;">
+      <Timeline class="time-line">
         <TimelineItem color="#73E4C9">
-          <p class="time">2017.09.26</p>
-          <p class="content">初版开始编写，git仓库初始化</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[0].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[0].activity")}}</p>
         </TimelineItem>
         <TimelineItem>
-          <p class="time">2018.11.06</p>
-          <p class="content">添加i18n国际化适配</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[1].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[1].activity")}}</p>
         </TimelineItem>
         <TimelineItem>
-          <p class="time">2018.11.12</p>
-          <p class="content">迁移阿里云</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[2].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[2].activity")}}</p>
         </TimelineItem>
         <TimelineItem>
-          <p class="time">2018.11.13</p>
-          <p class="content">添加Vue-lazyload</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[3].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[3].activity")}}</p>
         </TimelineItem>
         <TimelineItem>
-          <p class="time">2018.11.15</p>
-          <p class="content">完成ICP备案</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[4].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[4].activity")}}</p>
         </TimelineItem>
         <TimelineItem>
-          <p class="time">2018.11.15</p>
-          <p class="content">首屏优化：第三方库使用CDN,iView按需加载</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[5].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[5].activity")}}</p>
         </TimelineItem>
         <TimelineItem>
-          <p class="time">2018.11.20</p>
-          <p class="content">加入音乐播放功能(半成品，完善ing)</p>
+          <p class="time">{{$t("message.aboutPage.timeLine[6].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[6].activity")}}</p>
         </TimelineItem>
       </Timeline>
     </div>
@@ -41,23 +41,33 @@
 
 <script>
   import IntroHeader from '../components/IntroHeader.vue'
-    export default {
-        data() {
-            return {}
-        },
-        methods: {},
-        created: function () {
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {}
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {IntroHeader}
-    }
+    },
+    mounted() {
+
+    },
+    components: {IntroHeader}
+  }
 </script>
 <style scoped="scoped">
-  .time{
+  .time {
     font-weight: 800;
     font-size: 0.8rem;
   }
+
+  /*.content{*/
+  /*font-size: 1rem;*/
+  /*}*/
+  .time-line {
+    margin-top: 5rem;
+  }
+
+
 </style>

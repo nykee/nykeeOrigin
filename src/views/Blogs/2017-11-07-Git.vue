@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="title-list">
-      <li ><h1 class="title">Git学习笔记</h1></li>
+      <li><h1 class="title">Git学习笔记</h1></li>
     </ul>
     <div class="main-body">
       <div id="part3" class="part">
@@ -33,21 +33,22 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-    export default {
-        data() {
-            return {
-              postTime:'2017-11-07'
-            }
-        },
-        methods: {},
-        created: function () {
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {
+        postTime: '2017-11-07'
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {PostTag}
-    }
+    },
+    mounted() {
+
+    },
+    components: {PostTag}
+  }
 </script>
 <style>
 

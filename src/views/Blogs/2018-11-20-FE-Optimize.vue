@@ -2,7 +2,7 @@
   <div>
     <section>
       <ul class="title-list">
-        <li >
+        <li>
           <h1 class="title">前端性能优化</h1>
         </li>
       </ul>
@@ -13,35 +13,35 @@
         <div class="descrp">
           <p class="title-lv2">1、index.html引入CDN</p>
           <picture>
-            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/cdn.jpg" class="resp-img" >
+            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/cdn.jpg" class="resp-img">
             <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/cdn.jpg" alt="">
           </picture>
           <p class="title-lv2">2、Webpack配置externals将不需要打包的CDN排除</p>
           <picture>
-            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/exter.jpg" class="resp-img" >
+            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/exter.jpg" class="resp-img">
             <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/exter.jpg" alt="">
           </picture>
           <p class="title-lv2">3、Vue插件注释掉Vue.use</p>
           <picture>
-            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/vueuse.jpg" class="resp-img" >
+            <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/vueuse.jpg" class="resp-img">
             <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/vueuse.jpg" alt="">
           </picture>
         </div>
         <div class="title-lv1">二 iview按需引入</div>
         <p class="title-lv2">1、{}形式引入组件</p>
         <picture>
-          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview2.jpg" class="resp-img" >
+          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview2.jpg" class="resp-img">
           <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/iview2.jpg" alt="">
         </picture>
         <p class="title-lv2">2、Vue.component()注册</p>
         <picture>
-          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview1.jpg" class="resp-img" >
+          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview1.jpg" class="resp-img">
           <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/iview1.jpg" alt="">
         </picture>
         <p class="title-lv2">3、通过webpack-bundle-analyzer插件查看打包情况</p>
         <span>npm run build --report</span>
         <picture>
-          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/run_rpt.png" class="resp-img" >
+          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/run_rpt.png" class="resp-img">
           <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/run_rpt.png" alt="">
         </picture>
 
@@ -70,40 +70,37 @@
         </code>
       </pre>
       <picture>
-        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/gzip.png" class="resp-img" >
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/gzip.png" class="resp-img">
         <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/gzip.png" alt="">
       </picture>
       <p class="title-lv3">打包后体积显著变小</p>
       <picture>
-        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/gzipA.jpg" class="resp-img" >
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/gzipA.jpg" class="resp-img">
         <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/gzipA.jpg" alt="">
       </picture>
       <div class="title-lv1">二 后端部分</div>
       <p class="title-lv2">Tomcat配置gzip</p>
       <ul>
-        <li> <span>后端仅配置了tomcat的Gzip其他容器后续用到再试</span></li>
+        <li><span>后端仅配置了tomcat的Gzip其他容器后续用到再试</span></li>
         <li><span>tomcat只需修改server.xml中的配置即可</span></li>
       </ul>
       <picture>
-        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/tomcat.jpg" class="resp-img" >
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/tomcat.jpg" class="resp-img">
         <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/tomcat.jpg" alt="">
       </picture>
       <p class="title-lv2">重启tomcat并访问验证</p>
       <span>返回的响应头的类型为GZIP即为开启gizp成功</span>
       <picture>
-        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/gzipRes.jpg" class="resp-img" >
+        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/gzipRes.jpg" class="resp-img">
         <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/gzipRes.jpg" alt="">
       </picture>
 
       <div class="title-lv1">三 总结</div>
 
-        <p class="title-lv3">为了个人网站的首屏开启速度也算是做了一点前端性能优化，
-          从最开始的首屏加载6.2秒到最后开启了Gzip的88ms，加载速度也算是有很大的飞跃，
+      <p class="title-lv3">为了个人网站的首屏开启速度也算是做了一点前端性能优化，
+        从最开始的首屏加载6.2秒到最后开启了Gzip的88ms，加载速度也算是有很大的飞跃，
         自己也是摸索了蛮多的性能优化手段，包括图片压缩、webp图片格式、CDN、前后端GZIP，
         过程中也接触了很多现在没用到的性能优化技术，webpack dll，vue路由懒加载等，等留着以后再玩吧，EOF</p>
-
-
-
 
 
       <PostTag :postTime="postTime"/>
@@ -113,21 +110,22 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-    export default {
-        data() {
-            return {
-              postTime:'2018-11-20',
-            }
-        },
-        methods: {},
-        created: function () {
 
-        },
-        mounted() {
+  export default {
+    data() {
+      return {
+        postTime: '2018-11-20',
+      }
+    },
+    methods: {},
+    created: function () {
 
-        },
-        components: {PostTag}
-    }
+    },
+    mounted() {
+
+    },
+    components: {PostTag}
+  }
 </script>
 <style>
 
