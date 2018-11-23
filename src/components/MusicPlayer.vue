@@ -67,7 +67,7 @@
         <div  class="time-ctrl">
           <ul class="clearfix">
             <li class="fl progress-bar">
-              <i-progress :percent="25"
+              <i-progress :percent="playPercent"
                           hide-info
                           :stroke-width="5" class="ivu-progress-bar"/>
             </li>
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <!--<keep-alive>-->
+      <keep-alive>
       <div id="mPlayer-playlist" class="mPlayer-playlist" v-if="isSongListShow">
         <ul v-for="song in songLists" class="clearfix mPlayer-playlist-items " @click="clickToPlay(song.index)"
             :key="song.index">
@@ -94,7 +94,7 @@
           <li class="fr playlist-artist" :class="{'playing-color':song.index === isPlayingIndex}">{{song.singer}}</li>
         </ul>
       </div>
-      <!--</keep-alive>-->
+      </keep-alive>
 
 
     </div>
@@ -121,8 +121,8 @@
       return {
         isSongListShow: false,
         isToggle: true,
-        songLists: [],
-        playStatus: 'paused',
+        songLists: [], //全部歌曲
+        playStatus: 'paused', //播放状态
         currentSong: [],
         isMobile: false,
         isMini: false,
@@ -131,9 +131,10 @@
         isVolumeSliderShow: false,
         mouseY: 0,
         moveDistance: 0,
-        isRandom: false,
-        cur_song_duration:"00:00",
-        cur_song_time_count:"00:00"
+        isRandom: false, //随机播放flag
+        cur_song_duration:"00:00", //当前歌曲播放进度分秒
+        cur_song_time_count:"00:00", //当前歌曲总分秒
+        playPercent:0 //进度条百分比
       }
     },
     methods: {
@@ -142,9 +143,9 @@
       },
       changePlayMode() {
         this.isRandom = !this.isRandom;
-        // console.log(this.isRandom);
         let infoMsg = this.isRandom?"已开启随机播放":"已开启列表播放";
         this.$Notice.info({
+
           title:infoMsg
         })
 
@@ -152,9 +153,7 @@
 
       toggleMini() {
         let self = this;
-        // console.log();
         let left = parseInt(this.$refs.mPlayer.style.left.slice(0, this.$refs.mPlayer.style.left.toString().indexOf("px")));
-        // console.log(left);
 
         if (left === 0) {
           let timer = setInterval(function () {
@@ -166,7 +165,6 @@
             self.isSongListShow = false;
             self.isVolumeSliderShow = false;
             left -= 10;
-            // console.log(left);
             self.$refs.mPlayer.style.left = left + "px";
           }, 16);
         }
@@ -179,7 +177,6 @@
             }
 
             left += 10;
-            // console.log(left);
             self.$refs.mPlayer.style.left = left + "px";
           }, 16);
         }
@@ -191,51 +188,19 @@
         this.isSongListShow = false
       },
       changePlayStatus() {
-        this.getSongDuration();
-        // let mscAudio = document.getElementById("mscAudio");
-        // console.log(mscAudio.autoplay);
-
         this.$refs.mscAudio.setAttribute("autoplay", "autoplay");
-        // mscAudio.autoplay = "autoplay";
-        // console.log(this.currentSong);
-        // this.$store.commit("CHANGE_PLAYSTATUS");
-        // this.playStatus = (this.playStatus ==="paused")?"playing" :"paused";
         if (this.playStatus === "paused") {
           this.playStatus = "playing";
-          // this.$refs.mscAudio.play();
-          // this.$refs.mscAudio.stop();
 
           this.$refs.mscAudio.play();
 
-          // console.log(Math.floor(this.$refs.mscAudio.duration/60));
-          // console.log(Math.floor(this.$refs.mscAudio.duration%60));
           this.isPlayingIndex = this.currentSong.index;
         }
         else {
           this.playStatus = "paused";
-          // this.$refs.mscAudio.pause();
           this.$refs.mscAudio.pause();
-          // this.$refs.mscAudio.play();
 
         }
-      },
-      getSongDuration(){
-        // console.log(this.cur_song_time_count);
-        this.$nextTick(()=>{
-          let min,sec = null;
-          console.log(this.$refs.mscAudio.duration);
-          console.log(this.$refs.mscAudio.currentSrc);
-          min=Math.floor(this.$refs.mscAudio.duration/60);
-          sec = Math.floor(this.$refs.mscAudio.duration%60);
-          sec = sec<10?("0"+sec):sec;
-          min = min<10?("0"+min):min;
-
-          this.cur_song_time_count = min+":"+sec;
-        })
-
-          // console.log(this.cur_song_time_count);
-
-
       },
 
       handleTimeUpdate(){
@@ -259,7 +224,6 @@
           this.isPlayingIndex = idx;
 
         }
-        this.getSongDuration();
 
 
 
@@ -271,18 +235,14 @@
         let idx = this.currentSong.index;
         let randIdx = Math.floor(Math.random() * (this.songLists.length - 1 + 1) + 1);
         if (this.isRandom) {
-          // console.log(randIdx);
           this.currentSong = this.songLists[randIdx - 1];
-          // console.log(this.currentSong);
         }
         else {
           if (idx === this.songLists.length) {
             this.currentSong = this.songLists[0];
-            this.getSongDuration();
           }
           else {
             this.currentSong = this.songLists[idx];
-            this.getSongDuration();
 
           }
         }
@@ -292,12 +252,11 @@
       },
       clickToPlay(index) {
         this.$refs.mscAudio.setAttribute("autoplay", "autoplay");
-        // console.log(mscAudio);
         this.currentSong = this.songLists[index - 1];
         this.playStatus = "playing";
         this.$refs.mscAudio.play();
         this.isPlayingIndex = index;
-        this.getSongDuration();
+//        this.getSongDuration();
       },
       showVSlider() {
         this.isVolumeSliderShow = !this.isVolumeSliderShow
@@ -321,7 +280,10 @@
         console.log("MouseUp");
 //            console.log(e);
         console.log(e.clientY);
-      }
+      },
+
+
+
 
 
     },
@@ -335,7 +297,7 @@
 
     },
     mounted() {
-
+      /*ajax获取歌单数据，绑定到songLists和currentSong*/
       axios.get("https://api.bzqll.com/music/tencent/songList?key=579621905&id=5632041384").then((res) => {
         for (let i = 0, len = res.data.data.songs.length; i < len; i++) {
           res.data.data.songs[i].index = i + 1;
@@ -346,6 +308,7 @@
       }).catch((err) => {
         console.warn(err)
       });
+      /*设置音量*/
       this.$refs.mscAudio.volume = parseFloat(parseInt(this.volumeNum) / 100);
       if (window.screen.width <= 425) {
         this.isMobile = true;
@@ -354,8 +317,55 @@
       else {
         this.isMobile = false;
       }
+      /*监听ended事件，一个音频放完后，调用playnext方法，手动播放下一首歌*/
       this.$refs.mscAudio.addEventListener("ended", () => {
         this.playNext();
+      });
+      /*监听loadedmetadata事件，音频文件加载完成后获取duration，绑定到cur_song_time_count上*/
+      this.$refs.mscAudio.addEventListener("loadedmetadata", (e) => {
+        let min,sec = null;
+        min=Math.floor(e.target.duration/60);
+        sec = Math.floor(e.target.duration%60);
+        sec = sec<10?("0"+sec):sec;
+        min = min<10?("0"+min):min;
+
+        this.cur_song_time_count = min+":"+sec;
+      });
+
+      this.$refs.mscAudio.addEventListener("timeupdate", (e) => {
+//        console.log(e.target.duration);
+        let currentTime =Math.floor( e.target.currentTime);
+//        console.log(currentTime);
+//        console.log(Math.floor((currentTime/e.target.duration)*100));
+//      console.log(currentTime);
+        this.playPercent =Math.floor((currentTime/e.target.duration)*100);
+
+      let sec="00",
+      min="00",
+      colon=":";
+
+      if(currentTime<60){
+
+        if(currentTime<10){
+          this.cur_song_duration = min+colon+"0"+currentTime;
+        }
+        else {
+          this.cur_song_duration = min+colon+currentTime;
+        }
+
+      }
+      else{
+        min= "0"+Math.floor(currentTime/60);
+        sec = Math.floor(currentTime- 60*Math.floor(currentTime/60));
+        sec = sec<10? ("0"+sec):sec;
+//        console.log(min);
+//        console.log(sec);
+//        this.cur_song_duration = Math.floor(e.target.currentTime/60)
+//        console.log("0"+Math.floor(e.target.currentTime/60)+":"+(Math.floor(e.target.currentTime- 60*Math.floor(e.target.currentTime/60))));
+        this.cur_song_duration =min+colon+sec;
+      }
+
+
       });
 
     },
@@ -372,7 +382,7 @@
   .mPlayer-main-board {
     background-color: #929292;
     border-radius: 4px;
-    opacity: .75;
+    opacity: .85;
     padding: .5rem .9rem 1.5rem .4rem;
     width: 20rem;
     height: 6.5rem;
@@ -425,7 +435,7 @@
     position: absolute;
     bottom: 100%;
     background-color: #929292;
-    opacity: .75;
+    opacity: .85;
     /*background-color: rgba(255,255,255,.65);*/
     /*background:rgba(146,146,146,.85);*/
     color: #f6f6f6;
