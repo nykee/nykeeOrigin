@@ -415,7 +415,7 @@
 
   .msc-player-box-mb {
     position: fixed;
-    top: 88% !important;
+    top: 84% !important;
     left: 0 !important;
   }
 
@@ -455,7 +455,7 @@
     width: 2rem;
     position: absolute;
     top: 28%;
-    left: 40%;
+    left: 36%;
     color: #fff;
     z-index: 2;
   }
@@ -464,8 +464,8 @@
     position: absolute;
     color: #fff;
     z-index: 2;
-    top: 76%;
-    left: 45%;
+    top: 74%;
+    left: 43%;
 
   }
 
