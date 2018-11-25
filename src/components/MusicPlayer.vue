@@ -20,31 +20,32 @@
               <li class="mPlayer-artist">{{currentSong.singer}}</li>
             </ul>
           </i-col>
-          <i-col :span="6" class="mPlayer-main-board-block">
+          <i-col :span="7" class="mPlayer-main-board-block">
             <img :src="currentSong.pic" alt="" class="mPlayer-album" :class="{'picSpin':playStatus==='playing'}">
           </i-col>
-          <i-col :span="1" class="volume-box">
+          <!--<i-col :span="1" class="volume-box">-->
 
-            <!--<Slider v-model="volume" :step="10" class="volume-slider" v-if="isVolumeSliderShow"></Slider>-->
-            <i class="fa fa-volume-up volume-btn ctrlIcons" @click="showVSlider"></i>
-            <div class="volume-slider" v-if="isVolumeSliderShow">
-              <!--<input type="range" class="slide-range" min="0" max="100" step="1" v-model="volumeNum">-->
-              <div class="volume-slider-wrap">
-                <input type="range" class="slide-range" min="0" max="100" step="1" v-model="volumeNum">
-                <div class="volume-slider-bar" v-bind:style="{height:volumeNum+'%'}"></div>
-                <div class="volume-slider-btn" v-bind:style="{bottom:volumeNum+'%'}"
-                     @mousedown="handleMouseDown($event)"
-                     @mousemove="handleMouseMove($event)"
-                     @mouseup="handleMouseUp($event)"
-                     draggable="true"></div>
-              </div>
-
-
-            </div>
+            <!--&lt;!&ndash;<Slider v-model="volume" :step="10" class="volume-slider" v-if="isVolumeSliderShow"></Slider>&ndash;&gt;-->
+            <!--<i class="fa fa-volume-up volume-btn ctrlIcons" @click="showVSlider"></i>-->
+            <!--&lt;!&ndash;<div class="volume-slider" v-if="isVolumeSliderShow">&ndash;&gt;-->
+              <!--&lt;!&ndash;&lt;!&ndash;<input type="range" class="slide-range" min="0" max="100" step="1" v-model="volumeNum">&ndash;&gt;&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="volume-slider-wrap">&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="range" class="slide-range" min="0" max="100" step="1" v-model="volumeNum">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="volume-slider-bar" v-bind:style="{height:volumeNum+'%'}"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="volume-slider-btn" v-bind:style="{bottom:volumeNum+'%'}"&ndash;&gt;-->
+                     <!--&lt;!&ndash;@mousedown="handleMouseDown($event)"&ndash;&gt;-->
+                     <!--&lt;!&ndash;@mousemove="handleMouseMove($event)"&ndash;&gt;-->
+                     <!--&lt;!&ndash;@mouseup="handleMouseUp($event)"&ndash;&gt;-->
+                     <!--&lt;!&ndash;draggable="true"></div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 
-          </i-col>
-          <i-col :span="1" class="mPlayer-main-board-block">
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--<Slider v-model="volumeNum" :step="10"  class="my-slider" v-if="isVolumeSliderShow"></Slider>-->
+
+
+          <!--</i-col>-->
+          <i-col :span="2" class="mPlayer-main-board-block">
             <ul>
               <li @click="changeSongListShow" class="ctrlIcons toggleListBtn"><i class="fa "
                                                                                  :class="{'fa-caret-up':!isSongListShow,'fa-caret-down':isSongListShow}"></i>
@@ -56,14 +57,6 @@
             </ul>
           </i-col>
         </Row>
-        <!--<Row>
-          <i-col :span="8"></i-col>
-          <i-col :span="8">
-            <span>2:21</span>
-            <span>/</span>
-            <span>3:40</span>
-          </i-col>
-        </Row>-->
         <div  class="time-ctrl">
           <ul class="clearfix">
             <li class="fl progress-bar">
@@ -76,11 +69,15 @@
             </li>
           </ul>
         </div>
+        <div class="vol-ctrl">
+          <i class="fa  volume-btn ctrlIcons" @click="showVSlider" :class="{'fa-volume-off':isMute,'fa-volume-up':!isMute}"></i>
+          <Slider v-model="volumeNum" :step="10"  class="my-slider" v-if="isVolumeSliderShow" ></Slider>
+        </div>
 
 
         <div class="miniBtn-container" v-if="!isMobile">
           <i class="fa   miniBtn ctrlIcons" :class="{'fa-chevron-left':!isToggle,'fa-chevron-right':isToggle}"
-             @click="toggleMini"></i>
+             @click="toggleSide"></i>
         </div>
       </div>
 
@@ -107,7 +104,7 @@
         <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}">
       </div>
     </div>
-    <audio :src="currentSong.url" class="mscAudio" id="mscAudio" ref="mscAudio"  :timeupdate="handleTimeUpdate">
+    <audio :src="currentSong.url" class="mscAudio" id="mscAudio" ref="mscAudio"  >
       您的浏览器不支持 audio 标签。请使用Chrome,Firefox等现代浏览器
     </audio>
   </div>
@@ -119,18 +116,16 @@
   export default {
     data() {
       return {
-        isSongListShow: false,
-        isToggle: true,
+        isSongListShow: false,  //播放列表显示标志位
+        isToggle: true,         //播放器侧边显示标志位
         songLists: [], //全部歌曲
         playStatus: 'paused', //播放状态
-        currentSong: [],
-        isMobile: false,
-        isMini: false,
-        isPlayingIndex: 1,
-        volumeNum: 30,
+        currentSong: [],      //当前播放歌曲
+        isMobile: false,     //是否为手机标志位
+        isMini: false,      //是否为Mini标志位
+        isPlayingIndex: 1, //当前播放歌曲的索引
+        volumeNum: 30,     //音量
         isVolumeSliderShow: false,
-        mouseY: 0,
-        moveDistance: 0,
         isRandom: false, //随机播放flag
         cur_song_duration:"00:00", //当前歌曲播放进度分秒
         cur_song_time_count:"00:00", //当前歌曲总分秒
@@ -139,9 +134,11 @@
     },
     methods: {
       changeSongListShow() {
+        /*播放列表显示标志位*/
         this.isSongListShow = !this.isSongListShow
       },
       changePlayMode() {
+        /*切换播放模式*/
         this.isRandom = !this.isRandom;
         let infoMsg = this.isRandom?"已开启随机播放":"已开启列表播放";
         this.$Notice.info({
@@ -151,10 +148,10 @@
 
       },
 
-      toggleMini() {
+      toggleSide() {
+        /*播放器播放器侧边模式与正常模式*/
         let self = this;
         let left = parseInt(this.$refs.mPlayer.style.left.slice(0, this.$refs.mPlayer.style.left.toString().indexOf("px")));
-
         if (left === 0) {
           let timer = setInterval(function () {
             if (left <= -320) {
@@ -175,19 +172,19 @@
               self.isToggle = false;
               return
             }
-
             left += 10;
             self.$refs.mPlayer.style.left = left + "px";
           }, 16);
         }
 
-
       },
       toggleMobileMini() {
+        /*切换mini模式标志位*/
         this.isMini = !this.isMini;
         this.isSongListShow = false
       },
       changePlayStatus() {
+        /*点击播放/暂停按钮改变播放状态*/
         this.$refs.mscAudio.setAttribute("autoplay", "autoplay");
         if (this.playStatus === "paused") {
           this.playStatus = "playing";
@@ -203,11 +200,8 @@
         }
       },
 
-      handleTimeUpdate(){
-       console.log("timeUpdated");
-      },
-
       playPrev() {
+        /*播放前一首*/
 
         let idx = this.currentSong.index;
         let randIdx = Math.floor(Math.random() * (this.songLists.length - 1 + 1) + 1);
@@ -224,14 +218,9 @@
           this.isPlayingIndex = idx;
 
         }
-
-
-
-
-
       },
       playNext() {
-
+        /*播放下一首*/
         let idx = this.currentSong.index;
         let randIdx = Math.floor(Math.random() * (this.songLists.length - 1 + 1) + 1);
         if (this.isRandom) {
@@ -251,36 +240,18 @@
 
       },
       clickToPlay(index) {
+        /*点击播放列表播放对于的歌曲*/
         this.$refs.mscAudio.setAttribute("autoplay", "autoplay");
         this.currentSong = this.songLists[index - 1];
         this.playStatus = "playing";
         this.$refs.mscAudio.play();
         this.isPlayingIndex = index;
-//        this.getSongDuration();
       },
       showVSlider() {
+        /*切换音量调整条 的显示*/
         this.isVolumeSliderShow = !this.isVolumeSliderShow
       },
-      /*changeVolume(){
 
-      }*/
-      handleMouseDown(e) {
-        console.log("MouseDown");
-        console.log(e.clientY);
-//            console.log(e.clientX);
-        this.mouseY = e.clientY;
-      },
-      handleMouseMove(e) {
-        console.log("MouseMove");
-//            console.log(e.clientY);
-        console.log(e.clientY - this.mouseY);
-
-      },
-      handleMouseUp(e) {
-        console.log("MouseUp");
-//            console.log(e);
-        console.log(e.clientY);
-      },
 
 
 
@@ -289,6 +260,7 @@
     },
     computed: {
       isMute() {
+        /*音量为零返回计算属性isMute*/
         return this.volumeNum === 0
       }
     }
@@ -310,6 +282,7 @@
       });
       /*设置音量*/
       this.$refs.mscAudio.volume = parseFloat(parseInt(this.volumeNum) / 100);
+      /*屏幕大小小于425则为手机页面*/
       if (window.screen.width <= 425) {
         this.isMobile = true;
         this.isMini = true;
@@ -331,13 +304,9 @@
 
         this.cur_song_time_count = min+":"+sec;
       });
-
+      /*监听timeUpdate事件，更新界面上的时间，设计分秒转换*/
       this.$refs.mscAudio.addEventListener("timeupdate", (e) => {
-//        console.log(e.target.duration);
         let currentTime =Math.floor( e.target.currentTime);
-//        console.log(currentTime);
-//        console.log(Math.floor((currentTime/e.target.duration)*100));
-//      console.log(currentTime);
         this.playPercent =Math.floor((currentTime/e.target.duration)*100);
 
       let sec="00",
@@ -345,23 +314,17 @@
       colon=":";
 
       if(currentTime<60){
-
         if(currentTime<10){
           this.cur_song_duration = min+colon+"0"+currentTime;
         }
         else {
           this.cur_song_duration = min+colon+currentTime;
         }
-
       }
       else{
         min= "0"+Math.floor(currentTime/60);
         sec = Math.floor(currentTime- 60*Math.floor(currentTime/60));
         sec = sec<10? ("0"+sec):sec;
-//        console.log(min);
-//        console.log(sec);
-//        this.cur_song_duration = Math.floor(e.target.currentTime/60)
-//        console.log("0"+Math.floor(e.target.currentTime/60)+":"+(Math.floor(e.target.currentTime- 60*Math.floor(e.target.currentTime/60))));
         this.cur_song_duration =min+colon+sec;
       }
 
@@ -369,7 +332,13 @@
       });
 
     },
-    components: {}
+    components: {},
+    watch:{
+      /*监听音乐变化设置audio音量*/
+      volumeNum(){
+        this.$refs.mscAudio.volume = parseFloat(parseInt(this.volumeNum) / 100);
+      }
+    }
   }
 </script>
 <style scoped>
@@ -635,4 +604,19 @@
     color: #f8f8f8;
   }
   .ivu-progress-bar{width: 7rem}
+  .vol-ctrl{
+    position: absolute;
+    bottom:10%;
+    right:10%;
+    color: #fff;
+    width: 4rem;
+    height: 1rem;
+
+  }
+  .my-slider{
+    position: absolute;
+    top:-21%;
+    left:27%;
+    width: 4.5rem;
+  }
 </style>
