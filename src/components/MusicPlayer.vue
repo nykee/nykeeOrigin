@@ -77,7 +77,7 @@
         <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}">
       </div>
     </div>
-    <audio :src="currentSong.url" class="mscAudio" id="mscAudio" ref="mscAudio">
+    <audio :src="currentSong.url" class="mscAudio"  ref="mscAudio">
       您的浏览器不支持 audio 标签。请使用Chrome,Firefox等现代浏览器
     </audio>
   </div>

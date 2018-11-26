@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div >
     <IntroHeader/>
-
-    <div class="flexContainer">
+    <div class="flexContainer time-line-container">
       <Timeline class="time-line">
         <TimelineItem color="#73E4C9">
           <p class="time">{{$t("message.aboutPage.timeLine[0].time")}}</p>
@@ -62,11 +61,11 @@
     font-size: 0.8rem;
   }
 
-  /*.content{*/
-  /*font-size: 1rem;*/
-  /*}*/
   .time-line {
     margin-top: 5rem;
+  }
+  .time-line-container{
+    padding: 0 1rem;
   }
 
 
