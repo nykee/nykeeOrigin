@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="!isMini" :class="{'msc-player-box-mb':isMobile,'msc-player-box':!isMobile}"
-         style="top:87%;left: -320px"
+         style="top:86%;left: -320px"
          ref="mPlayer">
       <div class="clearfix position-relative">
         <Row id="msc-player" class="mPlayer-main-board fl" type="flex" justify="center" align="middle">
