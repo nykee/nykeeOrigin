@@ -10,10 +10,8 @@
     "build": "node build/build.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run deploy:prod"
   },
-
-
-  "dependencies": {},
-
+  "dependencies": {
+  },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "autoprefixer": "^7.1.2",
