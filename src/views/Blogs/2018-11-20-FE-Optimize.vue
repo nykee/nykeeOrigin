@@ -28,14 +28,14 @@
           </picture>
         </div>
         <div class="title-lv1">二 iview按需引入</div>
-        <p class="title-lv2">1、{}形式引入组件</p>
-        <picture>
-          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview2.jpg" class="resp-img">
-          <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/iview2.jpg" alt="">
-        </picture>
-        <p class="title-lv2">2、Vue.component()注册</p>
+        <p class="title-lv2">1、按需引入组件</p>
         <picture>
           <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview1.jpg" class="resp-img">
+          <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/iview2.jpg" alt="">
+        </picture>
+        <p class="title-lv2">2、Vue.component()注册组件</p>
+        <picture>
+          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/iview2.jpg" class="resp-img">
           <img class="resp-img" src="http://imagenykeecn.test.upcdn.net/iview1.jpg" alt="">
         </picture>
         <p class="title-lv2">3、通过webpack-bundle-analyzer插件查看打包情况</p>
