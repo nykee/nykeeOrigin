@@ -8,12 +8,12 @@
         <div class="title-lv1">1、React-router</div>
         <p class="descrp">React-router必须设置history={browserHistory}，否则路由无法显示</p>
 
-        <!-- <CustomPicture srcSet="http://imagenykeecn.test.upcdn.net/history.webp"
-                        img-src="http://imagenykeecn.test.upcdn.net/history.jpg"/>-->
+        <!-- <CustomPicture srcSet="http://image.nykee.cn/history.webp"
+                        img-src="http://image.nykee.cn/history.jpg"/>-->
 
         <picture>
-          <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/history.webp" class="resp-img">
-          <img src="http://imagenykeecn.test.upcdn.net/history.jpg" class="resp-img"/>
+          <source type="image/webp" srcset="http://image.nykee.cn/history.webp" class="resp-img">
+          <img src="http://image.nykee.cn/history.jpg" class="resp-img"/>
         </picture>
 
         <div class="title-lv1">2、React图片引入</div>

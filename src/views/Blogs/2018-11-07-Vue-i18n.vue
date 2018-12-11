@@ -20,8 +20,8 @@
                 </li>
                 <li class="steps-item">
                   <picture>
-                    <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/webapck.base.webp" class="resp-img" >
-                    <img class="blog-img" src="http://imagenykeecn.test.upcdn.net/webapck.base.jpg" alt="">
+                    <source type="image/webp" srcset="http://image.nykee.cn/webapck.base.webp" class="resp-img" >
+                    <img class="blog-img" src="http://image.nykee.cn/webapck.base.jpg" alt="">
                   </picture>
                 </li>
                 <li class="steps-item">
@@ -32,8 +32,8 @@
                                  className="blog-img"
                                  srcSet="../../../static/img/vue-loader.conf.webp"/>-->
                   <picture>
-                    <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/vue-loader.conf.webp" class="resp-img" >
-                    <img src="http://imagenykeecn.test.upcdn.net/vue-loader.conf.jpg" class="resp-img"/>
+                    <source type="image/webp" srcset="http://image.nykee.cn/vue-loader.conf.webp" class="resp-img" >
+                    <img src="http://image.nykee.cn/vue-loader.conf.jpg" class="resp-img"/>
                   </picture>
                 </li>
               </ul>

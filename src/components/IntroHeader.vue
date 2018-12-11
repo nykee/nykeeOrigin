@@ -250,37 +250,37 @@
   }
 
   .intro-header-index {
-    background-image: url("http://imagenykeecn.test.upcdn.net/index.jpg");
+    background-image: url("http://image.nykee.cn/index.jpg");
   }
 
   .intro-header-index-webp {
-    background-image: url("http://imagenykeecn.test.upcdn.net/index.webp");
+    background-image: url("http://image.nykee.cn/index.webp");
   }
 
   .intro-header-blogs {
-    background-image: url("http://imagenykeecn.test.upcdn.net/code.jpg");
+    background-image: url("http://image.nykee.cn/code.jpg");
 
   }
 
   .intro-header-blogs-webp {
-    background-image: url("http://imagenykeecn.test.upcdn.net/code.webp");
+    background-image: url("http://image.nykee.cn/code.webp");
 
   }
 
   .intro-header-photo {
-    background-image: url("http://imagenykeecn.test.upcdn.net/lishui.jpg");
+    background-image: url("http://image.nykee.cn/lishui.jpg");
   }
 
   .intro-header-photo-webp {
-    background-image: url("http://imagenykeecn.test.upcdn.net/lishui.webp");
+    background-image: url("http://image.nykee.cn/lishui.webp");
   }
 
   .intro-header-about {
-    background-image: url("http://imagenykeecn.test.upcdn.net/qdh.jpg");
+    background-image: url("http://image.nykee.cn/qdh.jpg");
   }
 
   .intro-header-about-webp {
-    background-image: url("http://imagenykeecn.test.upcdn.net/qdh.webp");
+    background-image: url("http://image.nykee.cn/qdh.webp");
   }
 
   .intro-container {
