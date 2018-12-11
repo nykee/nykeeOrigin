@@ -209,8 +209,8 @@
 
   .logoName {
     position: absolute;
-    top: 3%;
-    right: 3%;
+    top: 10px;
+    right: 4%;
     color: #fff;
     font-weight: 800;
     font-size: 1.1rem;
