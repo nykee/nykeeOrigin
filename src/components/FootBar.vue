@@ -13,8 +13,8 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="supporter" >
       <picture>
-        <source type="image/webp" srcset="http://imagenykeecn.test.upcdn.net/ypy.webp" class="logo-ypy">
-        <img src="http://imagenykeecn.test.upcdn.net/ypy.png" alt="" class="logo-ypy"/>
+        <source type="image/webp" srcset="http://image.nykee.cn/ypy.webp" class="logo-ypy">
+        <img src="http://image.nykee.cn/ypy.png" alt="" class="logo-ypy"/>
       </picture>
 
     </Row>

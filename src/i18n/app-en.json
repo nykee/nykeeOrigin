@@ -146,7 +146,7 @@
       "timeLine": [
         {
           "time": "September 26, 2017",
-          "activity": "The first version begins to be written, git repository initialization"
+          "activity": "Git repository initialized and started to write the first version of website"
         },
         {
           "time": "November 06, 2018",
@@ -154,7 +154,7 @@
         },
         {
           "time": "November 12, 2018",
-          "activity": "Migrating Alibaba Cloud"
+          "activity": "Migrated Alibaba Cloud"
         },
         {
           "time": "November 13, 2018",
