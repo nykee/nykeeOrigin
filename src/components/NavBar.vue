@@ -11,7 +11,7 @@
             <span @click="changeActive" class="nykee-word">{{$t("message.nykee")}}</span>
           </router-link>
         </i-col>
-        <i-col :lg="{span:11,offset:7}"
+        <i-col :lg="{span:14,offset:4}"
                :md="{span:12,offset:4}"
                :sm="{span:11,offset:7}"
                :xs="{span:6,offset:12}">
@@ -28,6 +28,9 @@
             <router-link to="/Photograph">{{ $t("message.photograph")}}</router-link>
           </MenuItem>
           <MenuItem name="6">
+            <router-link to="/Comments">{{ $t("message.comments")}}</router-link>
+          </MenuItem>
+          <MenuItem name="7">
             <router-link to="/About">{{ $t("message.about")}}</router-link>
           </MenuItem>
 
@@ -60,6 +63,9 @@
           </DropdownItem>
           <DropdownItem>
             <router-link to="/Photograph" class="black-color">{{ $t("message.photograph")}}</router-link>
+          </DropdownItem>
+          <DropdownItem>
+            <router-link to="/Comments" class="black-color">{{ $t("message.comments")}}</router-link>
           </DropdownItem>
           <DropdownItem>
             <router-link to="/About" class="black-color">{{ $t("message.about")}}</router-link>

@@ -3,13 +3,13 @@
     <commonTitle :title-name="this.$t('message.aboutMe').toUpperCase()"/>
     <div>
 
-      <!-- <CustomPicture imgSrc="http://image.nykee.cn/nykee.png"
+      <!-- <CustomPicture imgSrc="https://image.nykee.cn/nykee.png"
                       className="avatar"
-                      srcSet="http://image.nykee.cn/nykee.webp"/>-->
+                      srcSet="https://image.nykee.cn/nykee.webp"/>-->
 
       <picture>
-        <source type="image/webp" srcset="http://image.nykee.cn/nykee.webp" class="resp-img">
-        <img src="http://image.nykee.cn/nykee.png" class="resp-img"/>
+        <source type="image/webp" srcset="https://image.nykee.cn/nykee.webp" class="resp-img">
+        <img src="https://image.nykee.cn/nykee.png" class="resp-img"/>
       </picture>
       <p class="slogan">
         {{$t("message.aboutMeSlogan")}}

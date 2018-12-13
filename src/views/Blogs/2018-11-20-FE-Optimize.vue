@@ -13,36 +13,36 @@
         <div class="descrp">
           <p class="title-lv2">1、index.html引入CDN</p>
           <picture>
-            <source type="image/webp" srcset="http://image.nykee.cn/cdn.jpg" class="resp-img">
-            <img class="resp-img" src="http://image.nykee.cn/cdn.jpg" alt="">
+            <source type="image/webp" srcset="https://image.nykee.cn/cdn.jpg" class="resp-img">
+            <img class="resp-img" src="https://image.nykee.cn/cdn.jpg" alt="">
           </picture>
           <p class="title-lv2">2、Webpack配置externals将不需要打包的CDN排除</p>
           <picture>
-            <source type="image/webp" srcset="http://image.nykee.cn/exter.jpg" class="resp-img">
-            <img class="resp-img" src="http://image.nykee.cn/exter.jpg" alt="">
+            <source type="image/webp" srcset="https://image.nykee.cn/exter.jpg" class="resp-img">
+            <img class="resp-img" src="https://image.nykee.cn/exter.jpg" alt="">
           </picture>
           <p class="title-lv2">3、Vue插件注释掉Vue.use</p>
           <picture>
-            <source type="image/webp" srcset="http://image.nykee.cn/vueuse.jpg" class="resp-img">
-            <img class="resp-img" src="http://image.nykee.cn/vueuse.jpg" alt="">
+            <source type="image/webp" srcset="https://image.nykee.cn/vueuse.jpg" class="resp-img">
+            <img class="resp-img" src="https://image.nykee.cn/vueuse.jpg" alt="">
           </picture>
         </div>
         <div class="title-lv1">二 iview按需引入</div>
         <p class="title-lv2">1、按需引入组件</p>
         <picture>
-          <source type="image/webp" srcset="http://image.nykee.cn/iview1.jpg" class="resp-img">
-          <img class="resp-img" src="http://image.nykee.cn/iview2.jpg" alt="">
+          <source type="image/webp" srcset="https://image.nykee.cn/iview1.jpg" class="resp-img">
+          <img class="resp-img" src="https://image.nykee.cn/iview2.jpg" alt="">
         </picture>
         <p class="title-lv2">2、Vue.component()注册组件</p>
         <picture>
-          <source type="image/webp" srcset="http://image.nykee.cn/iview2.jpg" class="resp-img">
-          <img class="resp-img" src="http://image.nykee.cn/iview1.jpg" alt="">
+          <source type="image/webp" srcset="https://image.nykee.cn/iview2.jpg" class="resp-img">
+          <img class="resp-img" src="https://image.nykee.cn/iview1.jpg" alt="">
         </picture>
         <p class="title-lv2">3、通过webpack-bundle-analyzer插件查看打包情况</p>
         <span>npm run build --report</span>
         <picture>
-          <source type="image/webp" srcset="http://image.nykee.cn/run_rpt.png" class="resp-img">
-          <img class="resp-img" src="http://image.nykee.cn/run_rpt.png" alt="">
+          <source type="image/webp" srcset="https://image.nykee.cn/run_rpt.png" class="resp-img">
+          <img class="resp-img" src="https://image.nykee.cn/run_rpt.png" alt="">
         </picture>
 
       </div>
@@ -70,13 +70,13 @@
         </code>
       </pre>
       <picture>
-        <source type="image/webp" srcset="http://image.nykee.cn/gzip.png" class="resp-img">
-        <img class="resp-img" src="http://image.nykee.cn/gzip.png" alt="">
+        <source type="image/webp" srcset="https://image.nykee.cn/gzip.png" class="resp-img">
+        <img class="resp-img" src="https://image.nykee.cn/gzip.png" alt="">
       </picture>
       <p class="title-lv3">打包后体积显著变小</p>
       <picture>
-        <source type="image/webp" srcset="http://image.nykee.cn/gzipA.jpg" class="resp-img">
-        <img class="resp-img" src="http://image.nykee.cn/gzipA.jpg" alt="">
+        <source type="image/webp" srcset="https://image.nykee.cn/gzipA.jpg" class="resp-img">
+        <img class="resp-img" src="https://image.nykee.cn/gzipA.jpg" alt="">
       </picture>
       <div class="title-lv1">二 后端部分</div>
       <p class="title-lv2">Tomcat配置gzip</p>
@@ -85,14 +85,14 @@
         <li><span>tomcat只需修改server.xml中的配置即可</span></li>
       </ul>
       <picture>
-        <source type="image/webp" srcset="http://image.nykee.cn/tomcat.jpg" class="resp-img">
-        <img class="resp-img" src="http://image.nykee.cn/tomcat.jpg" alt="">
+        <source type="image/webp" srcset="https://image.nykee.cn/tomcat.jpg" class="resp-img">
+        <img class="resp-img" src="https://image.nykee.cn/tomcat.jpg" alt="">
       </picture>
       <p class="title-lv2">重启tomcat并访问验证</p>
       <span>返回的响应头的类型为GZIP即为开启gizp成功</span>
       <picture>
-        <source type="image/webp" srcset="http://image.nykee.cn/gzipRes.jpg" class="resp-img">
-        <img class="resp-img" src="http://image.nykee.cn/gzipRes.jpg" alt="">
+        <source type="image/webp" srcset="https://image.nykee.cn/gzipRes.jpg" class="resp-img">
+        <img class="resp-img" src="https://image.nykee.cn/gzipRes.jpg" alt="">
       </picture>
 
       <div class="title-lv1">三 总结</div>

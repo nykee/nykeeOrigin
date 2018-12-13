@@ -5,6 +5,7 @@ import Blogs from '../views/Blogs.vue'
 import Project from '../views/Project.vue'
 import Photo from '../views/Photo.vue'
 import About from '../views/About.vue'
+import Comments from '../views/Comments.vue'
 import DZDPCrawlSpider from '../views/Blogs/2017-01-20-DZDP-Crawl-Spider.vue'
 import FrontEndTricks from '../views/Blogs/2017-01-22-Front-End-Tricks.vue'
 import MongoDBLearning from '../views/Blogs/2017-02-14-MongoDB-learning.vue'
@@ -106,6 +107,11 @@ const router = new VueRouter({
       path: '/About',
       name: 'About',
       component: About
+    },
+    {
+      path: '/Comments',
+      name: 'Comments',
+      component: Comments
     },
   ]
 });

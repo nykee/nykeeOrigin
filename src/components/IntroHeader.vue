@@ -7,10 +7,12 @@
         'intro-header-blogs':isBlogs&&!canUseWebp,
         'intro-header-photo':isPhoto&&!canUseWebp,
         'intro-header-about':isAbout&&!canUseWebp,
+        'intro-header-comments':isComments&&!canUseWebp,
         'intro-header-index-webp':isIndex&&canUseWebp,
         'intro-header-blogs-webp':isBlogs&&canUseWebp,
         'intro-header-photo-webp':isPhoto&&canUseWebp,
-        'intro-header-about-webp':isAbout&&canUseWebp
+        'intro-header-about-webp':isAbout&&canUseWebp,
+        'intro-header-comments-webp':isComments&&canUseWebp,
 
         }">
       <div class="intro-container">
@@ -56,6 +58,7 @@
         isTags: false,
         isPhoto: false,
         isAbout: false,
+        isComments:false,
         head: 'About Me',
         subHead: "Life`s short,I use js"
       }
@@ -98,8 +101,19 @@
           this.isPhoto = false;
           this.isAbout = true;
           this.head = 'TimeLine';
-
           this.subHead = 'Big Event Record'
+
+
+        }
+        else if (path === "/Comments") {
+          this.isBlogs =
+            this.isIndex=
+              this.isTags=
+                this.isPhoto=
+                  this.isAbout=false;
+          this.isComments =true;
+          this.head = 'Say something';
+          this.subHead = 'interesting or not'
 
 
         }
@@ -242,7 +256,9 @@
   .intro-header-blogs-webp,
   .intro-header-photo-webp,
   .intro-header-about,
-  .intro-header-about-webp {
+  .intro-header-about-webp,
+  .intro-header-comments,
+  .intro-header-comments-webp{
     background: no-repeat center center;
     background-attachment: scroll;
     background-color: #ccc;
@@ -250,38 +266,40 @@
   }
 
   .intro-header-index {
-    background-image: url("http://image.nykee.cn/index.jpg");
+    background-image: url("https://image.nykee.cn/index.jpg");
   }
 
   .intro-header-index-webp {
-    background-image: url("http://image.nykee.cn/index.webp");
+    background-image: url("https://image.nykee.cn/index.webp");
   }
 
   .intro-header-blogs {
-    background-image: url("http://image.nykee.cn/code.jpg");
+    background-image: url("https://image.nykee.cn/code.jpg");
 
   }
 
   .intro-header-blogs-webp {
-    background-image: url("http://image.nykee.cn/code.webp");
+    background-image: url("https://image.nykee.cn/code.webp");
 
   }
 
   .intro-header-photo {
-    background-image: url("http://image.nykee.cn/lishui.jpg");
+    background-image: url("https://image.nykee.cn/lishui.jpg");
   }
 
   .intro-header-photo-webp {
-    background-image: url("http://image.nykee.cn/lishui.webp");
+    background-image: url("https://image.nykee.cn/lishui.webp");
   }
 
   .intro-header-about {
-    background-image: url("http://image.nykee.cn/qdh.jpg");
+    background-image: url("https://image.nykee.cn/qdh.jpg");
   }
 
   .intro-header-about-webp {
-    background-image: url("http://image.nykee.cn/qdh.webp");
+    background-image: url("https://image.nykee.cn/qdh.webp");
   }
+  .intro-header-comments{background-image: url("https://image.nykee.cn/snr.jpg");}
+  .intro-header-comments-webp{background-image: url("https://image.nykee.cn/snr.webp");}
 
   .intro-container {
     width: 100%;

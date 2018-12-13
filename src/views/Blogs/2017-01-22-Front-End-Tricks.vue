@@ -60,8 +60,8 @@
                 }
             </code>
           </pre>
-          <CustomPicture imgSrc="http://image.nykee.cn/string.webp"
-                         srcSet="http://image.nykee.cn/string.jpg"/>
+          <CustomPicture imgSrc="https://image.nykee.cn/string.webp"
+                         srcSet="https://image.nykee.cn/string.jpg"/>
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
@@ -110,11 +110,11 @@
     console.table(data);
             </code>
           </pre>
-          <!--<CustomPicture imgSrc="http://image.nykee.cn/console.table.jpg"-->
-          <!--srcSet="http://image.nykee.cn/console.table.webp" className="resp-img"/>-->
+          <!--<CustomPicture imgSrc="https://image.nykee.cn/console.table.jpg"-->
+          <!--srcSet="https://image.nykee.cn/console.table.webp" className="resp-img"/>-->
           <picture>
-            <source type="image/webp" srcset="http://image.nykee.cn/console.table.webp" class="resp-img">
-            <img src="http://image.nykee.cn/console.table.jpg" class="resp-img"/>
+            <source type="image/webp" srcset="https://image.nykee.cn/console.table.webp" class="resp-img">
+            <img src="https://image.nykee.cn/console.table.jpg" class="resp-img"/>
           </picture>
 
         </div>
