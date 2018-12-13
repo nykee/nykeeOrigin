@@ -1,33 +1,46 @@
 <template>
-  <div >
+  <div class="comment-container">
     <!--header-->
-    <div class="flexContainer">
-      <div class="comment-header">
+    <Row type="flex" justify="center" align="middle" class="comment-header">
+      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} >
         <span>Comments</span>
         <span class="cut-off-line"></span>
         <span class="comments-sum">{{count}}</span>
         <span>条评论</span>
-      </div>
-    </div>
+      </i-col>
+    </Row>
 
     <!--body-->
-    <div class="comment-display-container">
-
-    </div>
-    <div class="comment-input-container">
+    <!--<div class="comment-display-container">
+      <div class="flexContainer">留言板空空如也~~</div>
       <div class="flexContainer">
+        <Page :total="100" />
+      </div>
+    </div>-->
+   <Row type="flex" justify="center" align="middle">
+     <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
+       <div style="height: 20rem;background: #ccc">留言板空空如也~~</div>
+     </i-col>
+   </Row>
+    <Row type="flex" justify="center" align="middle" class="page-row">
+      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
+        <Page :total="total" />
+      </i-col>
+    </Row>
+    <div class="comment-input-container ">
+      <div class="flexContainer input-section">
         <Input class="comment-inputarea" v-model="comments" type="textarea" :rows="4" placeholder="Enter something..." />
       </div>
-      <div class="flexContainer prof-input">
+      <div class="flexContainer input-section">
         <Avatar icon="ios-person" size="large" />
-        <Input v-model="value" placeholder="昵称或QQ号码" class="comment-input-items" />
-        <Input v-model="value" placeholder="邮箱"  class="comment-input-items"/>
+        <Input v-model="nickName" placeholder="昵称或QQ号码" class="comment-input-items" />
+        <Input v-model="email" placeholder="邮箱"  class="comment-input-items"/>
       </div>
-      <div class="flexContainer">
+      <div class="flexContainer input-section">
         <Radio v-model="isHuman">滴，老司机卡</Radio>
       </div>
-      <div class="flexContainer">
-       <Button type="primary">留言</Button>
+      <div class="flexContainer input-section">
+       <Button type="primary" @click="submitComments">留言</Button>
       </div>
 
 
@@ -41,10 +54,27 @@
             return {
               count:0,
               comments:'',
-              isHuman:false
+              isHuman:false,
+              nickName:'',
+              email:'',
+              total:0
             }
         },
-        methods: {},
+        methods: {
+          submitComments(){
+            if(!this.isHuman){
+              this.$Message.warning('请刷老司机卡上车');
+            }
+            else {
+              if(this.comments.length ===0){
+                this.$Message.warning('不允许空评论噢！');
+              }
+              else if(this.nickName.length ===0||this.email.length ===0){
+                this.$Message.warning('昵称或邮箱必填噢！');
+              }
+            }
+          }
+        },
         created: function () {
 
         },
@@ -55,8 +85,9 @@
     }
 </script>
 <style>
+  .comment-container{margin: .9rem 0}
   .comment-header{
-    margin-top: .6rem;}
+    margin: .6rem 0;}
   .cut-off-line{border-right: 1px solid #000}
   .comments-sum{
     margin-left: .6rem;}
@@ -70,7 +101,13 @@
     width: 28%;
     margin-left: .6rem;
   }
-  .prof-input{
+  .input-section{
     margin-top: .8rem;
+  }
+  .comment-display-container{
+    height: 20rem;
+  }
+  .page-row{
+    margin-top:.6rem;
   }
 </style>

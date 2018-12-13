@@ -112,7 +112,7 @@
                 this.isPhoto=
                   this.isAbout=false;
           this.isComments =true;
-          this.head = 'Say something';
+          this.head = 'Something';
           this.subHead = 'interesting or not'
 
 
