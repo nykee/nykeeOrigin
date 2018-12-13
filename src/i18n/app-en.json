@@ -155,7 +155,7 @@
         },
         {
           "time": "November 12, 2018",
-          "activity": "Migrated Alibaba Cloud"
+          "activity": "Migrate to Alibaba Cloud"
         },
         {
           "time": "November 13, 2018",
@@ -172,6 +172,11 @@
         {
           "time": "November 22, 2018",
           "activity": "Add music play function"
+        }
+      ,
+        {
+          "time": "December 13, 2018",
+          "activity": "update website to https "
         }
       ]
     }

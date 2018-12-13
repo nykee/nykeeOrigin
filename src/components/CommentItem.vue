@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <IntroHeader/>
-    <Comment/>
-  </div>
+
 </template>
 
 <script>
-  import IntroHeader from '../components/IntroHeader.vue'
-  import Comment from '../components/CommentContainer.vue'
     export default {
         data() {
             return {}
@@ -19,7 +14,7 @@
         mounted() {
 
         },
-        components: {IntroHeader,Comment}
+        components: {}
     }
 </script>
 <style>

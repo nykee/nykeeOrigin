@@ -298,8 +298,8 @@
   .intro-header-about-webp {
     background-image: url("https://image.nykee.cn/qdh.webp");
   }
-  .intro-header-comments{background-image: url("https://image.nykee.cn/snr.jpg");}
-  .intro-header-comments-webp{background-image: url("https://image.nykee.cn/snr.webp");}
+  .intro-header-comments{background-image: url("https://image.nykee.cn/HK.jpg");}
+  .intro-header-comments-webp{background-image: url("https://image.nykee.cn/HK.webp");}
 
   .intro-container {
     width: 100%;

@@ -31,6 +31,10 @@
           <p class="time">{{$t("message.aboutPage.timeLine[6].time")}}</p>
           <p class="content">{{$t("message.aboutPage.timeLine[6].activity")}}</p>
         </TimelineItem>
+        <TimelineItem>
+          <p class="time">{{$t("message.aboutPage.timeLine[7].time")}}</p>
+          <p class="content">{{$t("message.aboutPage.timeLine[7].activity")}}</p>
+        </TimelineItem>
       </Timeline>
     </div>
 
