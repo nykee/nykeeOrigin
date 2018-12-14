@@ -120,6 +120,7 @@
                   })
               }
             }
+            window.location.reload();
 
           }
         },
