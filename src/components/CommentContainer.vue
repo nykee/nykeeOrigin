@@ -30,7 +30,7 @@
    </Row>
     <Row type="flex" justify="center" align="middle" class="page-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
-        <Page :total="total" />
+        <Page :total="count" />
       </i-col>
     </Row>
     <div class="comment-input-container ">
