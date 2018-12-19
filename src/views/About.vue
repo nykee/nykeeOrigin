@@ -109,7 +109,7 @@
     margin-bottom: .8rem;
   }
   .site-intro-content{
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
 </style>

@@ -25,28 +25,32 @@
         <Page :total="count" @on-change="handlePageChange" show-elevator/>
       </i-col>
     </Row>
-    <!--<div class="comment-input-container ">
-      <div class="flexContainer input-section">
-        <Input class="comment-inputarea" v-model="comments" type="textarea" :rows="4" placeholder="Enter something..." />
-      </div>
-      <div class="flexContainer input-section">
-        <Avatar icon="ios-person" size="large" :src="avatarSrc"/>
-        <Input v-model="nickName" placeholder="昵称" class="comment-input-items"  @on-blur="handleOnBlur" />
-        <Input v-model="email" placeholder="邮箱"  class="comment-input-items"/>
-      </div>
-      <div class="flexContainer input-section">
-        <Radio v-model="isHuman">滴，老司机卡</Radio>
-      </div>
-      <div class="flexContainer input-section">
-       <Button type="primary" @click="submitComments">留言</Button>
-      </div>
-
-
-    </div>-->
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
 
           <Input  v-model="comments" type="textarea" :rows="4" placeholder="Enter something..." />
+
+      </i-col>
+    </Row>
+    <Row type="flex" justify="center" align="middle" class="item-row">
+      <i-col span="24" class="textA-center">
+        <span class="emotion-toggle-btn">开启表情box>>></span>
+      </i-col>
+      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} class="emotion-toggle-container">
+
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+        <Emotion></Emotion>
+
 
       </i-col>
     </Row>
@@ -83,6 +87,7 @@
 
 <script>
   import CommentItem from './CommentItem'
+  import Emotion from '../components/Emotion'
     export default {
         data() {
             return {
@@ -123,6 +128,8 @@
                 console.log(timeStamp);
                 // console.log(self.content);
                 // console.log(this.content);
+                this.comments=this.utf16toEntities(this.comments);
+                console.log(this.comments);
                 let params = {
                   postTime:timeStamp,
                   content:this.comments,
@@ -219,6 +226,21 @@
             }
 
 
+          },
+          utf16toEntities: function(str) { //检测utf16emoji表情 转换为实体字符以供后台存储
+            var patt=/[\ud800-\udbff][\udc00-\udfff]/g;
+            str = str.replace(patt, function(char){
+              var H, L, code;
+              if (char.length===2) {   //辅助平面字符（我们需要做处理的一类）
+                H = char.charCodeAt(0); // 取出高位
+                L = char.charCodeAt(1); // 取出低位
+                code = (H - 0xD800) * 0x400 + 0x10000 + L - 0xDC00; // 转换算法
+                return "&#" + code + ";";
+              } else {
+                return char;
+              }
+            });
+            return str;
           }
         },
         created: function () {
@@ -254,7 +276,7 @@
             })
 
         },
-        components: {CommentItem}
+        components: {CommentItem,Emotion}
     }
 </script>
 <style>
@@ -266,4 +288,8 @@
   .cut-off-line{border-right: 1px solid #000}
   .comments-sum{margin-left: .6rem;}
   .item-row{margin-top:.6rem;}
+  .emotion-toggle-container{
+    padding: 1rem;
+  }
+  .emotion-toggle-btn{cursor: pointer}
 </style>

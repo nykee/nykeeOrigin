@@ -16,8 +16,8 @@
       </i-col>
     </Row>
     <Row>
-      <div class="comment-detail">
-        {{content}}
+      <div class="comment-detail" v-html="content">
+        <!--{{content}}-->
       </div>
     </Row>
   </div>
