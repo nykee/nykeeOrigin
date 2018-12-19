@@ -87,6 +87,7 @@ function easeScroll(ms) {
 }
 
 
+
 Vue.filter('fomatTime', function (valueTime) {
 
   if(valueTime){
@@ -124,6 +125,7 @@ Vue.filter('fomatTime', function (valueTime) {
       // //注释("一小时之内");
       // var time = newData - diffTime;
       var dayNum = Math.floor(diffTime / (60 * 1000));
+      if(dayNum === 0 ){return "刚刚"}
       return dayNum + "分钟前";
 
     }

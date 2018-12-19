@@ -149,7 +149,10 @@
 
     },
     "aboutPage":{
-      "timeLine":[
+      "aboutSite":"关于本站",
+      "aboutSiteContent":"个人小站，瞎玩玩，倒腾倒腾，随便写点什么。前期使用了github pages，用的别人的主题改了改，无奈markdown写着不顺手，想想自己是个web开发，干脆动手撸个网站好了。前端使用了Vue全家桶,UI库使用iView,弄了下i-18n。后端套用了以前搭的SSM框架。后期丢到阿里云上搞定，以上",
+      "timeLine":"时间线",
+      "timeLineItems":[
         {
           "time":"2017.09.26",
           "activity":"初版开始编写，git仓库初始化"
@@ -160,7 +163,7 @@
         },
         {
           "time":"2018.11.12",
-          "activity":"迁移阿里云"
+          "activity":"迁移至阿里云"
         },
         {
           "time":"2018.11.13",
@@ -182,6 +185,11 @@
         {
           "time": "2018.12.13",
           "activity": "启用HTTPS访问"
+        }
+      ,
+        {
+          "time": "2018.12.18",
+          "activity": "增加留言板功能"
         }
       ]
     }

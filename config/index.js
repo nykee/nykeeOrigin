@@ -30,8 +30,14 @@ module.exports = {
     proxyTable: {
       "/Comment/*":{
         target:"http://127.0.0.1:8081/",
-        crossOrigin:true
-      }
+        crossOrigin:true,
+        changeOrigin: true,
+      },
+      // "/getAvatar":{
+      //   target:"https://ptlogin2.qq.com/",
+      //   crossOrigin:true,
+      //   changeOrigin: true,
+      // }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

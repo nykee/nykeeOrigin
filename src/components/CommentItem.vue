@@ -1,10 +1,10 @@
 <template>
   <div class="comment-item-container">
     <Row>
-      <i-col span="2">
-        <Avatar icon="ios-person" size="large" />
+      <i-col span="3">
+        <Avatar icon="ios-person" size="large" :src="avatar"/>
       </i-col>
-      <i-col span="22">
+      <i-col span="21">
         <ul>
           <li>
             {{nickName}}

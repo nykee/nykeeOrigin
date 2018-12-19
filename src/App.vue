@@ -125,6 +125,9 @@
   .position-relative {
     position: relative
   }
+  .textA-center{
+    text-align: center;
+  }
 
   @media (min-width: 1024px) {
     body {
