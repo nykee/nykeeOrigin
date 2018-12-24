@@ -1,15 +1,18 @@
 <template>
-  <span >
-    <img class="emotion-img" src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_tongue.gif" alt="">
-  </span>
+  <tooltip :content="tooltip" placement="top-start" >
+    <img :class="emotionClass" :src="src" alt="" >
+  </tooltip>
 </template>
 
 <script>
     export default {
+      props:["src","tooltip","code","emotionClass"],
         data() {
             return {}
         },
-        methods: {},
+        methods: {
+
+        },
         created: function () {
 
         },
@@ -25,4 +28,12 @@
     width: 2rem;
     cursor: pointer;
   }
+  .emotion-img-ali{
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+  }
+  /*.emotion-img:hover{*/
+    /*background-color: #F7F7F7;*/
+  /*}*/
 </style>

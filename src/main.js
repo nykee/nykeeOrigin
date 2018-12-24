@@ -6,7 +6,7 @@ import router from './router'
 import store from './store/store'
 import {
   Row, Col, Tooltip, Menu, MenuItem, BackTop, Dropdown,
-  DropdownItem, LoadingBar, Modal, Card, Drawer, Slider,Progress,Message
+  DropdownItem, LoadingBar, Modal, Card, Drawer, Slider,Progress,Message,Time
 } from 'iview'
 // import {RouterLink} from "VueRouter"
 // import iview from "iView"
@@ -42,6 +42,7 @@ Vue.component("Drawer", Drawer);
 Vue.component("Slider", Slider);
 Vue.component("Progress", Progress);
 Vue.component("Message", Message);
+Vue.component("Time", Time);
 // Vue.use(VueI18n);
 
 
