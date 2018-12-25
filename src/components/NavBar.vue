@@ -72,8 +72,8 @@
           </DropdownItem>
           <DropdownItem>
             <select v-model="lanSel" class="lanSel">
-              <option class="lanSel-option" v-for="item in languages" :value="item.value" :key="item.value">{{
-                item.label }}
+              <option class="lanSel-option" v-for="item in languages" :value="item.value" :key="item.value">
+                {{item.label }}
               </option>
             </select>
           </DropdownItem>
@@ -161,6 +161,24 @@
     mounted() {
       // console.log(this.$i18n.locale);
       let self = this;
+      switch (sessionStorage.getItem("locale")){
+        case "zh":
+          self.lanSel ='Chinese';
+          break;
+        case "ja":
+          self.lanSel ='Japanese';
+              break;
+        case "en":
+          self.lanSel ='English';
+          break;
+        default:
+          self.lanSel ='Chinese';
+          break;
+
+      }
+
+      console.log(this.$i18n.locale);
+      console.log(window.sessionStorage.getItem("locale"));
       bus.$on("tagRedirect", (args) => {
         // console.log(args);
 //              console.log(self.$refs);

@@ -2,14 +2,14 @@
   <div >
     <IntroHeader/>
     <!--网站简介-->
-    <Row class=" site-intro">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:8,offset:8}>
+    <Row class=" site-intro" type="flex" justify="center" align="middle">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <h2 class="site-intro-title  textA-center">
           {{$t("message.aboutPage.aboutSite")}}
         </h2>
 
       </i-col>
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:8,offset:8}>
+      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
         <div class="site-intro-content textA-center">
           {{$t("message.aboutPage.aboutSiteContent")}}
         </div>
@@ -18,14 +18,14 @@
 
     </Row>
 
-    <Row class="time-line-container">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:8,offset:8}>
+    <Row class="time-line-container" type="flex" justify="center" align="middle">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <h2 class="time-line-title textA-center">
           {{$t("message.aboutPage.timeLine")}}
         </h2>
 
       </i-col>
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:8,offset:8}>
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <Timeline class="time-line">
         <TimelineItem color="#73E4C9">
         <p class="time">{{$t("message.aboutPage.timeLineItems[0].time")}}</p>
@@ -96,7 +96,7 @@
 
   .time-line {
     margin-top: .5rem;
-    padding-left: 30%;
+    padding-left: 40%;
   }
   .time-line-container{
     padding: 0 1rem;

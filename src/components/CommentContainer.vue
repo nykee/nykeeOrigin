@@ -2,7 +2,7 @@
   <div class="comment-container">
     <!--header-->
     <Row type="flex" justify="center" align="middle" class="comment-header">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} >
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
         <span>Comments</span>
         <span class="cut-off-line"></span>
         <span class="comments-sum">{{count}}</span>
@@ -10,11 +10,16 @@
       </i-col>
     </Row>
 
-
+  <!--body-->
    <Row type="flex" justify="center" align="middle">
-     <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} v-for="com in commentSFromDB" :key="com.id">
+     <i-col v-if="spinShow"
+            :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
+       <Spin size="large" ></Spin>
+     </i-col>
+     <i-col v-if="!spinShow"
+            :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}
+            v-for="com in commentSFromDB" :key="com.id">
        <div style="height: 20rem;background: #ccc" v-if="count ===0">留言板空空如也~~</div>
-
          <CommentItem :nick-name="com.nickName"
                       :content="com.content"
                       :avatar ="com.avatar"
@@ -22,10 +27,9 @@
                       :browser="com.browser"
                       :os="com.os"
                       :isp="com.isp"/>
-
-
      </i-col>
    </Row>
+    <!--footer评论输入区-->
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
         <Page :total="count" @on-change="handlePageChange" show-elevator/>
@@ -33,36 +37,38 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
-
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
           <Input  v-model="comments" type="textarea" :rows="4" placeholder="随便写点什么吧..." />
-
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
-      <i-col span="24" class="textA-center">
-        <span class="emotion-toggle-btn" @click="toogleEmoji">{{toogleEmojiTitle}}</span>
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
+        <i class="fa fa-smile-o fa-2x emoji-toogle-btn" :class="{'active-btn':isEmojShow}" @click="toggleEmoji"></i>
       </i-col>
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} class="emotion-toggle-container" v-show="isEmojShow" >
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="emotion-toggle-container" v-show="isEmojShow" >
         <Tabs value="baidu_emoji">
-          <TabPane label="百度贴吧表情" name="baidu_emoji">
+          <TabPane label="贴吧" name="baidu_emoji">
              <span v-for="emo in baiduEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
-          <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"></Emotion>
+          <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
         </span>
           </TabPane>
-          <TabPane label="阿狸" name="ali">
+          <TabPane label="阿狸" name="ali_emoji">
             <span v-for="emo in aliEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
-          <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img-ali"></Emotion>
+          <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img-ali"/>
         </span>
           </TabPane>
-          <!--<TabPane label="标签三" name="name3">标签三的内容</TabPane>-->
+          <TabPane label="QQ" name="qq_emoji">
+            <span v-for="emo in qqEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+              <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
+            </span>
+          </TabPane>
         </Tabs>
 
 
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row" >
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <Row>
           <i-col span="2">
             <Avatar icon="ios-person" size="large" :src="avatarSrc"/>
@@ -80,12 +86,12 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} class="textA-center">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="textA-center">
         <Radio v-model="isHuman">滴，老司机卡</Radio>
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14} class="textA-center">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="textA-center">
         <Button type="primary" @click="submitComments">留言</Button>
       </i-col>
     </Row>
@@ -106,10 +112,12 @@
               email:'',
               ispInfo:'',
               total:0,
+              spinShow:false,
               isEmojShow:false,
-              toogleEmojiTitle:"表情包大法biubiu",
+              // toogleEmojiTitle:"表情包大法biubiu",
               commentSFromDB:[],
               avatarSrc:'',
+              isRouterAlive:false,
               baiduEmojis:[
                 {
                   name:'无语',
@@ -414,6 +422,88 @@
                   src:'https://image.nykee.cn/ali_emoji/yeah.jpg'
                 },
 
+              ],
+              qqEmojis:[
+                {
+                  name:'鼓掌',
+                  id:'clap',
+                  code:':qq_clap',
+                  src:'https://image.nykee.cn/qq_emoji/e4005.gif'
+                },
+                {
+                  name:'害羞',
+                  id:'redface',
+                  code:':qq_redface',
+                  src:'https://image.nykee.cn/qq_emoji/e4006.gif'
+                },
+                {
+                  name:'抖',
+                  id:'shake',
+                  code:':qq_shake',
+                  src:'https://image.nykee.cn/qq_emoji/e4007.gif'
+                },
+                {
+                  name:'汗',
+                  id:'han',
+                  code:':qq_han',
+                  src:'https://image.nykee.cn/qq_emoji/e4009.gif'
+                },
+
+
+                {
+                  name:'雷人',
+                  id:'thunder',
+                  code:':qq_thunder',
+                  src:'https://image.nykee.cn/qq_emoji/e4011.gif'
+                },
+                {
+                  name:'潜水',
+                  id:'hide',
+                  code:':qq_hide',
+                  src:'https://image.nykee.cn/qq_emoji/e4012.gif'
+                },
+                {
+                  name:'大笑',
+                  id:'laugh',
+                  code:':qq_laugh',
+                  src:'https://image.nykee.cn/qq_emoji/e4018.gif'
+                },
+                {
+                  name:'路过',
+                  id:'plane',
+                  code:':qq_plane',
+                  src:'https://image.nykee.cn/qq_emoji/e6097.gif'
+                },
+                {
+                  name:'干杯',
+                  id:'cheers',
+                  code:':qq_cheers',
+                  src:'https://image.nykee.cn/qq_emoji/e6098.gif'
+                },
+                {
+                  name:'恭喜发财',
+                  id:'gxfc',
+                  code:':qq_gxfc',
+                  src:'https://image.nykee.cn/qq_emoji/e6100.gif'
+                },
+                {
+                  name:'红包',
+                  id:'redbag',
+                  code:':qq_redbag',
+                  src:'https://image.nykee.cn/qq_emoji/e6101.gif'
+                },
+                {
+                  name:'玫瑰',
+                  id:'rose',
+                  code:':qq_rose',
+                  src:'https://image.nykee.cn/qq_emoji/e6104.gif'
+                },
+                {
+                  name:'求约会',
+                  id:'askdate',
+                  code:':qq_askdate',
+                  src:'https://image.nykee.cn/qq_emoji/e6107.gif'
+                },
               ]
             }
         },
@@ -427,10 +517,11 @@
               return false;
           },
           submitComments:function(){
+            let self= this;
             // console.log(!this.isHuman);
             // console.log(this.comments);
             let browser = this.getBrowserInfo();
-            console.log(browser);
+            // console.log(browser);
             let os = this.getOsInfo();
             if(!this.isHuman){
               this.$Message.warning('请刷老司机卡上车');
@@ -447,6 +538,7 @@
               }
               else {
                 let timeStamp = new Date().getTime().toString();
+                this.comments=this.utf16toEntities(this.comments);
                 let params = {
                   postTime:timeStamp,
                   content:this.comments,
@@ -458,17 +550,30 @@
                 };
                 axios.post("/Comment/insertNewComment",params)
                   .then((res)=>{
+                    console.log(res.data);
+                    if(String(res.data.code)==="200"){
+                      self.$Message.success({
+                        content: "评论成功！",
+                        duration: 3
+                      })
+                    }
                   })
                   .catch((err)=>{
                     console.log(err);
                   })
               }
             }
-            window.location.reload();
+           location.reload();
+            window.scrollTo(0,0)
+            // history.go(0)
 
+           /* this.$nextTick(function () {
+
+              this.isRouterAlive = true
+
+            })*/
           },
           addEmoji(code){
-           // console.log(code);
            this.comments+=code;
           },
           handlePageChange:function(page){
@@ -480,9 +585,11 @@
                 index:index,
                 rowLimit:rowLimit
               };
+            this.spinShow =true;
             axios.post("/Comment/QueryCommentsPerPage",params)
               .then(
                 (res)=>{
+                  self.spinShow =false;
                   for(let i=0,len=self.commentSFromDB.length;i<len;i++){
                     self.commentSFromDB.shift();
                   }
@@ -497,9 +604,8 @@
                 }
               )
           },
-          toogleEmoji(){
+          toggleEmoji(){
             this.isEmojShow = !this.isEmojShow;
-            this.toogleEmojiTitle = this.toogleEmojiTitle ==="表情包大法biubiu"?"(づ￣3￣)づ╭❤～":"表情包大法biubiu"
           },
           handleOnBlur(){
             let qqNum = this.nickName;
@@ -540,8 +646,7 @@
           },
           getOsInfo(){
             let sUserAgent = navigator.userAgent;
-            // console.log(sUserAgent);
-            // console.log(sUserAgent.search(/AppleWebKit/g));
+
             let isWin = (navigator.platform === "Win32") || (navigator.platform === "Windows");
             let isMac = (navigator.platform === "Mac68K") || (navigator.platform === "MacPPC") || (navigator.platform === "Macintosh") || (navigator.platform === "MacIntel");
             if (isMac)
@@ -577,17 +682,13 @@
                 return "Windows10";
 
             }
-            let isIphone = sUserAgent.indexOf("like Mac OS X");
-            // console.log(isIphone !== -1);
-            if(isIphone){
-              // let likeIdx = sUserAgent.indexOf("like");
-              // let name = sUserAgent.substring(sUserAgent.indexOf(),likeIdx);
-              //
-              // let ver =name.substring(name.indexOf("_"),name.indexOf("_")-1);
-              // console.log(ver);
-
-              console.log("IOS");
+            let isIphone = sUserAgent.indexOf("iphone;")>-1;
+            let isPad = sUserAgent.indexOf("iPad;")>-1;
+            let isMac2 = sUserAgent.indexOf("Macintosh;")>-1;
+            console.log(isIphone !== -1);
+            if(isIphone|| isPad){
               return "IOS"}
+            if(isMac2){return "Mac"}
             return "other";
           },
           getBrowserInfo:function(){
@@ -667,35 +768,44 @@
               broName = temp.replace('/', ' ');
             }
             else if (userAgent.indexOf('QQ') !== -1) {
-              // isQQ = true;
-              /*broName = 'Chrome浏览器';*/
-
               broName = 'QQ浏览器';
             }
-            else if(userAgent.search(/AppleWebKit/g)){
-              // console.log("safari");
-              if(userAgent.search(/Macintosh/g)){
-                broName = "Safari on Mac OS X"
-              }
-              else {broName = "Safari on IOS";}
-            }
-
             else {
               broName = "M78星云信息探测器"
             }
+            if(userAgent.indexOf("iPhone;")>-1 ||userAgent.indexOf("iPad;")>-1||userAgent.indexOf("Macintosh;")>-1){
+              if(userAgent.search(/AppleWebKit/g)){
+                broName = "Safari"
+              }
+            }
 
-            // console.log(broName);
             return broName
   },
-
+          utf16toEntities: function(str) { //检测utf16emoji表情 转换为实体字符以供后台存储
+            var patt=/[\ud800-\udbff][\udc00-\udfff]/g;
+            str = str.replace(patt, function(char){
+              var H, L, code;
+              if (char.length===2) {   //辅助平面字符（我们需要做处理的一类）
+                H = char.charCodeAt(0); // 取出高位
+                L = char.charCodeAt(1); // 取出低位
+                code = (H - 0xD800) * 0x400 + 0x10000 + L - 0xDC00; // 转换算法
+                return "&#" + code + ";";
+              } else {
+                return char;
+              }
+            });
+            return str;
+          }
         },
         created: function () {
         },
         mounted() {
           // let browser = this.getBrowserInfo();
           // console.log(browser);
-          this.getBrowserInfo();
-         this.getOsInfo();
+          // let browser =this.getBrowserInfo();
+          // console.log(browser);
+          console.log(navigator.platform);
+         // this.getOsInfo();
         this.uIP=  returnCitySN["cip"];
         console.log(this.uIP);
           let self = this;
@@ -764,13 +874,16 @@
   .comments-sum{margin-left: .6rem;}
   .item-row{margin-top:.6rem;}
   .emotion-toggle-container{
-    padding: 1rem;
+    padding: 1rem 0;
   }
-  .emotion-toggle-btn{cursor: pointer;margin: 1rem;display: inline-block}
+  .emoji-toogle-btn{cursor: pointer;color:#ccc}
   .emoj-container{
     display: inline-block;
     padding:.5rem .4rem;}
   .emoj-container:hover{
     background-color: #f5f5f5;
   }
+  .active-btn{color: #2b85e4}
+
+
 </style>

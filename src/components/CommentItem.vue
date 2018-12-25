@@ -1,26 +1,34 @@
 <template>
   <div class="comment-item-container">
-    <Row>
-      <i-col span="3">
+    <Row type="flex" justify="center" align="middle">
+      <i-col :xs={span:3} :sm={span:3} :md={span:3} :lg={span:3}>
         <Avatar icon="ios-person" size="large" :src="avatar"/>
       </i-col>
-      <i-col span="21">
+      <i-col :xs={span:20,offset:1} :sm={span:20,offset:1} :md={span:20,offset:0} :lg={span:20,offset:1}>
         <ul>
           <li class="nickname-li">
             {{nickName}}
           </li>
           <li class="time-li">
-            <span class="post-at">发布于</span><Time :time="processedTime" type="datetime" ></Time>
-            <span class="ua">(<img class="info-icon" :src="bsr_icon_src"/>{{browser}}</span>
-            <span class="os"><img class="info-icon" :src="os_icon_src">{{os}})</span>
-            <span>{{isp}}</span>
+            <ul>
+              <li class="c-items">
+                <span class="post-at">发布于</span>
+                <Time :time="processedTime" type="datetime" ></Time>
+              </li>
+              <li class="c-items">
+                <span class="ua"><img class="info-icon" :src="bsr_icon_src"/>{{browser}}</span>
+                <span class="os"><img class="info-icon" :src="os_icon_src">{{os}}</span>
+              </li>
+              <li class="c-items">
+                <span class="c-items-isp">来自：{{isp}}</span>
+              </li>
+            </ul>
           </li>
         </ul>
       </i-col>
     </Row>
     <Row>
       <div class="comment-detail"  v-html="decodedContent">
-
       </div>
     </Row>
   </div>
@@ -119,7 +127,12 @@
             }, {
               pattern:/:bbd/g,
               fileName:"baidu_emoji/icon_bbd.gif"
-            }, {
+            },
+            {
+              pattern:/:britan/g,
+              fileName:"baidu_emoji/icon_britan.gif"
+            },
+            {
               pattern: /:doubt/g,
               fileName:"baidu_emoji/icon_doubt.gif"
             }, {
@@ -193,7 +206,7 @@
               fileName:"baidu_emoji/icon_tongue.gif"
             },{
               pattern: /:like/g,
-              fileName:"baidu_emoji/icon_like.gif"
+              fileName:"baidu_emoji/icon_like.png"
             },
             {
               pattern: /:ali_bath/g,
@@ -294,13 +307,80 @@
               pattern: /:ali_yeah/g,
               fileName:"ali_emoji/yeah.jpg"
             }
+            ,
+            {
+              pattern: /:qq_clap/g,
+              fileName:"qq_emoji/e4005.gif"
+            }
+            ,
+            {
+              pattern: /:qq_redface/g,
+              fileName:"qq_emoji/e4006.gif"
+            }
+            ,
+            {
+              pattern: /:qq_shake/g,
+              fileName:"qq_emoji/e4007.gif"
+            }
+            ,
+            {
+              pattern: /:qq_han/g,
+              fileName:"qq_emoji/e4009.gif"
+            }
+            ,
+            {
+              pattern: /:qq_thunder/g,
+              fileName:"qq_emoji/e4011.gif"
+            }
+            ,
+            {
+              pattern: /:qq_hide/g,
+              fileName:"qq_emoji/e4012.gif"
+            }
+            ,
+            {
+              pattern: /:qq_laugh/g,
+              fileName:"qq_emoji/e4018.gif"
+            }
+            ,
+            {
+              pattern: /:qq_plane/g,
+              fileName:"qq_emoji/e6097.gif"
+            }
+            ,
+            {
+              pattern: /:qq_cheers/g,
+              fileName:"qq_emoji/e6098.gif"
+            }
+            ,
+            {
+              pattern: /:qq_gxfc/g,
+              fileName:"qq_emoji/e6100.gif"
+            }
+            ,
+            {
+              pattern: /:qq_redbag/g,
+              fileName:"qq_emoji/e6101.gif"
+            }
+            ,
+            {
+              pattern: /:qq_rose/g,
+              fileName:"qq_emoji/e6104.gif"
+            }
+            ,
+            {
+              pattern: /:qq_askdate/g,
+              fileName:"qq_emoji/e6107.gif"
+            }
+            ,
+
 
 
           ];
 
           let temp_content =this.content;
           for(let i =0,len = tempMap.length;i<len;i++){
-            temp_content = temp_content.replace(tempMap[i].pattern,`<img style="width: 2rem;height: 2rem" src="${baseUrl}${tempMap[i].fileName}"/>`)
+            temp_content = temp_content.replace(tempMap[i].pattern,`<img style="width: 1.8rem;height: 1.8rem;vertical-align: middle" src="${baseUrl}${tempMap[i].fileName}"/>`)
           }
          return   temp_content;
         },
@@ -324,4 +404,6 @@
     height: .8rem;width: .8rem;
     margin: 0 .3rem 0 .4rem;
   }
+  /*.c-items{mt}*/
+  .c-items-isp{font-size: .8rem}
 </style>

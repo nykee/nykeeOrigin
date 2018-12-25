@@ -100,8 +100,8 @@
           this.isTags = false;
           this.isPhoto = false;
           this.isAbout = true;
-          this.head = 'TimeLine';
-          this.subHead = 'Big Event Record'
+          this.head = 'About';
+          this.subHead = 'timeline etc'
 
 
         }
