@@ -6,66 +6,101 @@
         <span>Comments</span>
         <span class="cut-off-line"></span>
         <span class="comments-sum">{{count}}</span>
-        <span>条评论</span>
+        <span>{{$t("message.commentsPage.commentCountDesc")}}</span>
       </i-col>
     </Row>
-
   <!--body-->
    <Row type="flex" justify="center" align="middle">
      <i-col v-if="spinShow"
             :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
-       <Spin size="large" ></Spin>
+       <div class="loading-mask">
+         <Spin size="large" fix>
+           <Icon type="ios-loading" size=32 class="demo-spin-icon-load"></Icon>
+           <div>Loading...</div>
+         </Spin>
+       </div>
      </i-col>
      <i-col v-if="!spinShow"
             :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}
             v-for="com in commentSFromDB" :key="com.id">
-       <div style="height: 20rem;background: #ccc" v-if="count ===0">留言板空空如也~~</div>
+       <!--<div style="height: 20rem;background: #ccc" v-if="isEmpty">留言板空空如也~~</div>-->
          <CommentItem :nick-name="com.nickName"
                       :content="com.content"
                       :avatar ="com.avatar"
                       :post-time ="com.postTime"
                       :browser="com.browser"
                       :os="com.os"
-                      :isp="com.isp"/>
+                      :isp="com.isp"
+                      :cmt-id="com.id"/>
      </i-col>
    </Row>
     <!--footer评论输入区-->
     <Row type="flex" justify="center" align="middle" class="item-row">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <Page :total="count" @on-change="handlePageChange" show-elevator/>
-        <!--<Button type="primary" @click="elevator">走起</Button>-->
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
-          <Input  v-model="comments" type="textarea" :rows="4" placeholder="随便写点什么吧..." />
+          <Input ref="commentsInput" v-model="comments" type="textarea" :rows="4" :placeholder="this.$t('message.commentsPage.placeholder_comment')" />
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
-      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
-        <i class="fa fa-smile-o fa-2x emoji-toogle-btn" :class="{'active-btn':isEmojShow}" @click="toggleEmoji"></i>
-      </i-col>
-      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="emotion-toggle-container" v-show="isEmojShow" >
-        <Tabs value="baidu_emoji">
-          <TabPane label="贴吧" name="baidu_emoji">
+     <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} v-if="!isMobile">
+
+      <Poptip placement="bottom-end"  word-wrap>
+          <span @click="toggleEmoji" class="emoji-toggle-contanier">
+            <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" ></i>{{$t("message.commentsPage.emoji")}}
+          </span>
+        <div slot="content">
+            <Tabs value="baidu_emoji">
+              <TabPane label="贴吧" name="baidu_emoji">
              <span v-for="emo in baiduEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
           <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
         </span>
-          </TabPane>
-          <TabPane label="阿狸" name="ali_emoji">
+              </TabPane>
+              <TabPane label="阿狸" name="ali_emoji">
             <span v-for="emo in aliEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
           <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img-ali"/>
         </span>
-          </TabPane>
-          <TabPane label="QQ" name="qq_emoji">
+              </TabPane>
+              <TabPane label="QQ" name="qq_emoji">
             <span v-for="emo in qqEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
               <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
             </span>
-          </TabPane>
-        </Tabs>
+              </TabPane>
+            </Tabs>
 
-
+        </div>
+      </Poptip>
       </i-col>
+
+        <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}  v-if="isMobile">
+          <span @click="toggleEmoji" class="emoji-toggle-contanier">
+            <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" @click="toggleEmoji"></i>{{$t("message.commentsPage.emoji")}}
+          </span>
+        </i-col>
+        <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="emotion-toggle-container" v-show="isEmojShow&&isMobile" >
+          <Tabs value="baidu_emoji">
+            <TabPane label="贴吧" name="baidu_emoji">
+             <span v-for="emo in baiduEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+          <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
+        </span>
+            </TabPane>
+            <TabPane label="阿狸" name="ali_emoji">
+            <span v-for="emo in aliEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+          <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img-ali"/>
+        </span>
+            </TabPane>
+            <TabPane label="QQ" name="qq_emoji">
+            <span v-for="emo in qqEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+              <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
+            </span>
+            </TabPane>
+          </Tabs>
+        </i-col>
+
+
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row" >
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
@@ -74,44 +109,45 @@
             <Avatar icon="ios-person" size="large" :src="avatarSrc"/>
           </i-col>
           <i-col span="10" offset="1">
-            <Input v-model="nickName" placeholder="昵称或QQ号码" class="comment-input-items"  @on-blur="handleOnBlur" />
+            <Input v-model="nickName" :placeholder="this.$t('message.commentsPage.placeholder_nickname')" class="comment-input-items"  @on-blur="handleOnBlur" />
           </i-col>
           <i-col span="10" offset="1">
-            <Input v-model="email" placeholder="邮箱"  class="comment-input-items"/>
+            <Input v-model="email" :placeholder="this.$t('message.commentsPage.placeholder_email')"  class="comment-input-items"/>
           </i-col>
         </Row>
-
-
-
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="textA-center">
-        <Radio v-model="isHuman">滴，老司机卡</Radio>
+        <Radio v-model="isHuman">{{$t("message.commentsPage.notRobot")}}</Radio>
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="textA-center">
-        <Button type="primary" @click="submitComments">留言</Button>
+        <Button type="primary" @click="submitComments">{{$t("message.commentsPage.submit_comment")}}</Button>
       </i-col>
     </Row>
   </div>
 </template>
 
 <script>
+  import {isMobile} from '../utils/ScreenWidth'
+  import EventBus from "../utils/EventBus"
   import CommentItem from './CommentItem'
   import Emotion from '../components/Emotion'
     export default {
         data() {
             return {
+              // isEmpty:false,
               count:0,
               comments:'',
               isHuman:false,
               nickName:'',
               qqNum:"",
               email:'',
-              ispInfo:'',
-              total:0,
+              ispInfo:'未知ISP',
+              // total:0,
+              isMobile:false,
               spinShow:false,
               isEmojShow:false,
               // toogleEmojiTitle:"表情包大法biubiu",
@@ -518,10 +554,7 @@
           },
           submitComments:function(){
             let self= this;
-            // console.log(!this.isHuman);
-            // console.log(this.comments);
             let browser = this.getBrowserInfo();
-            // console.log(browser);
             let os = this.getOsInfo();
             if(!this.isHuman){
               this.$Message.warning('请刷老司机卡上车');
@@ -542,6 +575,7 @@
                 let params = {
                   postTime:timeStamp,
                   content:this.comments,
+                  email:this.email,
                   nickname:this.nickName,
                   avatar:this.avatarSrc,
                   browser:browser,
@@ -565,13 +599,6 @@
             }
            location.reload();
             window.scrollTo(0,0)
-            // history.go(0)
-
-           /* this.$nextTick(function () {
-
-              this.isRouterAlive = true
-
-            })*/
           },
           addEmoji(code){
            this.comments+=code;
@@ -589,13 +616,15 @@
             axios.post("/Comment/QueryCommentsPerPage",params)
               .then(
                 (res)=>{
-                  self.spinShow =false;
+
                   for(let i=0,len=self.commentSFromDB.length;i<len;i++){
                     self.commentSFromDB.shift();
                   }
+
                   for(let i=0,len =res.data.length;i<len;i++){
                     self.commentSFromDB .push(res.data[i]) ;
                   }
+                  self.spinShow =false;
                 }
               )
               .catch(
@@ -697,14 +726,14 @@
             // let isFireFox =false;
             // let isChrome = false;
             // let isEdge = false;
+            // let isQQ =false;
             let broName = '';
             let strStart = 0;
             let strStop = 0;
             let temp = '';
-            // let isQQ =false;
-
             let userAgent = window.navigator.userAgent; //包含以下属性中所有或一部分的字符串：appCodeName,appName,appVersion,language,platform
-            console.log(userAgent);
+            // console.log(userAgent);
+
             //FireFox
             if (userAgent.indexOf('Firefox') !== -1) {
               // isFireFox = true;
@@ -713,6 +742,8 @@
               broName = temp.replace('/', ' ')
 
             }
+
+            //Opera
             else if (userAgent.indexOf('Opera') !== -1) {
               // isFireFox = true;
               strStart = userAgent.indexOf('Opera');
@@ -722,8 +753,7 @@
 
             }
 
-
-//Edge
+            //Edge
             else if (userAgent.indexOf('Edge') !== -1) {
               // isEdge = true;
               /*broName = 'Edge浏览器';*/
@@ -732,7 +762,7 @@
               broName = temp.replace('/', ' ');
             }
 
-//IE浏览器
+            //IE浏览器
             else if (userAgent.indexOf('NET') !== -1 && userAgent.indexOf("rv") !== -1) {
               // isIE = true;
               /*broName = 'IE浏览器'; */
@@ -742,24 +772,25 @@
               broName = temp.replace('rv', 'IE').replace(':', ' ');
             }
 
-//360极速模式可以区分360安全浏览器和360极速浏览器
+            //360极速模式可以区分360安全浏览器和360极速浏览器
             else if (userAgent.indexOf('WOW') !== -1 && userAgent.indexOf("NET") < 0 && userAgent.indexOf("Firefox") < 0) {
               if (navigator.javaEnabled()) {
-                is360 = true;
+                console.log(userAgent);
+                // is360 = true;
                 broName = '360安全浏览器-极速模式';
               } else {
-                is360 = true;
+                // is360 = true;
                 broName = '360极速浏览器-极速模式';
               }
             }
 
-//360兼容
+            //360兼容
             else if (userAgent.indexOf('WOW') !== -1 && userAgent.indexOf("NET") !== -1 && userAgent.indexOf("MSIE") !== -1 && userAgent.indexOf("rv") < 0) {
-              is360 = true;
+              // is360 = true;
               broName = '360兼容模式';
             }
 
-//Chrome浏览器
+            //Chrome浏览器
             else if (userAgent.indexOf('WOW') < 0 && userAgent.indexOf("Edge") < 0) {
               // isChrome = true;
               strStart = userAgent.indexOf('Chrome');
@@ -781,7 +812,8 @@
 
             return broName
   },
-          utf16toEntities: function(str) { //检测utf16emoji表情 转换为实体字符以供后台存储
+          utf16toEntities: function(str) {
+            //检测utf16emoji表情 转换为实体字符以供后台存储
             var patt=/[\ud800-\udbff][\udc00-\udfff]/g;
             str = str.replace(patt, function(char){
               var H, L, code;
@@ -800,14 +832,18 @@
         created: function () {
         },
         mounted() {
+          // console.log(this.count);
+          // console.log( this.isEmpty);
           // let browser = this.getBrowserInfo();
           // console.log(browser);
           // let browser =this.getBrowserInfo();
           // console.log(browser);
-          console.log(navigator.platform);
+          // console.log(navigator.platform);
          // this.getOsInfo();
+          this.isMobile =isMobile();
         this.uIP=  returnCitySN["cip"];
-        console.log(this.uIP);
+        // console.log(this.uIP);
+
           let self = this;
           axios.get("/Comment/QueryCommentsCount")
             .then((res)=>{
@@ -817,26 +853,24 @@
             .catch((err)=>{
               console.log(err);
             });
-
+          // console.log(self.count === 0);
+          this.spinShow =true;
           axios.get("/Comment/QueryCommentsInitial")
             .then((res)=>{
               // console.log(res.data);
-
               for(let i=0,len =res.data.length;i<len;i++){
                 self.commentSFromDB .push(res.data[i]) ;
               }
-
-
+              this.spinShow =false;
             })
             .catch((err)=>{
-
+                console.warn(err);
             });
           axios.post("/Comment/getIpInfo",{uIP:this.uIP})
             .then((res)=>{
               // console.log(res.data.extendInfo.ipinfo);
               let result = JSON.parse(res.data.extendInfo.ipinfo);
               // console.log(result);
-
               let country =result.data.country; //国家
               let region =result.data.region;  //地区
               let city =result.data.city;      //城市
@@ -847,20 +881,21 @@
               }
               else {
                 self.ispInfo = country+region+city+isp;
-
               }
-              // alert(self.ispInfo)
-              // console.log(self.ispInfo);
-
-
-                  // console.log(res.data.extendInfo.ipinfo);
             })
             .catch((err)=>{
-
-            })
-
-
+                console.warn(err);
+            });
+          EventBus.$on("rePlyComment",(data)=>{
+            this.$refs.commentsInput.focus();
+            this.comments="";
+            this.comments+= "@"+data.nickname+" ";
+            // console.log(data);
+          })
         },
+      computed:{
+
+      },
         components: {CommentItem,Emotion}
     }
 </script>
@@ -873,17 +908,33 @@
   .cut-off-line{border-right: 1px solid #000}
   .comments-sum{margin-left: .6rem;}
   .item-row{margin-top:.6rem;}
-  .emotion-toggle-container{
-    padding: 1rem 0;
+  .emotion-toggle-container{padding: 1rem 0;}
+  .emoji-toggle-contanier{cursor: pointer}
+  .emoji-toggle-btn{
+    cursor: pointer;
+    color:#ccc;
+    vertical-align:center;
+    margin-right: .4rem;
   }
-  .emoji-toogle-btn{cursor: pointer;color:#ccc}
   .emoj-container{
     display: inline-block;
     padding:.5rem .4rem;}
-  .emoj-container:hover{
-    background-color: #f5f5f5;
+  .emoj-container:hover{background-color: #f5f5f5;}
+  .loading-mask{
+    /*width:20rem;*/
+    height: 103.5625rem;
+    background-color: #F7F7F7;
+    opacity: .7;
+    position: relative;
   }
   .active-btn{color: #2b85e4}
-
+  .demo-spin-icon-load{
+    animation: ani-demo-spin 1s linear infinite;
+  }
+  @keyframes ani-demo-spin {
+    from { transform: rotate(0deg);}
+    50%  { transform: rotate(180deg);}
+    to   { transform: rotate(360deg);}
+  }
 
 </style>

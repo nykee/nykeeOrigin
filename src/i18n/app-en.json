@@ -187,6 +187,24 @@
           "activity": "add comments page "
         }
       ]
+    },
+    "musicPlay":{
+      "playModeToolTips":{
+        "randomPlay":"random play mode activated!",
+        "listPlay":"list play mode activated!"
+      }
+    },
+    "commentsPage":{
+      "commentCountDesc":"comments",
+      "reply":"reply",
+      "postAt":"posted at",
+      "fromWhat":"from:",
+      "emoji":"emojis",
+      "placeholder_nickname":"your nickname",
+      "placeholder_email":"email address",
+      "placeholder_comment":"Just type something u wanna say~",
+      "notRobot":"prove you are not a robot",
+      "submit_comment":"comment"
     }
   }
 }

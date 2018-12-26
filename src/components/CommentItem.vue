@@ -1,10 +1,16 @@
 <template>
-  <div class="comment-item-container">
+  <div class="comment-item-container" >
     <Row type="flex" justify="center" align="middle">
-      <i-col :xs={span:3} :sm={span:3} :md={span:3} :lg={span:3}>
+      <i-col :lg={span:3}
+             :md={span:3}
+             :sm={span:3}
+             :xs={span:3}>
         <Avatar icon="ios-person" size="large" :src="avatar"/>
       </i-col>
-      <i-col :xs={span:20,offset:1} :sm={span:20,offset:1} :md={span:20,offset:0} :lg={span:20,offset:1}>
+      <i-col :lg={span:18}
+             :md={span:18}
+             :sm={span:18}
+             :xs={span:18}>
         <ul>
           <li class="nickname-li">
             {{nickName}}
@@ -12,19 +18,31 @@
           <li class="time-li">
             <ul>
               <li class="c-items">
-                <span class="post-at">发布于</span>
+                <span class="post-at">{{$t("message.commentsPage.postAt")}}</span>
                 <Time :time="processedTime" type="datetime" ></Time>
               </li>
               <li class="c-items">
-                <span class="ua"><img class="info-icon" :src="bsr_icon_src"/>{{browser}}</span>
-                <span class="os"><img class="info-icon" :src="os_icon_src">{{os}}</span>
+                <span class="ua">
+                  <img class="info-icon" :src="bsr_icon_src"/>
+                  <span v-if="!isMobile">{{browser}}</span>
+                </span>
+                <span class="os">
+                  <img class="info-icon" :src="os_icon_src"/>
+                  <span v-if="!isMobile">{{os}}</span>
+                </span>
               </li>
               <li class="c-items">
-                <span class="c-items-isp">来自：{{isp}}</span>
+                <span class="c-items-isp">{{$t("message.commentsPage.fromWhat")}}{{isp}}</span>
               </li>
             </ul>
           </li>
         </ul>
+      </i-col>
+      <i-col :lg={span:2}
+             :md={span:2}
+             :sm={span:2}
+             :xs={span:2}>
+        <Button class="reply-btn" type="primary" size="small" @click="replyTo">{{$t("message.commentsPage.reply")}}</Button>
       </i-col>
     </Row>
     <Row>
@@ -35,26 +53,35 @@
 </template>
 
 <script>
+  import {isMobile} from '../utils/ScreenWidth'
+  import EventBus from '../utils/EventBus'
     import Emotion from "../components/Emotion"
     export default {
-      props:["nickName","postTime","avatar","content","browser","os","isp"],
+      props:["nickName","postTime","avatar","content","browser","os","isp","cmtId"],
         data() {
             return {
               bsr_icon_src:'',
-              os_icon_src:''
+              os_icon_src:'',
+              isMobile:false
             }
         },
         methods: {
+          replyTo:function () {
+            // console.log(this.nickName);
+            EventBus.$emit("rePlyComment",{id:this.cmtId,nickname:this.nickName})
 
-
+          }
 
         },
         created: function () {
 
         },
         mounted() {
+        // console.log(this.cmtId);
+        this.isMobile =isMobile();
         // this.userAgent =this.getBrowserInfo();
         // console.log(this.userAgent);
+          /*根据传入的browser来动态改变browser图标*/
           if(this.browser.indexOf("Chrome")!==-1){
             this.bsr_icon_src = "https://image.nykee.cn/browser_icons/chrome.svg"
           }
@@ -82,9 +109,7 @@
             this.bsr_icon_src = "https://image.nykee.cn/browser_icons/chrome.svg"
           }
 
-
-
-
+          /*根据传入的os来动态改变os的图标*/
           if(this.os.indexOf("Windows7")!==-1){
             this.os_icon_src = "https://image.nykee.cn/browser_icons/windows_win7.svg"
           }
@@ -99,20 +124,20 @@
           }
           else if(this.os.indexOf("Linux")!==-1){
             this.os_icon_src = "https://image.nykee.cn/browser_icons/linux.svg"
-          }else if(this.os.indexOf("IOS")!==-1 ||this.os.indexOf("Mac")!==-1 ){
+          }
+          else if(this.os.indexOf("IOS")!==-1 ||this.os.indexOf("Mac")!==-1 ){
             this.os_icon_src = "https://image.nykee.cn/browser_icons/apple.jpg"
           }
-
           else {
             this.os_icon_src = "https://image.nykee.cn/browser_icons/windows_win7.svg"
           }
-
 
         },
       computed:{
 
         decodedContent:function () {
           let baseUrl = "https://image.nykee.cn/";
+          //存放正则和对应的文件名称的数据结构
           let tempMap = [
             {
               pattern:/:aa/g,
@@ -377,11 +402,12 @@
 
 
           ];
-
           let temp_content =this.content;
           for(let i =0,len = tempMap.length;i<len;i++){
-            temp_content = temp_content.replace(tempMap[i].pattern,`<img style="width: 1.8rem;height: 1.8rem;vertical-align: middle" src="${baseUrl}${tempMap[i].fileName}"/>`)
+            //遍历上面数据结构，用str的replace匹配数据结构中的pattern，替换为img,src采用baseurl+数据结构中的filename拼接
+            temp_content = temp_content.replace(tempMap[i].pattern,`<img style="width: 1.8rem;height: 1.8rem;vertical-align: middle;padding-left: .1rem" src="${baseUrl}${tempMap[i].fileName}"/>`)
           }
+         // 返回拼接好的计算属性
          return   temp_content;
         },
         processedTime:function () {
@@ -404,6 +430,6 @@
     height: .8rem;width: .8rem;
     margin: 0 .3rem 0 .4rem;
   }
-  /*.c-items{mt}*/
   .c-items-isp{font-size: .8rem}
+  .reply-btn{opacity: .8;font-size: .6rem}
 </style>

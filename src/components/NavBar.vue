@@ -12,7 +12,7 @@
           </router-link>
         </i-col>
         <i-col :lg="{span:14,offset:4}"
-               :md="{span:12,offset:4}"
+               :md="{span:14,offset:4}"
                :sm="{span:11,offset:7}"
                :xs="{span:6,offset:12}">
           <MenuItem name="2">
@@ -33,10 +33,9 @@
           <MenuItem name="7">
             <router-link to="/About">{{ $t("message.about")}}</router-link>
           </MenuItem>
-
         </i-col>
         <i-col :lg="{span:2}"
-               :md="{span:1}"
+               :md="{span:2}"
                :sm="{span:2}"
                :xs="{span:2}">
           <select v-model="lanSel" class="lanSel">
@@ -48,9 +47,9 @@
     <!--Mobile Nav-->
     <div v-if="isMobile">
       <Dropdown trigger="click" class="dropDownMenu">
-        <a href="javascript:void(0)">
-          <i class="fa fa-reorder fa-2x"></i>
-        </a>
+
+        <i class="fa fa-reorder fa-2x pointer"></i>
+
         <DropdownMenu slot="list">
           <DropdownItem>
             <router-link to="/" class="black-color">{{ $t("message.home")}}</router-link>
@@ -77,9 +76,7 @@
               </option>
             </select>
           </DropdownItem>
-
         </DropdownMenu>
-
       </Dropdown>
       <span class="logoName" @click="directToIndex">Nykee Blog</span>
     </div>
@@ -177,8 +174,8 @@
 
       }
 
-      console.log(this.$i18n.locale);
-      console.log(window.sessionStorage.getItem("locale"));
+      // console.log(this.$i18n.locale);
+      // console.log(window.sessionStorage.getItem("locale"));
       bus.$on("tagRedirect", (args) => {
         // console.log(args);
 //              console.log(self.$refs);
@@ -244,8 +241,6 @@
     width: 5rem;
     outline: 0;
     border-radius: 4px;
-    /*background-color: #e1f0fe;
-    color: #fff;*/
   }
 
   .lanSel:hover, .lanSel-option:hover {
@@ -259,5 +254,6 @@
   .nykee-word {
     padding-left: .5rem;
   }
+  .pointer{cursor: pointer;color: #fff}
 
 </style>

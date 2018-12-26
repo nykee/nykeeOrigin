@@ -192,6 +192,24 @@
           "activity": "增加留言板功能"
         }
       ]
+    },
+    "musicPlay":{
+      "playModeToolTips":{
+        "randomPlay":"已开启随机播放",
+        "listPlay":"已开启列表播放"
+      }
+    },
+    "commentsPage":{
+      "commentCountDesc":"条评论",
+      "reply":"回复",
+      "postAt":"发布于",
+      "fromWhat":"来自：",
+      "emoji":"表情",
+      "placeholder_nickname":"昵称或QQ号码",
+      "placeholder_email":"邮箱",
+      "placeholder_comment":"随便写点什么吧...",
+      "notRobot":"滴，老司机卡",
+      "submit_comment":"留言"
     }
 
 

@@ -66,7 +66,6 @@
           </ul>
         </div>
       </keep-alive>
-
     </div>
     <div id="mini-player" v-if="isMini">
       <div class="mini-player-box">
@@ -112,7 +111,7 @@
       changePlayMode() {
         /*切换播放模式*/
         this.isRandom = !this.isRandom;
-        let infoMsg = this.isRandom ? "已开启随机播放" : "已开启列表播放";
+        let infoMsg = this.isRandom ? this.$t("message.musicPlay.playModeToolTips.randomPlay") :this.$t("message.musicPlay.playModeToolTips.listPlay");
         this.$Notice.info({
           title: infoMsg
         })

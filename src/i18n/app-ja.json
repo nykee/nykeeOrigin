@@ -187,6 +187,24 @@
           "activity": "メッセージボード機能を追加する"
         }
       ]
+    },
+    "musicPlay":{
+      "playModeToolTips":{
+        "randomPlay":"ランダムプレイをオンにする",
+        "listPlay":"オープンリストプレイ"
+      }
+    },
+    "commentsPage":{
+      "commentCountDesc":"コメント",
+      "reply":"返信する",
+      "postAt":"に掲載されました",
+      "fromWhat":"から:",
+      "emoji":"emojis",
+      "placeholder_nickname":"ニックネーム",
+      "placeholder_email":"email address",
+      "placeholder_comment":"ただ何か書く",
+      "notRobot":"ドロップ、古いドライバーカード",
+      "submit_comment":"メッセージを残す"
     }
   }
 }

@@ -1,14 +1,21 @@
 <template>
-  <tooltip :content="tooltip" placement="top-start" >
-    <img :class="emotionClass" :src="src" alt="" >
-  </tooltip>
+  <div>
+    <tooltip :content="tooltip" placement="top-start" v-if="!isMobile">
+      <img :class="emotionClass" :src="src" alt="" />
+    </tooltip>
+    <img :class="emotionClass" :src="src" alt="" v-if="isMobile"/>
+  </div>
+
 </template>
 
 <script>
+  import {isMobile} from '../utils/ScreenWidth'
     export default {
       props:["src","tooltip","code","emotionClass"],
         data() {
-            return {}
+            return {
+              isMobile:false
+            }
         },
         methods: {
 
@@ -17,7 +24,8 @@
 
         },
         mounted() {
-
+          this.isMobile =isMobile();
+          // console.log(this.isMobile);
         },
         components: {}
     }

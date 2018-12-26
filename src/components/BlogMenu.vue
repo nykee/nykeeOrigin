@@ -64,13 +64,6 @@
       });
     },
     mounted() {
-      // console.log(this.activeName);
-      /* mapState({
-         activeName: state => state.blogMenuActiveName
-       });
-       this.$nextTick(()=>{
-         this.$refs.bMenu.updateActiveName();
-       });*/
 
     },
     components: {}
