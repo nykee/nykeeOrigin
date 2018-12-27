@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <span>
     <tooltip :content="tooltip" placement="top-start" v-if="!isMobile">
-      <img :class="emotionClass" :src="src" alt="" />
+      <img :class="emotionClass" class="emoj-img" :src="src" alt="" />
     </tooltip>
-    <img :class="emotionClass" :src="src" alt="" v-if="isMobile"/>
-  </div>
+    <img :class="emotionClass" class="emoj-img" :src="src" alt="" v-if="isMobile"/>
+  </span>
 
 </template>
 
@@ -41,7 +41,8 @@
     width: 3rem;
     cursor: pointer;
   }
-  /*.emotion-img:hover{*/
-    /*background-color: #F7F7F7;*/
-  /*}*/
+  .emoj-img{
+
+    }
+  .emoj-img:hover{transform: scale(1.2)}
 </style>

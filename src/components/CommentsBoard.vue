@@ -38,6 +38,9 @@
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <Page :total="count" @on-change="handlePageChange" show-elevator/>
+        <span class="reply-btn" v-if="isReplyMode">
+          <Button size="small" type="warning" @click="cancelReply">取消回复</Button>
+        </span>
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
@@ -47,30 +50,28 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} v-if="!isMobile">
-
-      <Poptip placement="bottom-end"  word-wrap>
+      <Poptip   word-wrap>
           <span @click="toggleEmoji" class="emoji-toggle-contanier">
             <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" ></i>{{$t("message.commentsPage.emoji")}}
           </span>
         <div slot="content">
-            <Tabs value="baidu_emoji">
+            <Tabs value="baidu_emoji" class="emoj-pages">
               <TabPane label="贴吧" name="baidu_emoji">
-             <span v-for="emo in baiduEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+             <span v-for="emo in baiduEmojis" :key="emo.id"   @click="addEmoji(emo.code)">
           <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
         </span>
               </TabPane>
               <TabPane label="阿狸" name="ali_emoji">
-            <span v-for="emo in aliEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+            <span v-for="emo in aliEmojis" :key="emo.id"   @click="addEmoji(emo.code)">
           <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img-ali"/>
         </span>
               </TabPane>
               <TabPane label="QQ" name="qq_emoji">
-            <span v-for="emo in qqEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+            <span v-for="emo in qqEmojis" :key="emo.id"   @click="addEmoji(emo.code)">
               <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
             </span>
               </TabPane>
             </Tabs>
-
         </div>
       </Poptip>
       </i-col>
@@ -83,17 +84,17 @@
         <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="emotion-toggle-container" v-show="isEmojShow&&isMobile" >
           <Tabs value="baidu_emoji">
             <TabPane label="贴吧" name="baidu_emoji">
-             <span v-for="emo in baiduEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+             <span v-for="emo in baiduEmojis" :key="emo.id"   @click="addEmoji(emo.code)">
           <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
         </span>
             </TabPane>
             <TabPane label="阿狸" name="ali_emoji">
-            <span v-for="emo in aliEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+            <span v-for="emo in aliEmojis" :key="emo.id"   @click="addEmoji(emo.code)">
           <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img-ali"/>
         </span>
             </TabPane>
             <TabPane label="QQ" name="qq_emoji">
-            <span v-for="emo in qqEmojis" :key="emo.id" class="emoj-container"  @click="addEmoji(emo.code)">
+            <span v-for="emo in qqEmojis" :key="emo.id"   @click="addEmoji(emo.code)">
               <Emotion :src="emo.src" :tooltip="emo.name" :code="emo.code" emotionClass="emotion-img"/>
             </span>
             </TabPane>
@@ -540,7 +541,9 @@
                   code:':qq_askdate',
                   src:'https://image.nykee.cn/qq_emoji/e6107.gif'
                 },
-              ]
+              ],
+              isReplyMode:false,
+              cmt_id_reply_to:''
             }
         },
         methods: {
@@ -582,19 +585,39 @@
                   os:os,
                   isp:this.ispInfo
                 };
-                axios.post("/Comment/insertNewComment",params)
-                  .then((res)=>{
-                    console.log(res.data);
-                    if(String(res.data.code)==="200"){
-                      self.$Message.success({
-                        content: "评论成功！",
-                        duration: 3
-                      })
-                    }
-                  })
-                  .catch((err)=>{
-                    console.log(err);
-                  })
+                if(!this.isReplyMode ){
+                  axios.post("/Comment/insertNewComment",params)
+                    .then((res)=>{
+                      console.log(res.data);
+                      if(String(res.data.code)==="200"){
+                        self.$Message.success({
+                          content: "评论成功！",
+                          duration: 3
+                        })
+                      }
+                    })
+                    .catch((err)=>{
+                      console.log(err);
+                    })
+                }
+                else {
+                  params["replyTo"] =this.cmt_id_reply_to;
+                  axios.post("/Comment/insertNewReply",params)
+                    .then((res)=>{
+                      console.log(res.data);
+                      if(String(res.data.code)==="200"){
+                        self.$Message.success({
+                          content: "回复成功！",
+                          duration: 3
+                        })
+                      }
+                    })
+                    .catch((err)=>{
+                      console.log(err);
+                    })
+
+                }
+
               }
             }
            location.reload();
@@ -827,34 +850,38 @@
               }
             });
             return str;
+          },
+          cancelReply(){
+            this.isReplyMode =false;
+            this.comments = ''
           }
         },
         created: function () {
         },
         mounted() {
-          // console.log(this.count);
-          // console.log( this.isEmpty);
-          // let browser = this.getBrowserInfo();
-          // console.log(browser);
-          // let browser =this.getBrowserInfo();
-          // console.log(browser);
-          // console.log(navigator.platform);
-         // this.getOsInfo();
           this.isMobile =isMobile();
         this.uIP=  returnCitySN["cip"];
-        // console.log(this.uIP);
-
           let self = this;
+          this.spinShow =true;
           axios.get("/Comment/QueryCommentsCount")
             .then((res)=>{
               // console.log(res.data.extendInfo.commentsSum);
-              self.count = res.data.extendInfo.commentsSum;
+              self.count+= parseInt(res.data.extendInfo.commentsSum);
+
+            })
+            .catch((err)=>{
+              console.log(err);
+            });
+          axios.get("/Comment/QueryReplyCount")
+            .then((res)=>{
+              // console.log(typeof res.data.extendInfo.replySum);
+              self.count+=parseInt(res.data.extendInfo.replySum);
             })
             .catch((err)=>{
               console.log(err);
             });
           // console.log(self.count === 0);
-          this.spinShow =true;
+
           axios.get("/Comment/QueryCommentsInitial")
             .then((res)=>{
               // console.log(res.data);
@@ -889,7 +916,9 @@
           EventBus.$on("rePlyComment",(data)=>{
             this.$refs.commentsInput.focus();
             this.comments="";
-            this.comments+= "@"+data.nickname+" ";
+            this.comments+= "回复"+data.nickname+"：";
+            this.isReplyMode =true;
+            this.cmt_id_reply_to =data.id;
             // console.log(data);
           })
         },
@@ -916,10 +945,7 @@
     vertical-align:center;
     margin-right: .4rem;
   }
-  .emoj-container{
-    display: inline-block;
-    padding:.5rem .4rem;}
-  .emoj-container:hover{background-color: #f5f5f5;}
+
   .loading-mask{
     /*width:20rem;*/
     height: 103.5625rem;
@@ -936,5 +962,8 @@
     50%  { transform: rotate(180deg);}
     to   { transform: rotate(360deg);}
   }
-
+  .reply-btn{position: absolute;bottom:0;right:0;font-size: .6rem}
+  .emoj-pages{
+    width: 18rem;
+  height: 20rem}
 </style>

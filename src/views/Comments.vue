@@ -7,7 +7,7 @@
 
 <script>
   import IntroHeader from '../components/IntroHeader.vue'
-  import Comment from '../components/CommentContainer.vue'
+  import Comment from '../components/CommentsBoard.vue'
     export default {
         data() {
             return {}
