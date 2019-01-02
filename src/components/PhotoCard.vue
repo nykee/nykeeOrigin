@@ -1,18 +1,8 @@
 <template>
   <Card class="photo-card ">
     <div class="photo-card-box">
-      <div style="position: relative">
-
-       <!-- <picture>
-          <source type="image/webp" v-lazy="webpSrc" class="photo-card-img"/>
-          <img v-lazy="imgSrc" class="photo-card-img"/>
-        </picture>-->
-        <!--<div class="photo-card-img-box">-->
-          <!--<img :src="imgSrc" alt=""  style="display: none;" class="photo-card-img" v-on:load="getSomething($event)" >-->
+      <div style="position: relative" class="custom-pic-container">
           <CustomPicture class-name="resp-img"  :imgSrc="imgSrc" :srcSet="webpSrc" />
-        <!--</div>-->
-
-
         <div class="img-expand-box" >
           <i class="fa img-expand" :class="{'fa-arrows-alt':!isModalShow,'fa-2x':!isMobile}" @click="changeImgExpand" ></i>
         </div>
@@ -30,41 +20,39 @@
       <Modal v-model="isModalShow" footer-hide fullscreen >
         <div>
           <span class="modal-title">{{description}}</span>
-
-          <!--<CustomPicture :imgSrc="imgSrc"
-                         className="fullScreenImg"
-                         :srcSet="webpSrc"/>-->
-
           <picture>
-            <source :srcset="webpSrc"  type="image/webp" class="fullScreenImg" >
-            <img :src="imgSrc" alt="" class="fullScreenImg"  />
+            <source :srcset="webpSrc"  type="image/webp" class="full-screen-img" >
+            <img :src="imgSrc" alt="" class="full-screen-img"  />
           </picture>
           <ul class="modal-footer">
             <li>{{photoTime}}</li>
-            <li><i class="fa fa-location-arrow"></i>{{photoLocation}}</li>
+            <li>
+              <i class="fa fa-location-arrow"></i>
+              {{photoLocation}}
+            </li>
           </ul>
         </div>
       </Modal>
-    <div class="mobileModal" v-if="isMobileModalShow">
-      <div class="mobileModal-mask"></div>
-      <div class="mobileModal-content ">
-        <div class="mModal-header clearfix">
-          <i class="fa fa-close fa-2x mModal-close fr"  @click="closeMmodal"></i>
+    <div class="mobile-modal" v-if="isMobileModalShow">
+      <div class="mobile-modal-mask"></div>
+      <div class="mobile-modal-content ">
+        <div class="mobile-modal-header clearfix">
+          <i class="fa fa-close fa-2x mobile-modal-close fr"  @click="closeMmodal"></i>
         </div>
-       <!-- <CustomPicture :imgSrc="imgSrc"
-                       className="mb-fullScreenImg"
-                       :srcSet="webpSrc"/>-->
         <picture>
-          <source :srcset="webpSrc"  type="image/webp" class="mb-fullScreenImg" >
-          <img :src="imgSrc" alt="" class="mb-fullScreenImg"  />
+          <source :srcset="webpSrc"  type="image/webp" class="mb-full-screen-img" >
+          <img :src="imgSrc" alt="" class="mb-full-screen-img"  />
         </picture>
-        <div class="mModal-footer clearfix">
+        <div class="mobile-modal-footer clearfix">
           <ul class="fl">
-            <li><span class="mobileModal-title">{{description}}</span></li>
-            <li class="mModal-footer-time">{{photoTime}}</li>
-            <li class="mModal-footer-pos"><i class="fa fa-location-arrow"></i>{{photoLocation}}</li>
+            <li><span class="mobile-modal-title">{{description}}</span></li>
+            <li class="mobile-modal-footer-time">{{photoTime}}</li>
+            <li class="mobile-modal-footer-pos">
+              <i class="fa fa-location-arrow"></i>
+              {{photoLocation}}
+            </li>
           </ul>
-          <i class="fa fa-heart fa-2x fr likeBtn"></i>
+          <i class="fa fa-heart fa-2x fr like-btn"></i>
         </div>
       </div>
     </div>
@@ -99,7 +87,6 @@
 
         },
         created: function () {
-          // console.log(this.description);
         },
         mounted() {
           if(window.screen.width<769){this.isMobile = true}
@@ -115,20 +102,12 @@
     width: 80%;
     margin-top: 2rem;
     padding-bottom: .5rem;
-    /*position: relative;*/
   }
   .photo-card-box{
     text-align: center;
     padding-bottom: 2rem;
-    /*position: relative;*/
-  }
-  /*.photo-card-img-box{*/
-
-    /*width: 100%;*/
-    /*height: 100%;*/
-  /*}*/
-  .photo-card-img{
-    width:100%;height:auto;max-width:100%;display:block;
+    width: 100%;
+    height: 100%;
   }
   .photo-card-desc{
     margin-top: .5rem;
@@ -147,20 +126,19 @@
     bottom:1%;
     right:2%;
     color:rgba(132,134,136,0.8);
+    cursor: pointer;
   }
   .photo-card-info{
     padding-top: .8rem;
   }
   .img-expand{
     color:#F7F7F7;
-
   }
-  .fullScreenImg{
-   /* display: inline-block;
-    height: auto;
-    max-width: 100%;*/
-    /*height: 100%;*/
-    width:100%;height:auto;max-width:100%;display:block;
+  .full-screen-img{
+    width:100%;
+    height:auto;
+    max-width:100%;
+    display:block;
   }
   .img-expand-box{
     position: absolute;
@@ -169,6 +147,7 @@
     padding: .5rem;
     border-radius: 3px;
     background-color: rgba(214,214,214,0.6);
+    cursor: pointer;
   }
   .img-expand-box:hover{
     transform:  scale(1.05);
@@ -186,13 +165,11 @@
     text-align: center;
     padding-bottom: .2rem;
   }
-  .mobileModal{
+  .mobile-modal{
     width: 100%;
     height: 100%;
-
-
   }
-  .mobileModal-mask{
+  .mobile-modal-mask{
     position: fixed;
     top: 0;
     right: 0;
@@ -204,7 +181,7 @@
     background-color: #000;
     z-index: 50;
   }
-  .mobileModal-content{
+  .mobile-modal-content{
     z-index: 100;
     position: fixed;
     top: 0;
@@ -212,41 +189,38 @@
     width: 100%;
     height: 100%;
     padding: .5rem;
-    /*background-color: pink;*/
   }
-  .mobileModal-title{
+  .mobile-modal-title{
     font-size: 1rem;
     color:#f7f7f7;
     display: inline-block;
     padding-left: .3rem;
     margin-bottom: .3rem;
   }
-  .mb-fullScreenImg{
+  .mb-full-screen-img{
     width: 100%;
     height: 50%;
-    /*padding: 0 .3rem;*/
     padding: 0;
     margin-top: 20%;
     margin-bottom: 10%;
 
   }
-  .mModal-close{
+  .mobile-modal-close{
     color:#f7f7f7;
     margin-top: 8%;
     padding-right: 4%;
   }
-  .mModal-header{
+  .mobile-modal-header{
     margin-bottom: .8rem;
   }
-  .mModal-footer{
+  .mobile-modal-footer{
     margin-top: 10%;
-    /*margin-bottom: 10%;*/
   }
-  .likeBtn{
+  .like-btn{
     color:#fff;
     padding-right: .2rem;
   }
-  .mModal-footer-time,.mModal-footer-pos{color:#808080;}
+  .mobile-modal-footer-time,.mobile-modal-footer-pos{color:#808080;}
   @media screen and (min-width: 200px) and (max-width:425px ){
     .img-expand-box{
       padding: .2rem .3rem;
@@ -277,7 +251,10 @@
   }
   @media screen and (min-width: 376px) and (max-width:425px ){
     .photo-card{margin-top: .8rem;}
-    .photo-card-box{padding-bottom: .8rem}
+    .photo-card-box{
+      padding-bottom: .8rem;
+
+    }
     .photo-card-img-box{
       width: 19rem;
       height: 14rem;
@@ -335,4 +312,12 @@
     }
 
   }
+  .custom-pic-container{
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    overflow: hidden;
+  }
+
+
 </style>

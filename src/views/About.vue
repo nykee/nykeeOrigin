@@ -10,7 +10,7 @@
 
       </i-col>
       <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
-        <div class="site-intro-content textA-center">
+        <div class="site-intro-content ">
           {{$t("message.aboutPage.aboutSiteContent")}}
         </div>
         <Divider dashed />
@@ -96,7 +96,12 @@
 
   .time-line {
     margin-top: .5rem;
-    padding-left: 40%;
+    padding-left: 38%;
+  }
+  @media screen and (max-width: 425px){
+    .time-line {
+      padding-left: 30%;
+    }
   }
   .time-line-container{
     padding: 0 1rem;

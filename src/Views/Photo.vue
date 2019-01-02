@@ -10,17 +10,24 @@
         <li class="photo-intro-items">{{$t("message.photoPage.intro[4]")}}</li>
       </ul>
     </div>
-    <div v-for="photo in photoData">
-      <div class="flexContainer">
-        <PhotoCard :description="photo.desc" :webpSrc="photo.webpSrc" :imgSrc="photo.imgSrc"
-                   :photoTime="photo.photoTime" :photoLocation="photo.photoLocation"/>
+   <!-- <Scroll :on-reach-bottom="handleReachBottom" >-->
+      <div v-for="photo in photoData" >
+        <div class="flexContainer">
+          <PhotoCard :description="photo.desc"
+                     :webpSrc="photo.webpSrc"
+                     :imgSrc="photo.imgSrc"
+                     :photoTime="photo.photoTime"
+                     :photoLocation="photo.photoLocation"/>
+        </div>
       </div>
-    </div>
+    <!--</Scroll>-->
+
   </div>
 </template>
 <script>
   import IntroHeader from '../components/IntroHeader.vue'
   import PhotoCard from '../components/PhotoCard'
+  import {throttle} from "../utils/throttle";
 
   export default {
     data() {
@@ -82,7 +89,8 @@
             "photoTime": this.$t("message.photoPage.photos[7].time"),
             "photoLocation": this.$t("message.photoPage.photos[7].location"),
           },
-          {
+
+          /*{
             "desc": this.$t("message.photoPage.photos[8].title"),
             "webpSrc": "https://image.nykee.cn/bird.webp",
             "imgSrc": "https://image.nykee.cn/bird.jpg",
@@ -102,8 +110,45 @@
             "imgSrc": "https://image.nykee.cn/sky.jpg",
             "photoTime": this.$t("message.photoPage.photos[10].time"),
             "photoLocation": this.$t("message.photoPage.photos[10].location"),
-          }
+          }*/
         ]
+      }
+    },
+    mounted(){
+      window.addEventListener('scroll', throttle(this.handleScroll));
+
+
+    },
+    methods:{
+      handleScroll(){
+        let self =this;
+        // console.log("ReachBottom");
+        let scrollTop =Math.floor(document.body.scrollTop ||document.documentElement.scrollTop)
+        let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        let scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
+        console.log("clientHeight:"+clientHeight);
+        console.log("scrollTop:"+scrollTop);
+        console.log("scrollHeight:"+scrollHeight);
+
+        if(scrollHeight = clientHeight+scrollTop){
+
+          setTimeout(() => {
+            let startIndex = self.photoData.length;
+            let limit =3;
+            for(let i = startIndex;i<startIndex+limit;i++){
+              console.log(i);
+            }
+            /*  self.photoData.push(
+                {
+
+                }
+              );*/
+
+          },1000)
+
+        }
+
+
       }
     },
     components: {

@@ -67,15 +67,19 @@
         </div>
       </keep-alive>
     </div>
-    <div id="mini-player" v-if="isMini">
-      <div class="mini-player-box">
-        <i class="fa  fa-2x playBtn-mini ctrlIcons"
-           :class="{'fa-pause':playStatus==='playing',
+    <keep-alive>
+      <div id="mini-player" v-if="isMini">
+
+        <div class="mini-player-box">
+          <i class="fa  fa-2x playBtn-mini ctrlIcons"
+             :class="{'fa-pause':playStatus==='playing',
                'fa-play':playStatus==='paused'}" @click="changePlayStatus"></i>
-        <i class="fa fa-toggle-right toggle-mini-btn" @click="toggleMobileMini"></i>
-        <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}">
+          <i class="fa fa-toggle-right toggle-mini-btn" @click="toggleMobileMini"></i>
+          <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}">
+        </div>
       </div>
-    </div>
+    </keep-alive>
+
     <audio :src="currentSong.url" class="mscAudio"  ref="mscAudio">
       您的浏览器不支持 audio 标签。请使用Chrome,Firefox等现代浏览器
     </audio>
@@ -310,7 +314,7 @@
     margin-top: .2rem;
   }
 
-  .mPlayer-main-board-block {
+  .mPlayer-main-board-block {s
     padding: 0 .5rem;
   }
 

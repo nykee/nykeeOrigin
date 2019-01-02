@@ -61,5 +61,5 @@
     }
 </script>
 <style>
-  .reply-container{padding-left: 1.2rem}
+  .reply-container{padding-left: 3rem}
 </style>

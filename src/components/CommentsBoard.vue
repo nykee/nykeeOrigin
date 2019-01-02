@@ -5,7 +5,7 @@
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
         <span>Comments</span>
         <span class="cut-off-line"></span>
-        <span class="comments-sum">{{count}}</span>
+        <span class="comments-sum">{{commentsAndReplySum}}</span>
         <span>{{$t("message.commentsPage.commentCountDesc")}}</span>
       </i-col>
     </Row>
@@ -37,7 +37,7 @@
     <!--footer评论输入区-->
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
-        <Page :total="count" @on-change="handlePageChange" show-elevator/>
+        <Page :total="commentsTotal" @on-change="handlePageChange" show-elevator/>
         <span class="reply-btn" v-if="isReplyMode">
           <Button size="small" type="warning" @click="cancelReply">取消回复</Button>
         </span>
@@ -140,7 +140,8 @@
         data() {
             return {
               // isEmpty:false,
-              count:0,
+              commentsAndReplySum:0,
+              commentsTotal:0,
               comments:'',
               isHuman:false,
               nickName:'',
@@ -866,7 +867,7 @@
           axios.get("/Comment/QueryCommentsCount")
             .then((res)=>{
               // console.log(res.data.extendInfo.commentsSum);
-              self.count+= parseInt(res.data.extendInfo.commentsSum);
+              self.commentsTotal+= parseInt(res.data.extendInfo.commentsSum);
 
             })
             .catch((err)=>{
@@ -875,7 +876,7 @@
           axios.get("/Comment/QueryReplyCount")
             .then((res)=>{
               // console.log(typeof res.data.extendInfo.replySum);
-              self.count+=parseInt(res.data.extendInfo.replySum);
+              self.commentsAndReplySum=self.commentsTotal+parseInt(res.data.extendInfo.replySum);
             })
             .catch((err)=>{
               console.log(err);

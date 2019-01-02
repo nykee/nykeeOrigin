@@ -1,10 +1,10 @@
 <template>
   <div class="comment-item-container" @mouseenter="showReplyBtn" @mouseleave="hideReplyBtn">
-    <Row type="flex" justify="center" align="middle">
-      <i-col :lg={span:3}
-             :md={span:3}
-             :sm={span:3}
-             :xs={span:3}>
+    <Row type="flex" justify="center" align="middle" :gutter="10">
+      <i-col :lg={span:2}
+             :md={span:2}
+             :sm={span:2}
+             :xs={span:2}>
         <Avatar icon="ios-person" size="large" :src="avatar"/>
       </i-col>
       <i-col :lg={span:18}
@@ -38,10 +38,10 @@
           </li>
         </ul>
       </i-col>
-      <i-col :lg={span:2}
-             :md={span:2}
-             :sm={span:2}
-             :xs={span:2}>
+      <i-col :lg={span:3}
+             :md={span:3}
+             :sm={span:3}
+             :xs={span:3}>
         <Button class="reply-btn" type="primary" size="small" @click="replyTo" v-if="isReplyBtnShow">{{$t("message.commentsPage.reply")}}</Button>
       </i-col>
     </Row>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-  import {isMobile} from '../utils/ScreenWidth'
+  import {isMobile,isPad} from '../utils/ScreenWidth'
   import EventBus from '../utils/EventBus'
     export default {
       props:["nickName","postTime","avatar","content","browser","os","isp","cmtId","parentId"],
@@ -88,6 +88,10 @@
 
         },
         mounted() {
+        console.log(screen.width);
+          if(isPad()||isMobile()){
+            this.isReplyBtnShow =true;
+          }
         // console.log(this.parentId);
         // console.log(this.content);
           this.isMobile =isMobile();
