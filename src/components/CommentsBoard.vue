@@ -950,9 +950,9 @@
 
   .loading-mask{
     /*width:20rem;*/
-    height: 103.5625rem;
-    background-color: #F7F7F7;
-    opacity: .7;
+    height: 20.5625rem;
+    background-color: #f3f3f3;
+    opacity: 1;
     position: relative;
   }
   .active-btn{color: #2b85e4}
