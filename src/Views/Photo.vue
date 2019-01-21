@@ -90,7 +90,7 @@
             "photoLocation": this.$t("message.photoPage.photos[7].location"),
           },
 
-          /*{
+         {
             "desc": this.$t("message.photoPage.photos[8].title"),
             "webpSrc": "https://image.nykee.cn/bird.webp",
             "imgSrc": "https://image.nykee.cn/bird.jpg",
@@ -110,7 +110,7 @@
             "imgSrc": "https://image.nykee.cn/sky.jpg",
             "photoTime": this.$t("message.photoPage.photos[10].time"),
             "photoLocation": this.$t("message.photoPage.photos[10].location"),
-          }*/
+          }
         ]
       }
     },

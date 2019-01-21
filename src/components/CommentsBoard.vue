@@ -868,19 +868,20 @@
             .then((res)=>{
               // console.log(res.data.extendInfo.commentsSum);
               self.commentsTotal+= parseInt(res.data.extendInfo.commentsSum);
+              axios.get("/Comment/QueryReplyCount")
+                .then((res)=>{
+                  // console.log(typeof res.data.extendInfo.replySum);
+                  self.commentsAndReplySum=self.commentsTotal+parseInt(res.data.extendInfo.replySum);
+                })
+                .catch((err)=>{
+                  console.log(err);
+                });
 
             })
             .catch((err)=>{
               console.log(err);
             });
-          axios.get("/Comment/QueryReplyCount")
-            .then((res)=>{
-              // console.log(typeof res.data.extendInfo.replySum);
-              self.commentsAndReplySum=self.commentsTotal+parseInt(res.data.extendInfo.replySum);
-            })
-            .catch((err)=>{
-              console.log(err);
-            });
+
           // console.log(self.count === 0);
 
           axios.get("/Comment/QueryCommentsInitial")
