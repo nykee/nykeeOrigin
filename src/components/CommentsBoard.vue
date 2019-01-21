@@ -917,7 +917,7 @@
           EventBus.$on("rePlyComment",(data)=>{
             this.$refs.commentsInput.focus();
             this.comments="";
-            this.comments+= "回复"+data.nickname+"：";
+            this.comments+= "回复@"+data.nickname+"：";
             this.isReplyMode =true;
             this.cmt_id_reply_to =data.id;
             // console.log(data);
