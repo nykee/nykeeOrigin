@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <div v-if="!isMini" :class="{'msc-player-box-mb':isMobile,'msc-player-box':!isMobile}"
          style="top:86%;left: -320px"
          ref="mPlayer">
@@ -219,10 +219,11 @@
         return this.volumeNum === 0
       }
     },
-    created: function () {
+    created() {
 
     },
     mounted() {
+      let self = this;
       /*ajax获取歌单数据，绑定到songLists和currentSong*/
       axios.get("https://api.bzqll.com/music/tencent/songList?key=579621905&id=5632041384").then((res) => {
         for (let i = 0, len = res.data.data.songs.length; i < len; i++) {
@@ -278,6 +279,54 @@
           this.cur_song_duration = min + colon + sec;
         }
       });
+      // window.addEventListener('keydown', callback)
+
+
+
+      document.onkeydown = function (e) {
+        let evn = e || event;
+        let key = evn.keyCode || evn.which || evn.charCode;
+        let ctrlKey =evn.ctrlKey || evn.metaKey;
+
+        if(ctrlKey&& key ===37){
+          evn.preventDefault();
+          // console.log("left");
+          self.playPrev();
+          self.$Notice.info({
+            title: "切换上一首"
+          })
+        }
+        if(ctrlKey&& key ===39){
+          evn.preventDefault();
+          // console.log("right");
+          self.playNext();
+          self.$Notice.info({
+            title: "切换下一首"
+          })
+        }
+        if(ctrlKey&& key ===38){
+          evn.preventDefault();
+          // console.log("up ");
+          self.volumeNum+=10;
+          self.$Notice.info({
+            title: "音量+10"
+          })
+        }
+        if(ctrlKey&& key ===40){
+          evn.preventDefault();
+          // console.log("down");
+          self.volumeNum-=10;
+          self.$Notice.info({
+            title: "音量-10"
+          })
+
+        }
+
+      };
+
+
+
+
     },
     components: {},
     watch: {
@@ -314,7 +363,7 @@
     margin-top: .2rem;
   }
 
-  .mPlayer-main-board-block {s
+  .mPlayer-main-board-block {
     padding: 0 .5rem;
   }
 
@@ -353,7 +402,11 @@
     padding: .3rem;
     border-radius: 4px;
     width: 20rem;
+    max-height: 20rem;
     margin-bottom: .2rem;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    font-size: .8rem;
   }
 
   .playlist-index {
@@ -362,10 +415,11 @@
 
   .playlist-artist {
     text-overflow: ellipsis;
-    width: 9rem;
+    width: 8rem;
     white-space: nowrap;
     overflow: hidden;
     padding-right: .2rem;
+    text-align: center;
   }
 
   .playlist-index, .playlist-songname, .playlist-artist, .playlist-cur, .ctrlIcons {
@@ -551,5 +605,24 @@
     top: -21%;
     left: 27%;
     width: 4.5rem;
+  }
+
+  .mPlayer-playlist::-webkit-scrollbar-track-piece {
+  /*滚动条凹槽的颜色，还可以设置边框属性*/
+    background-color:#f8f8f8;
+  }
+  .mPlayer-playlist::-webkit-scrollbar {
+  /*滚动条的宽度*/
+    width:8px;
+    height:9px;
+  }
+  .mPlayer-playlist::-webkit-scrollbar-thumb {
+  /*滚动条的设置*/
+    background-color:#dddddd;
+    background-clip:padding-box;
+    min-height:28px;
+  }
+  .mPlayer-playlist::-webkit-scrollbar-thumb:hover {
+    background-color:#bbb;
   }
 </style>
