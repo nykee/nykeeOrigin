@@ -292,8 +292,10 @@
           evn.preventDefault();
           // console.log("left");
           self.playPrev();
+          console.log(self.currentSong);
           self.$Notice.info({
-            title: "切换上一首"
+            title: "切换上一首",
+            desc:"当前:"+self.currentSong.singer+"--"+self.currentSong.name
           })
         }
         if(ctrlKey&& key ===39){
@@ -301,23 +303,31 @@
           // console.log("right");
           self.playNext();
           self.$Notice.info({
-            title: "切换下一首"
+            title: "切换下一首",
+            desc:"当前:"+self.currentSong.singer+"--"+self.currentSong.name
           })
         }
         if(ctrlKey&& key ===38){
           evn.preventDefault();
           // console.log("up ");
           self.volumeNum+=10;
+          if(self.volumeNum>100){
+            self.volumeNum= 100;
+            return false }
           self.$Notice.info({
-            title: "音量+10"
-          })
+            title: "音量+10,当前音量："+self.volumeNum
+          });
+
         }
         if(ctrlKey&& key ===40){
           evn.preventDefault();
           // console.log("down");
           self.volumeNum-=10;
+          if(self.volumeNum<0){
+            self.volumeNum=0;
+            return 0 }
           self.$Notice.info({
-            title: "音量-10"
+            title: "音量-10,当前音量："+self.volumeNum
           })
 
         }

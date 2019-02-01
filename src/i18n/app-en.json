@@ -146,7 +146,7 @@
     "aboutPage": {
       "aboutSite":"About this site",
       "aboutSiteContent":"My personal web site, just for fun, write something. In the beginning I deployed my site at github pages, and used others theme. However  markdown  was not easy  to write for me. I thought that I was a web developer, so I just started to construct a website on my own. The front end uses the Vue family bucket, and the UI library uses iView and add  i-18n adaption. The back end uses  Java Spring&SpringMVC&Mybatis framework. Recently, I deployed my site to Alibaba Cloud.Bingo,jobs done!",
-      "timeLine":"TimeLine",
+      "timeLine":"Update Record",
       "timeLineItems": [
         {
           "time": "September 26, 2017",
@@ -185,6 +185,11 @@
         {
           "time": "December 18, 2018",
           "activity": "add comments page "
+        }
+      ,
+        {
+          "time": "Jan 31, 2019",
+          "activity": "add volume by keyboard to music player "
         }
       ]
     },

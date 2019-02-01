@@ -60,7 +60,7 @@
       "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
     },
     "projects_nykee":{
-      "name":"www.nykee.cn",
+      "name":"个人网站www.nykee.cn",
       "description_1":"个人网站用来写写博客随便记录点什么东西",
       "description_2":"使用Vue、iview、vue-router、Vuex全家桶开发，进行了i18n国际化适配及响应式适配",
       "description_3":"优化首屏加载：iview按需加载，第三方依赖CDN引入，图片压缩使用Webp格式并部署在又拍云，webpack与后端配置Gzip压缩",
@@ -151,7 +151,7 @@
     "aboutPage":{
       "aboutSite":"关于本站",
       "aboutSiteContent":"个人小站，瞎玩玩，倒腾倒腾，随便写点什么。前期使用了github pages，用的别人的主题改了改，无奈markdown写着不顺手，想想自己是个web开发，干脆动手撸个网站好了。前端使用了Vue全家桶开发,UI库使用iView,弄了下i18n国际化。后端套用了以前搭的SSM框架。部署在阿里云，以上",
-      "timeLine":"时间线",
+      "timeLine":"更新日志",
       "timeLineItems":[
         {
           "time":"2017.09.26",
@@ -190,6 +190,11 @@
         {
           "time": "2018.12.18",
           "activity": "增加留言板功能"
+        }
+      ,
+        {
+          "time": "2019.01.31",
+          "activity": "播放器添加快捷键音量控制"
         }
       ]
     },

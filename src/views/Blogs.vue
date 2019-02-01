@@ -25,12 +25,19 @@
         <router-view></router-view>
       </i-col>
     </Row>
+    <Row type="flex" justify="center" align="middle">
+      <i-col span="16">
+        <BlogCard></BlogCard>
+      </i-col>
+    </Row>
+
   </div>
 </template>
 
 <script>
   import IntroHeader from '../components/IntroHeader.vue'
   import BlogMenu from "../components/BlogMenu"
+  import BlogCard from "../components/BlogCard"
 
   export default {
     data() {
@@ -64,7 +71,7 @@
     updated: function () {
     },
     components: {
-      IntroHeader, BlogMenu
+      IntroHeader, BlogMenu,BlogCard
     }
   }
 </script>
