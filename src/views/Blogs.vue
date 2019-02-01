@@ -26,8 +26,15 @@
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle">
-      <i-col span="16">
-        <BlogCard></BlogCard>
+      <i-col span="16" v-for="bItem in blogItems">
+        <BlogCard :postTime="bItem.postTime"
+                  :title="bItem.title"
+                  :viewSum="bItem.viewSum"
+                  :commentsSum="bItem.commentsSum"
+                  :tag="bItem.tag"
+                  :thumbPicSrc="bItem.thumbPicSrc"
+                  :route="bItem.route"
+        ></BlogCard>
       </i-col>
     </Row>
 
@@ -43,7 +50,14 @@
     data() {
       return {
         isMobile: false,
-        drawerShow: false
+        drawerShow: false,
+          blogItems:[
+              {postTime:"2017/1/22",title:'前端技巧汇总，包括CSS,JS',viewSum:300,commentsSum:10,tag:"前端",thumbPicSrc:'https://image.nykee.cn/sakura.webp',route:'FrontEndTricks'},
+              {postTime:"2017/2/14",title:'MongoDB学习笔记',viewSum:30,commentsSum:11,tag:"前端",thumbPicSrc:'https://image.nykee.cn/sakura.webp',route:'MongoDBLearning'},
+              {postTime:"2017/6/08",title:'百度地图学习笔记',viewSum:100,commentsSum:22,tag:"前端",thumbPicSrc:'https://image.nykee.cn/sakura.webp',route:'BaiduMapLearning'},
+              {postTime:"2017/9/21",title:'echarts 2.7.2爬坑记录',viewSum:30,commentsSum:1,tag:"前端",thumbPicSrc:'https://image.nykee.cn/sakura.webp',route:'EchartsLearning'},
+              {postTime:"2017/9/26",title:'Vue学习笔记',viewSum:222,commentsSum:2,tag:"前端",thumbPicSrc:'https://image.nykee.cn/sakura.webp',route:'VueLearning'},
+              ]
       }
     },
     methods: {},
@@ -75,7 +89,7 @@
     }
   }
 </script>
-<style>
+<style scoped="scoped">
   .title {
     margin-bottom: 15px;
   }
