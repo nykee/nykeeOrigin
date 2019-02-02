@@ -40,58 +40,39 @@ const router = new VueRouter({
       path: '/Blogs',
       name: 'Blogs',
       component: Blogs,
-      children: [
-        {
-          path: 'DZDPCrawlSpider',
-          component: DZDPCrawlSpider
-        },
-        {
-          path: 'FrontEndTricks',
-          component: FrontEndTricks
-        },
-        {
-          path: 'MongoDBLearning',
-          component: MongoDBLearning
-        }, {
-          path: 'BaiduMapLearning',
-          component: BaiduMapLearning
-        }, {
-          path: 'EchartsLearning',
-          component: EchartsLearning
-        },
-        {
-          path: 'VueLearning',
-          component: VueLearning
-        },
-        {
-          path: 'GitLearning',
-          component: GitLearning
-        },
-        {
-          path: 'ReactTricks',
-          component: ReactTricks
-        },
-        {
-          path: 'D3Learning',
-          component: D3Learning
-        },
-        {
-          path: 'NettyLearning',
-          component: NettyLearning
-        },
-        {
-          path: 'ReactLearning',
-          component: ReactLearning
-        },
-        {
-          path: 'VueI18n',
-          component: VueI18n
-        },
-        {
-          path: 'FeOPT',
-          component: FeOPT
-        },
-      ]
+    },
+    {
+      path: '/Blogs/DZDPCrawlSpider',
+      name: 'DZDPCrawlSpider',
+      component: DZDPCrawlSpider
+    },
+    {
+      path: '/Blogs/MongoDBLearning',
+      component: MongoDBLearning
+    },
+    {
+      path: '/Blogs/FrontEndTricks',
+      component: FrontEndTricks
+    },
+    {
+      path: '/Blogs/BaiduMapLearning',
+      component: BaiduMapLearning
+    },
+    {
+      path: '/Blogs/EchartsLearning',
+      component: EchartsLearning
+    },
+    {
+      path: '/Blogs/VueLearning',
+      component: VueLearning
+    },
+    {
+      path: '/Blogs/GitLearning',
+      component: GitLearning
+    },
+    {
+      path: '/Blogs/ReactTricks',
+      component: ReactTricks
     },
     {
       path: '/Project',

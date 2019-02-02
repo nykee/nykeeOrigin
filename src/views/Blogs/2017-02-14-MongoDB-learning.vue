@@ -1,45 +1,49 @@
 <template>
   <div>
-    <ul class="title-list">
-      <li><h1 class="title">MongoDB学习笔记</h1></li>
-    </ul>
-    <div class="main-body">
-      <div id="part1" class="part">
-        <div class="title-lv1"> 一、安装</div>
-        <p class="descrp">window下安装，略过不表。</p>
-        <p class="title-lv2"> 1.创建数据库目录：</p>
-        <pre class="code-text">
+    <IntroHeader></IntroHeader>
+    <Row type="flex" align="center" justify="center">
+      <i-col :lg="{span:14}">
+        <div class="blog-content">
+          <ul class="title-list">
+            <li><h1 class="title">MongoDB学习笔记</h1></li>
+          </ul>
+          <div class="main-body">
+            <div id="part1" class="part">
+              <div class="title-lv1"> 一、安装</div>
+              <p class="descrp">window下安装，略过不表。</p>
+              <p class="title-lv2"> 1.创建数据库目录：</p>
+              <pre class="code-text">
             <code>
               mongod.exe --dbpath c:\data\db
             </code>
           </pre>
-        <p class="title-lv2"> 2.将MongoDB服务器作为Windows服务运行</p>
-        <pre class="code-text">
+              <p class="title-lv2"> 2.将MongoDB服务器作为Windows服务运行</p>
+              <pre class="code-text">
             <code>
              mongod.exe --bind_ip yourIPadress --logpath "C:\data\dbConf\mongodb.log" --logappend --dbpath "C:\data\db"
               --port yourPortNumber --serviceName "YourServiceName" --serviceDisplayName "YourServiceName" --install
             </code>
           </pre>
-        <ul class="descrp">参数解释：
-          <li>--bind_ip： 绑定服务IP，若绑定127.0.0.1，则只能本机访问，不指定默认本地所有IP</li>
-          <li>--logpath： 定MongoDB日志文件，注意是指定文件不是目录</li>
-          <li>--dbpath: 指定数据库路径</li>
-          <li>--port: 指定服务端口号，默认端口27017</li>
-          <li>--serviceName: 指定服务名称</li>
-          <li>--serviceDisplayName: 指定服务名称，有多个mongodb服务时执行。</li>
-          <li>--install: 指定作为一个Windows服务安装。</li>
-        </ul>
-        <p class="title-lv2"> 3.MongoDB后台管理 Shell</p>
-        <p class="descrp">切换至mongodb装目录的下的bin目录，执行</p>
-        <pre class="code-text">
+              <ul class="descrp">参数解释：
+                <li>--bind_ip： 绑定服务IP，若绑定127.0.0.1，则只能本机访问，不指定默认本地所有IP</li>
+                <li>--logpath： 定MongoDB日志文件，注意是指定文件不是目录</li>
+                <li>--dbpath: 指定数据库路径</li>
+                <li>--port: 指定服务端口号，默认端口27017</li>
+                <li>--serviceName: 指定服务名称</li>
+                <li>--serviceDisplayName: 指定服务名称，有多个mongodb服务时执行。</li>
+                <li>--install: 指定作为一个Windows服务安装。</li>
+              </ul>
+              <p class="title-lv2"> 3.MongoDB后台管理 Shell</p>
+              <p class="descrp">切换至mongodb装目录的下的bin目录，执行</p>
+              <pre class="code-text">
             <code>
               mongo
             </code>
           </pre>
-      </div>
-      <div id="part2" class="part">
-        <div class="title-lv1"> 二、MongoDB命令</div>
-        <pre class="code-text">
+            </div>
+            <div id="part2" class="part">
+              <div class="title-lv1"> 二、MongoDB命令</div>
+              <pre class="code-text">
             <code>
     show dbs                                //查看所有数据库
     use dbname                              //切换数据库
@@ -129,15 +133,21 @@
     mongostat/mongotop
             </code>
           </pre>
-      </div>
+            </div>
 
-    </div>
-    <PostTag :postTime="postTime"/>
+          </div>
+          <PostTag :postTime="postTime"/>
+        </div>
+
+      </i-col>
+    </Row>
+
   </div>
 </template>
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import IntroHeader from '../../components/IntroHeader.vue'
 
   export default {
     data() {
@@ -152,7 +162,7 @@
     mounted() {
 
     },
-    components: {PostTag}
+    components: {PostTag,IntroHeader}
   }
 </script>
 <style>

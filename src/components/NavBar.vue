@@ -19,7 +19,7 @@
             <router-link to="/">{{ $t("message.home")}}</router-link>
           </MenuItem>
           <MenuItem name="3">
-            <router-link to="/Blogs/FrontEndTricks">{{ $t("message.blog")}}</router-link>
+            <router-link to="/Blogs">{{ $t("message.blog")}}</router-link>
           </MenuItem>
           <MenuItem name="4">
             <router-link to="/Project">{{ $t("message.projects")}}</router-link>
@@ -55,7 +55,7 @@
             <router-link to="/" class="black-color">{{ $t("message.home")}}</router-link>
           </DropdownItem>
           <DropdownItem>
-            <router-link to="/Blogs/FrontEndTricks" class="black-color">{{ $t("message.blog")}}</router-link>
+            <router-link to="/Blogs" class="black-color">{{ $t("message.blog")}}</router-link>
           </DropdownItem>
           <DropdownItem>
             <router-link to="/Project" class="black-color">{{ $t("message.projects")}}</router-link>

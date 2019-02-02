@@ -172,5 +172,8 @@
       font-size: 33px;
     }
   }
+  .blog-content{
+    margin-top:2rem;
+  }
 
 </style>
