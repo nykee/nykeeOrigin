@@ -19,6 +19,7 @@ import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
 import NettyLearning from '../views/Blogs/2018-05-17-Netty.vue'
 import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
 import FeOPT from '../views/Blogs/2018-11-20-FE-Optimize'
+import BlogsIndex from '../views/Blogs/BlogsIndex.vue'
 
 
 // Vue.use(VueRouter);
@@ -40,39 +41,64 @@ const router = new VueRouter({
       path: '/Blogs',
       name: 'Blogs',
       component: Blogs,
-    },
-    {
-      path: '/Blogs/DZDPCrawlSpider',
-      name: 'DZDPCrawlSpider',
-      component: DZDPCrawlSpider
-    },
-    {
-      path: '/Blogs/MongoDBLearning',
-      component: MongoDBLearning
-    },
-    {
-      path: '/Blogs/FrontEndTricks',
-      component: FrontEndTricks
-    },
-    {
-      path: '/Blogs/BaiduMapLearning',
-      component: BaiduMapLearning
-    },
-    {
-      path: '/Blogs/EchartsLearning',
-      component: EchartsLearning
-    },
-    {
-      path: '/Blogs/VueLearning',
-      component: VueLearning
-    },
-    {
-      path: '/Blogs/GitLearning',
-      component: GitLearning
-    },
-    {
-      path: '/Blogs/ReactTricks',
-      component: ReactTricks
+        children:[
+            {
+              path:'/DZDPCrawlSpider',
+                component:DZDPCrawlSpider
+            },
+            {
+              path:'/',
+                component:BlogsIndex
+            },
+            {
+              path:'MongoDBLearning',
+                component:MongoDBLearning
+            },
+            {
+                path: 'FrontEndTricks',
+                component: FrontEndTricks
+            },
+            {
+                path: 'BaiduMapLearning',
+                component: BaiduMapLearning
+            },
+            {
+                path: 'EchartsLearning',
+                component: EchartsLearning
+            },
+            {
+                path: 'VueLearning',
+                component: VueLearning
+            },
+            {
+                path: 'GitLearning',
+                component: GitLearning
+            },
+            {
+                path: 'ReactTricks',
+                component: ReactTricks
+            },
+            {
+                path: 'D3Learning',
+                component: D3Learning
+            },
+            {
+                path: 'ReactLearning',
+                component: ReactLearning
+            },
+            {
+                path: 'NettyLearning',
+                component: NettyLearning
+            },
+            {
+                path: 'VueI18n',
+                component: VueI18n
+            },
+            {
+                path: 'FeOPT',
+                component: FeOPT
+            },
+        ]
     },
     {
       path: '/Project',

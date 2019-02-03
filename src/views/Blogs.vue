@@ -25,24 +25,24 @@
         <router-view></router-view>
       </i-col>
     </Row>-->
-    <Row type="flex" justify="center" align="middle" v-for="bItem in blogItems" :key="bItem.title">
-      <i-col :lg="{span:10}" >
-        <BlogCard :postTime="bItem.postTime"
-                  :title="bItem.title"
-                  :viewSum="bItem.viewSum"
-                  :commentsSum="bItem.commentsSum"
-                  :tag="bItem.tag"
-                  :thumbPicSrc="bItem.thumbPicSrc"
-                  :route="bItem.route"
-                  :preview="bItem.preview"
-        ></BlogCard>
-      </i-col>
-    </Row>
-    <Row type="flex" justify="center" align="middle">
+    <!--<Row type="flex" justify="center" align="middle" v-for="bItem in blogItems" :key="bItem.title">-->
+      <!--<i-col :lg="{span:10}" >-->
+        <!--<BlogCard :postTime="bItem.postTime"-->
+                  <!--:title="bItem.title"-->
+                  <!--:viewSum="bItem.viewSum"-->
+                  <!--:commentsSum="bItem.commentsSum"-->
+                  <!--:tag="bItem.tag"-->
+                  <!--:thumbPicSrc="bItem.thumbPicSrc"-->
+                  <!--:route="bItem.route"-->
+                  <!--:preview="bItem.preview"-->
+        <!--&gt;</BlogCard>-->
+      <!--</i-col>-->
+    <!--</Row>-->
+    <!--<Row type="flex" justify="center" align="middle">-->
 
-        <Button class="load-more-btn">加载更多</Button>
-    </Row>
-
+        <!--<Button class="load-more-btn">加载更多</Button>-->
+    <!--</Row>-->
+    <router-view></router-view>
 
   </div>
 </template>
@@ -238,11 +238,7 @@
     max-width: 100%;
     display: block;
   }
-  .load-more-btn{
-    margin-top:4rem;
-    padding: .8rem 2rem;
-    border-radius: 14px;
-  }
+
 
 
 

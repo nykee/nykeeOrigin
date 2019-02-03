@@ -1,6 +1,5 @@
 <template>
   <div>
-    <IntroHeader></IntroHeader>
     <Row type="flex" align="center" justify="center">
       <i-col :lg="{span:14}">
         <div class="blog-content">

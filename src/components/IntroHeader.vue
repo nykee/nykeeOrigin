@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <header v-if="!isTags"
+    <!--<header v-if="!isTags"
             :class="{
         'intro-header-index':isIndex&&!canUseWebp,
         'intro-header-blogs':isBlogs&&!canUseWebp,
@@ -24,21 +24,33 @@
 
 
       </div>
-    </header>
+    </header>-->
 
-
-    <header v-if="isTags">
-      <div class="intro-container">
+    <header >
+      <div class="intro-container" :style="{backgroundImage:url(imgSrc)}">
 
         <div class="site-heading">
           <h1 class="site-heading-title">{{head}}</h1>
           <span class="site-heading-subtitle">{{subHead}}</span>
         </div>
-        <div id="particles"></div>
+
 
       </div>
-
     </header>
+
+
+    <!--<header v-if="isTags">-->
+      <!--<div class="intro-container">-->
+
+        <!--<div class="site-heading">-->
+          <!--<h1 class="site-heading-title">{{Title}}</h1>-->
+          <!--<span class="site-heading-subtitle">{{SubTitle}}</span>-->
+        <!--</div>-->
+        <!--<div id="particles"></div>-->
+
+      <!--</div>-->
+
+    <!--</header>-->
 
 
   </div>
@@ -50,74 +62,20 @@
   import {checkWebp} from "../utils/WebPutil"
 
   export default {
+      props:["Title","SubTitle","imgSrc","isProjectPage"],
     data() {
       return {
-        canUseWebp: false,
+        /*canUseWebp: false,
         isIndex: true,
         isBlogs: false,
         isTags: false,
         isPhoto: false,
         isAbout: false,
-        isComments:false,
-        head: 'About Me',
-        subHead: "Life`s short,I use js"
+        isComments:false,*/
       }
     },
     methods: {
 
-      changeBG() {
-        let path = String(this.$route.path);
-        if (path === "/Blogs" || path.substring(0, path.lastIndexOf('/')) === "/Blogs") {
-          this.isBlogs = true;
-          this.isIndex = false;
-          this.isTags = false;
-          this.isPhoto = false;
-          this.isAbout = false;
-          this.head = 'Nykee Blog';
-          this.subHead = 'Talk is cheap,show me ur code~'
-        }
-        else if (path === "/Project") {
-          this.isBlogs = false;
-          this.isIndex = false;
-          this.isTags = true;
-          this.isPhoto = false;
-          this.isAbout = false;
-          this.head = 'My Projects';
-          this.subHead = 'Think Different!'
-        }
-        else if (path === "/Photograph") {
-          this.isBlogs = false;
-          this.isIndex = false;
-          this.isTags = false;
-          this.isPhoto = true;
-          this.isAbout = false;
-          this.head = 'See the world';
-          this.subHead = 'With my eyes and my camera!'
-        }
-        else if (path === "/About") {
-          this.isBlogs = false;
-          this.isIndex = false;
-          this.isTags = false;
-          this.isPhoto = false;
-          this.isAbout = true;
-          this.head = 'About';
-          this.subHead = 'timeline etc'
-
-
-        }
-        else if (path === "/Comments") {
-          this.isBlogs =
-            this.isIndex=
-              this.isTags=
-                this.isPhoto=
-                  this.isAbout=false;
-          this.isComments =true;
-          this.head = 'Something';
-          this.subHead = 'interesting or not'
-
-
-        }
-      },
       myParticles() {
         particlesJS('particles', {
           "particles": {
@@ -235,12 +193,15 @@
     },
     created: function () {
 
-      this.canUseWebp = checkWebp();
-      this.changeBG();
+//      this.canUseWebp = checkWebp();
+//      this.changeBG();
     },
     mounted() {
 //          this.changeBG();
-
+        console.log(this.Title);
+        console.log(this.SubTitle);
+        console.log(this.isProjectPage)
+        console.log(this.imgSrc );
       this.myParticles();
 
     },
