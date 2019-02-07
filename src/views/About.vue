@@ -1,6 +1,10 @@
 <template>
   <div >
-    <IntroHeader/>
+    <IntroHeader
+            Title="About"
+            introHeaderClass="intro-header-about"
+            subTitle="timeline etc"
+            :isProjectPage="false"/>
     <!--网站简介-->
     <Row class=" site-intro" type="flex" justify="center" align="middle">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>

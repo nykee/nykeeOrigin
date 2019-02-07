@@ -1,6 +1,6 @@
 <template>
   <div>
-    <IntroHeader Title="About Me~~" imgSrc="https://image.nykee.cn/index.jpg" SubTitle="Life`s short,I use js" :isProjectPage="false"/>
+      <IntroHeader Title="About Me" introHeaderClass="intro-header-index" subTitle="Life`s short,I use js" :isProjectPage="false"></IntroHeader>
     <Row class="self-info-container">
       <i-col :lg="20" :md="19" :sm="24" :xs="24" class="leftCol">
         <h1 class="intro">{{ $t("message.aboutMe")}}</h1>

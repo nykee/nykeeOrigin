@@ -1,6 +1,10 @@
 <template>
   <div>
-    <IntroHeader/>
+    <IntroHeader
+            Title="See the world"
+            introHeaderClass="intro-header-photo"
+            subTitle="With my eyes and my camera!"
+            :isProjectPage="false"/>
     <div class="flexContainer">
       <ul class="photo-intro">
         <li class="photo-intro-items">{{$t("message.photoPage.intro[0]")}}</li>

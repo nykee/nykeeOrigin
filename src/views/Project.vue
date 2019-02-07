@@ -1,6 +1,10 @@
 <template>
   <div>
-    <IntroHeader></IntroHeader>
+    <IntroHeader
+            Title="My Projects"
+            imgSrc="https://image.nykee.cn/index.jpg"
+            subTitle="Think Different!"
+            :isProjectPage="false"></IntroHeader>
 
     <Row type="flex" justify="center" align="middle" class="proj-row" v-for="proj in projs" v-bind:key="proj.id">
       <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:12}>

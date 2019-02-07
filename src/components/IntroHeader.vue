@@ -1,37 +1,13 @@
 <template>
-  <div>
-
-    <!--<header v-if="!isTags"
-            :class="{
-        'intro-header-index':isIndex&&!canUseWebp,
-        'intro-header-blogs':isBlogs&&!canUseWebp,
-        'intro-header-photo':isPhoto&&!canUseWebp,
-        'intro-header-about':isAbout&&!canUseWebp,
-        'intro-header-comments':isComments&&!canUseWebp,
-        'intro-header-index-webp':isIndex&&canUseWebp,
-        'intro-header-blogs-webp':isBlogs&&canUseWebp,
-        'intro-header-photo-webp':isPhoto&&canUseWebp,
-        'intro-header-about-webp':isAbout&&canUseWebp,
-        'intro-header-comments-webp':isComments&&canUseWebp,
-
-        }">
-      <div class="intro-container">
-
-        <div class="site-heading">
-          <h1 class="site-heading-title">{{head}}</h1>
-          <span class="site-heading-subtitle">{{subHead}}</span>
-        </div>
 
 
-      </div>
-    </header>-->
 
     <header >
-      <div class="intro-container" :style="{backgroundImage:url(imgSrc)}">
+      <div class="intro-container" :class="introHeaderClass">
 
         <div class="site-heading">
-          <h1 class="site-heading-title">{{head}}</h1>
-          <span class="site-heading-subtitle">{{subHead}}</span>
+          <h1 class="site-heading-title">{{Title}}</h1>
+          <span class="site-heading-subtitle">{{subTitle}}</span>
         </div>
 
 
@@ -53,7 +29,6 @@
     <!--</header>-->
 
 
-  </div>
 
 </template>
 
@@ -62,7 +37,7 @@
   import {checkWebp} from "../utils/WebPutil"
 
   export default {
-      props:["Title","SubTitle","imgSrc","isProjectPage"],
+      props:["Title","subTitle","introHeaderClass","isProjectPage"],
     data() {
       return {
         /*canUseWebp: false,
@@ -192,17 +167,37 @@
       }
     },
     created: function () {
+/*
+* <!--<header v-if="!isTags"
+            :class="{
+        'intro-header-index':isIndex&&!canUseWebp,
+        'intro-header-blogs':isBlogs&&!canUseWebp,
+        'intro-header-photo':isPhoto&&!canUseWebp,
+        'intro-header-about':isAbout&&!canUseWebp,
+        'intro-header-comments':isComments&&!canUseWebp,
+        'intro-header-index-webp':isIndex&&canUseWebp,
+        'intro-header-blogs-webp':isBlogs&&canUseWebp,
+        'intro-header-photo-webp':isPhoto&&canUseWebp,
+        'intro-header-about-webp':isAbout&&canUseWebp,
+        'intro-header-comments-webp':isComments&&canUseWebp,
 
+        }">
+      <div class="intro-container">
+
+        <div class="site-heading">
+          <h1 class="site-heading-title">{{head}}</h1>
+          <span class="site-heading-subtitle">{{subHead}}</span>
+        </div>
+
+
+      </div>
+    </header>-->
+* */
 //      this.canUseWebp = checkWebp();
 //      this.changeBG();
     },
     mounted() {
-//          this.changeBG();
-        console.log(this.Title);
-        console.log(this.SubTitle);
-        console.log(this.isProjectPage)
-        console.log(this.imgSrc );
-      this.myParticles();
+//      this.myParticles();
 
     },
     components: {}
@@ -220,14 +215,11 @@
   .intro-header-about-webp,
   .intro-header-comments,
   .intro-header-comments-webp{
-    background: no-repeat center center;
-    background-attachment: scroll;
-    background-color: #ccc;
-    background-size: cover;
+
   }
 
   .intro-header-index {
-    background-image: url("https://image.nykee.cn/index.jpg");
+    background-image: url("https://image.nykee.cn/index.jpg") ;
   }
 
   .intro-header-index-webp {
@@ -245,7 +237,7 @@
   }
 
   .intro-header-photo {
-    background-image: url("https://image.nykee.cn/lishui.jpg");
+    background-image: url("https://image.nykee.cn/lishui.jpg") ;
   }
 
   .intro-header-photo-webp {
@@ -257,14 +249,20 @@
   }
 
   .intro-header-about-webp {
-    background-image: url("https://image.nykee.cn/qdh.webp");
+    background-image: url("https://image.nykee.cn/qdh.webp") ;
   }
   .intro-header-comments{background-image: url("https://image.nykee.cn/HK.jpg");}
   .intro-header-comments-webp{background-image: url("https://image.nykee.cn/HK.webp");}
 
   .intro-container {
+      background-repeat: no-repeat;
+      background-position: center center;
+    background-attachment: scroll;
+    background-color: #ccc;
+    background-size: cover;
     width: 100%;
     height: 25rem;
+    /*background-image: url("https://image.nykee.cn/HK.jpg");*/
   }
 
   .site-heading {

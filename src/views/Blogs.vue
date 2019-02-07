@@ -1,6 +1,10 @@
 <template>
   <div>
-    <IntroHeader/>
+    <IntroHeader
+            Title="Nykee Blog"
+            introHeaderClass="intro-header-blogs"
+            subTitle="Talk is cheap,show me ur code~"
+            :isProjectPage="false"/>
    <!-- <Row class="blog-container">
       <i-col :lg="{span:5}"
              :md="{span:7}"

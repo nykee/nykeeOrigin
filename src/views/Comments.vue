@@ -1,6 +1,10 @@
 <template>
   <div>
-    <IntroHeader/>
+    <IntroHeader
+            Title="Something"
+            introHeaderClass="intro-header-comments"
+            subTitle="interesting or not"
+            :isProjectPage="false"/>
     <Comment/>
   </div>
 </template>
