@@ -262,6 +262,7 @@
     background-size: cover;
     width: 100%;
     height: 25rem;
+    margin-bottom: .4rem;
     /*background-image: url("https://image.nykee.cn/HK.jpg");*/
   }
 

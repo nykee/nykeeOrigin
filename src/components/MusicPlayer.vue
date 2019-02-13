@@ -24,12 +24,12 @@
           <i-col :span="2" class="mPlayer-main-board-block">
             <ul>
               <li @click="changeSongListShow" class="ctrlIcons toggleListBtn">
-                <i class="fa " :class="{'fa-caret-up':!isSongListShow,'fa-caret-down':isSongListShow}"></i>
+                <i class="fa " :class="{'fa-toggle-up':!isSongListShow,'fa-toggle-down':isSongListShow}"></i>
               </li>
               <li @click="changePlayMode" class="ctrlIcons">
                 <i class="fa " :class="{'fa-random':isRandom,'fa-reorder':!isRandom}"></i>
               </li>
-              <li v-if="isMobile" class="ctrlIcons" @click="toggleMobileMini"><i class="fa fa-toggle-left"></i></li>
+              <li  class="ctrlIcons" @click="toggleMobileMini"><i class="fa fa-compress"></i></li>
             </ul>
           </i-col>
         </Row>
@@ -74,7 +74,8 @@
           <i class="fa  fa-2x playBtn-mini ctrlIcons"
              :class="{'fa-pause':playStatus==='playing',
                'fa-play':playStatus==='paused'}" @click="changePlayStatus"></i>
-          <i class="fa fa-toggle-right toggle-mini-btn" @click="toggleMobileMini"></i>
+          <i class="fa fa-expand toggle-mini-btn" @click="toggleMobileMini"></i>
+          <!--<Tooltip content="切换正常/mini播放模式" placement="top-start"><i class="fa fa-expand toggle-mini-btn" @click="toggleMobileMini"></i></Tooltip>-->
           <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}">
         </div>
       </div>
@@ -97,7 +98,7 @@
         playStatus: 'paused', //播放状态
         currentSong: [],      //当前播放歌曲
         isMobile: false,     //是否为手机标志位
-        isMini: false,      //是否为Mini标志位
+        isMini: true,      //是否为Mini标志位
         isPlayingIndex: 1, //当前播放歌曲的索引
         volumeNum: 30,     //音量
         isVolumeSliderShow: false, //音量条显示标志位
@@ -152,7 +153,9 @@
       toggleMobileMini() {
         /*切换mini模式标志位*/
         this.isMini = !this.isMini;
-        this.isSongListShow = false
+        // this.isToggle =true;
+        this.isSongListShow = false;
+        this.toggleSide();
       },
       changePlayStatus() {
         /*点击播放/暂停按钮改变播放状态*/
@@ -492,7 +495,7 @@
     border-radius: 50%;
     background-color: rgba(146, 146, 146, 0.35);
     position: fixed;
-    top: 88%;
+    top: 85%;
     left: 1%;
   }
 

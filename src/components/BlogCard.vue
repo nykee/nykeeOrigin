@@ -2,7 +2,7 @@
   <div @click="goToArticle" class="article-card-container" @mouseover="handleMouseOver" @mouseout="handleMouseOut">
     <Card class="article-card" padding="0">
         <Row>
-          <i-col :lg="{span:10}">
+          <i-col :lg="{span:10}" :md="{span:9}" :sm="{span:14}" :xs="{span:24}">
             <ul class="article-card-detail-lists">
               <li class="article-card-detail-lists-items">
                 <i class="fa fa-clock-o gray"></i><PostTime :postTime="postTime" class="post-time"></PostTime>
@@ -18,8 +18,11 @@
               <li>{{preview}}</li>
             </ul>
           </i-col>
-          <i-col :lg="{span:14}">
-            <img :src="thumbPicSrc" alt="" class="img-thumb" :class="{'isHover':isHover}">
+          <i-col :lg="{span:14}" :md="{span:15}" :sm="{span:14}" :xs="{span:24}">
+            <div class="img-container">
+              <img :src="thumbPicSrc" alt="" class="img-thumb" :class="{'isHover':isHover}">
+            </div>
+
           </i-col>
         </Row>
     </Card>
@@ -63,6 +66,8 @@
     width: 30rem;
     height: 20rem;
     vertical-align: bottom;
+    max-width: 100%;
+    max-height: 100%;
   }
   .article-card-container{ margin-top:6rem;}
   .article-card-container:hover{ cursor: pointer;box-shadow:0 1px 20px -6px rgba(0,0,0,.5) }
@@ -89,6 +94,18 @@
   }
   .blog-title:hover,.comments-sum:hover,.tag:hover{
     color: #2D8CF0;
+  }
+  .img-container{
+    overflow: hidden;
+  }
+  @media screen and (max-width: 414px) {
+    .article-card-detail-lists{padding:.4rem;
+      text-align: center;
+      margin-bottom: .4rem;}
+    .article-card-detail-lists-items{
+      margin-bottom: .6rem;}
+    .img-thumb{height: 14rem}
+
   }
 
 </style>
