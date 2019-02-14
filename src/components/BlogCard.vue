@@ -1,8 +1,8 @@
 <template>
   <div @click="goToArticle" class="article-card-container" @mouseover="handleMouseOver" @mouseout="handleMouseOut">
     <Card class="article-card" padding="0">
-        <Row>
-          <i-col :lg="{span:10}" :md="{span:9}" :sm="{span:14}" :xs="{span:24}">
+        <Row type="flex">
+          <i-col :lg="{span:10}" :md="{span:9}" :sm="{span:14}" :xs="{span:24}" :order="contentOrder">
             <ul class="article-card-detail-lists">
               <li class="article-card-detail-lists-items">
                 <i class="fa fa-clock-o gray"></i><PostTime :postTime="postTime" class="post-time"></PostTime>
@@ -18,7 +18,7 @@
               <li>{{preview}}</li>
             </ul>
           </i-col>
-          <i-col :lg="{span:14}" :md="{span:15}" :sm="{span:14}" :xs="{span:24}">
+          <i-col :lg="{span:14}" :md="{span:15}" :sm="{span:14}" :xs="{span:24}" :order="imgOrder">
             <div class="img-container">
               <img :src="thumbPicSrc" alt="" class="img-thumb" :class="{'isHover':isHover}">
             </div>
@@ -32,7 +32,7 @@
 <script>
   import PostTime from "../components/PostTime"
     export default {
-      props:["postTime","title","viewSum","commentsSum","tag","thumbPicSrc","route","preview"],
+      props:["postTime","title","viewSum","commentsSum","tag","thumbPicSrc","route","preview","imgOrder","contentOrder"],
         data() {
             return {
                 isHover:false
@@ -69,9 +69,9 @@
     max-width: 100%;
     max-height: 100%;
   }
-  .article-card-container{ margin-top:6rem;}
-  .article-card-container:hover{ cursor: pointer;box-shadow:0 1px 20px -6px rgba(0,0,0,.5) }
-  .article-card{overflow: hidden}
+  .article-card-container{ margin-top:4rem;}
+  .article-card:hover{ cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5) }
+  .article-card{overflow: hidden;border-radius: 18px}
   .article-card-detail-lists{
     padding: 2rem 1rem 0 2rem;
   }

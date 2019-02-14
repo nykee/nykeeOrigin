@@ -9,14 +9,17 @@
                           :tag="bItem.tag"
                           :thumbPicSrc="bItem.thumbPicSrc"
                           :route="bItem.route"
-                          :preview="bItem.preview">
+                          :preview="bItem.preview"
+                          :imgOrder="bItem.imgOrder"
+                          :contentOrder="bItem.contentOrder"
+                >
 
                 </BlogCard>
             </i-col>
         </Row>
         <Row type="flex" justify="center" align="middle">
 
-            <Button class="load-more-btn">加载更多</Button>
+            <Button class="load-more-btn" @click="loadMoreBlogs">加载更多</Button>
         </Row>
     </div>
 </template>
@@ -26,56 +29,70 @@ import BlogCard from "../../components/BlogCard.vue"
 
         data() {
             return {
+              isLoading:false,
                 blogItems:[
                     {postTime:"2017/1/22",
                         title:'前端技巧汇总，包括CSS,JS',
                         viewSum:300,
-                        commentsSum:10,
+                        commentsSum:0,
                         tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/FE.jpg',
+                        thumbPicSrc:'https://image.nykee.cn/FE.png',
                         route:'FrontEndTricks',
-                        preview:"前端技巧汇总，包括CSS,JS"
+                        preview:"前端技巧汇总，包括CSS,JS",
+                      imgOrder:'1',
+                      contentOrder:'2'
                     },
                     {postTime:"2017/2/14",
                         title:'MongoDB学习笔记',
                         viewSum:30,
-                        commentsSum:11,
+                        commentsSum:0,
                         tag:"前端",
                         thumbPicSrc:'https://image.nykee.cn/mongo.jpg',
                         route:'MongoDBLearning',
-                        preview:"MongoDB学习笔记"
+                        preview:"MongoDB学习笔记",
+                      imgOrder:'2',
+                      contentOrder:'1'
                     },
                     {postTime:"2017/6/08",
                         title:'百度地图学习笔记',
                         viewSum:100,
-                        commentsSum:22,
+                        commentsSum:0,
                         tag:"前端",
                         thumbPicSrc:'https://image.nykee.cn/bd.jpeg',
                         route:'BaiduMapLearning',
-                        preview:"百度地图学习笔记"
+                        preview:"百度地图学习笔记",
+                      imgOrder:'1',
+                      contentOrder:'2'
                     },
                     {postTime:"2017/9/21",
                         title:'echarts 2.7.2爬坑记录',
                         viewSum:30,
-                        commentsSum:1,
+                        commentsSum:0,
                         tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/echarts.jpg',
+                        thumbPicSrc:'https://image.nykee.cn/echarts.png',
                         route:'EchartsLearning',
-                        preview:"echarts 2.7.2爬坑记录"
+                        preview:"echarts 2.7.2爬坑记录",
+                      imgOrder:'2',
+                      contentOrder:'1'
                     },
                     {postTime:"2017/9/26",
                         title:'Vue学习笔记',
                         viewSum:222,
-                        commentsSum:2,
+                        commentsSum:0,
                         tag:"前端",
                         thumbPicSrc:'https://image.nykee.cn/vue.jpg',
                         route:'VueLearning',
-                        preview:"Vue学习笔记"
+                        preview:"Vue学习笔记",
+                      imgOrder:'1',
+                      contentOrder:'2'
 
                     },
                 ]
             }
         },
+      methods:{
+        loadMoreBlogs(){}
+      },
         components: {
             BlogCard
         }

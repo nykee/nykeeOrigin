@@ -124,6 +124,7 @@
       toggleSide() {
         /*播放器播放器侧边模式与正常模式*/
         let self = this;
+        // console.log(this.$refs.mPlayer);
         let left = parseInt(this.$refs.mPlayer.style.left.slice(0, this.$refs.mPlayer.style.left.toString().indexOf("px")));
         if (left === 0) {
           let timer = setInterval(function () {
@@ -155,7 +156,15 @@
         this.isMini = !this.isMini;
         // this.isToggle =true;
         this.isSongListShow = false;
-        this.toggleSide();
+        if(!this.isMini){
+          console.log("切换回正常模式！");
+          this.$nextTick(()=>{
+            // console.log(this.$refs.mPlayer);
+            this.toggleSide();
+          })
+
+
+        }
       },
       changePlayStatus() {
         /*点击播放/暂停按钮改变播放状态*/
