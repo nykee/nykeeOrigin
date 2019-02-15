@@ -70,8 +70,9 @@
     max-height: 100%;
   }
   .article-card-container{ margin-top:4rem;}
+  .ivu-card:hover{cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5)!important;}
   .article-card:hover{ cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5) }
-  .article-card{overflow: hidden;border-radius: 18px}
+  .article-card{overflow: hidden;border-radius: 18px!important;}
   .article-card-detail-lists{
     padding: 2rem 1rem 0 2rem;
   }

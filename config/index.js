@@ -33,6 +33,11 @@ module.exports = {
         crossOrigin:true,
         changeOrigin: true,
       },
+      "/Blog/*":{
+        target:"http://127.0.0.1:8081/",
+        crossOrigin:true,
+        changeOrigin: true,
+      },
       // "/getAvatar":{
       //   target:"https://ptlogin2.qq.com/",
       //   crossOrigin:true,

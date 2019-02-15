@@ -1,7 +1,7 @@
 <template>
     <div>
         <Row type="flex" justify="center" align="middle" v-for="bItem in blogItems" :key="bItem.title">
-            <i-col :lg="{span:10}" :md="{span:14}" :sm="{span:10}" :xs="{span:20}">
+            <i-col :lg="{span:14}" :md="{span:14}" :sm="{span:10}" :xs="{span:20}">
                 <BlogCard :postTime="bItem.postTime"
                           :title="bItem.title"
                           :viewSum="bItem.viewSum"
@@ -90,6 +90,15 @@ import BlogCard from "../../components/BlogCard.vue"
                 ]
             }
         },
+      mounted(){
+        axios.get("/Blog/QueryBlogs")
+          .then((res)=>{
+              console.log(res);
+          })
+          .catch((err)=>{
+              console.log(err);
+          })
+      },
       methods:{
         loadMoreBlogs(){}
       },
