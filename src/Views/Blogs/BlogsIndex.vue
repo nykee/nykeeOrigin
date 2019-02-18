@@ -5,7 +5,7 @@
                 <BlogCard :postTime="bItem.postTime"
                           :title="bItem.title"
                           :viewSum="bItem.viewSum"
-                          :commentsSum="bItem.commentsSum"
+                          :commentsSum="bItem.commentSum"
                           :tag="bItem.tag"
                           :thumbPicSrc="bItem.thumbPicSrc"
                           :route="bItem.route"
@@ -19,7 +19,8 @@
         </Row>
         <Row type="flex" justify="center" align="middle">
 
-            <Button class="load-more-btn" @click="loadMoreBlogs">加载更多</Button>
+            <Button class="load-more-btn" @click="loadMoreBlogs" v-if="!isLoading">加载更多</Button>
+            <Spin size="large" v-if="isLoading" class="loading-spin"></Spin>
         </Row>
     </div>
 </template>
@@ -30,77 +31,42 @@ import BlogCard from "../../components/BlogCard.vue"
         data() {
             return {
               isLoading:false,
-                blogItems:[
-                    {postTime:"2017/1/22",
-                        title:'前端技巧汇总，包括CSS,JS',
-                        viewSum:300,
-                        commentsSum:0,
-                        tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/FE.png',
-                        route:'FrontEndTricks',
-                        preview:"前端技巧汇总，包括CSS,JS",
-                      imgOrder:'1',
-                      contentOrder:'2'
-                    },
-                    {postTime:"2017/2/14",
-                        title:'MongoDB学习笔记',
-                        viewSum:30,
-                        commentsSum:0,
-                        tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/mongo.jpg',
-                        route:'MongoDBLearning',
-                        preview:"MongoDB学习笔记",
-                      imgOrder:'2',
-                      contentOrder:'1'
-                    },
-                    {postTime:"2017/6/08",
-                        title:'百度地图学习笔记',
-                        viewSum:100,
-                        commentsSum:0,
-                        tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/bd.jpeg',
-                        route:'BaiduMapLearning',
-                        preview:"百度地图学习笔记",
-                      imgOrder:'1',
-                      contentOrder:'2'
-                    },
-                    {postTime:"2017/9/21",
-                        title:'echarts 2.7.2爬坑记录',
-                        viewSum:30,
-                        commentsSum:0,
-                        tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/echarts.png',
-                        route:'EchartsLearning',
-                        preview:"echarts 2.7.2爬坑记录",
-                      imgOrder:'2',
-                      contentOrder:'1'
-                    },
-                    {postTime:"2017/9/26",
-                        title:'Vue学习笔记',
-                        viewSum:222,
-                        commentsSum:0,
-                        tag:"前端",
-                        thumbPicSrc:'https://image.nykee.cn/vue.jpg',
-                        route:'VueLearning',
-                        preview:"Vue学习笔记",
-                      imgOrder:'1',
-                      contentOrder:'2'
-
-                    },
-                ]
+                blogItems:[],
+              // limit:5,
+              offset:0
             }
         },
       mounted(){
-        axios.get("/Blog/QueryBlogs")
+        axios.get("/Blog/QueryBlogsInit")
           .then((res)=>{
               console.log(res);
+              let result =res.data;
+              console.log(result);
+              for(let i=0,len=result.length;i<len;i++){
+                // result[i].postTime = DateFormat.Format(result[i].postTime);
+                console.log(result[i].postTime);
+                this.blogItems.push(result[i])
+              }
           })
           .catch((err)=>{
               console.log(err);
           })
       },
       methods:{
-        loadMoreBlogs(){}
+        loadMoreBlogs(){
+          this.isLoading = true;
+          this.offset+=5;
+          axios.get("/Blog/loadMoreBlogs",{params:{
+            // limit:this.limit,
+              offset:this.offset
+            }})
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+        }
       },
         components: {
             BlogCard
@@ -119,5 +85,8 @@ import BlogCard from "../../components/BlogCard.vue"
       padding: .6rem 1.4rem;
       border-radius: 14px;
     }
+  }
+  .loading-spin{
+    margin-top: 4rem;
   }
 </style>

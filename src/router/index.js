@@ -43,7 +43,7 @@ const router = new VueRouter({
       component: Blogs,
         children:[
             {
-              path:'/DZDPCrawlSpider',
+              path:'DZDPCrawlSpider',
                 component:DZDPCrawlSpider
             },
             {

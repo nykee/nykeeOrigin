@@ -188,8 +188,12 @@
         }
       ,
         {
-          "time": "Jan 31, 2019",
+          "time": "January 31, 2019",
           "activity": "add volume by keyboard to music player "
+        } ,
+        {
+          "time": "February 18, 2019",
+          "activity": "Change the layout of blog page"
         }
       ]
     },

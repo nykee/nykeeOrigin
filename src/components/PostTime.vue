@@ -9,11 +9,12 @@
         props:["postTime"],
         data(){
           return {
-            time:(new Date(this.postTime))
+            // time:(new Date(this.postTime).getTime())
+            time:parseInt(this.postTime)
           }
         },
         mounted(){
-//            console.log(new Date(this.postTime));
+           // console.log(this.time);
         }
     }
 </script>

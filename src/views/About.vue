@@ -30,46 +30,10 @@
 
       </i-col>
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
-        <Timeline class="time-line">
-        <TimelineItem color="#73E4C9">
-        <p class="time">{{$t("message.aboutPage.timeLineItems[0].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[0].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[1].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[1].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[2].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[2].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[3].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[3].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[4].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[4].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[5].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[5].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[6].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[6].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[7].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[7].activity")}}</p>
-        </TimelineItem>
-        <TimelineItem>
-        <p class="time">{{$t("message.aboutPage.timeLineItems[8].time")}}</p>
-        <p class="content">{{$t("message.aboutPage.timeLineItems[8].activity")}}</p>
-        </TimelineItem>
-          <TimelineItem>
-            <p class="time">{{$t("message.aboutPage.timeLineItems[9].time")}}</p>
-            <p class="content">{{$t("message.aboutPage.timeLineItems[9].activity")}}</p>
+        <Timeline class="time-line" v-for="item in items" :key="item.activity">
+          <TimelineItem >
+            <p class="time">{{item.time}}</p>
+            <p class="content">{{item.activity}}</p>
           </TimelineItem>
         </Timeline>
       </i-col>
@@ -84,14 +48,26 @@
 
   export default {
     data() {
-      return {}
+      return {
+        // items:[]
+      }
     },
     methods: {},
     created: function () {
 
     },
     mounted() {
+      // let aa =[];
+      // for(let i=0,len =this.$t)
+      // this.items =this.$t("message.aboutPage.timeLineItems");
+      // console.log(this.$t("message.aboutPage.timeLineItems"));
+      // console.log(this.items);
 
+    },
+    computed:{
+      items:function () {
+        return this.$t("message.aboutPage.timeLineItems")
+      }
     },
     components: {IntroHeader}
   }
