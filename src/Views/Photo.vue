@@ -115,6 +115,22 @@
             "photoTime": this.$t("message.photoPage.photos[10].time"),
             "photoLocation": this.$t("message.photoPage.photos[10].location"),
           }
+            ,
+            {
+                "desc": this.$t("message.photoPage.photos[11].title"),
+                "webpSrc": "https://image.nykee.cn/ayada.webp",
+                "imgSrc": "https://image.nykee.cn/ayada.jpg",
+                "photoTime": this.$t("message.photoPage.photos[11].time"),
+                "photoLocation": this.$t("message.photoPage.photos[11].location"),
+            }
+            ,
+            {
+                "desc": this.$t("message.photoPage.photos[12].title"),
+                "webpSrc": "https://image.nykee.cn/sunset.webp",
+                "imgSrc": "https://image.nykee.cn/sunset.jpg",
+                "photoTime": this.$t("message.photoPage.photos[12].time"),
+                "photoLocation": this.$t("message.photoPage.photos[12].location"),
+            }
         ]
       }
     },

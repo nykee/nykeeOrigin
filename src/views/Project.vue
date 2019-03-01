@@ -104,6 +104,6 @@
 </script>
 <style scoped>
   .proj-row {
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 </style>

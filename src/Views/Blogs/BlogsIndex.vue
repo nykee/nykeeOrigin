@@ -17,20 +17,23 @@
                 </BlogCard>
             </i-col>
         </Row>
-        <Row type="flex" justify="center" align="middle">
+        <Row type="flex" justify="center" align="middle" class="bottom-line-row">
 
-            <Button class="load-more-btn" @click="loadMoreBlogs" v-if="!isLoading">加载更多</Button>
-            <Spin size="large" v-if="isLoading" class="loading-spin"></Spin>
+            <Button class="load-more-btn" @click="loadMoreBlogs" v-if="!isLoading&&!noMoreBlogs">加载更多</Button>
+            <Spin size="large" v-if="isLoading&&!noMoreBlogs" class="loading-spin"></Spin>
+            <NoMoreBlogBaseLine v-if="noMoreBlogs"></NoMoreBlogBaseLine>
         </Row>
     </div>
 </template>
 <script>
 import BlogCard from "../../components/BlogCard.vue"
+import NoMoreBlogBaseLine from "../../components/NoMoreBlogBaseLine"
     export default {
 
         data() {
             return {
               isLoading:false,
+                noMoreBlogs:false,
                 blogItems:[],
               // limit:5,
               offset:0
@@ -39,12 +42,12 @@ import BlogCard from "../../components/BlogCard.vue"
       mounted(){
         axios.get("/Blog/QueryBlogsInit")
           .then((res)=>{
-              console.log(res);
+//              console.log(res);
               let result =res.data;
-              console.log(result);
+//              console.log(result);
               for(let i=0,len=result.length;i<len;i++){
                 // result[i].postTime = DateFormat.Format(result[i].postTime);
-                console.log(result[i].postTime);
+//                console.log(result[i].postTime);
                 this.blogItems.push(result[i])
               }
           })
@@ -56,12 +59,24 @@ import BlogCard from "../../components/BlogCard.vue"
         loadMoreBlogs(){
           this.isLoading = true;
           this.offset+=5;
-          axios.get("/Blog/loadMoreBlogs",{params:{
+          axios.get("/Blog/LoadMoreBlogs",{params:{
             // limit:this.limit,
               offset:this.offset
             }})
             .then((res)=>{
-                console.log(res);
+//                console.log(res);
+                let result =res.data;
+                if(result.length ===0){
+                    this.noMoreBlogs =true;
+                }
+//                console.log(result);
+                for(let i=0,len=result.length;i<len;i++){
+                    // result[i].postTime = DateFormat.Format(result[i].postTime);
+//                    console.log(result[i].postTime);
+                    this.blogItems.push(result[i])
+                }
+                this.isLoading =false;
+
             })
             .catch((err)=>{
                 console.log(err);
@@ -69,22 +84,28 @@ import BlogCard from "../../components/BlogCard.vue"
         }
       },
         components: {
-            BlogCard
+            BlogCard,NoMoreBlogBaseLine
         }
     }
 </script>
 <style scoped>
-    .load-more-btn{
+    .bottom-line-row{
         margin-top:4rem;
+    }
+    .load-more-btn{
+        /*margin-top:4rem;*/
         padding: .8rem 2rem;
         border-radius: 14px;
     }
   @media screen and (max-width: 414px){
     .load-more-btn{
-      margin-top:3rem;
+      /*margin-top:3rem;*/
       padding: .6rem 1.4rem;
       border-radius: 14px;
     }
+      .bottom-line-row{
+          margin-top:3rem;
+      }
   }
   .loading-spin{
     margin-top: 4rem;

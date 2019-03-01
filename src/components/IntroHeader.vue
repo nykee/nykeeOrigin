@@ -1,39 +1,16 @@
 <template>
-
-
-
     <header >
       <div class="intro-container" :class="introHeaderClass">
-
         <div class="site-heading">
           <h1 class="site-heading-title">{{Title}}</h1>
           <span class="site-heading-subtitle">{{subTitle}}</span>
         </div>
-
-
       </div>
     </header>
-
-
-    <!--<header v-if="isTags">-->
-      <!--<div class="intro-container">-->
-
-        <!--<div class="site-heading">-->
-          <!--<h1 class="site-heading-title">{{Title}}</h1>-->
-          <!--<span class="site-heading-subtitle">{{SubTitle}}</span>-->
-        <!--</div>-->
-        <!--<div id="particles"></div>-->
-
-      <!--</div>-->
-
-    <!--</header>-->
-
-
-
 </template>
 
 <script>
-  // import particlesJS from "particles.js"
+//   import particlesJS from "particles.js"
   import {checkWebp} from "../utils/WebPutil"
 
   export default {
@@ -197,6 +174,10 @@
 //      this.changeBG();
     },
     mounted() {
+//        console.log(location.pathname)
+        if(location.pathname ==="/Project"){
+            this.myParticles();
+        }
 //      this.myParticles();
 
     },

@@ -137,10 +137,22 @@
           "location": "Songjiang District Shanghai"
         },
         {
-          "title": "TEN",
+          "title": "Blue",
           "time": "Photographed on July 19, 2018",
           "location": "Songjiang District Shanghai"
         }
+      ,
+        {
+          "title": "Ayada Blue",
+          "time": "Photographed on Feb 21, 2019",
+          "location": "Ayada Maldives"
+        },
+        {
+          "title": "Sunset Ayada",
+          "time": "Photographed on Feb 23, 2019",
+          "location": "Ayada Maldives"
+        }
+
       ]
     },
     "aboutPage": {
