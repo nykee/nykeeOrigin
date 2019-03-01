@@ -2,7 +2,7 @@
   <Card class="photo-card ">
     <div class="photo-card-box">
       <div style="position: relative" class="custom-pic-container">
-          <CustomPicture class-name="resp-img"  :imgSrc="imgSrc" :srcSet="webpSrc" />
+        <CustomPicture class-name="resp-img"  :imgSrc="imgSrc" :srcSet="webpSrc"  />
         <div class="img-expand-box" >
           <i class="fa img-expand" :class="{'fa-arrows-alt':!isModalShow,'fa-2x':!isMobile}" @click="changeImgExpand" ></i>
         </div>
@@ -275,7 +275,7 @@
     }
   }
   @media screen and (min-width: 1025px) and (max-width:1440px ){
-    .photo-card{margin-top: 1rem;}
+    .photo-card{margin-top: 4rem;}
     .photo-card-desc{font-size: 1.6rem;}
     .photo-card-desc-time{
       font-size: 1rem;
@@ -318,6 +318,8 @@
     padding-bottom: 75%;
     overflow: hidden;
   }
+
+
 
 
 </style>

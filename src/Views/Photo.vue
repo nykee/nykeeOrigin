@@ -21,7 +21,8 @@
                      :webpSrc="photo.webpSrc"
                      :imgSrc="photo.imgSrc"
                      :photoTime="photo.photoTime"
-                     :photoLocation="photo.photoLocation"/>
+                     :photoLocation="photo.photoLocation"
+          class="photo-card"/>
         </div>
       </div>
     <!--</Scroll>-->
@@ -205,4 +206,5 @@
       padding: .4rem 0
     }
   }
+
 </style>

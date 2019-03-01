@@ -144,34 +144,7 @@
       }
     },
     created: function () {
-/*
-* <!--<header v-if="!isTags"
-            :class="{
-        'intro-header-index':isIndex&&!canUseWebp,
-        'intro-header-blogs':isBlogs&&!canUseWebp,
-        'intro-header-photo':isPhoto&&!canUseWebp,
-        'intro-header-about':isAbout&&!canUseWebp,
-        'intro-header-comments':isComments&&!canUseWebp,
-        'intro-header-index-webp':isIndex&&canUseWebp,
-        'intro-header-blogs-webp':isBlogs&&canUseWebp,
-        'intro-header-photo-webp':isPhoto&&canUseWebp,
-        'intro-header-about-webp':isAbout&&canUseWebp,
-        'intro-header-comments-webp':isComments&&canUseWebp,
 
-        }">
-      <div class="intro-container">
-
-        <div class="site-heading">
-          <h1 class="site-heading-title">{{head}}</h1>
-          <span class="site-heading-subtitle">{{subHead}}</span>
-        </div>
-
-
-      </div>
-    </header>-->
-* */
-//      this.canUseWebp = checkWebp();
-//      this.changeBG();
     },
     mounted() {
 //        console.log(location.pathname)
@@ -185,26 +158,18 @@
   }
 </script>
 <style>
-  .intro-header-index,
-  .intro-header-blogs,
-  .intro-header-photo,
-  .intro-header-about,
-  .intro-header-index-webp,
-  .intro-header-blogs-webp,
-  .intro-header-photo-webp,
-  .intro-header-about,
-  .intro-header-about-webp,
-  .intro-header-comments,
-  .intro-header-comments-webp{
 
-  }
 
   .intro-header-index {
     background-image: url("https://image.nykee.cn/index.jpg") ;
   }
 
+
   .intro-header-index-webp {
     background-image: url("https://image.nykee.cn/index.webp");
+  }
+  .intro-header-proj{
+      background-image: url("https://image.nykee.cn/tower.jpeg") ;
   }
 
   .intro-header-blogs {
@@ -243,7 +208,7 @@
     background-size: cover;
     width: 100%;
     height: 25rem;
-    margin-bottom: .4rem;
+    /*margin-bottom: .4rem;*/
     /*background-image: url("https://image.nykee.cn/HK.jpg");*/
   }
 

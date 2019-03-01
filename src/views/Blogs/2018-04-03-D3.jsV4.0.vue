@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <ul class="title-list">
-      <li><h1 class="title">D3 V4.0学习笔记</h1></li>
-    </ul>
-    <div class="main-body">
-      <div id="part1" class="part">
+    <Row type="flex" align="center" justify="center">
+        <div>
+            <ul class="title-list" >
+                <li><h1 class="title">D3 V4.0学习笔记</h1></li>
+            </ul>
+            <div class="main-body">
+                <div id="part1" class="part">
 
-        <div class="title-lv1">1、D3V4.0画基本图代码</div>
-        <p class="descrp">D3V4.0画基本图代码</p>
-        <pre class="code-text">
+                    <div class="title-lv1">1、D3V4.0画基本图代码</div>
+                    <p class="descrp">D3V4.0画基本图代码</p>
+                    <pre class="code-text">
           <code>
            import '../../styles/common.less';
 import '../../styles/index.less';
@@ -266,10 +267,12 @@ class Index {
 
           </code>
         </pre>
-      </div>
-    </div>
-    <PostTag :postTime="postTime"/>
-  </div>
+                </div>
+            </div>
+            <PostTag :postTime="postTime"/>
+        </div>
+    </Row>
+
 </template>
 
 <script>

@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <ul class="title-list">
-      <li><h1 class="title">百度地图学习笔记</h1></li>
-    </ul>
-    <div class="main-body">
+  <Row type="flex" align="center" justify="center">
+      <i-col :lg="{span:14}" class="blog-content">
+          <ul class="title-list">
+              <li><h1 class="title">百度地图学习笔记</h1></li>
+          </ul>
+          <div class="main-body">
        <pre class="code-text">
             <code>
        var map = new BMap.Map("container");
@@ -79,12 +80,14 @@
        map.setCurrentCity("上海"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用*/
             </code>
           </pre>
-    </div>
+          </div>
 
 
-    <PostTag :postTime="postTime"/>
+          <PostTag :postTime="postTime"/>
+      </i-col>
 
-  </div>
+
+  </Row>
 </template>
 
 <script>

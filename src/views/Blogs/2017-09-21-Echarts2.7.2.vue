@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <ul class="title-list">
-      <li><h1 class="title">echarts学习笔记</h1></li>
-    </ul>
-    <div class="main-body">
-      <div class="title-lv1">echarts 2.7.2爬坑记录</div>
-      <p class="descrp">echarts2.7.2比较坑，标注点的坐标的配置为{ name: '北京',
-        geoCoord:[116.46, 39.92], },要把geoCoord写在data里面，具体mapoption的配置如下：</p>
-      <pre class="code-text">
+   <Row type="flex" align="center" justify="center">
+     <i-col :lg="{span:14}" class="blog-content">
+       <ul class="title-list">
+         <li><h1 class="title">echarts学习笔记</h1></li>
+       </ul>
+       <div class="main-body">
+         <div class="title-lv1">echarts 2.7.2爬坑记录</div>
+         <p class="descrp">echarts2.7.2比较坑，标注点的坐标的配置为{ name: '北京',
+           geoCoord:[116.46, 39.92], },要把geoCoord写在data里面，具体mapoption的配置如下：</p>
+         <pre class="code-text">
             <code>
               mapOption:{
                  /*地图用到的数据，Object形式*/
@@ -115,9 +116,11 @@
                }
             </code>
           </pre>
-    </div>
-    <PostTag :postTime="postTime"/>
-  </div>
+       </div>
+       <PostTag :postTime="postTime"/>
+     </i-col>
+
+   </Row>
 </template>
 
 <script>

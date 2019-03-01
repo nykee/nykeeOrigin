@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <ul class="title-list">
-      <li><h1 class="title">Git学习笔记</h1></li>
-    </ul>
-    <div class="main-body">
-      <div id="part3" class="part">
-        <div class="title-lv1">一、Git常用命令</div>
-        <pre class="code-text">
+  <Row type="flex" align="center" justify="center">
+
+    <i-col :lg="{span:14}" class="blog-content">
+      <ul class="title-list">
+        <li><h1 class="title">Git学习笔记</h1></li>
+      </ul>
+      <div class="main-body">
+        <div id="part3" class="part">
+          <div class="title-lv1">一、Git常用命令</div>
+          <pre class="code-text">
             <code>
     git init   # 初始化一个git仓库
     git config --global user.email "you@example.com" # 设置git账户邮箱地址
@@ -25,10 +27,11 @@
     git config --global credential.helper store # 长期存储Git密码
             </code>
           </pre>
+        </div>
       </div>
-    </div>
-    <PostTag :postTime="postTime"/>
-  </div>
+      <PostTag :postTime="postTime"/>
+    </i-col>
+  </Row>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Row type="flex" align="center" justify="center">
-      <i-col :lg="{span:14}">
+      <i-col :lg="{span:14}" class="blog-content">
         <div class="blog-content">
           <ul class="title-list">
             <li><h1 class="title">MongoDB学习笔记</h1></li>

@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <!--<IntroHeader></IntroHeader>-->
+
+
     <Row type="flex" align="center" justify="center">
-      <i-col :lg="{span:14}">
+      <i-col :lg="{span:14}" class="blog-content">
         <div class="blog-content">
     <ul class="title-list">
       <li><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
@@ -117,8 +117,8 @@
           <!--<CustomPicture imgSrc="https://image.nykee.cn/console.table.jpg"-->
           <!--srcSet="https://image.nykee.cn/console.table.webp" className="resp-img"/>-->
           <picture>
-            <source type="image/webp" srcset="https://image.nykee.cn/console.table.webp" class="resp-img">
-            <img src="https://image.nykee.cn/console.table.jpg" class="resp-img"/>
+            <source type="image/webp" srcset="https://image.nykee.cn/console.table.webp" >
+            <img src="https://image.nykee.cn/console.table.jpg" />
           </picture>
 
         </div>
@@ -384,7 +384,7 @@
     </Row>
 
 
-  </div>
+
 </template>
 
 <script>

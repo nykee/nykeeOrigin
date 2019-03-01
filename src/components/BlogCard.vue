@@ -11,9 +11,15 @@
                 <span class="blog-title">{{title}}</span>
               </li>
               <li class="article-card-detail-lists-items">
-                <i class="fa fa-eye gray"></i><span>{{viewSum}}热度</span>
-                <i class="fa fa-comment gray"></i><span class="comments-sum">{{commentsSum}}条评论</span>
-                <i class="fa fa-tag gray"></i><span class="tag">{{tag}}</span>
+                <span class="view-sum">
+                  <i class="fa fa-eye gray"></i><span >{{viewSum}}热度</span>
+                </span>
+                <span class="comments-sum">
+                  <i class="fa fa-comment gray"></i><span >{{commentsSum}}条评论</span>
+                </span>
+                <span class="tag">
+                  <i class="fa fa-tag gray"></i><span >{{tag}}</span>
+                </span>
               </li>
               <li>{{preview}}</li>
             </ul>
@@ -40,7 +46,7 @@
         },
         methods: {
             goToArticle(){
-              console.log(this.route);
+//              console.log(this.route);
              this.$router.push("/Blogs/"+this.route)
           },
             handleMouseOver(){
@@ -93,8 +99,9 @@
   .blog-title{
     font-weight: bold;
   }
-  .blog-title:hover,.comments-sum:hover,.tag:hover{
-    color: #2D8CF0;
+  .blog-title:hover,.comments-sum:hover,.tag:hover,.view-sum:hover{
+    color: #2D8CF0 !important;
+    cursor: pointer;
   }
   .img-container{
     overflow: hidden;

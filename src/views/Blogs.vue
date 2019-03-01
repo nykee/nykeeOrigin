@@ -4,50 +4,9 @@
             Title="Nykee Blog"
             introHeaderClass="intro-header-blogs"
             subTitle="Talk is cheap,show me ur code~"
-            :isProjectPage="false"/>
-   <!-- <Row class="blog-container">
-      <i-col :lg="{span:5}"
-             :md="{span:7}"
-             :sm="{span:24}"
-             :xs="{span:24}">
-        <div v-show="!isMobile">
-          <BlogMenu/>
-        </div>
-
-        <div v-show="isMobile">
-          <div @click="drawerShow = true" class="mbNav-box"><i class="fa fa-navicon fa-2x"><span
-            class="mbNav-name">文章目录</span></i></div>
-          <Drawer title="文章目录" placement="left" :closable="false" v-model="drawerShow">
-            <BlogMenu/>
-          </Drawer>
-        </div>
-      </i-col>
-      <i-col :lg="{span:19}"
-             :md="{span:17}"
-             :sm="{span:24}"
-             :xs="{span:24}">
-        <router-view></router-view>
-      </i-col>
-    </Row>-->
-    <!--<Row type="flex" justify="center" align="middle" v-for="bItem in blogItems" :key="bItem.title">-->
-      <!--<i-col :lg="{span:10}" >-->
-        <!--<BlogCard :postTime="bItem.postTime"-->
-                  <!--:title="bItem.title"-->
-                  <!--:viewSum="bItem.viewSum"-->
-                  <!--:commentsSum="bItem.commentsSum"-->
-                  <!--:tag="bItem.tag"-->
-                  <!--:thumbPicSrc="bItem.thumbPicSrc"-->
-                  <!--:route="bItem.route"-->
-                  <!--:preview="bItem.preview"-->
-        <!--&gt;</BlogCard>-->
-      <!--</i-col>-->
-    <!--</Row>-->
-    <!--<Row type="flex" justify="center" align="middle">-->
-
-        <!--<Button class="load-more-btn">加载更多</Button>-->
-    <!--</Row>-->
+            :isProjectPage="false">
+    </IntroHeader>
     <router-view></router-view>
-
   </div>
 </template>
 
@@ -140,7 +99,7 @@
     }
   }
 </script>
-<style scoped="scoped">
+<style >
   .title {
     margin-bottom: 15px;
   }
@@ -201,12 +160,20 @@
     margin-top: 10px;
   }
 
-  .blog-container {
-    margin-top: 1rem;
-    padding: 0 .6rem;
+  /*.blog-container {*/
+    /*margin-top: 1rem;*/
+    /*padding: 0 .6rem;*/
 
+  /*}*/
+  .blog-container{
+    /*padding-top:3rem;*/
+    /*background: #F4F5F5;*/
+    /*opacity: .5;*/
   }
-
+  .blog-content{
+    /*background: #fff;*/
+    padding: 3rem .5rem 0 .5rem;
+  }
   .descrp {
     font-size: 16px;
     line-height: 1.27rem;
@@ -242,6 +209,7 @@
     max-width: 100%;
     display: block;
   }
+
 
 
 
