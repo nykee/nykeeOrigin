@@ -169,11 +169,12 @@
     background-image: url("https://image.nykee.cn/index.webp");
   }
   .intro-header-proj{
-      background-image: url("https://image.nykee.cn/tower.jpeg") ;
+      background-image: url("https://image.nykee.cn/code.jpg");
   }
 
   .intro-header-blogs {
-    background-image: url("https://image.nykee.cn/code.jpg");
+
+      background-image: url("https://image.nykee.cn/tower.jpeg") ;
 
   }
 
