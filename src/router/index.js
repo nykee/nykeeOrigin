@@ -18,7 +18,8 @@ import D3Learning from '../views/Blogs/2018-04-03-D3.jsV4.0.vue'
 import ReactLearning from '../views/Blogs/2018-05-29-React.vue'
 import NettyLearning from '../views/Blogs/2018-05-17-Netty.vue'
 import VueI18n from '../views/Blogs/2018-11-07-Vue-i18n.vue'
-import FeOPT from '../views/Blogs/2018-11-20-FE-Optimize'
+import FeOPT from '../views/Blogs/2018-11-20-FE-Optimize.vue'
+import Ayada from '../views/Blogs/2019-03-03-Ayada.vue'
 import BlogsIndex from '../views/Blogs/BlogsIndex.vue'
 
 
@@ -97,6 +98,11 @@ const router = new VueRouter({
             {
                 path: 'FeOPT',
                 component: FeOPT
+            },
+
+            {
+                path: 'Ayada',
+                component: Ayada
             },
         ]
     },
