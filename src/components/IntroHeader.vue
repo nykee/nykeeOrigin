@@ -174,7 +174,7 @@
 
   .intro-header-blogs {
 
-      background-image: url("https://image.nykee.cn/tower.jpeg") ;
+      background-image: url("https://image.nykee.cn/tower_new.jpeg") ;
 
   }
 
