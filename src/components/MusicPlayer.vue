@@ -547,6 +547,9 @@
     left: 43%;
 
   }
+  .toggle-mini-btn:hover{
+    cursor: pointer;
+  }
 
   .volume-slider {
     position: absolute;
