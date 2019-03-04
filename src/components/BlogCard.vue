@@ -75,6 +75,12 @@
     max-width: 100%;
     max-height: 100%;
   }
+  @media screen and (max-width: 1440px){
+    .img-thumb{
+      width:31rem;
+      height:21rem;
+    }
+  }
   .article-card-container{ margin-top:4rem;}
   .ivu-card:hover{cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5)!important;}
   .article-card:hover{ cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5) }
