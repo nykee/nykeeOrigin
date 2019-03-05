@@ -40,10 +40,12 @@ import NoMoreBlogBaseLine from "../../components/NoMoreBlogBaseLine"
             }
         },
       mounted(){
+          this.isLoading =true;
         axios.get("/Blog/QueryBlogsInit")
           .then((res)=>{
 //              console.log(res);
               let result =res.data;
+            this.isLoading =false;
 //              console.log(result);
               for(let i=0,len=result.length;i<len;i++){
                 // result[i].postTime = DateFormat.Format(result[i].postTime);

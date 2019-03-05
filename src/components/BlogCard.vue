@@ -75,12 +75,31 @@
     max-width: 100%;
     max-height: 100%;
   }
-  @media screen and (max-width: 1440px){
+  @media screen and (min-width: 1280px){
     .img-thumb{
-      width:31rem;
-      height:21rem;
+      width:28rem;
+      height:18rem;
     }
   }
+  @media screen and (min-width: 1440px){
+    .img-thumb{
+      width:31rem;
+      height:20rem;
+    }
+  }
+  @media screen and (min-width: 1680px){
+    .img-thumb{
+      width:40rem;
+      height:24rem;
+    }
+  }
+  @media screen and (min-width: 2560px){
+    .img-thumb{
+      width:56rem;
+      height:34rem;
+    }
+  }
+
   .article-card-container{ margin-top:4rem;}
   .ivu-card:hover{cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5)!important;}
   .article-card:hover{ cursor: pointer;box-shadow:0 6px 10px 6px rgba(110,110,110,.5) }

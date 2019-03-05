@@ -1,7 +1,7 @@
 <template>
 
     <Row type="flex" align="center" justify="center">
-      <i-col :lg="{span:14}" class="blog-content">
+      <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
         <section>
           <ul class="title-list">
             <li >
@@ -22,8 +22,8 @@
                     </li>
                     <li class="steps-item">
                       <picture>
-                        <source type="image/webp" srcset="http://image.nykee.cn/webapck.base.webp"  >
-                        <img class="blog-img" src="http://image.nykee.cn/webapck.base.jpg" alt="">
+                        <source type="image/webp" srcset="https://image.nykee.cn/webapck.base.webp"  >
+                        <img class="blog-img" src="https://image.nykee.cn/webapck.base.jpg" alt="">
                       </picture>
                     </li>
                     <li class="steps-item">
@@ -34,8 +34,8 @@
                                       className="blog-img"
                                       srcSet="../../../static/img/vue-loader.conf.webp"/>-->
                       <picture>
-                        <source type="image/webp" srcset="http://image.nykee.cn/vue-loader.conf.webp"  >
-                        <img src="http://image.nykee.cn/vue-loader.conf.jpg" />
+                        <source type="image/webp" srcset="https://image.nykee.cn/vue-loader.conf.webp"  >
+                        <img src="https://image.nykee.cn/vue-loader.conf.jpg" />
                       </picture>
                     </li>
                   </ul>
@@ -174,6 +174,16 @@
         </div>
           <PostTag :postTime="postTime"/>
         </section>
+
+        <PagerComponent
+          prvUrl="FeOPT"
+          prvBgSrc="https://image.nykee.cn/feopt.jpg"
+          prvBlogTitle="前端性能优化"
+          next-url="NettyLearning"
+          next-bg-src="https://image.nykee.cn/netty.jpg"
+          next-blog-title="Netty心跳机制"
+        >
+        </PagerComponent>
       </i-col>
 
     </Row>
@@ -184,6 +194,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
 //  import CustomPicture from "../../components/CustomPicture"
+  import PagerComponent from '../../components/PagerComponent'
     export default {
         data() {
             return {
@@ -198,7 +209,7 @@
         mounted() {
 
         },
-        components: {PostTag,}
+        components: {PostTag,PagerComponent}
     }
 </script>
 <style>

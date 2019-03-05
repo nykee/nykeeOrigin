@@ -1,6 +1,6 @@
 <template>
   <Row type="flex" align="center" justify="center">
-      <i-col :lg="{span:14}" class="blog-content">
+      <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
           <section>
               <ul class="title-list">
                   <li>
@@ -88,6 +88,16 @@ render(&lt;HelloMessage name="John" />, mountNode);
               </div>
           </div>
           <PostTag :postTime="postTime"/>
+
+        <PagerComponent
+          prvUrl="NettyLearning"
+          prvBgSrc="https://image.nykee.cn/jap.jpg"
+          prvBlogTitle="Netty心跳机制"
+          next-url="GitLearning"
+          next-bg-src="https://image.nykee.cn/git.jpg"
+          next-blog-title="Git学习笔记"
+        >
+        </PagerComponent>
       </i-col>
 
   </Row>
@@ -96,6 +106,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import PagerComponent from '../../components/PagerComponent'
 
   export default {
     data() {
@@ -110,7 +121,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
     mounted() {
 
     },
-    components: {PostTag}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style>

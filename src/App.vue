@@ -172,6 +172,11 @@
       font-size: 33px;
     }
   }
+  @media screen and (min-width: 2560px)  {
+    body{
+      font-size: 36px;
+    }
+  }
   /*.blog-content{*/
     /*margin-top:2rem;*/
   /*}*/

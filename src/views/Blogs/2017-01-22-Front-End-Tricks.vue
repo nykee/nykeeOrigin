@@ -2,7 +2,7 @@
 
 
     <Row type="flex" align="center" justify="center">
-      <i-col :lg="{span:14}" class="blog-content">
+      <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
         <div class="blog-content">
     <ul class="title-list">
       <li><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
@@ -378,8 +378,19 @@
 
 
     </div>
+
     <PostTag :postTime="postTime"/>
         </div>
+
+        <PagerComponent
+          prvUrl="MongoDBLearning"
+          prvBgSrc="https://image.nykee.cn/mongo.jpg"
+          prvBlogTitle="MongoDB学习笔记"
+          next-url="DZDPCrawlSpider"
+          next-bg-src="https://image.nykee.cn/node.jpg"
+          next-blog-title="Node.js大众点评爬虫"
+        >
+        </PagerComponent>
       </i-col>
     </Row>
 
@@ -390,6 +401,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   //  import CustomPicture from "../../components/CustomPicture"
+  import PagerComponent from '../../components/PagerComponent'
   export default {
     data() {
       return {
@@ -409,7 +421,7 @@
 
 
     },
-    components: {PostTag,}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style scoped>

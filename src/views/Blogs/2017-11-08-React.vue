@@ -1,7 +1,7 @@
 <template>
   <Row type="flex" align="center" justify="center">
 
-    <i-col :lg="{span:14}" class="blog-content">
+    <i-col :lg="{span:14}" :md="{span:18}" class="blog-content">
       <ul class="title-list">
         <li><h1 class="title">React及React-router注意点</h1></li>
       </ul>
@@ -36,6 +36,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   //  import CustomPicture from '../../components/CustomPicture'
+  import PagerComponent from '../../components/PagerComponent'
   export default {
     data() {
       return {
@@ -49,7 +50,7 @@
     mounted() {
 
     },
-    components: {PostTag,}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style>

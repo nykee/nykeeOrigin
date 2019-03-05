@@ -70,7 +70,7 @@ router.afterEach(route => {
 
 function easeScroll(ms) {
   let scrollY = window.scrollY,
-    step = 50;
+    step = 100;
   // console.log(scrollY);;
 
   let timer = setInterval(function () {

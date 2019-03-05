@@ -1,6 +1,6 @@
 <template>
   <Row type="flex" align="center" justify="center" class="blog-container">
-    <i-col :lg="{span:14}" class="blog-content">
+    <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
       <ul class="title-list">
         <li><h1 class="title">Node.js大众点评爬虫</h1></li>
         <li class="list-items">语言: Node.js</li>
@@ -15,6 +15,15 @@
       </ol>
 
       <PostTag :postTime="postTime"/>
+
+      <PagerComponent
+        prvUrl="FrontEndTricks"
+        prvBgSrc="https://image.nykee.cn/html2.jpg"
+        prvBlogTitle="前端技巧汇总，包括CSS,JS"
+
+      >
+      </PagerComponent>
+
     </i-col>
 
   </Row>
@@ -23,6 +32,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import PagerComponent from '../../components/PagerComponent'
 
   export default {
     data() {
@@ -38,7 +48,7 @@
 
     },
     components: {
-      PostTag
+      PostTag,PagerComponent
     }
   }
 </script>

@@ -1,6 +1,6 @@
 <template>
    <Row type="flex" align="center" justify="center">
-     <i-col :lg="{span:14}" class="blog-content">
+     <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
        <ul class="title-list">
          <li><h1 class="title">echarts学习笔记</h1></li>
        </ul>
@@ -118,6 +118,16 @@
           </pre>
        </div>
        <PostTag :postTime="postTime"/>
+
+       <PagerComponent
+         prvUrl="VueLearning"
+         prvBgSrc="https://image.nykee.cn/vue.jpg"
+         prvBlogTitle="Vue学习笔记"
+         next-url="BaiduMapLearning"
+         next-bg-src="https://image.nykee.cn/bdmap.jpg"
+         next-blog-title="百度地图学习笔记"
+       >
+       </PagerComponent>
      </i-col>
 
    </Row>
@@ -125,6 +135,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import PagerComponent from '../../components/PagerComponent'
 
   export default {
     data() {
@@ -139,7 +150,7 @@
     mounted() {
 
     },
-    components: {PostTag}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style>

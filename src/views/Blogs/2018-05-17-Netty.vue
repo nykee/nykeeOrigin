@@ -1,7 +1,7 @@
 <template>
     <Row type="flex" align="center" justify="center">
 
-        <i-col :lg="{span:14}" class="blog-content">
+        <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
             <ul class="title-list">
                 <li><h1 class="title">Netty心跳机制</h1></li>
             </ul>
@@ -263,12 +263,23 @@
                 </section>
             </div>
             <PostTag :postTime="postTime"/>
+
+          <PagerComponent
+            prvUrl="VueI18n"
+            prvBgSrc="https://image.nykee.cn/i18n.jpg"
+            prvBlogTitle="Vue-i18n实现国际化"
+            next-url="ReactLearning"
+            next-bg-src="https://image.nykee.cn/react.png"
+            next-blog-title="React学习笔记"
+          >
+          </PagerComponent>
         </i-col>
     </Row>
 </template>
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import PagerComponent from '../../components/PagerComponent'
 
   export default {
     data() {
@@ -284,7 +295,7 @@
     mounted() {
 
     },
-    components: {PostTag}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style>

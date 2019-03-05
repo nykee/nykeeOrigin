@@ -1,7 +1,7 @@
 <template>
   <div>
     <Row type="flex" align="center" justify="center">
-      <i-col :lg="{span:14}" class="blog-content">
+      <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
         <div class="blog-content">
           <ul class="title-list">
             <li><h1 class="title">MongoDB学习笔记</h1></li>
@@ -138,6 +138,16 @@
           <PostTag :postTime="postTime"/>
         </div>
 
+        <PagerComponent
+          prvUrl="BaiduMapLearning"
+          prvBgSrc="https://image.nykee.cn/bdmap.jpg"
+          prvBlogTitle="百度地图学习笔记"
+          next-url="FrontEndTricks"
+          next-bg-src="https://image.nykee.cn/html2.jpg"
+          next-blog-title="前端技巧汇总，包括CSS,JS"
+        >
+        </PagerComponent>
+
       </i-col>
     </Row>
 
@@ -146,7 +156,8 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
-  import IntroHeader from '../../components/IntroHeader.vue'
+  // import IntroHeader from '../../components/IntroHeader.vue'
+  import PagerComponent from '../../components/PagerComponent'
 
   export default {
     data() {
@@ -161,7 +172,7 @@
     mounted() {
 
     },
-    components: {PostTag,IntroHeader}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style>

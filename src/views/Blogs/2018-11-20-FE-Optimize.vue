@@ -1,6 +1,6 @@
 <template>
     <Row type="flex" align="center" justify="center" class="blog-container">
-        <i-col :lg="{span:18}" class="blog-content">
+        <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
             <section>
                 <ul class="title-list">
                     <li>
@@ -106,6 +106,15 @@
 
                 <PostTag :postTime="postTime"/>
             </section>
+          <PagerComponent
+            next-url="VueI18n"
+            next-bg-src="https://image.nykee.cn/i18n.jpg"
+            next-blog-title="Vue-i18n实现国际化"
+            prvUrl="Ayada"
+            prvBgSrc="https://image.nykee.cn/back.jpg"
+            prvBlogTitle="阿雅达蜜月之旅"
+          >
+          </PagerComponent>
         </i-col>
 
     </Row>
@@ -113,8 +122,11 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import PagerComponent from '../../components/PagerComponent'
+  import updatePV from "../../mixins/index"
 
   export default {
+    mixins:[updatePV],
     data() {
       return {
         postTime: '2018-11-20',
@@ -125,9 +137,9 @@
 
     },
     mounted() {
-
+      updatePV.methods.updatePV("22")
     },
-    components: {PostTag}
+    components: {PostTag,PagerComponent}
   }
 </script>
 <style>
