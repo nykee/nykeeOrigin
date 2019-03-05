@@ -1,6 +1,4 @@
-
-export default {
-
+const mixin={
   methods:{
     updatePV(articleID){
       console.log(articleID);
@@ -9,13 +7,13 @@ export default {
       };
       axios.post("/Blogs/UpdatePV",param)
         .then((res)=>{
-            console.log(res);
+          console.log(res);
         })
         .catch((err)=>{
-            console.log(err);
+          console.log(err);
         })
 
     }
   }
-
-}
+};
+export default mixin;
