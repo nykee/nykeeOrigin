@@ -5,7 +5,7 @@ import {
   CHANGE_BLOGMENU_ACTIVENAME,
   CHANGE_PLAYSTATUS,
   INITIAL_SONGLISTS,
-  GET_SONGLISTS
+  GET_SONGLISTS,GET_PV
 } from './mutation-types'
 
 // Vue.use(Vuex);
@@ -15,7 +15,9 @@ export default new Vuex.Store(
       blogMenuActiveName: "1",
       playStatus: "paused",
       song_current: [],
-      songLists: null
+      songLists: null,
+        blogId:1,
+        pv:0
     },
     mutations: {
       [CHANGE_BLOGMENU_ACTIVENAME](state, newActiveName) {
@@ -31,7 +33,11 @@ export default new Vuex.Store(
       },
       [GET_SONGLISTS](state) {
         return state.songLists;
-      }
+      },
+        [GET_PV](state,pv){
+          state.pv = pv;
+        }
+
     },
     actions: {
       initialSongLists(context) {
@@ -48,6 +54,36 @@ export default new Vuex.Store(
         });
         context.commit("INITIAL_SONGLISTS", result)
       },
+        getPV(context,params){
+          let result=null;
+            axios.get("/Blog/QueryBlogPV",params)
+                .then((res)=>{
+                    // console.log(res.data);
+                    result =res.data;
+                    // return res.data;
+                })
+                .catch((err)=>{
+                    console.log(err);
+                });
+            context.commit("GET_PV",result)
+        },
+        updatePV(context){
+            let param ={
+                id:articleID,
+                viewSum:viewSum
+            };
+
+            axios.post("/Blog/UpdateBlogPV",param)
+                .then((res)=>{
+                    console.log(res);
+                    return res;
+                })
+                .catch((err)=>{
+                    console.log(err);
+                })
+
+        }
+        }
     }
-  }
+
 )

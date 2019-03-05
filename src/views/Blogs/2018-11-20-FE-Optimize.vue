@@ -123,10 +123,12 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
-  import updatePV from "../../mixins/index"
+  import mixin_PV from "../../mixins/index"
+
 
   export default {
-    mixins:[updatePV],
+//    mixins:[mixin_PV],
+
     data() {
       return {
         postTime: '2018-11-20',
@@ -137,7 +139,7 @@
 
     },
     mounted() {
-      updatePV.methods.updatePV("22")
+        store.dispatch("getPV",{params:{id:"1"}})
     },
     components: {PostTag,PagerComponent}
   }
