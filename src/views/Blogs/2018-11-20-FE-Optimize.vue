@@ -123,7 +123,8 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
-  import mixin_PV from "../../mixins/index"
+  import mixin_PV from "../../mixins/index";
+  import store from "../../store/store"
 
 
   export default {

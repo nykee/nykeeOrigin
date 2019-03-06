@@ -30,8 +30,8 @@
 
       </i-col>
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
-        <Timeline class="time-line" v-for="item in items" :key="item.activity">
-          <TimelineItem >
+        <Timeline class="time-line" >
+          <TimelineItem  v-for="item in items" :key="item.activity">
             <p class="time">{{item.time}}</p>
             <p class="content">{{item.activity}}</p>
           </TimelineItem>
