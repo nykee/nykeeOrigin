@@ -862,6 +862,7 @@
         mounted() {
           this.isMobile =isMobile();
         this.uIP=  returnCitySN["cip"];
+        console.log(this.uIP);
           let self = this;
           this.spinShow =true;
           axios.get("/Comment/QueryCommentsCount")

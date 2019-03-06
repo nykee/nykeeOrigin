@@ -124,23 +124,45 @@
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
   import mixin_PV from "../../mixins/index";
-  import store from "../../store/store"
+  // import store from "../../store/store"
 
 
   export default {
-//    mixins:[mixin_PV],
+   mixins:[mixin_PV],
 
     data() {
       return {
         postTime: '2018-11-20',
+        // pv:mixin_PV.data().pv
+        b_id:"12"
       }
+    },
+    computed:{
+      /*pv(){
+        console.log(this.$store.state);
+        return this.$store.state.blog.pv
+      }*/
     },
     methods: {},
     created: function () {
 
     },
     mounted() {
-        store.dispatch("getPV",{params:{id:"1"}})
+     // mixin_PV.methods.getPV("1");
+     // console.log(this.pv);
+      /* this.$store.dispatch("getPV",{params:{id:"12"}});
+       let pv_old = this.$store.state.blog.pv;
+      console.log("pv_old:"+pv_old);*/
+      let getPV_promise =mixin_PV.methods.getPV(this.b_id);
+      let pvs;
+      getPV_promise.then((v)=>{
+        pvs=v;
+        pvs+=1;
+        let updatePV_promise= mixin_PV.methods.updatePV(this.b_id,pvs.toString());
+        updatePV_promise.then((v)=>{
+          console.log(v);
+        })
+      });
     },
     components: {PostTag,PagerComponent}
   }

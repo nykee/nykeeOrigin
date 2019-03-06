@@ -1,13 +1,13 @@
 import Vuex from 'vuex'
 // import Vue from 'vue';
 import axios from 'axios';
-import {
-  CHANGE_BLOGMENU_ACTIVENAME,
-  CHANGE_PLAYSTATUS,
-  INITIAL_SONGLISTS,
-  GET_SONGLISTS,GET_PV
-} from './mutation-types'
-
+// import {
+//   CHANGE_BLOGMENU_ACTIVENAME,
+//   CHANGE_PLAYSTATUS,
+//   INITIAL_SONGLISTS,
+//   GET_SONGLISTS,GET_PV
+// } from './mutation-types'
+import * as types from "./mutation-types"
 // Vue.use(Vuex);
 export default new Vuex.Store(
   {
@@ -16,28 +16,38 @@ export default new Vuex.Store(
       playStatus: "paused",
       song_current: [],
       songLists: null,
-        blogId:1,
-        pv:0
+       blog:{
+        id:1,
+         pv:0
+       }
     },
     mutations: {
-      [CHANGE_BLOGMENU_ACTIVENAME](state, newActiveName) {
+      [types.CHANGE_BLOGMENU_ACTIVENAME](state, newActiveName) {
         state.blogMenuActiveName = newActiveName;
       },
-      [CHANGE_PLAYSTATUS](state) {
+      [types.CHANGE_PLAYSTATUS](state) {
         state.playStatus = (state.playStatus === "paused") ? "playing" : "paused"
       },
-      [INITIAL_SONGLISTS](state, data) {
+      [types.INITIAL_SONGLISTS](state, data) {
         console.log(data);
         state.songLists = data;
 
       },
-      [GET_SONGLISTS](state) {
+      [types.GET_SONGLISTS](state) {
         return state.songLists;
       },
-        [GET_PV](state,pv){
-          state.pv = pv;
+        [types.GET_PV](state,value){
+        // console.log("进入mutation");
+        // console.log(value);
+        // console.log(pv);
+          state.blog.pv = value;
+          // console.log(state.pv);
+          // return state.pv;
         }
 
+    },
+    getters:{
+      getPV:state => state.blog.pv
     },
     actions: {
       initialSongLists(context) {
@@ -55,17 +65,19 @@ export default new Vuex.Store(
         context.commit("INITIAL_SONGLISTS", result)
       },
         getPV(context,params){
-          let result=null;
+        // console.log("进去action");
+        console.log(params);
+          // let result=null;
             axios.get("/Blog/QueryBlogPV",params)
                 .then((res)=>{
                     // console.log(res.data);
-                    result =res.data;
+                  context.commit("GET_PV",res.data)
                     // return res.data;
                 })
                 .catch((err)=>{
                     console.log(err);
                 });
-            context.commit("GET_PV",result)
+
         },
         updatePV(context){
             let param ={

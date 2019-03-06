@@ -47,11 +47,14 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import mixin_PV from "../../mixins/index";
 
   export default {
+    mixins:[mixin_PV],
     data() {
       return {
-        postTime: '2017-11-07'
+        postTime: '2017-11-07',
+        b_id:"9"
       }
     },
     methods: {},
@@ -59,7 +62,19 @@
 
     },
     mounted() {
-
+      /*this.$store.dispatch("getPV",{params:{id:"9"}});
+      let pv_old = this.$store.state.blog.pv;
+      console.log("pv_old:"+pv_old);*/
+      let getPV_promise =mixin_PV.methods.getPV(this.b_id);
+      let pvs;
+      getPV_promise.then((v)=>{
+        pvs=v;
+        pvs+=1;
+        let updatePV_promise= mixin_PV.methods.updatePV(this.b_id,pvs.toString());
+        updatePV_promise.then((v)=>{
+          console.log(v);
+        })
+      });
     },
     components: {PostTag,PagerComponent}
   }

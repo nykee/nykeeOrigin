@@ -2,7 +2,7 @@
   <div>
     <!--PC Nav-->
     <Row>
-      <Menu v-if="!isMobile" ref="myMenu" mode="horizontal" theme="light" active-name="2" class="menu">
+      <Menu v-if="!isMobile" ref="myMenu" mode="horizontal" theme="light" active-name="2"  class="menu">
         <i-col :lg="{span:4}"
                :md="{span:4}"
                :sm="{span:4}"
@@ -105,11 +105,18 @@
             value: 'Japanese',
             label: '日本語'
           },
-        ]
+        ],
+        // isSticky:false
+        // scroll:0
 
       }
     },
     methods: {
+     /* handleScroll(){
+          let scrollTop = document.body.scrollTop ||document.documentElement.scrollTop;
+          // console.log(scrollTop);
+          this.isSticky = scrollTop > 20;
+      },*/
 
       changeActive() {
         this.$nextTick(() => {
@@ -184,6 +191,11 @@
         });
       });
       this.isMobile = window.screen.width < 769;
+      // this.scroll =document.body.scrollTop||document.documentElement.scrollTop;
+      /*window.addEventListener("scroll",()=>{
+        this.handleScroll()
+      })*/
+
 
     },
 
@@ -214,6 +226,17 @@
     left: 5px;
     z-index: 3;
     margin-left: 2rem;
+  }
+  .sticky-menu{
+    /*position: sticky;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    background: #7c8186;
+    opacity: .7;
+    /*margin-top: -40px;*/
   }
 
   .ivu-menu-horizontal.ivu-menu-light:after {
