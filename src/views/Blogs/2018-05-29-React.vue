@@ -114,7 +114,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
     data() {
       return {
         postTime: '2017-11-08',
-        b_id:"9"
+        b_id:"4"
       }
     },
     methods: {},

@@ -143,7 +143,7 @@
     data() {
       return {
         postTime: '2017-09-21',
-        b_id:"4"
+        b_id:"7"
       }
     },
     methods: {},

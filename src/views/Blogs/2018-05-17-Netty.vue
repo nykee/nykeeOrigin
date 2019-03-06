@@ -288,7 +288,7 @@
 
       return {
         postTime: '2017-05-17',
-        b_id:"10"
+        b_id:"3"
       }
     },
     methods: {},

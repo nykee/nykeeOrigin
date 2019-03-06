@@ -124,7 +124,7 @@
     data() {
       return {
         postTime: '2017-09-26',
-        b_id:"5"
+        b_id:"6"
       }
     },
     methods: {},

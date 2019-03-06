@@ -165,7 +165,7 @@
     data() {
       return {
         postTime: '2017-02-14',
-        b_id:"2"
+        b_id:"9"
       }
     },
     methods: {},
@@ -188,6 +188,10 @@
       });
     },
     components: {PostTag,PagerComponent}
+
+    /*
+    *
+    * */
   }
 </script>
 <style>

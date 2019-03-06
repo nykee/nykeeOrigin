@@ -27,7 +27,8 @@
 </template>
 <script>
 import BlogCard from "../../components/BlogCard.vue"
-import NoMoreBlogBaseLine from "../../components/NoMoreBlogBaseLine"
+import NoMoreBlogBaseLine from "../../components/NoMoreBlogBaseLine";
+import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowScroll"
     export default {
 
         data() {
@@ -55,9 +56,15 @@ import NoMoreBlogBaseLine from "../../components/NoMoreBlogBaseLine"
           })
           .catch((err)=>{
               console.log(err);
-          })
+          });
+        window.addEventListener("scroll",this.handleScroll)
+
       },
       methods:{
+          handleScroll(){
+            let sT=getScrollTop();
+            console.log(sT);
+          },
         loadMoreBlogs(){
           this.isLoading = true;
           this.offset+=5;

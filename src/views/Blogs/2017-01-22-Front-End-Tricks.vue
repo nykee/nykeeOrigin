@@ -410,7 +410,7 @@
         sc: `<script src="//domain.com/path/to/script.js">`,
         postTime: '2017-01-22',
         screenWidth: 0,
-        b_id:"1"
+        b_id:"10"
       }
     },
     methods: {},

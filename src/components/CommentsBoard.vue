@@ -556,6 +556,26 @@
             else
               return false;
           },
+          QueryCommentsInitial:function(){
+            let self = this;
+            this.spinShow =true;
+            self.commentsAndReplySum+=1;
+            self.commentSFromDB=[];
+            self.nickName ="";
+            self.email ='';
+            self.comments='';
+            axios.get("/Comment/QueryCommentsInitial")
+              .then((res)=>{
+                // console.log(res.data);
+                for(let i=0,len =res.data.length;i<len;i++){
+                  self.commentSFromDB .push(res.data[i]) ;
+                }
+                this.spinShow =false;
+              })
+              .catch((err)=>{
+                console.warn(err);
+              });
+          },
           submitComments:function(){
             let self= this;
             let browser = this.getBrowserInfo();
@@ -596,6 +616,7 @@
                           duration: 3
                         })
                       }
+                     self.QueryCommentsInitial();
                     })
                     .catch((err)=>{
                       console.log(err);
@@ -612,6 +633,10 @@
                           duration: 3
                         })
                       }
+
+
+                      self.QueryCommentsInitial();
+
                     })
                     .catch((err)=>{
                       console.log(err);
@@ -621,7 +646,10 @@
 
               }
             }
-           location.reload();
+
+
+
+           // location.reload();
             window.scrollTo(0,0)
           },
           addEmoji(code){

@@ -110,7 +110,7 @@
     data() {
       return {
         postTime: '2017-06-08',
-        b_id:"3"
+        b_id:"8"
       }
     },
     methods: {},

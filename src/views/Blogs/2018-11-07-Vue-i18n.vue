@@ -202,7 +202,7 @@
             return {
               postTime:'2018-11-07',
               i18nVar:"{{ $t(\"message.变量\") }}",
-              b_id:"11"
+              b_id:"2"
             }
         },
         methods: {},

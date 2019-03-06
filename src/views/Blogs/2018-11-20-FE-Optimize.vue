@@ -134,7 +134,7 @@
       return {
         postTime: '2018-11-20',
         // pv:mixin_PV.data().pv
-        b_id:"12"
+        b_id:"1"
       }
     },
     computed:{
