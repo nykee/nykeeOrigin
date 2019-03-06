@@ -50,7 +50,7 @@
                 <div class="title-lv1">三 webpack开启GZIP</div>
                 <p class="title-lv2">1、npm安装compression-webpack-plugin,修改config.build.productionGzip为true</p>
                 <pre>
-        <code>
+        <code class="code-text">
           if (config.build.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 

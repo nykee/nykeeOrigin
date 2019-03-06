@@ -35,7 +35,7 @@
       "githubAdd":""
     },
     "projects_inno":{
-      "name":"逸动云平台",
+      "name":"逸动云平台初版",
       "description_1":"公司云平台初版，负责前后端架构设计与搭建 ",
       "description_2":"前台采用JQuery+BootStrap+css3，后台使用SSM框架",
       "description_3":"数据可视化采用百度echarts",
@@ -43,32 +43,34 @@
       "githubAdd":""
     },
     "projects_innoVue":{
-      "name":"inno云平台 build by Vue",
-      "description_1":"云平台项目使用Vue重构",
-      "githubAdd":"https://github.com/nykee/innooooVue"
+      "name":"逸动云平台Vue重构版本",
+      "description_1":"逸动云平台第二版使用Vue重构，前端使用Vue全家桶，后端仍然维持为JAVA SSM框架",
+      "description_2":"功能上实现了文件上传、病例测试数据报告生成、病例测试数据报告各个分辨率适配、报告的导出功能(html2canvas+jsPdf)、病例树状目录显示与查找筛选，报告结论与PC端软件接口对接完成数据同步",
+      "description_3":"也是包揽前后端的工作，后端主要是与公司的matlab对接，java调用matlab生成的jar包，计算结果返回给前端；前端收到数据后将其渲染到数据表格及图表容器中",
+      "githubAdd":""
     },
     "projects_fluoVue":{
       "name":"FluoMotion云平台 build by Vue",
       "description_1":"FluoMotion云平台用Vue.js进行重写",
       "description_2":"iview",
-      "githubAdd":"https://github.com/nykee/innooooVue"
+      "githubAdd":""
     },
     "projects_fluoReact":{
       "name":"FluoMotion云平台 build by React",
       "description_1":"react重写了FluoMotion平台，作为react练手",
       "description_2":"UI组件库使用的阿里的ant-d",
-      "githubAdd":"https://github.com/nykee/nykeeMotionVReact"
+      "githubAdd":""
     },
     "projects_nykee":{
       "name":"个人网站www.nykee.cn",
       "description_1":"个人网站用来写写博客随便记录点什么东西",
-      "description_2":"使用Vue、iview、vue-router、Vuex全家桶开发，进行了i18n国际化适配及响应式适配",
+      "description_2":"使用Vue、iview、vue-router、Vuex全家桶开发的SPA，进行了i18n国际化适配及响应式适配",
       "description_3":"优化首屏加载：iview按需加载，第三方依赖CDN引入，图片压缩使用Webp格式并部署在又拍云，webpack与后端配置Gzip压缩",
-      "description_4":"",
+      "description_4":"用了第三方开源的qq音乐API，写了一个播放音乐的小组件",
       "description_5":"购买了域名www.nykee.cn进行绑定",
-      "description_6":"前期部署于github上，目前已迁移至阿里云",
+      "description_6":"前期部署于github page上，后期迁移至阿里云",
       "description_7":"后端使用了JAVA,SSM框架",
-      "githubAdd":"https://github.com/nykee/nykee.github.io"
+      "githubAdd":""
     },
     "projects_dzdp":{
       "name":"大众点评NodeJS爬虫",
@@ -76,6 +78,19 @@
       "description_2":"使用大众点评的API",
       "description_3":"superagent发起请求,cheerio解析网页,async控制并发",
       "githubAdd":"https://github.com/nykee/dzdp_spider"
+    },
+    "projects_wkzf":{
+      "name":"悟空找房EAS项目",
+      "description_1":"金蝶EAS财务软件二次开发项目，甲方为悟空找房",
+      "description_2":"悟空找房自有财务系统与金蝶EAS系统之间使用WebService推送单据开发：1、基于金蝶自有封装的WebService进行开发、2、WebService接口联调、3、WebService的测试及发布",
+      "description_3":"悟空找房项目EAS报销流程二次开发配置：1、报销单单据界面配置（包括桌面端与web页面单据布局配置与单据字段配置）2、工作流EAS客户端配置与二次开发 （包括角色配置、报销金额条件判断、流程跳转等）3、报销单单据流程测试（本地软件模拟测试、测试环境人员测试、生产环境实际测试）",
+      "githubAdd":""
+    },
+    "projects_eleme":{
+      "name":"react仿写饿了么",
+      "description_1":"用antd仿写的饿了么spa",
+      "description_2":"移动端手势库使用了react-swipe,主要用到了天气API和腾讯地址定位,下拉刷新",
+      "githubAdd":""
     },
     "photoPage":{
 

@@ -47,22 +47,26 @@
           {
             id: 3,
             pName: this.$t("message.projects_innoVue.name"),
-            desc: [this.$t("message.projects_innoVue.description_1"),],
-            github: 'https://github.com/nykee/innooooVue',
-            stack: 'Vue'
+            desc: [
+                this.$t("message.projects_innoVue.description_1"),
+                this.$t("message.projects_innoVue.description_2"),
+                this.$t("message.projects_innoVue.description_3"),
+            ],
+//            github: 'https://github.com/nykee/innooooVue',
+            stack: 'Vue、SSM'
           },
           {
             id: 4,
             pName: this.$t("message.projects_fluoVue.name"),
             desc: [this.$t("message.projects_fluoVue.description_1"), this.$t("message.projects_fluoVue.description_2"),],
-            github: 'https://github.com/nykee/nykeeMotion',
+//            github: 'https://github.com/nykee/nykeeMotion',
             stack: 'Vue'
           },
           {
             id: 5,
             pName: this.$t("message.projects_fluoReact.name"),
             desc: [this.$t("message.projects_fluoReact.description_1"), this.$t("message.projects_fluoReact.description_2"),],
-            github: 'https://github.com/nykee/nykeeMotionVReact',
+//            github: 'https://github.com/nykee/nykeeMotionVReact',
             stack: 'Ant-d React'
           },
           {
@@ -71,7 +75,7 @@
             desc: [this.$t("message.projects_nykee.description_1"),
               this.$t("message.projects_nykee.description_2"),
               this.$t("message.projects_nykee.description_3"),
-              // this.$t("message.projects_nykee.description_4"),
+               this.$t("message.projects_nykee.description_4"),
               this.$t("message.projects_nykee.description_5"),
               this.$t("message.projects_nykee.description_6"),
               this.$t("message.projects_nykee.description_7"),
@@ -88,6 +92,15 @@
             github: 'https://github.com/nykee/dzdp_spider',
             stack: 'NodeJS'
           },
+            {
+                id: 8,
+                pName: this.$t("message.projects_wkzf.name"),
+                desc: [this.$t("message.projects_wkzf.description_1"),
+                    this.$t("message.projects_wkzf.description_2"),
+                    this.$t("message.projects_wkzf.description_3"),],
+                github: '',
+                stack: 'Java'
+            },
         ],
 
 
