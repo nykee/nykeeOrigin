@@ -80,6 +80,9 @@
             next-url="FeOpt"
             next-bg-src="https://image.nykee.cn/feopt.jpg"
             next-blog-title="前端性能优化"
+            prvUrl="FeInterview"
+            prvBgSrc="https://image.nykee.cn/cartoon2.jpg"
+            prvBlogTitle="前端面试题总结"
           >
           </PagerComponent>
         </i-col>

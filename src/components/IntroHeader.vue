@@ -6,18 +6,18 @@
           <span class="site-heading-subtitle">{{subTitle}}</span>
         </div>
       </div>
-      <!--<div  class="intro-container" v-if="isProj">-->
-        <!--<div class="site-heading">-->
-          <!--<h1 class="site-heading-title">{{Title}}</h1>-->
-          <!--<span class="site-heading-subtitle">{{subTitle}}</span>-->
-        <!--</div>-->
-        <!--<div id="particles" ></div>-->
-      <!--</div>-->
+      <div  class="proj-container" v-if="isProj">
+        <div class="site-heading">
+          <h1 class="site-heading-title">{{Title}}</h1>
+          <span class="site-heading-subtitle">{{subTitle}}</span>
+        </div>
+        <div id="particles" ></div>
+      </div>
     </header>
 </template>
 
 <script>
-  // import particlesJS from "particlesJS"
+//   import particlesJS from "particles.js"
   // import {checkWebp} from "../utils/WebPutil"
 
   export default {
@@ -37,7 +37,8 @@
     methods: {
 
       myParticles() {
-        particlesJS.load('particles', "../../utils/particles.json", function () {
+//          console.log(particlesJS)
+        particlesJS.load('particles', "../../static/particles.json", function () {
           console.log('callback - particles.js config loaded');
         });
       }
@@ -48,7 +49,7 @@
     mounted() {
 //        console.log(location.pathname)
         if(location.pathname ==="/Project"){
-          // this.isProj = true;
+           this.isProj = true;
             this.myParticles();
         }
 //      this.myParticles();
@@ -111,6 +112,10 @@
     height: 25rem;
     /*margin-bottom: .4rem;*/
     /*background-image: url("https://image.nykee.cn/HK.jpg");*/
+  }
+  .proj-container{
+      /*width: 100%;*/
+      height:25rem;
   }
 
   .site-heading {
