@@ -19,7 +19,7 @@
         </Row>
         <Row type="flex" justify="center" align="middle" class="bottom-line-row">
 
-            <Button class="load-more-btn" @click="loadMoreBlogs" v-if="!isLoading&&!noMoreBlogs">加载更多</Button>
+            <!--<Button class="load-more-btn" @click="loadMoreBlogs" v-if="!isLoading&&!noMoreBlogs">加载更多</Button>-->
             <Spin size="large" v-if="isLoading&&!noMoreBlogs" class="loading-spin"></Spin>
             <NoMoreBlogBaseLine v-if="noMoreBlogs"></NoMoreBlogBaseLine>
         </Row>
@@ -62,8 +62,16 @@ import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowSc
       },
       methods:{
           handleScroll(){
-            let sT=getScrollTop();
-            console.log(sT);
+            let scrollT=getScrollTop();
+            console.log("scrolltop"+scrollT);
+            let scrollH = getScrollHeight();
+              console.log("scrollH"+scrollH);
+              let windH = getWindowHeight();
+              console.log("windH"+windH);
+              if(scrollT+windH ===scrollH){
+                  this.loadMoreBlogs();
+              }
+
           },
         loadMoreBlogs(){
           this.isLoading = true;
@@ -101,17 +109,9 @@ import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowSc
     .bottom-line-row{
         margin-top:4rem;
     }
-    .load-more-btn{
-        /*margin-top:4rem;*/
-        padding: .8rem 2rem;
-        border-radius: 14px;
-    }
+
   @media screen and (max-width: 414px){
-    .load-more-btn{
-      /*margin-top:3rem;*/
-      padding: .6rem 1.4rem;
-      border-radius: 14px;
-    }
+
       .bottom-line-row{
           margin-top:3rem;
       }
