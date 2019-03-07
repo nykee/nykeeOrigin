@@ -4,13 +4,13 @@
       <i-col :lg={span:2}
              :md={span:2}
              :sm={span:2}
-             :xs={span:2}>
+             :xs={span:4}>
         <Avatar icon="ios-person" size="large" :src="avatar"/>
       </i-col>
       <i-col :lg={span:18}
              :md={span:18}
              :sm={span:18}
-             :xs={span:18}>
+             :xs={span:16}>
         <ul>
           <li class="nickname-li">
             {{nickName}}

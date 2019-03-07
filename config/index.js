@@ -28,7 +28,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/Comment/*":{
+      /*"/Comment/*":{
         target:"http://127.0.0.1:8081/",
         crossOrigin:true,
         changeOrigin: true,
@@ -37,18 +37,18 @@ module.exports = {
         target:"http://127.0.0.1:8081/",
         crossOrigin:true,
         changeOrigin: true,
-      },
+      },*/
 
-        /*"/Comment/!*":{
+        "/Comment/*":{
             target:"http://127.0.0.1:8080/",
             crossOrigin:true,
             changeOrigin: true,
         },
-        "/Blog/!*":{
+        "/Blog/*":{
             target:"http://127.0.0.1:8080/",
             crossOrigin:true,
             changeOrigin: true,
-        },*/
+        },
       // "/getAvatar":{
       //   target:"https://ptlogin2.qq.com/",
       //   crossOrigin:true,

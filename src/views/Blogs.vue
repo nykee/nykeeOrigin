@@ -2,7 +2,7 @@
   <div>
     <IntroHeader
             Title="Nykee Blog"
-            introHeaderClass="intro-header-blogs intro-header-blogs-webp"
+            introHeaderClass="intro-header-blogs"
             subTitle="Talk is cheap,show me ur code~"
             :isProjectPage="false">
     </IntroHeader>

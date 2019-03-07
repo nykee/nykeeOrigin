@@ -2,7 +2,7 @@
   <div>
     <IntroHeader
             Title="Something"
-            introHeaderClass="intro-header-comments intro-header-comments-webp"
+            introHeaderClass="intro-header-comments"
             subTitle="interesting or not"
             :isProjectPage="false"/>
     <Comment/>

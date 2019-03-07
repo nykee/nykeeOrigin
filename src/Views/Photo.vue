@@ -2,7 +2,7 @@
   <div>
     <IntroHeader
             Title="See the world"
-            introHeaderClass="intro-header-photo intro-header-photo-webp"
+            introHeaderClass="intro-header-photo"
             subTitle="With my eyes and my camera!"
             :isProjectPage="false"/>
     <div class="flexContainer">

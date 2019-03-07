@@ -85,6 +85,7 @@
             prvBlogTitle="前端面试题总结"
           >
           </PagerComponent>
+            <Comment></Comment>
         </i-col>
 
     </Row>
@@ -94,6 +95,7 @@
     import PostTag from '../../components/PostTag.vue'
     import CustomPicture from '../../components/CustomPicture.vue'
     import PagerComponent from '../../components/PagerComponent'
+    import Comment from '../../components/CommentsBoard.vue'
     import mixin_PV from "../../mixins/index";
 
     export default {
@@ -130,7 +132,7 @@
 
 
         },
-        components: {PostTag,CustomPicture,PagerComponent}
+        components: {PostTag,CustomPicture,PagerComponent,Comment}
     }
 </script>
 <style>

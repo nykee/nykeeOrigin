@@ -3,7 +3,6 @@
     <IntroHeader
             Title="My Projects"
             imgSrc="https://image.nykee.cn/index.jpg"
-            introHeaderClass="intro-header-proj"
             subTitle="Think Different!"
             :isProjectPage="false"></IntroHeader>
 

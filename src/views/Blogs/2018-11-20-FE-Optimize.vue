@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <Row type="flex" align="center" justify="center" class="blog-container">
         <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
             <section>
