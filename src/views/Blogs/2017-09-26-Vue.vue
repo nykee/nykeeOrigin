@@ -98,6 +98,18 @@
             >一般来说， v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件不太可能改变，则使用 v-if 较好。
           </p>
         </div>
+        <div>
+          <h3>杂项累积经验</h3>
+          <p>
+            ElementUi及iView中对键盘input事件进行监听需要加上.native， 因为elementUI对input进行了封装，原生的事件不起作用。
+            eg: </p>
+            <pre>
+          <code class="code-text">
+            &lg;el-input v-model="form.name" placeholder="昵称" @input.native="submit">&lg;/el-input>
+          </code>
+        </pre>
+
+        </div>
       </div>
       <PostTag :postTime="postTime"/>
 

@@ -18,52 +18,52 @@
                 <h3 class="photo-title">阿雅达的标志性建筑--白色灯塔</h3>
 
                 <CustomPicture imgSrc="https://image.nykee.cn/tower.jpeg"
-                               srcSet="https://image.nykee.cn/tower.jpeg"
+                               srcSet="https://image.nykee.cn/tower.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">reception还有一个迷你版的灯塔</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/aya_minitower.jpg"
-                               srcSet="https://image.nykee.cn/aya_minitower.jpg"
+                               srcSet="https://image.nykee.cn/aya_minitower.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">透过阿雅达的水瓶看大海</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/bottle.jpg"
-                               srcSet="https://image.nykee.cn/bottle.jpg"
+                               srcSet="https://image.nykee.cn/bottle.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">我们的沙屋房间号码是203，emmm还不错，离餐厅蛮近的，后面看看其实沙屋都差不多，没啥好位置和差位置之分</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/aya_203.jpg"
-                               srcSet="https://image.nykee.cn/aya_203.jpg"
+                               srcSet="https://image.nykee.cn/aya_203.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">水屋幸运地拿到了最好的520，不过也是用沙屋晚退房4个小时换来的，还是值得的</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/aya_520.jpg"
-                               srcSet="https://image.nykee.cn/aya_520.jpg"
+                               srcSet="https://image.nykee.cn/aya_520.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">沙滩上的寄居蟹，photo by LP大人</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/aya_crab.jpg"
-                               srcSet="https://image.nykee.cn/aya_crab.jpg"
+                               srcSet="https://image.nykee.cn/aya_crab.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">蜜月晚餐点的饮料,Blue Ocean，颜色是Tiffany蓝的，味道还不错</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/aya_cheers.jpg"
-                               srcSet="https://image.nykee.cn/aya_cheers.jpg"
+                               srcSet="https://image.nykee.cn/aya_cheers.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">在水屋的日出</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/aya_sunrise.jpg"
-                               srcSet="https://image.nykee.cn/aya_sunrise.jpg"
+                               srcSet="https://image.nykee.cn/aya_sunrise.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">Ocean Breeze餐厅拍的日落，印度洋的晚霞</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/sunset.jpg"
-                               srcSet="https://image.nykee.cn/sunset.jpg"
+                               srcSet="https://image.nykee.cn/sunset.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <h3 class="photo-title">落日晚霞，岁月静好，身边有你</h3>
                 <CustomPicture imgSrc="https://image.nykee.cn/back.jpg"
-                               srcSet="https://image.nykee.cn/back.jpg"
+                               srcSet="https://image.nykee.cn/back.webp"
                                className="commonBlogImg"
                 ></CustomPicture>
                 <Divider>手动分割线</Divider>

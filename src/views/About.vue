@@ -2,7 +2,7 @@
   <div >
     <IntroHeader
             Title="About"
-            introHeaderClass="intro-header-about"
+            introHeaderClass="intro-header-about intro-header-about-webp"
             subTitle="timeline etc"
             :isProjectPage="false"/>
     <!--网站简介-->

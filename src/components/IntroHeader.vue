@@ -69,18 +69,16 @@
   .intro-header-index-webp {
     background-image: url("https://image.nykee.cn/index.webp");
   }
-  .intro-header-proj{
-      background-image: url("https://image.nykee.cn/code.jpg");
-  }
+
 
   .intro-header-blogs {
 
-      background-image: url("https://image.nykee.cn/tower_new.jpeg") ;
+      background-image: url("https://image.nykee.cn/tower_new.jpg") ;
 
   }
 
   .intro-header-blogs-webp {
-    background-image: url("https://image.nykee.cn/code.webp");
+    background-image: url("https://image.nykee.cn/tower_new.webp");
 
   }
 
@@ -93,11 +91,11 @@
   }
 
   .intro-header-about {
-    background-image: url("https://image.nykee.cn/qdh.jpg");
+    background-image: url("https://image.nykee.cn/about.jpg");
   }
 
   .intro-header-about-webp {
-    background-image: url("https://image.nykee.cn/qdh.webp") ;
+    background-image: url("https://image.nykee.cn/about.webp") ;
   }
   .intro-header-comments{background-image: url("https://image.nykee.cn/HK.jpg");}
   .intro-header-comments-webp{background-image: url("https://image.nykee.cn/HK.webp");}
