@@ -41,6 +41,7 @@ import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowSc
             }
         },
       mounted(){
+        window.addEventListener("scroll",this.handleScroll)
           this.isLoading =true;
         axios.get("/Blog/QueryBlogsInit")
           .then((res)=>{
@@ -57,7 +58,7 @@ import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowSc
           .catch((err)=>{
               console.log(err);
           });
-        window.addEventListener("scroll",this.handleScroll)
+
 
       },
       methods:{
@@ -65,7 +66,12 @@ import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowSc
             let scrollT=getScrollTop();
             let scrollH = getScrollHeight();
               let windH = getWindowHeight();
+              scrollT =Math.floor(scrollT)
+              console.log(scrollT);
+              console.log(scrollH);
+              console.log(windH);
               if(scrollT+windH ===scrollH){
+                console.log("bottom!!");
                   this.loadMoreBlogs();
               }
 
