@@ -67,13 +67,16 @@
 
 
   .intro-header-index-webp {
+
     background-image: url("https://image.nykee.cn/index.webp");
   }
 
 
   .intro-header-blogs {
 
+
       background-image: url("https://image.nykee.cn/tower_new.jpg") ;
+
 
   }
 

@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <Row type="flex" align="center" justify="center" class="blog-container">
         <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
             <section>
@@ -46,6 +47,7 @@
                         <img  src="https://image.nykee.cn/run_rpt.png" alt="" style="max-width: 90%">
                     </picture>
 
+
                 </div>
                 <div class="title-lv1">三 webpack开启GZIP</div>
                 <p class="title-lv2">1、npm安装compression-webpack-plugin,修改config.build.productionGzip为true</p>
@@ -70,6 +72,7 @@
 }
         </code>
       </pre>
+
                 <picture>
                     <source type="image/webp" srcset="https://image.nykee.cn/gzip.png" >
                     <img  src="https://image.nykee.cn/gzip.png" alt="">
@@ -95,6 +98,7 @@
                     <source type="image/webp" srcset="https://image.nykee.cn/gzipRes.jpg" >
                     <img  src="https://image.nykee.cn/gzipRes.jpg" alt="">
                 </picture>
+
 
                 <div class="title-lv1">三 总结</div>
 

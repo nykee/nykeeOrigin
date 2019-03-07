@@ -64,8 +64,13 @@
                 }
             </code>
           </pre>
+<<<<<<< HEAD
           <CustomPicture imgSrc="https://image.nykee.cn/string.webp"
                          srcSet="https://image.nykee.cn/string.jpg"/>
+=======
+          <CustomPicture imgSrc="http://image.nykee.cn/string.webp"
+                         srcSet="http://image.nykee.cn/string.jpg"/>
+>>>>>>> c8af39d9dffd9e105d07b3592590756d98cc6c69
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
@@ -114,11 +119,13 @@
     console.table(data);
             </code>
           </pre>
+
           <!--<CustomPicture imgSrc="https://image.nykee.cn/console.table.jpg"-->
           <!--srcSet="https://image.nykee.cn/console.table.webp" className="resp-img"/>-->
           <picture>
             <source type="image/webp" srcset="https://image.nykee.cn/console.table.webp" >
             <img src="https://image.nykee.cn/console.table.jpg" />
+
           </picture>
 
         </div>

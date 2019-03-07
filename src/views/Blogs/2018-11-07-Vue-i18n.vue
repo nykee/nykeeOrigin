@@ -14,6 +14,7 @@
             <div class="title-lv1">Step1 依赖安装及脚手架配置</div>
             <div class="descrp">
               <ul>
+<<<<<<< HEAD
                 <li class="steps">1、安装依赖：vue-i18n 、@kazupon/vue-i18n-loader</li>
                 <li class="steps">2、配置Vue-cli的配置文件：
                   <ul>
@@ -39,6 +40,7 @@
                       </picture>
                     </li>
                   </ul>
+
                 </li>
               </ul>
             </div>
