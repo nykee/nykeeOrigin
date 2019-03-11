@@ -3,9 +3,13 @@
     <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
       <ul class="title-list">
         <li><h1 class="title">Node.js大众点评爬虫</h1></li>
+        <section>
+          <PostTag :postTime="postTime" />
+        </section>
         <li class="list-items">语言: Node.js</li>
         <li class="list-items">日期: 2016/11/04</li>
       </ul>
+
       <ol class="descrp">概述：
         <li><i class="fa fa-dot-circle-o "></i>搜索了下网上的node.js爬虫，发现有个爬大众点评的，吃向来是中国人比较感兴趣的，就点进去逛了下</li>
         <li><i class="fa fa-dot-circle-o"></i>自己照葫芦画瓢写了个爬上海的美食的小爬虫</li>
@@ -14,7 +18,6 @@
         </li>
       </ol>
 
-      <PostTag :postTime="postTime"/>
 
       <PagerComponent
         prvUrl="FrontEndTricks"
@@ -23,6 +26,7 @@
 
       >
       </PagerComponent>
+      <Comment :bid="b_id"></Comment>
 
     </i-col>
 
@@ -34,6 +38,7 @@
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
   import mixin_PV from "../../mixins/index";
+  import Comment from '../../components/BlogComment'
 
   export default {
     mixins:[mixin_PV],
@@ -64,6 +69,7 @@
     },
     components: {
       PostTag,PagerComponent
+      ,Comment
     }
   }
 </script>

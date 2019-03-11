@@ -23,10 +23,11 @@
 </script>
 <style>
   .post-tag {
-    color: #CCCCCC;
+    color: #999;
     font-size: 18px;
     font-family: Lora, 'Times New Roman', serif;
     font-style: italic;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
   }
 </style>

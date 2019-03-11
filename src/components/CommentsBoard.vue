@@ -23,7 +23,6 @@
      <i-col v-if="!spinShow"
             :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}
             v-for="com in commentSFromDB" :key="com.id">
-       <!--<div style="height: 20rem;background: #ccc" v-if="isEmpty">留言板空空如也~~</div>-->
          <CommentItem :nick-name="com.nickName"
                       :content="com.content"
                       :avatar ="com.avatar"
@@ -31,8 +30,13 @@
                       :browser="com.browser"
                       :os="com.os"
                       :isp="com.isp"
-                      :cmt-id="com.id"/>
+                      :cmt-id="com.id"
+                      :parentBlogId="bid"
+         v-if="!isEmpty"/>
+
      </i-col>
+     <CommentEmptyStatus v-if="isEmpty"></CommentEmptyStatus>
+
    </Row>
     <!--footer评论输入区-->
     <Row type="flex" justify="center" align="middle" class="item-row">
@@ -136,10 +140,11 @@
   import EventBus from "../utils/EventBus"
   import CommentItem from './CommentItem'
   import Emotion from '../components/Emotion'
+  import CommentEmptyStatus   from "./CommentEmptyStatus"
     export default {
         data() {
             return {
-              // isEmpty:false,
+              isEmpty:false,
               commentsAndReplySum:0,
               commentsTotal:0,
               comments:'',
@@ -152,7 +157,6 @@
               isMobile:false,
               spinShow:false,
               isEmojShow:false,
-              // toogleEmojiTitle:"表情包大法biubiu",
               commentSFromDB:[],
               avatarSrc:'',
               isRouterAlive:false,
@@ -256,7 +260,7 @@
                 {
                   name:'NicoNicoNi~',
                   id:'niconiconit',
-                  code:':niconiconit',
+                  code:':Dniconiconi',
                   src:'https://image.nykee.cn/baidu_emoji/icon_niconiconit.gif'
                 },
                 {
@@ -303,14 +307,14 @@
                 },
                 {
                   name:'惊哭',
-                  id:'surprised',
-                  code:':surprised',
+                  id:'surprisedCry',
+                  code:':surprisedCry',
                   src:'https://image.nykee.cn/baidu_emoji/icon_surprised.gif'
                 },
                 {
                   name:'惊讶',
-                  id:'surprised2',
-                  code:':surprised2',
+                  id:'surprised',
+                  code:':surprised',
                   src:'https://image.nykee.cn/baidu_emoji/icon_surprised2.gif'
                 },
                 {
@@ -544,7 +548,8 @@
                 },
               ],
               isReplyMode:false,
-              cmt_id_reply_to:''
+              cmt_id_reply_to:'',
+              bid:"0"
             }
         },
         methods: {
@@ -564,7 +569,7 @@
             self.nickName ="";
             self.email ='';
             self.comments='';
-            axios.get("/Comment/QueryCommentsInitial")
+            axios.get("/Comment/QueryCommentsInitial",{params:{parentBlogId:self.bid}})
               .then((res)=>{
                 // console.log(res.data);
                 for(let i=0,len =res.data.length;i<len;i++){
@@ -604,7 +609,8 @@
                   avatar:this.avatarSrc,
                   browser:browser,
                   os:os,
-                  isp:this.ispInfo
+                  isp:this.ispInfo,
+                  parentBlogId:this.bid
                 };
                 if(!this.isReplyMode ){
                   axios.post("/Comment/insertNewComment",params)
@@ -631,7 +637,8 @@
                         self.$Message.success({
                           content: "回复成功！",
                           duration: 3
-                        })
+                        });
+                        self.isReplyMode =false;
                       }
 
 
@@ -662,7 +669,8 @@
               self=this,
               params ={
                 index:index,
-                rowLimit:rowLimit
+                rowLimit:rowLimit,
+                parentBlogId:this.bid
               };
             this.spinShow =true;
             axios.post("/Comment/QueryCommentsPerPage",params)
@@ -888,19 +896,23 @@
         created: function () {
         },
         mounted() {
+          this.isEmpty = this.commentsAndReplySum === 0;
+
           this.isMobile =isMobile();
         this.uIP=  returnCitySN["cip"];
         console.log(this.uIP);
           let self = this;
           this.spinShow =true;
-          axios.get("/Comment/QueryCommentsCount")
+          axios.get("/Comment/QueryCommentsCount",{params:{parentBlogId:self.bid}})
             .then((res)=>{
               // console.log(res.data.extendInfo.commentsSum);
               self.commentsTotal+= parseInt(res.data.extendInfo.commentsSum);
-              axios.get("/Comment/QueryReplyCount")
+              axios.get("/Comment/QueryReplyCount",{params:{parentBlogId:self.bid}})
                 .then((res)=>{
                   // console.log(typeof res.data.extendInfo.replySum);
                   self.commentsAndReplySum=self.commentsTotal+parseInt(res.data.extendInfo.replySum);
+                  self.isEmpty = self.commentsAndReplySum === 0;
+                  // console.log("this.commentsAndReplySum:"+self.commentsAndReplySum);
                 })
                 .catch((err)=>{
                   console.log(err);
@@ -913,7 +925,7 @@
 
           // console.log(self.count === 0);
 
-          axios.get("/Comment/QueryCommentsInitial")
+          axios.get("/Comment/QueryCommentsInitial",{params:{parentBlogId:self.bid}})
             .then((res)=>{
               // console.log(res.data);
               for(let i=0,len =res.data.length;i<len;i++){
@@ -924,6 +936,7 @@
             .catch((err)=>{
                 console.warn(err);
             });
+          self.isEmpty = self.commentsAndReplySum === 0;
           axios.post("/Comment/getIpInfo",{uIP:this.uIP})
             .then((res)=>{
               // console.log(res.data.extendInfo.ipinfo);
@@ -944,6 +957,7 @@
             .catch((err)=>{
                 console.warn(err);
             });
+
           EventBus.$on("rePlyComment",(data)=>{
             this.$refs.commentsInput.focus();
             this.comments="";
@@ -951,17 +965,18 @@
             this.isReplyMode =true;
             this.cmt_id_reply_to =data.id;
             // console.log(data);
+
           })
         },
       computed:{
 
       },
-        components: {CommentItem,Emotion}
+        components: {CommentItem,Emotion,CommentEmptyStatus}
     }
 </script>
-<style>
+<style scoped>
   .comment-container{
-    margin: .9rem 0;
+    margin: 1.4rem 0;
     padding:0 .6rem ;
   }
   .comment-header{margin: .6rem 0;}

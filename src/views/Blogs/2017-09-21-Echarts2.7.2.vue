@@ -4,6 +4,9 @@
        <ul class="title-list">
          <li><h1 class="title">echarts学习笔记</h1></li>
        </ul>
+       <section>
+         <PostTag :postTime="postTime" />
+       </section>
        <div class="main-body">
          <div class="title-lv1">echarts 2.7.2爬坑记录</div>
          <p class="descrp">echarts2.7.2比较坑，标注点的坐标的配置为{ name: '北京',
@@ -117,7 +120,6 @@
             </code>
           </pre>
        </div>
-       <PostTag :postTime="postTime"/>
 
        <PagerComponent
          prvUrl="VueLearning"
@@ -128,6 +130,7 @@
          next-blog-title="百度地图学习笔记"
        >
        </PagerComponent>
+       <Comment :bid="b_id"></Comment>
      </i-col>
 
    </Row>
@@ -136,6 +139,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
 
   export default {
@@ -165,7 +169,8 @@
         })
       });
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
   }
 </script>
 <style>

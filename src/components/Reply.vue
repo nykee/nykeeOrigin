@@ -8,7 +8,9 @@
                     :browser="rep.browser"
                     :os="rep.os"
                     :isp="rep.isp"
-                    :parentId="parentId"/>
+                    :parentId="parentId"
+                    :parentBlogId="parentBlogId"
+      />
     </div>
   </div>
 
@@ -18,7 +20,7 @@
   import BasicComment from "./BasicCommentComponent"
   import EventBus from "../utils/EventBus";
     export default {
-      props:["parentId"],
+      props:["parentId","parentBlogId"],
         data() {
             return {
               repFromDB:[]
@@ -33,8 +35,11 @@
 
         },
         mounted() {
-        console.log(this.parentId);
-          let params={replyTo:this.parentId};
+        // console.log(this.parentId);
+          let params={
+            replyTo:this.parentId,
+            parentBlogId:this.parentBlogId
+          };
           // console.log(this.cmtId);
           let self =this;
           // console.log(typeof this.cmtId);

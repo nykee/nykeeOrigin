@@ -5,6 +5,9 @@
             <ul class="title-list">
                 <li><h1 class="title">Netty心跳机制</h1></li>
             </ul>
+          <section>
+            <PostTag :postTime="postTime" />
+          </section>
             <div class="main-body">
                 <br id="part3" class="part">
                 <div class="title-lv1">1、Netty应用心跳和重连的整个过程:</div>
@@ -262,7 +265,6 @@
                     </ul>
                 </section>
             </div>
-            <PostTag :postTime="postTime"/>
 
           <PagerComponent
             prvUrl="VueI18n"
@@ -273,6 +275,7 @@
             next-blog-title="React学习笔记"
           >
           </PagerComponent>
+          <Comment :bid="b_id"></Comment>
         </i-col>
     </Row>
 </template>
@@ -280,6 +283,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
 
   export default {
@@ -310,7 +314,8 @@
         })
       });
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
   }
 </script>
 <style>

@@ -8,7 +8,7 @@
                   :os="os"
                   :isp="isp"
                   :cmtId="cmtId"/>
-      <Reply :parentId="cmtId"/>
+      <Reply :parentId="cmtId" :parentBlogId="parentBlogId"/>
 
   </div>
 </template>
@@ -19,7 +19,7 @@
     import BasicComment from "../components/BasicCommentComponent"
     import EventBus from "../utils/EventBus";
     export default {
-      props:["nickName","postTime","avatar","content","browser","os","isp","cmtId"],
+      props:["nickName","postTime","avatar","content","browser","os","isp","cmtId","parentBlogId"],
         data() {
             return {
               hasReply:false

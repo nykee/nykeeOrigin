@@ -6,6 +6,9 @@
           <ul class="title-list">
             <li><h1 class="title">MongoDB学习笔记</h1></li>
           </ul>
+          <section>
+            <PostTag :postTime="postTime" />
+          </section>
           <div class="main-body">
             <div id="part1" class="part">
               <div class="title-lv1"> 一、安装</div>
@@ -135,7 +138,6 @@
             </div>
 
           </div>
-          <PostTag :postTime="postTime"/>
         </div>
 
         <PagerComponent
@@ -147,6 +149,7 @@
           next-blog-title="前端技巧汇总，包括CSS,JS"
         >
         </PagerComponent>
+        <Comment :bid="b_id"></Comment>
 
       </i-col>
     </Row>
@@ -159,6 +162,7 @@
   // import IntroHeader from '../../components/IntroHeader.vue'
   import PagerComponent from '../../components/PagerComponent'
   import mixin_PV from "../../mixins/index";
+  import Comment from '../../components/BlogComment'
 
   export default {
     mixins:[mixin_PV],
@@ -187,7 +191,8 @@
         })
       });
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
 
     /*
     *

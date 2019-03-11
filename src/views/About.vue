@@ -57,11 +57,6 @@
 
     },
     mounted() {
-      // let aa =[];
-      // for(let i=0,len =this.$t)
-      // this.items =this.$t("message.aboutPage.timeLineItems");
-      // console.log(this.$t("message.aboutPage.timeLineItems"));
-      // console.log(this.items);
 
     },
     computed:{

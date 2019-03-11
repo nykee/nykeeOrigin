@@ -7,6 +7,9 @@
     <ul class="title-list">
       <li><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
     </ul>
+          <section>
+            <PostTag :postTime="postTime" />
+          </section>
     <div class="main-body">
       <div id="part1" class="part">
 
@@ -64,13 +67,8 @@
                 }
             </code>
           </pre>
-<<<<<<< HEAD
           <CustomPicture imgSrc="https://image.nykee.cn/string.webp"
                          srcSet="https://image.nykee.cn/string.jpg"/>
-=======
-          <CustomPicture imgSrc="http://image.nykee.cn/string.webp"
-                         srcSet="http://image.nykee.cn/string.jpg"/>
->>>>>>> c8af39d9dffd9e105d07b3592590756d98cc6c69
         </div>
         <div id="part2-section2" class="section">
           <p class="title-lv2"> 2.整数的操作</p>
@@ -386,7 +384,6 @@
 
     </div>
 
-    <PostTag :postTime="postTime"/>
         </div>
 
         <PagerComponent
@@ -398,6 +395,7 @@
           next-blog-title="Node.js大众点评爬虫"
         >
         </PagerComponent>
+        <Comment :bid="b_id"></Comment>
       </i-col>
     </Row>
 
@@ -407,6 +405,7 @@
 
 <script>
   import PostTag from '../../components/PostTag.vue'
+  import Comment from '../../components/BlogComment'
   //  import CustomPicture from "../../components/CustomPicture"
   import PagerComponent from '../../components/PagerComponent'
   import mixin_PV from "../../mixins/index";
@@ -443,7 +442,8 @@
       });
 
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
   }
 </script>
 <style scoped>

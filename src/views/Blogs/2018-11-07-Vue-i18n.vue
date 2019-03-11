@@ -9,12 +9,14 @@
             </li>
           </ul>
         </section>
+        <section>
+          <PostTag :postTime="postTime" />
+        </section>
         <section class="main-body">
           <div id="part1" class="part">
             <div class="title-lv1">Step1 依赖安装及脚手架配置</div>
             <div class="descrp">
               <ul>
-<<<<<<< HEAD
                 <li class="steps">1、安装依赖：vue-i18n 、@kazupon/vue-i18n-loader</li>
                 <li class="steps">2、配置Vue-cli的配置文件：
                   <ul>
@@ -174,7 +176,6 @@
             </ul>
           </div>
         </div>
-          <PostTag :postTime="postTime"/>
         </section>
 
         <PagerComponent
@@ -186,6 +187,7 @@
           next-blog-title="Netty心跳机制"
         >
         </PagerComponent>
+        <Comment :bid="b_id"></Comment>
       </i-col>
 
     </Row>
@@ -197,6 +199,7 @@
   import PostTag from '../../components/PostTag.vue'
 //  import CustomPicture from "../../components/CustomPicture"
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
     export default {
       mixins:[mixin_PV],
@@ -226,7 +229,8 @@
             })
           });
         },
-        components: {PostTag,PagerComponent}
+        components: {PostTag,PagerComponent
+          ,Comment}
     }
 </script>
 <style>

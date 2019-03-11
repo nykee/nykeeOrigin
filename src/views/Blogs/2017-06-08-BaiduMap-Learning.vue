@@ -4,6 +4,9 @@
           <ul class="title-list">
               <li><h1 class="title">百度地图学习笔记</h1></li>
           </ul>
+        <section>
+          <PostTag :postTime="postTime" />
+        </section>
           <div class="main-body">
        <pre class="code-text">
             <code>
@@ -83,7 +86,6 @@
           </div>
 
 
-          <PostTag :postTime="postTime"/>
 
         <PagerComponent
           prvUrl="EchartsLearning"
@@ -94,6 +96,7 @@
           next-blog-title="MongoDB学习笔记"
         >
         </PagerComponent>
+        <Comment :bid="b_id"></Comment>
       </i-col>
 
 
@@ -103,6 +106,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
 
   export default {
@@ -130,7 +134,8 @@
       });
 
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
   }
 </script>
 <style>

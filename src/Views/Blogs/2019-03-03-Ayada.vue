@@ -8,6 +8,9 @@
                     </li>
                 </ul>
             </section>
+          <section>
+            <PostTag :postTime="postTime" />
+          </section>
             <section class="main-body">
                 <p>一生一次的蜜月旅行选择了马尔代夫，这个在小学课本里据说还有50年就要因为全球变暖而海平面上升而湮没的国家。马代是比较适合放松度假的，
                 也不用一直奔波全程在走路的感觉，沙滩玩玩水，房间里躺躺，拍拍照片，吃吃喝喝还是很惬意的。马代最苦恼的就是选岛，100多个岛屿，有句话叫："爱她就带她到马代，恨她就让她选岛"，
@@ -73,9 +76,7 @@
                 </p>
             </section>
 
-            <section>
-                <PostTag :postTime="postTime"/>
-            </section>
+
           <PagerComponent
             next-url="FeOpt"
             next-bg-src="https://image.nykee.cn/feopt.jpg"
@@ -85,7 +86,7 @@
             prvBlogTitle="前端面试题总结"
           >
           </PagerComponent>
-            <Comment></Comment>
+            <Comment :bid="b_id"></Comment>
         </i-col>
 
     </Row>
@@ -95,7 +96,7 @@
     import PostTag from '../../components/PostTag.vue'
     import CustomPicture from '../../components/CustomPicture.vue'
     import PagerComponent from '../../components/PagerComponent'
-    import Comment from '../../components/CommentsBoard.vue'
+    import Comment from '../../components/BlogComment'
     import mixin_PV from "../../mixins/index";
 
     export default {

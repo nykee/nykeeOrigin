@@ -21,7 +21,7 @@
                             next-blog-title="阿雅达蜜月旅行"
                     >
                     </PagerComponent>
-
+                  <Comment :bid="b_id"></Comment>
                 </section>
             </i-col>
         </Row>
@@ -32,6 +32,7 @@
     import mixin_PV from "../../mixins/index";
     import PostTag from '../../components/PostTag.vue'
     import PagerComponent from '../../components/PagerComponent'
+    import Comment from '../../components/BlogComment'
     export default {
         mixins:[mixin_PV],
         data() {
@@ -54,7 +55,8 @@
         },
         components: {
             PostTag,
-            PagerComponent
+            PagerComponent,
+          Comment
         }
     }
 </script>

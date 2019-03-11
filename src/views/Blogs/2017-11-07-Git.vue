@@ -5,6 +5,9 @@
       <ul class="title-list">
         <li><h1 class="title">Git学习笔记</h1></li>
       </ul>
+      <section>
+        <PostTag :postTime="postTime" />
+      </section>
       <div class="main-body">
         <div id="part3" class="part">
           <div class="title-lv1">一、Git常用命令</div>
@@ -29,7 +32,6 @@
           </pre>
         </div>
       </div>
-      <PostTag :postTime="postTime"/>
 
       <PagerComponent
         prvUrl="ReactLearning"
@@ -40,6 +42,7 @@
         next-blog-title="Vue学习笔记"
       >
       </PagerComponent>
+      <Comment :bid="b_id"></Comment>
     </i-col>
   </Row>
 </template>
@@ -47,6 +50,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
 
   export default {
@@ -76,7 +80,8 @@
         })
       });
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
   }
 </script>
 <style>

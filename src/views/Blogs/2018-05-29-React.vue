@@ -8,6 +8,9 @@
                   </li>
               </ul>
           </section>
+        <section>
+          <PostTag :postTime="postTime" />
+        </section>
           <section class="main-body">
               <div id="part1" class="part">
                   <div class="title-lv1">React概述</div>
@@ -87,7 +90,6 @@ render(&lt;HelloMessage name="John" />, mountNode);
         </pre>
               </div>
           </div>
-          <PostTag :postTime="postTime"/>
 
         <PagerComponent
           prvUrl="NettyLearning"
@@ -98,6 +100,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
           next-blog-title="Git学习笔记"
         >
         </PagerComponent>
+        <Comment :bid="b_id"></Comment>
       </i-col>
 
   </Row>
@@ -107,6 +110,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
 
   export default {
@@ -136,7 +140,8 @@ render(&lt;HelloMessage name="John" />, mountNode);
         })
       });
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent
+      ,Comment}
   }
 </script>
 <style>

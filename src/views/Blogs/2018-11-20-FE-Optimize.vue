@@ -8,6 +8,9 @@
                     </li>
                 </ul>
             </section>
+          <section>
+            <PostTag :postTime="postTime" />
+          </section>
             <section class="main-body">
                 <div id="part1" class="part">
                     <div class="title-lv1">一 前端部分</div>
@@ -107,7 +110,6 @@
                     过程中也接触了很多现在没用到的性能优化技术，webpack dll，vue路由懒加载等，等留着以后再玩吧，EOF</p>
 
 
-                <PostTag :postTime="postTime"/>
             </section>
           <PagerComponent
             next-url="VueI18n"
@@ -118,6 +120,7 @@
             prvBlogTitle="阿雅达蜜月之旅"
           >
           </PagerComponent>
+          <Comment :bid="b_id"></Comment>
         </i-col>
 
     </Row>
@@ -126,6 +129,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+  import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
   // import store from "../../store/store"
 
@@ -167,7 +171,8 @@
         })
       });
     },
-    components: {PostTag,PagerComponent}
+    components: {PostTag,PagerComponent,
+    Comment}
   }
 </script>
 <style>

@@ -204,7 +204,7 @@
               pattern:/:niconiconi/g,
               fileName:"baidu_emoji/icon_niconiconi.gif"
             }, {
-              pattern:/:niconiconit/g,
+              pattern:/:Dniconiconi/g,
               fileName:"baidu_emoji/icon_niconiconit.gif"
             }, {
               pattern: /:rbq/g,
@@ -228,10 +228,10 @@
               pattern: /:spray/g,
               fileName:"baidu_emoji/icon_spray.gif"
             }, {
-              pattern: /:surprised/g,
+              pattern: /:surprisedCry/g,
               fileName:"baidu_emoji/icon_surprised.gif"
             }, {
-              pattern: /:surprised2/g,
+              pattern: /:surprised/g,
               fileName:"baidu_emoji/icon_surprised2.gif"
             }, {
               pattern: /:tear/g,
