@@ -108,5 +108,10 @@
 <style scoped>
     .article-items{
         margin:.8rem 0;
+
     }
+    /*.article-items>a{
+        display: inline-block;
+        !*font-size: 1.2rem;*!
+    }*/
 </style>

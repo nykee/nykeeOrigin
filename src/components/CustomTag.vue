@@ -21,8 +21,8 @@
 <style>
   .custom-tag-box{
     display: inline-block;
-    height: 2rem;
-    width: 4rem;
+    height: 2.2rem;
+    width: 5rem;
     line-height: 2rem;
     background: transparent;
     border-radius: 10px;

@@ -26,6 +26,7 @@
     background: #ccc;
     opacity: .8;
     position: relative;
+    border-radius: 6px;
 
   }
   .empty-comment-cont{
