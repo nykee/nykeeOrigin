@@ -2,6 +2,9 @@
   <Row type="flex" align="center" justify="center">
 
     <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
+      <section  class="tag-section"   >
+        <CustomTag :tag="tag.name" v-for="tag in tags" :key="tag.id"/>
+      </section>
       <ul class="title-list">
         <li><h1 class="title">Vue学习笔记</h1></li>
       </ul>
@@ -134,13 +137,18 @@
   import PagerComponent from '../../components/PagerComponent'
   import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
+  import CustomTag from "../../components/CustomTag"
 
   export default {
     mixins:[mixin_PV],
     data() {
       return {
         postTime: '2017-09-26',
-        b_id:"6"
+        b_id:"6",
+        tags:[
+          {id:1,name:"前端"},
+          {id:2,name:"面试"}
+        ]
       }
     },
     methods: {},
@@ -163,7 +171,7 @@
       });
     },
     components: {PostTag,PagerComponent
-      ,Comment}
+      ,Comment,CustomTag}
   }
 </script>
 <style>

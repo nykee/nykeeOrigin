@@ -3,7 +3,11 @@
 
     <Row type="flex" align="center" justify="center">
       <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
-        <div class="blog-content">
+
+      <div class="blog-content">
+          <section  class="tag-section"   >
+            <CustomTag :tag="tag.name" v-for="tag in tags" :key="tag.id"/>
+          </section>
     <ul class="title-list">
       <li><h1 class="title">前端技巧汇总，包括CSS,JS</h1></li>
     </ul>
@@ -409,6 +413,7 @@
   //  import CustomPicture from "../../components/CustomPicture"
   import PagerComponent from '../../components/PagerComponent'
   import mixin_PV from "../../mixins/index";
+  import CustomTag from "../../components/CustomTag"
   export default {
     mixins:[mixin_PV],
     data() {
@@ -416,7 +421,12 @@
         sc: `<script src="//domain.com/path/to/script.js">`,
         postTime: '2017-01-22',
         screenWidth: 0,
-        b_id:"10"
+        b_id:"10",
+        tags:[
+          {id:1,name:"前端"},
+          {id:2,name:"js"},
+          {id:3,name:"css"},
+        ]
       }
     },
     methods: {},
@@ -443,7 +453,7 @@
 
     },
     components: {PostTag,PagerComponent
-      ,Comment}
+      ,Comment,CustomTag}
   }
 </script>
 <style scoped>

@@ -180,5 +180,9 @@
   /*.blog-content{*/
     /*margin-top:2rem;*/
   /*}*/
+  .tag-section{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
 
 </style>

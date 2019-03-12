@@ -2,6 +2,9 @@
 
     <Row type="flex" align="center" justify="center">
       <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
+        <section  class="tag-section"   >
+          <CustomTag :tag="tag.name" v-for="tag in tags" :key="tag.id"/>
+        </section>
         <section>
           <ul class="title-list">
             <li >
@@ -198,6 +201,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
 //  import CustomPicture from "../../components/CustomPicture"
+  import CustomTag from "../../components/CustomTag"
   import PagerComponent from '../../components/PagerComponent'
   import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
@@ -207,7 +211,12 @@
             return {
               postTime:'2018-11-07',
               i18nVar:"{{ $t(\"message.变量\") }}",
-              b_id:"2"
+              b_id:"2",
+              tags:[
+                {id:1,name:"前端"},
+                {id:2,name:"国际化"},
+                {id:3,name:"vue-i18n"}
+              ]
             }
         },
         methods: {},
@@ -230,7 +239,7 @@
           });
         },
         components: {PostTag,PagerComponent
-          ,Comment}
+          ,Comment,CustomTag}
     }
 </script>
 <style>

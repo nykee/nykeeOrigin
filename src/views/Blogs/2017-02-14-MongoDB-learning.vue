@@ -2,6 +2,9 @@
   <div>
     <Row type="flex" align="center" justify="center">
       <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
+        <section  class="tag-section"   >
+          <CustomTag :tag="tag.name" v-for="tag in tags" :key="tag.id"/>
+        </section>
         <div class="blog-content">
           <ul class="title-list">
             <li><h1 class="title">MongoDB学习笔记</h1></li>
@@ -163,13 +166,18 @@
   import PagerComponent from '../../components/PagerComponent'
   import mixin_PV from "../../mixins/index";
   import Comment from '../../components/BlogComment'
+  import CustomTag from "../../components/CustomTag"
 
   export default {
     mixins:[mixin_PV],
     data() {
       return {
         postTime: '2017-02-14',
-        b_id:"9"
+        b_id:"9",
+        tags:[
+          {id:1,name:"数据库"},
+          {id:2,name:"MongoDB"}
+        ]
       }
     },
     methods: {},
@@ -192,7 +200,7 @@
       });
     },
     components: {PostTag,PagerComponent
-      ,Comment}
+      ,Comment,CustomTag}
 
     /*
     *

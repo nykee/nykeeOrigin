@@ -2,6 +2,9 @@
     <div>
         <Row type="flex" align="center" justify="center" class="blog-container">
             <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
+              <section  class="tag-section"   >
+                <CustomTag :tag="tag.name" v-for="tag in tags" :key="tag.id"/>
+              </section>
                 <section>
                     <ul class="title-list">
                         <li>
@@ -33,12 +36,17 @@
     import PostTag from '../../components/PostTag.vue'
     import PagerComponent from '../../components/PagerComponent'
     import Comment from '../../components/BlogComment'
+    import CustomTag from "../../components/CustomTag"
     export default {
         mixins:[mixin_PV],
         data() {
             return {
                 postTime: '2019-03-06',
-                b_id:"13"
+                b_id:"13",
+              tags:[
+                {id:1,name:"前端"},
+                {id:2,name:"面试"}
+              ]
             }
         },
         mounted() {
@@ -56,7 +64,7 @@
         components: {
             PostTag,
             PagerComponent,
-          Comment
+          Comment,CustomTag
         }
     }
 </script>

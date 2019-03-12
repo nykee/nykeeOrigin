@@ -1,6 +1,9 @@
 <template>
   <Row type="flex" align="center" justify="center">
       <i-col :lg="{span:18}" :md="{span:18}" class="blog-content">
+        <section  class="tag-section"   >
+          <CustomTag v-for="tag in tags" :key="tag.id" :tag="tag.name"/>
+        </section>
           <section>
               <ul class="title-list">
                   <li>
@@ -112,13 +115,18 @@ render(&lt;HelloMessage name="John" />, mountNode);
   import PagerComponent from '../../components/PagerComponent'
   import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
+  import CustomTag from "../../components/CustomTag"
 
   export default {
     mixins:[mixin_PV],
     data() {
       return {
         postTime: '2017-11-08',
-        b_id:"4"
+        b_id:"4",
+        tags:[
+          {id:1,name:"前端"},
+          {id:2,name:"React"}
+        ]
       }
     },
     methods: {},
@@ -141,7 +149,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
       });
     },
     components: {PostTag,PagerComponent
-      ,Comment}
+      ,Comment,CustomTag}
   }
 </script>
 <style>
