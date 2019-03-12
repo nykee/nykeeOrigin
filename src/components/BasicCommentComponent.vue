@@ -14,6 +14,7 @@
         <ul>
           <li class="nickname-li">
             {{nickName}}
+            <Tag v-if="isOwner" color="gold">博主</Tag>
           </li>
           <li class="time-li">
             <ul>
@@ -63,7 +64,8 @@
               bsr_icon_src:'',
               os_icon_src:'',
               isMobile:false,
-              isReplyBtnShow:false
+              isReplyBtnShow:false,
+                isOwner:false
             }
         },
         methods: {
@@ -88,6 +90,9 @@
 
         },
         mounted() {
+          if(this.nickName === "I am Specialized"){this.isOwner =true}
+          else if(this.nickName === "nykee"){this.isOwner =true}
+          else {this.isOwner =false}
         console.log(screen.width);
           if(isPad()||isMobile()){
             this.isReplyBtnShow =true;
