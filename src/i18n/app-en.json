@@ -77,6 +77,13 @@
       "description_3": "use superagent to get request,'cheerio' to analyze  html structure,use 'async' to control concurrence",
       "githubAdd": "https://github.com/nykee/dzdp_spider"
     },
+    "projects_wkzf":{
+      "name":"悟空找房EAS项目",
+      "description_1":"金蝶EAS财务软件二次开发项目，甲方为悟空找房",
+      "description_2":"悟空找房自有财务系统与金蝶EAS系统之间使用WebService推送单据开发：1、基于金蝶自有封装的WebService进行开发、2、WebService接口联调、3、WebService的测试及发布",
+      "description_3":"悟空找房项目EAS报销流程二次开发配置：1、报销单单据界面配置（包括桌面端与web页面单据布局配置与单据字段配置）2、工作流EAS客户端配置与二次开发 （包括角色配置、报销金额条件判断、流程跳转等）3、报销单单据流程测试（本地软件模拟测试、测试环境人员测试、生产环境实际测试）",
+      "githubAdd":""
+    },
     "photoPage": {
       "intro": [
         "I used to cross the mountains and the sea.",

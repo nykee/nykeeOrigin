@@ -20,11 +20,12 @@
           {id:2,href:'https://2heng.xin/',title:"樱花庄的白猫"},
           {id:3,href:'http://huangxuan.me/',title:"Hux Blog"},
           {id:4,href:'https://www.fghrsh.net/',title:"FGHRSH 的博客"},
-          {id:5,href:'https://www.heroyf.club/',title:"heroyf"},
+          {id:5,href:'https://heroyf.club/',title:"萌萌哒の柯基"},
           {id:6,href:'https://www.hojun.cn/',title:"hojun"},
           {id:7,href:'https://blog.woc.moe/',title:"jmglsi的博客"},
           {id:8,href:'https://www.yooomu.com/',title:"Kong's Blog"},
-          {id:9,href:'https://lishaoy.net/',title:"Persilee's Blog"}
+          {id:9,href:'https://lishaoy.net/',title:"Persilee's Blog"},
+          {id:10,href:'https://meowqvq.wordpress.com/',title:"惡魔菌の记事簿"}
           ]
       }
     },
