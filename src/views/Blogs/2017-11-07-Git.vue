@@ -14,8 +14,8 @@
       <div class="main-body">
         <div id="part3" class="part">
           <div class="title-lv1">一、Git常用命令</div>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-Bash">
     git init   # 初始化一个git仓库
     git config --global user.email "you@example.com" # 设置git账户邮箱地址
     git config --global user.name "yourname" # 设置git用户名

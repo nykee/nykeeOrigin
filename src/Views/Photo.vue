@@ -6,22 +6,18 @@
             subTitle="With my eyes and my camera!"
             :isProjectPage="false"/>
     <div class="flexContainer">
-      <ul class="photo-intro">
-        <li class="photo-intro-items">{{$t("message.photoPage.intro[0]")}}</li>
-        <li class="photo-intro-items">{{$t("message.photoPage.intro[1]")}}</li>
-        <li class="photo-intro-items">{{$t("message.photoPage.intro[2]")}}</li>
-        <li class="photo-intro-items">{{$t("message.photoPage.intro[3]")}}</li>
-        <li class="photo-intro-items">{{$t("message.photoPage.intro[4]")}}</li>
+      <ul class="photo-intro" >
+        <li class="photo-intro-items" v-for="intro in intros" :key="intro.id">{{intro.content}}</li>
       </ul>
     </div>
    <!-- <Scroll :on-reach-bottom="handleReachBottom" >-->
       <div v-for="photo in photoData" >
         <div class="flexContainer">
-          <PhotoCard :description="photo.desc"
+          <PhotoCard :description="photo.title"
                      :webpSrc="photo.webpSrc"
                      :imgSrc="photo.imgSrc"
-                     :photoTime="photo.photoTime"
-                     :photoLocation="photo.photoLocation"
+                     :photoTime="photo.time"
+                     :photoLocation="photo.location"
           class="photo-card"/>
         </div>
       </div>
@@ -38,104 +34,43 @@
     data() {
       return {
         photoData: [
-          {
-            "desc": this.$t("message.photoPage.photos[0].title"),
-            "webpSrc": "https://image.nykee.cn/yuyuan.webp",
-            "imgSrc": "https://image.nykee.cn/yuyuan.jpg",
-            "photoTime": this.$t("message.photoPage.photos[0].time"),
-            "photoLocation": this.$t("message.photoPage.photos[0].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[1].title"),
-            "webpSrc": "https://image.nykee.cn/maitian.webp",
-            "imgSrc": "https://image.nykee.cn/maitian.jpg",
-            "photoTime": this.$t("message.photoPage.photos[1].time"),
-            "photoLocation": this.$t("message.photoPage.photos[1].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[2].title"),
-            "webpSrc": "https://image.nykee.cn/nightrain.webp",
-            "imgSrc": "https://image.nykee.cn/nightrain.jpg",
-            "photoTime": this.$t("message.photoPage.photos[2].time"),
-            "photoLocation": this.$t("message.photoPage.photos[2].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[3].title"),
-            "webpSrc": "https://image.nykee.cn/puppy.webp",
-            "imgSrc": "https://image.nykee.cn/puppy.jpg",
-            "photoTime": this.$t("message.photoPage.photos[3].time"),
-            "photoLocation": this.$t("message.photoPage.photos[3].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[4].title"),
-            "webpSrc": "https://image.nykee.cn/szmuseum.webp",
-            "imgSrc": "https://image.nykee.cn/szmuseum.jpg",
-            "photoTime": this.$t("message.photoPage.photos[4].time"),
-            "photoLocation": this.$t("message.photoPage.photos[4].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[5].title"),
-            "webpSrc": "https://image.nykee.cn/sakura.webp",
-            "imgSrc": "https://image.nykee.cn/sakura.jpg",
-            "photoTime": this.$t("message.photoPage.photos[5].time"),
-            "photoLocation": this.$t("message.photoPage.photos[5].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[6].title"),
-            "webpSrc": "https://image.nykee.cn/sea.webp",
-            "imgSrc": "https://image.nykee.cn/sea.jpg",
-            "photoTime": this.$t("message.photoPage.photos[6].time"),
-            "photoLocation": this.$t("message.photoPage.photos[6].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[7].title"),
-            "webpSrc": "https://image.nykee.cn/boat.webp",
-            "imgSrc": "https://image.nykee.cn/boat.jpg",
-            "photoTime": this.$t("message.photoPage.photos[7].time"),
-            "photoLocation": this.$t("message.photoPage.photos[7].location"),
-          },
 
-         {
-            "desc": this.$t("message.photoPage.photos[8].title"),
-            "webpSrc": "https://image.nykee.cn/bird.webp",
-            "imgSrc": "https://image.nykee.cn/bird.jpg",
-            "photoTime": this.$t("message.photoPage.photos[8].time"),
-            "photoLocation": this.$t("message.photoPage.photos[8].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[9].title"),
-            "webpSrc": "https://image.nykee.cn/car.webp",
-            "imgSrc": "https://image.nykee.cn/car.jpg",
-            "photoTime": this.$t("message.photoPage.photos[9].time"),
-            "photoLocation": this.$t("message.photoPage.photos[9].location"),
-          },
-          {
-            "desc": this.$t("message.photoPage.photos[10].title"),
-            "webpSrc": "https://image.nykee.cn/sky.webp",
-            "imgSrc": "https://image.nykee.cn/sky.jpg",
-            "photoTime": this.$t("message.photoPage.photos[10].time"),
-            "photoLocation": this.$t("message.photoPage.photos[10].location"),
-          }
-            ,
-            {
-                "desc": this.$t("message.photoPage.photos[11].title"),
-                "webpSrc": "https://image.nykee.cn/ayada.webp",
-                "imgSrc": "https://image.nykee.cn/ayada.jpg",
-                "photoTime": this.$t("message.photoPage.photos[11].time"),
-                "photoLocation": this.$t("message.photoPage.photos[11].location"),
-            }
-            ,
-            {
-                "desc": this.$t("message.photoPage.photos[12].title"),
-                "webpSrc": "https://image.nykee.cn/sunset.webp",
-                "imgSrc": "https://image.nykee.cn/sunset.jpg",
-                "photoTime": this.$t("message.photoPage.photos[12].time"),
-                "photoLocation": this.$t("message.photoPage.photos[12].location"),
-            }
-        ]
+        ],
+        intros:[]
       }
     },
+    created(){
+      this.intros =this.$t("message.photoPage.intro");
+      this.photoData =this.$t("message.photoPage.photos");
+      let photoSrc =[
+        {"webSrc":"https://image.nykee.cn/yuyuan.webp","imgSrc":"https://image.nykee.cn/yuyuan.jpg"},
+        {"webSrc":"https://image.nykee.cn/maitian.webp","imgSrc":"https://image.nykee.cn/maitian.jpg"},
+        {"webSrc":"https://image.nykee.cn/nightrain.webp","imgSrc":"https://image.nykee.cn/nightrain.jpg"},
+        {"webSrc":"https://image.nykee.cn/puppy.webp","imgSrc":"https://image.nykee.cn/puppy.jpg"},
+        {"webSrc":"https://image.nykee.cn/szmuseum.webp","imgSrc":"https://image.nykee.cn/szmuseum.jpg"},
+        {"webSrc":"https://image.nykee.cn/sakura.webp","imgSrc":"https://image.nykee.cn/sakura.jpg"},
+        {"webSrc":"https://image.nykee.cn/sea.webp","imgSrc":"https://image.nykee.cn/sea.jpg"},
+        {"webSrc":"https://image.nykee.cn/boat.webp","imgSrc":"https://image.nykee.cn/boat.jpg"},
+        {"webSrc":"https://image.nykee.cn/bird.webp","imgSrc":"https://image.nykee.cn/bird.jpg"},
+        {"webSrc":"https://image.nykee.cn/car.webp","imgSrc":"https://image.nykee.cn/car.jpg"},
+        {"webSrc":"https://image.nykee.cn/sky.webp","imgSrc":"https://image.nykee.cn/sky.jpg"},
+        {"webSrc":"https://image.nykee.cn/ayada.webp","imgSrc":"https://image.nykee.cn/ayada.jpg"},
+        {"webSrc":"https://image.nykee.cn/sunset.webp","imgSrc":"https://image.nykee.cn/sunset.jpg"},
+        {"webSrc":"https://image.nykee.cn/building.webp","imgSrc":"https://image.nykee.cn/building.jpg"},
+        {"webSrc":"https://image.nykee.cn/building2.webp","imgSrc":"https://image.nykee.cn/building2.jpg"},
+        {"webSrc":"https://image.nykee.cn/towercrane.webp","imgSrc":"https://image.nykee.cn/towercrane.jpg"},
+        {"webSrc":"https://image.nykee.cn/windmill.webp","imgSrc":"https://image.nykee.cn/windmill.jpg"},
+      ];
+      // this.intros =this.$t("message.photoPage.intro");
+      for(let i=0,len=this.photoData.length;i<len;i++){
+        this.photoData[i].webSrc =photoSrc[i].webSrc;
+        this.photoData[i].imgSrc =photoSrc[i].imgSrc;
+      }
+      console.log(this.photoData);
+    },
     mounted(){
+
+      // console.log(this.intro);
       window.addEventListener('scroll', throttle(this.handleScroll));
 
 

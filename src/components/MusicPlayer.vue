@@ -154,16 +154,22 @@
       toggleMobileMini() {
         /*切换mini模式标志位*/
         this.isMini = !this.isMini;
+
+
         // this.isToggle =true;
         this.isSongListShow = false;
         if(!this.isMini){
           console.log("切换回正常模式！");
+          this.$Message.info("切换回正常播放器！")
           this.$nextTick(()=>{
             // console.log(this.$refs.mPlayer);
             this.toggleSide();
           })
 
 
+        }
+        else {
+          this.$Message.info("切换至mini播放器！");
         }
       },
       changePlayStatus() {
@@ -173,6 +179,7 @@
           this.playStatus = "playing";
           this.$refs.mscAudio.play();
           this.isPlayingIndex = this.currentSong.index;
+          this.$Message.info({content:"ctrl+↑增加音量，ctrl+↓减小音量，ctrl+ ←切换上一首，ctrl+→切换下一首",duration:4})
         }
         else {
           this.playStatus = "paused";
@@ -291,18 +298,17 @@
           this.cur_song_duration = min + colon + sec;
         }
       });
-      // window.addEventListener('keydown', callback)
 
 
 
+      /*监听键盘事件，切歌*/
       document.onkeydown = function (e) {
         let evn = e || event;
         let key = evn.keyCode || evn.which || evn.charCode;
         let ctrlKey =evn.ctrlKey || evn.metaKey;
-
+        /*ctrl+左箭头切换上一首*/
         if(ctrlKey&& key ===37){
           evn.preventDefault();
-          // console.log("left");
           self.playPrev();
           console.log(self.currentSong);
           self.$Notice.info({
@@ -310,6 +316,7 @@
             desc:"当前:"+self.currentSong.singer+"--"+self.currentSong.name
           })
         }
+        /*ctrl+右箭头切换下一首*/
         if(ctrlKey&& key ===39){
           evn.preventDefault();
           // console.log("right");
@@ -319,9 +326,9 @@
             desc:"当前:"+self.currentSong.singer+"--"+self.currentSong.name
           })
         }
+        /*ctrl+上箭头增加音量*/
         if(ctrlKey&& key ===38){
           evn.preventDefault();
-          // console.log("up ");
           self.volumeNum+=10;
           if(self.volumeNum>100){
             self.volumeNum= 100;
@@ -329,11 +336,10 @@
           self.$Notice.info({
             title: "音量+10,当前音量："+self.volumeNum
           });
-
         }
+        /*ctrl+下箭头减小音量*/
         if(ctrlKey&& key ===40){
           evn.preventDefault();
-          // console.log("down");
           self.volumeNum-=10;
           if(self.volumeNum<0){
             self.volumeNum=0;
@@ -341,9 +347,7 @@
           self.$Notice.info({
             title: "音量-10,当前音量："+self.volumeNum
           })
-
         }
-
       };
 
 

@@ -17,18 +17,18 @@
               <div class="title-lv1"> 一、安装</div>
               <p class="descrp">window下安装，略过不表。</p>
               <p class="title-lv2"> 1.创建数据库目录：</p>
-              <pre class="code-text">
-            <code>
+              <pre v-highlightjs>
+            <code class="plain-text">
               mongod.exe --dbpath c:\data\db
             </code>
           </pre>
               <p class="title-lv2"> 2.将MongoDB服务器作为Windows服务运行</p>
-              <pre class="code-text">
-            <code>
+              <pre v-highlightjs>
+            <code class="plain-text">
              mongod.exe --bind_ip yourIPadress --logpath "C:\data\dbConf\mongodb.log" --logappend --dbpath "C:\data\db"
               --port yourPortNumber --serviceName "YourServiceName" --serviceDisplayName "YourServiceName" --install
             </code>
-          </pre>
+          </pre >
               <ul class="descrp">参数解释：
                 <li>--bind_ip： 绑定服务IP，若绑定127.0.0.1，则只能本机访问，不指定默认本地所有IP</li>
                 <li>--logpath： 定MongoDB日志文件，注意是指定文件不是目录</li>
@@ -48,8 +48,8 @@
             </div>
             <div id="part2" class="part">
               <div class="title-lv1"> 二、MongoDB命令</div>
-              <pre class="code-text">
-            <code>
+              <pre v-highlightjs>
+            <code class="lang-javascript">
     show dbs                                //查看所有数据库
     use dbname                              //切换数据库
     db.dropDatabase()                       //删除数据库,默认为test

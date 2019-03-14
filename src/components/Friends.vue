@@ -25,7 +25,10 @@
           {id:7,href:'https://blog.woc.moe/',title:"jmglsi的博客"},
           {id:8,href:'https://www.yooomu.com/',title:"Kong's Blog"},
           {id:9,href:'https://lishaoy.net/',title:"Persilee's Blog"},
-          {id:10,href:'https://meowqvq.wordpress.com/',title:"惡魔菌の记事簿"}
+          {id:10,href:'https://meowqvq.wordpress.com/',title:"惡魔菌の记事簿"},
+          {id:11,href:'https://www.uo33.cn/',title:"林阿三"},
+          {id:12,href:'https://5sir.cn/',title:"梁Sir blog"},
+          {id:13,href:'https://www.xcnte.com/',title:"Xcnte's Blog"},
           ]
       }
     },

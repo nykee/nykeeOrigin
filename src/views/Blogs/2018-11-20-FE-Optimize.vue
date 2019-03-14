@@ -47,7 +47,11 @@
                         <img  src="https://image.nykee.cn/iview1.jpg" alt="">
                     </picture>
                     <p class="title-lv2">3、通过webpack-bundle-analyzer插件查看打包情况</p>
-                    <span>npm run build --report</span>
+                  <pre v-highlightjs>
+                    <code class="lang-Bash">
+                      npm run build --report
+                    </code>
+                  </pre>
                     <picture>
                         <source type="image/webp" srcset="https://image.nykee.cn/run_rpt.png" >
                         <img  src="https://image.nykee.cn/run_rpt.png" alt="" style="max-width: 90%">
@@ -57,8 +61,8 @@
                 </div>
                 <div class="title-lv1">三 webpack开启GZIP</div>
                 <p class="title-lv2">1、npm安装compression-webpack-plugin,修改config.build.productionGzip为true</p>
-                <pre>
-        <code class="code-text">
+                <pre v-highlightjs>
+        <code class="lang-javascript">
           if (config.build.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 

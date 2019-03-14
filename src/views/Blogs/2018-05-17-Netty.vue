@@ -34,10 +34,10 @@
                         idle 状态), 就会触发指定的事件。</p>
 
                     <p class="descrp">该类可以对三种类型的超时做心跳机制检测：</p>
-                    <pre class="code-text">
-          <code>
+                    <pre v-hightlightjs>
+          <code class="java">
             public IdleStateHandler(int readerIdleTimeSeconds, int writerIdleTimeSeconds, int allIdleTimeSeconds) {
-            this((long)readerIdleTimeSeconds, (long)writerIdleTimeSeconds, (long)allIdleTimeSeconds, TimeUnit.SECONDS);
+              this((long)readerIdleTimeSeconds, (long)writerIdleTimeSeconds, (long)allIdleTimeSeconds, TimeUnit.SECONDS);
             }
           </code>
           </pre>
@@ -49,9 +49,9 @@
                     下面我们还是通过一个例子来讲解IdleStateHandler的使用。<br>
 
                     服务端：
-                    <pre class="code-text">
-          <code>
-            public class HeartBeatServer {
+                    <pre v-hightlightjs>
+          <code class="java">
+    public class HeartBeatServer {
     private int port;
 
     public HeartBeatServer(int port) {
@@ -86,26 +86,25 @@
         </pre>
 
                     服务端Initializer：<br>
-                    <pre class="code-text">
-          <code>
-            public class HeartBeatServerChannelInitializer extends ChannelInitializer &lt;SocketChannel&gt; {
-    @Override
-    protected void initChannel(SocketChannel socketChannel) throws Exception {
-        ChannelPipeline pipeline = socketChannel.pipeline();
-
-        pipeline.addLast("handler",new IdleStateHandler(3, 0, 0, TimeUnit.SECONDS));
-        pipeline.addLast("decoder", new StringDecoder());
-        pipeline.addLast("encoder", new StringEncoder());
-        pipeline.addLast(new HeartBeatServerHandler());
+                    <pre v-hightlightjs>
+          <code class="java">
+      public class HeartBeatServerChannelInitializer extends ChannelInitializer &lt;SocketChannel&gt; {
+          @Override
+          protected void initChannel(SocketChannel socketChannel) throws Exception {
+          ChannelPipeline pipeline = socketChannel.pipeline();
+          pipeline.addLast("handler",new IdleStateHandler(3, 0, 0, TimeUnit.SECONDS));
+          pipeline.addLast("decoder", new StringDecoder());
+          pipeline.addLast("encoder", new StringEncoder());
+          pipeline.addLast(new HeartBeatServerHandler());
     }
 }
           </code>
         </pre>
                     在这里IdleStateHandler也是handler的一种，所以加入addLast。我们分别设置4个参数：读超时时间为3s，写超时和读写超时为0，然后加入时间控制单元。
                     <br>服务端handler：
-                    <pre class="code-text">
-          <code>
-           public class HeartBeatServerHandler extends ChannelInboundHandlerAdapter{
+                    <pre v-hightlightjs>
+          <code class="java">
+    public class HeartBeatServerHandler extends ChannelInboundHandlerAdapter{
     private int loss_connect_time = 0;
 
     @Override
@@ -144,9 +143,9 @@
                     <br>READER_IDLE，WRITER_IDLE，ALL_IDLE。正好对应读事件写事件和读写事件。
 
                     再来写一下客户端：<br>
-                    <pre class="code-text">
-          <code>
-          public class HeartBeatsClient {
+                    <pre v-hightlightjs>
+          <code class="java">
+    public class HeartBeatsClient {
     private  int port;
     private  String address;
 
@@ -183,9 +182,9 @@
         </pre>
 
                     客户端Initializer：<br>
-                    <pre class="code-text">
-          <code>
-       public class HeartBeatsClientChannelInitializer extends  ChannelInitializer&lt;SocketChannel&gt; {
+                    <pre v-hightlightjs>
+          <code class="java">
+    public class HeartBeatsClientChannelInitializer extends  ChannelInitializer&lt;SocketChannel&gt; {
 
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline pipeline = socketChannel.pipeline();
@@ -200,9 +199,9 @@
         </pre>
                     这里我们设置了IdleStateHandler的写超时为3秒，客户端执行的动作为写消息到服务端，服务端执行读动作。<br>
                     客户端handler:
-                    <pre class="code-text">
-          <code>
-       public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
+                    <pre v-hightlightjs>
+          <code class="java">
+    public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
 
     private static final ByteBuf HEARTBEAT_SEQUENCE = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Heartbeat",
             CharsetUtil.UTF_8));

@@ -36,8 +36,17 @@
             <p class="content">{{item.activity}}</p>
           </TimelineItem>
         </Timeline>
+        <Divider dashed />
       </i-col>
 
+    </Row>
+
+    <Row type="flex" justify="center" align="middle">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} style="text-align: center">
+         <p class="day-count-box">
+           本站<i class="fa fa-superpowers s-icon"></i>已运行<span class="day-count">{{dayCount}}天</span>| 当前有1人在线
+         </p>
+      </i-col>
     </Row>
 
   </div>
@@ -45,18 +54,28 @@
 
 <script>
   import IntroHeader from '../components/IntroHeader.vue'
+  import moment from "moment"
 
   export default {
     data() {
       return {
         // items:[]
+        dayCount:0
+
       }
     },
-    methods: {},
+    methods: {
+
+    },
     created: function () {
 
     },
     mounted() {
+
+      moment.locale('zh-cn');
+      let currentTime = moment(new Date(), 'YYYYMMDD');
+      let foundTime =moment(new Date("2017-09-26"), 'YYYYMMDD');
+      this.dayCount=currentTime.diff(foundTime,"days");
 
     },
     computed:{
@@ -94,6 +113,15 @@
   }
   .site-intro-content{
     padding: 1rem;
+  }
+  .day-count-box{
+    color: #B9B9B9;
+  }
+  .day-count{
+    color:#C71585 ;
+  }
+  .s-icon{
+    color:#E1BA52 ;
   }
 
 </style>

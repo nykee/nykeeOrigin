@@ -86,11 +86,11 @@
     },
     "photoPage": {
       "intro": [
-        "I used to cross the mountains and the sea.",
-        "I yearn for the wind and freedom",
-        "Life is more than just in front of you.",
-        "There are also poems and distant places",
-        "To see the world with my eyes and camera! "
+        {"id":"1","content":"I used to cross the mountains and the sea"},
+        {"id":"2","content":"I yearn for the wind and freedom"},
+        {"id":"3","content":"Life is more than just in front of you"},
+        {"id":"4","content":"There are also poems and distant places"},
+        {"id":"5","content":"To see the world with my eyes and camera! "}
       ],
       "photos": [
         {
@@ -158,6 +158,29 @@
           "title": "Sunset Ayada",
           "time": "Photographed on Feb 23, 2019",
           "location": "Ayada Maldives"
+        },
+        {
+          "title":"Building",
+          "time":"Photographed on March 12, 2019",
+          "location":"Songjiang District Shanghai"
+        }
+      ,
+        {
+          "title":"Still Building",
+          "time":"Photographed on March 12, 2019",
+          "location":"Songjiang District Shanghai"
+        }
+      ,
+        {
+          "title":"Construction",
+          "time":"Photographed on March 12, 2019",
+          "location":"Songjiang District Shanghai"
+        }
+      ,
+        {
+          "title":"differ",
+          "time":"Photographed on March 12, 2019",
+          "location":"Songjiang District Shanghai"
         }
 
       ]

@@ -8,16 +8,10 @@
     <Row class="self-info-container">
       <i-col :lg="20" :md="19" :sm="24" :xs="24" class="leftCol">
         <h1 class="intro">{{ $t("message.aboutMe")}}</h1>
-        <pre class="self-intro">
-            {{$t("message.selfIntro[0]")}}
-            {{$t("message.selfIntro[1]")}}
-            {{$t("message.selfIntro[2]")}}
-            {{$t("message.selfIntro[3]")}}
-            {{$t("message.selfIntro[4]")}}
-            {{$t("message.selfIntro[5]")}}
-            {{$t("message.selfIntro[6]")}}
-          <h3 class="slogan">{{ $t("message.selfIntroSlogan")}}</h3>
-        </pre>
+        <ul class="self-intro-box">
+          <li v-for="s in selfIntros" class="self-intro-items">{{s}}</li>
+        </ul>
+        <h3 class="self-intro-slogan">{{ $t("message.selfIntroSlogan")}}</h3>
       </i-col>
       <i-col :lg="4" :md="5" :sm="24" :xs="24">
         <div class="flexContainer">
@@ -43,7 +37,9 @@
 
   export default {
     data() {
-      return {}
+      return {
+        selfIntros:this.$t(("message.selfIntro"))
+      }
     },
     methods: {},
     created: function () {
@@ -85,6 +81,15 @@
 
   #wrap {
     padding-right: .8rem;
+  }
+  .self-intro-box{
+    margin-left: .8rem;
+  }
+  .self-intro-items{
+    line-height: 1.2rem;
+  }
+  .self-intro-slogan{
+    margin-top: 2.8rem;
   }
 
 

@@ -56,8 +56,8 @@
               <ul>
                 <li>
                   <span>1、入口文件引入并使用i18n</span>
-                  <pre>
-                <code class="code-text">
+                  <pre v-highlightjs>
+                <code class="lang-javascript">
                     import VueI18n from 'vue-i18n'
                     Vue.use(VueI18n);
                 </code>
@@ -65,8 +65,8 @@
                 </li>
                 <li>
                   <span>2、实例化Vuei18n,设置默认的语言，并通过require引入相关的词典json文件</span>
-                  <pre>
-                <code class="code-text">
+                  <pre v-highlightjs>
+                <code class="lang-javascript">
                   const i18n = new VueI18n({
                       locale:'zh',
                         messages:{
@@ -81,8 +81,8 @@
                 </li>
                 <li>
                   <span>3、json词典文件例子如下</span>
-                  <pre>
-                <code class="code-text">
+                  <pre v-highlightjs>
+                <code class="lang-javascript">
                   {
                     "message": {
                       "home": "home",
@@ -98,8 +98,8 @@
                 </li>
                 <li>
                   <span>4、将实例化的i18n配置通过option的方式注入到Vue实例上</span>
-                  <pre>
-                <code class="code-text">
+                  <pre v-highlightjs>
+                <code class="lang-javascript">
                    new Vue({
                 el: '#app',
                 router,
@@ -120,16 +120,16 @@
               <ul>
                 <li>
                   <span>1、在Vue template中通过 {{i18nVar}}来使用</span>
-                  <pre>
-                <code class="code-text">
+                  <pre v-highlightjs>
+                <code class="html">
                  &lt;router-link to="/Blogs/FrontEndTricks" style="color:#000!important;">{&nbsp;{ $t("message.blog")}} &lt;/router-link>
                 </code>
               </pre>
                 </li>
                 <li>
                   <span>2、在javascript中通过this.$t("message.xxx")来使用</span>
-                  <pre>
-                <code class="code-text">
+                  <pre v-highlightjs>
+                <code class="html">
                   &lt;commonTitle :title-name="this.$t('message.aboutMe')"/>
                 </code>
               </pre>
@@ -142,8 +142,8 @@
             <ul>
               <li>
                 <span>1、使用select组件切换语言，并绑定语言变量</span>
-                <pre>
-              <code class="code-text">
+                <pre v-highlightjs>
+              <code class="html">
                 &lt;Select v-model="lanSel" size="small" style="width: 5rem">
                     &lt;Option v-for="lan in languages" :value="lan.value" :key="lan.value">{&nbsp;{ lan.label }}&lt;/Option>
                 &lt;/Select>
@@ -152,8 +152,8 @@
               </li>
               <li>
                 <span>2、通过watch方法来监听绑定的语言变量，并通过this.$i18n.locale来改变locale</span>
-                <pre>
-              <code class="code-text">
+                <pre v-highlightjs>
+              <code class="lang-javascript">
                 watch:{
           lanSel:function (val) {
             switch (val.toString()){

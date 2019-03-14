@@ -30,8 +30,8 @@
                       </ul>
                       <br>
                       这里通过一个简单的组件来快速了解这些概念，以及建立起对 React 的一个总体认识。
-                      <pre>
-          <code class="code-text">
+                      <pre v-hightlightjs>
+          <code class="lang-javascript">
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
@@ -85,8 +85,8 @@ render(&lt;HelloMessage name="John" />, mountNode);
 
                   <div class="title-lv1">React图片引入</div>
                   <p class="descrp">React图片地址由父组件通过props的方式传递给子组件时，必须使用字符串拼接的方式，否则图片无法加载</p>
-                  <pre class="code-text">
-          <code>
+                  <pre v-hightlightjs>
+          <code class="html">
             父组件：<span><</span>SwiperItem imgSrc="food" itemName="美食"><span><</span>/SwiperItem>
             子组件：<span><</span>div ><span><</span>img   src={require("../../images/swiper/"+this.props.imgSrc+".jpg")} alt=""/><span><</span>/div>
           </code>

@@ -22,7 +22,7 @@
           <p class="title-lv2"> 1.加载CDN文件时，可以省掉HTTP标识</p>
           <p class="descrp">
             现在很流行的CDN即从专门的服务器加载一些通用的JS和CSS文件，出于安全考虑有的CDN服务器使用HTTPS方式连接，而有的是传统的HTTP，其实我们在使用时可以忽略掉这个，将它从URL中省去。</p>
-          <pre class="code-text">
+          <pre v-highlightjs>
             <code>
               {{sc}}
             </code>
@@ -33,8 +33,8 @@
         <div id="part1-section2" class="section">
           <p class="title-lv2"> 2.简单的文字模糊效果</p>
           <p class="descrp">以下两行简单的CSS3代码可达到将文字模糊化处理的目的，出来的效果有点像使用PS的滤镜，so cool!</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="css">
               p {
               color: transparent;
               text-shadow: #111 0 0 5px;
@@ -45,8 +45,8 @@
         <div id="part1-section3" class="section">
           <p class="title-lv2">3.创建长宽比固定的元素</p>
           <p class="descrp">通过设置父级窗口的 padding-bottom 可以达到让容器保持一定的长度比的目的，这在响应式页面设计中比较有用，能够保持元素不变形。</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="html">
               <span><</span>div style="width: 100%; position: relative; padding-bottom: 20%;">
                 <span><</span>div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;background-color:yellow;">
                   this content will have a constant aspect ratio that varies based on the width.
@@ -62,8 +62,8 @@
           <p class="title-lv2"> 1.生成随机字符串</p>
           <p class="descrp">利用 Math.random 和 toString 生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了 toString
             方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                function generateRandomAlphaNum(len) {
                   var rdmString = "";
                   for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
@@ -79,10 +79,10 @@
           <p class="descrp">JavaScript中是没有整型概念的，但利用好位操作符可以轻松处理，同时获得效率上的提升。</p>
           <p class="descrp">|0 和 ~~ 是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的 parseInt , Math.round
             要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
-          <pre class="code-text">
-            <code>
-               var foo = (12.4 / 4.13) | 0;//结果为3
-                var bar = ~~(12.4 / 4.13);//结果为3
+          <pre v-highlightjs>
+            <code class="lang-javascript">
+               let foo = (12.4 / 4.13) | 0;   //结果为3
+               let bar = ~~(12.4 / 4.13);   //结果为3
             </code>
           </pre>
           <p class="descrp">顺便说句， !! 将一个值方便快速转化为布尔值 !!window===true 。</p>
@@ -93,8 +93,8 @@
             是支持对文字添加样式的，甚至log图片都可以。于是可以重写掉默认的log方法，把将要log的文字应用到CSS的模糊效果，这样当有人试图调用console.log()的时候，出来的是模糊不清的文字。好冷，我表示没有笑。
 
             是从这篇G+帖子的评论里看到的。使用之后的效果是再次调用log会输出字迹模糊不清的文字。</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                var _log = console.log;
                 console.log = function() {
                     _log.call(console, '%c' + [].slice.call(arguments).join(' '), 'color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);');
@@ -105,8 +105,8 @@
         <div id="part2-section4" class="section">
           <p class="title-lv2"> 4.不声明第三个变量的值交换</p>
           <p class="descrp">我们都知道交换两个变量值的常规做法，那就是声明一个中间变量来暂存。但鲜有人去挑战不声明中间变量的情况，下面的代码给出了这种实现。蛮有创意 的。</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                var a=1,b=2;a=[b,b=a][0];
             </code>
           </pre>
@@ -114,8 +114,8 @@
         <div id="part2-section5" class="section">
           <p class="title-lv2"> 5.console.table</p>
           <p class="descrp">Chrome专属，IE绕道的 console 方法。可以将JavaScript关联数组以表格形式输出到浏览器 console ，效果很惊赞，界面很美观。</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                //采购情况
     var data = [{'品名': '杜雷斯', '数量': 4}, {'品名': '冈本', '数量': 3}];
     console.table(data);
@@ -133,8 +133,8 @@
         </div>
         <div id="part2-section6" class="section">
           <p class="title-lv2"> 6.用媒体查询来设置html的font-size：</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="css">
                @media screen and (min-width: 320px) {
          html {font-size: 14px;}
      }
@@ -164,8 +164,8 @@
         <div id="part2-section7" class="section">
           <p class="title-lv2">
             7.利用js计算当前设备的DPR，动态设置在html标签上，并动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小（这个方法很不错哦~）</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                !function(win, lib) {
         var timer,
             doc     = win.document,
@@ -326,24 +326,24 @@
         </div>
         <div id="part2-section8" class="section">
           <p class="title-lv2"> 8.CSS文字居中：</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="plain-text">
                给父元素设置height:20px;line-height:20px;
             </code>
           </pre>
         </div>
         <div id="part2-section9" class="section">
           <p class="title-lv2"> 9.数字格式化为货币格式</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                (23333333).toLocaleString('en-US')  //"23,333,333"
             </code>
           </pre>
         </div>
         <div id="part2-section10" class="section">
           <p class="title-lv2"> 10.JS获取屏幕宽度高度</p>
-          <pre class="code-text">
-            <code>
+          <pre v-highlightjs>
+            <code class="lang-javascript">
                网页可见区域宽： document.body.clientWidth
             　　网页可见区域高： document.body.clientHeight
             　　网页可见区域宽： document.body.offsetWidth (包括边线的宽)

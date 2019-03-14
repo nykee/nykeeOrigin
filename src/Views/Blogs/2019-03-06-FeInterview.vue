@@ -31,6 +31,9 @@
                             next-url="Ayada"
                             next-bg-src="https://image.nykee.cn/back.jpg"
                             next-blog-title="阿雅达蜜月旅行"
+                            prv-url="ImgComp"
+                            prv-bg-src="https://image.nykee.cn/seaboat.jpg"
+                            prv-blog-title="前端图片压缩"
                     >
                     </PagerComponent>
                   <Comment :bid="b_id"></Comment>

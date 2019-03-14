@@ -35,7 +35,10 @@ module.exports = {
         'vue-lazyload': 'VueLazyload',
       'vue-i18n':'VueI18n',
       "particles":"particles.js",
-      "axios":"axios"
+      "axios":"axios",
+      "moment":"moment",
+      "vue-highlightjs":"VueHighlightJS",
+      "highlightjs":"highlightjs"
     },
   module: {
     rules: [

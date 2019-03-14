@@ -11,8 +11,11 @@ import {
 // import {RouterLink} from "VueRouter"
 // import iview from "iView"
 import 'iview/dist/styles/iview.css'
+import 'highlight.js/styles/atom-one-dark.css'
 // import 'font-awesome-webpack'
-import vueI18n from 'vue-i18n'
+import vueI18n from 'vue-i18n';
+// import VueHighlightJS from 'vue-highlightjs'
+// Vue.use(VueHighlightJS);
 
 // import Axios from 'axios';
 // Vue.prototype.$http =Axios;

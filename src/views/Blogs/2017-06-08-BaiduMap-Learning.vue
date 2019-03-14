@@ -11,8 +11,8 @@
           <PostTag :postTime="postTime" />
         </section>
           <div class="main-body">
-       <pre class="code-text">
-            <code>
+       <pre v-highlightjs>
+            <code class="lang-javascript">
        var map = new BMap.Map("container");
        var point = new BMap.Point(116.331398,39.897445);
        map.centerAndZoom(point, 5);  // 编写自定义函数，创建标注

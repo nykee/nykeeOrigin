@@ -67,11 +67,11 @@ import {getScrollTop,getScrollHeight,getWindowHeight} from "../../utils/WindowSc
             let scrollH = getScrollHeight();
               let windH = getWindowHeight();
               scrollT =Math.floor(scrollT)
-              console.log(scrollT);
-              console.log(scrollH);
-              console.log(windH);
+              // console.log(scrollT);
+              // console.log(scrollH);
+              // console.log(windH);
               if(scrollT+windH ===scrollH){
-                console.log("bottom!!");
+                // console.log("bottom!!");
                   this.loadMoreBlogs();
               }
 

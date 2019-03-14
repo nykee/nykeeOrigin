@@ -17,15 +17,33 @@
   import NavBar from './components/NavBar.vue';
   import FootBar from './components/FootBar.vue'
   import MusicPlayer from './components/MusicPlayer'
+  // import hljs from "highlight.js/lib/highlight"
+  // import javascript from 'highlight.js/lib/languages/javascript';
+  // hljs.registerLanguage('javascript', javascript);
 
   export default {
 
     data() {
       return {}
     },
-    methods: {},
-    mounted: function () {
+    methods: {
+      highlightCode:() => {
+        const preEl = document.querySelectorAll('pre');
 
+        preEl.forEach((el) => {
+          highlightjs.highlightBlock(el)
+        })
+      }
+    },
+    mounted: function () {
+      POWERMODE.colorful = true; // 火花各种颜色
+      POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
+      document.body.addEventListener('input', POWERMODE);
+
+      this.highlightCode();
+    },
+    updated:function () {
+      this.highlightCode();
     },
     watch: {},
     components: {
@@ -107,6 +125,8 @@
     white-space: pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+    margin-top: .6rem;
+    margin-bottom: .4rem;
   }
 
   .flexContainer {
