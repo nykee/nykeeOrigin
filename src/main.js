@@ -8,17 +8,12 @@ import {
   Row, Col, Tooltip, Menu, MenuItem, BackTop, Dropdown,
   DropdownItem, LoadingBar, Modal, Card, Drawer, Slider,Progress,Message,Time
 } from 'iview'
-// import {RouterLink} from "VueRouter"
-// import iview from "iView"
-import 'iview/dist/styles/iview.css'
-import 'highlight.js/styles/atom-one-dark.css'
-// import 'font-awesome-webpack'
 import vueI18n from 'vue-i18n';
-// import VueHighlightJS from 'vue-highlightjs'
-// Vue.use(VueHighlightJS);
+// import hljs from "highlight.js"
 
 // import Axios from 'axios';
 // Vue.prototype.$http =Axios;
+const hljs =require("highlight.js");
 
 Vue.config.productionTip = false;
 // Vue.use(iview);
@@ -58,6 +53,13 @@ const i18n = new vueI18n({
     ja: require('./i18n/app-ja.json'),
 
   }
+});
+
+Vue.directive('highlightjs',function (el) {
+  let blocks = el.querySelectorAll('pre code');
+  blocks.forEach((block)=>{
+    hljs.highlightBlock(block)
+  })
 });
 
 

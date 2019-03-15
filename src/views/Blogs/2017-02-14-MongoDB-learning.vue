@@ -152,7 +152,7 @@
           next-blog-title="前端技巧汇总，包括CSS,JS"
         >
         </PagerComponent>
-        <Comment :bid="b_id"></Comment>
+        <Comment :bid="b_id" :btitle="btitle"></Comment>
 
       </i-col>
     </Row>
@@ -174,6 +174,7 @@
       return {
         postTime: '2017-02-14',
         b_id:"9",
+        btitle:"MongoDB学习笔记",
         tags:[
           {id:1,name:"数据库"},
           {id:2,name:"MongoDB"}

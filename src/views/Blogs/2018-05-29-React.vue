@@ -103,7 +103,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
           next-blog-title="Git学习笔记"
         >
         </PagerComponent>
-        <Comment :bid="b_id"></Comment>
+        <Comment :bid="b_id" :btitle="btitle"></Comment>
       </i-col>
 
   </Row>
@@ -123,6 +123,7 @@ render(&lt;HelloMessage name="John" />, mountNode);
       return {
         postTime: '2017-11-08',
         b_id:"4",
+        btitle:"React学习笔记",
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"React"}

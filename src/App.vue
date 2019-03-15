@@ -17,7 +17,7 @@
   import NavBar from './components/NavBar.vue';
   import FootBar from './components/FootBar.vue'
   import MusicPlayer from './components/MusicPlayer'
-  // import hljs from "highlight.js/lib/highlight"
+  // import hljs from "highlight.js"
   // import javascript from 'highlight.js/lib/languages/javascript';
   // hljs.registerLanguage('javascript', javascript);
 
@@ -27,23 +27,23 @@
       return {}
     },
     methods: {
-      highlightCode:() => {
+      /*highlightCode:() => {
         const preEl = document.querySelectorAll('pre');
 
         preEl.forEach((el) => {
-          highlightjs.highlightBlock(el)
+          hljs.highlightBlock(el)
         })
-      }
+      }*/
     },
     mounted: function () {
       POWERMODE.colorful = true; // 火花各种颜色
       POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
       document.body.addEventListener('input', POWERMODE);
 
-      this.highlightCode();
+      // this.highlightCode();
     },
     updated:function () {
-      this.highlightCode();
+      // this.highlightCode();
     },
     watch: {},
     components: {

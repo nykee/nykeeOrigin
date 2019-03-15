@@ -128,7 +128,7 @@
             prvBlogTitle="阿雅达蜜月之旅"
           >
           </PagerComponent>
-          <Comment :bid="b_id"></Comment>
+          <Comment :bid="b_id" :btitle="btitle"></Comment>
         </i-col>
 
     </Row>
@@ -151,6 +151,7 @@
         postTime: '2018-11-20',
         // pv:mixin_PV.data().pv
         b_id:"1",
+        btitle:"前端性能优化",
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"性能优化"},

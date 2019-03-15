@@ -99,7 +99,7 @@
           next-blog-title="MongoDB学习笔记"
         >
         </PagerComponent>
-        <Comment :bid="b_id"></Comment>
+        <Comment :bid="b_id" :btitle="btitle"></Comment>
       </i-col>
 
 
@@ -119,6 +119,7 @@
       return {
         postTime: '2017-06-08',
         b_id:"8",
+        btitle:"百度地图学习笔记",
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"百度地图"}

@@ -57,7 +57,7 @@
   import {isMobile,isPad} from '../utils/ScreenWidth'
   import EventBus from '../utils/EventBus'
     export default {
-      props:["nickName","postTime","avatar","content","browser","os","isp","cmtId","parentId"],
+      props:["nickName","postTime","avatar","content","browser","os","isp","email","cmtId","parentId"],
 
       data() {
             return {
@@ -74,13 +74,13 @@
             // console.log(this.parentId);
             let replyToId = this.cmtId || this.parentId;
             // console.log(replyToId);
-            EventBus.$emit("rePlyComment",{id:replyToId,nickname:this.nickName})
+            EventBus.$emit("rePlyComment",{id:replyToId,nickName:this.nickName,email:this.email,content:this.decodedContent,location:location.href})
 
           },
           showReplyBtn(){
 
             this.isReplyBtnShow =true;
-            console.log(this.isReplyBtnShow);
+            // console.log(this.isReplyBtnShow);
           },
           hideReplyBtn(){
             this.isReplyBtnShow =false;
@@ -93,7 +93,7 @@
           if(this.nickName === "I am Specialized"){this.isOwner =true}
           else if(this.nickName === "nykee"){this.isOwner =true}
           else {this.isOwner =false}
-        console.log(screen.width);
+        // console.log(screen.width);
           if(isPad()||isMobile()){
             this.isReplyBtnShow =true;
           }

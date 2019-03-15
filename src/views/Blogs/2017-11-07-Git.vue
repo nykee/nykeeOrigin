@@ -45,7 +45,7 @@
         next-blog-title="Vue学习笔记"
       >
       </PagerComponent>
-      <Comment :bid="b_id"></Comment>
+      <Comment :bid="b_id" :btitle="btitle"></Comment>
     </i-col>
   </Row>
 </template>
@@ -63,6 +63,7 @@
       return {
         postTime: '2017-11-07',
         b_id:"5",
+        btitle:'Git学习笔记',
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"Git"}

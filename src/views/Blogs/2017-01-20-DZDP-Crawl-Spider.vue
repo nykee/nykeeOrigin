@@ -29,7 +29,7 @@
 
       >
       </PagerComponent>
-      <Comment :bid="b_id"></Comment>
+      <Comment :bid="b_id" :btitle="btitle"></Comment>
 
     </i-col>
 
@@ -50,6 +50,7 @@
       return {
         postTime: '2016-11-04',
         b_id:"11",
+        btitle:"Node.js大众点评爬虫",
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"爬虫"},

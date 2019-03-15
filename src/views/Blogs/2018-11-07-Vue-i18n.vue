@@ -190,7 +190,7 @@
           next-blog-title="Netty心跳机制"
         >
         </PagerComponent>
-        <Comment :bid="b_id"></Comment>
+        <Comment :bid="b_id" :btitle="btitle"></Comment>
       </i-col>
 
     </Row>
@@ -212,6 +212,7 @@
               postTime:'2018-11-07',
               i18nVar:"{{ $t(\"message.变量\") }}",
               b_id:"2",
+              btitle:'Vue-i18n实现国际化',
               tags:[
                 {id:1,name:"前端"},
                 {id:2,name:"国际化"},

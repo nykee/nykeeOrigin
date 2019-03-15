@@ -133,7 +133,7 @@
          next-blog-title="百度地图学习笔记"
        >
        </PagerComponent>
-       <Comment :bid="b_id"></Comment>
+       <Comment :bid="b_id" :btitle="btitle"></Comment>
      </i-col>
 
    </Row>
@@ -152,6 +152,7 @@
       return {
         postTime: '2017-09-21',
         b_id:"7",
+        btitle:"echarts学习笔记",
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"echarts"}

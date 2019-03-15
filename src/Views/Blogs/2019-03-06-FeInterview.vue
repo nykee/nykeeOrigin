@@ -36,7 +36,7 @@
                             prv-blog-title="前端图片压缩"
                     >
                     </PagerComponent>
-                  <Comment :bid="b_id"></Comment>
+                  <Comment :bid="b_id" :btitle="b_title"></Comment>
                 </section>
             </i-col>
         </Row>
@@ -60,7 +60,9 @@
                 {id:2,name:"面试"},
                 {id:3,name:"知识点"},
 
+
               ],
+              b_title:"前端面试题总结",
                 articles:[
                     {id:1,title:"前端面试校招问题准备（总结）",href:"https://www.nowcoder.com/discuss/59411"},
                     {id:2,title:"前端调试清单之优化网络资源",href:"https://segmentfault.com/a/1190000014364828"},

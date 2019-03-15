@@ -37,8 +37,8 @@ module.exports = {
       "particles":"particles.js",
       "axios":"axios",
       "moment":"moment",
-      "vue-highlightjs":"VueHighlightJS",
-      "highlightjs":"highlightjs"
+      // "vue-highlightjs":"VueHighlightJS",
+      "highlight.js":"hljs"
     },
   module: {
     rules: [

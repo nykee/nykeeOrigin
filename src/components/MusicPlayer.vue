@@ -179,7 +179,7 @@
           this.playStatus = "playing";
           this.$refs.mscAudio.play();
           this.isPlayingIndex = this.currentSong.index;
-          this.$Message.info({content:"ctrl+↑增加音量，ctrl+↓减小音量，ctrl+ ←切换上一首，ctrl+→切换下一首",duration:4})
+          this.$Message.info({content:"开始播放，ctrl+↑增加音量，ctrl+↓减小音量，ctrl+ ←切换上一首，ctrl+→切换下一首",duration:4})
         }
         else {
           this.playStatus = "paused";

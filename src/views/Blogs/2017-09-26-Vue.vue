@@ -127,7 +127,7 @@
         next-blog-title="echarts 2.7.2爬坑记录"
       >
       </PagerComponent>
-      <Comment :bid="b_id"></Comment>
+      <Comment :bid="b_id" :btitle="btitle"></Comment>
     </i-col>
   </Row>
 </template>
@@ -145,6 +145,7 @@
       return {
         postTime: '2017-09-26',
         b_id:"6",
+        btitle:'Vue学习笔记',
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"面试"}

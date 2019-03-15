@@ -42,7 +42,7 @@ const conf =require("./config"); //引入config文件
 const JPG =conf.JPEGImages;
 const PNG =conf.PNGImages;
 const out=conf.outputPath;
-             /*压缩jpg文件*/
+/*压缩jpg文件*/
 const optimiseJPEGImages = () =>
   imagemin([JPG], out, {
     plugins: [
@@ -94,7 +94,7 @@ optimiseJPEGImages()
             next-blog-title="前端面试题总结"
           >
           </PagerComponent>
-          <Comment :bid="b_id"></Comment>
+          <Comment :bid="b_id" :btitle="btitle"></Comment>
         </section>
       </i-col>
     </Row>
@@ -112,6 +112,7 @@ optimiseJPEGImages()
             return {
               postTime: '2019-03-13',
               b_id:"14",
+              btitle:"前端图片压缩",
               tags:[
                 {id:1,name:"前端"},
                 {id:2,name:"代码"},

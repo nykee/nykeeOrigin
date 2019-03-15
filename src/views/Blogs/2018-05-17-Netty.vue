@@ -277,7 +277,7 @@
             next-blog-title="React学习笔记"
           >
           </PagerComponent>
-          <Comment :bid="b_id"></Comment>
+          <Comment :bid="b_id" :btitle="btitle"></Comment>
         </i-col>
     </Row>
 </template>
@@ -296,6 +296,7 @@
       return {
         postTime: '2017-05-17',
         b_id:"3",
+        btitle:'Netty心跳机制',
         tags:[
           {id:1,name:"后端"},
           {id:2,name:"netty"}

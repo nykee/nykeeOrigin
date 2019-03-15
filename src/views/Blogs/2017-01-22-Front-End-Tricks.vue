@@ -399,7 +399,7 @@
           next-blog-title="Node.js大众点评爬虫"
         >
         </PagerComponent>
-        <Comment :bid="b_id"></Comment>
+        <Comment :bid="b_id" :btitle="btitle"></Comment>
       </i-col>
     </Row>
 
@@ -422,6 +422,7 @@
         postTime: '2017-01-22',
         screenWidth: 0,
         b_id:"10",
+        btitle:'前端技巧汇总，包括CSS,JS',
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"js"},

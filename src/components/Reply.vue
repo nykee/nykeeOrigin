@@ -9,6 +9,7 @@
                     :os="rep.os"
                     :isp="rep.isp"
                     :parentId="parentId"
+                    :email="rep.email"
                     :parentBlogId="parentBlogId"
       />
     </div>
@@ -20,7 +21,7 @@
   import BasicComment from "./BasicCommentComponent"
   import EventBus from "../utils/EventBus";
     export default {
-      props:["parentId","parentBlogId"],
+      props:["parentId","parentBlogId","email"],
         data() {
             return {
               repFromDB:[]

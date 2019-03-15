@@ -89,7 +89,7 @@
             prvBlogTitle="前端面试题总结"
           >
           </PagerComponent>
-            <Comment :bid="b_id"></Comment>
+            <Comment :bid="b_id" :btitle="btitle"></Comment>
         </i-col>
 
     </Row>
@@ -109,6 +109,7 @@
             return {
                 postTime: '2019-03-03',
               b_id:"12",
+              btitle:'阿雅达蜜月旅行',
               tags:[{id:1,name:"旅行"}]
             }
         },
