@@ -64,6 +64,7 @@
               ],
               b_title:"前端面试题总结",
                 articles:[
+                    {id:0,title:" 从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理",href:"https://segmentfault.com/a/1190000012925872"},
                     {id:1,title:"前端面试校招问题准备（总结）",href:"https://www.nowcoder.com/discuss/59411"},
                     {id:2,title:"前端调试清单之优化网络资源",href:"https://segmentfault.com/a/1190000014364828"},
                     {id:3,title:"Vue.js异步更新及nextTick",href:"https://juejin.im/post/5b85b3326fb9a019fc76ecee"},
@@ -88,6 +89,8 @@
                     {id:22,title:"前端面试笔试知识汇总3（含答案）",href:"http://www.cnblogs.com/huansky/p/5953202.html"},
                     {id:23,title:"前端基础面试题总结",href:"https://www.nowcoder.com/discuss/136331"},
                     {id:24,title:" 如何让一个vue项目支持多语言（vue-i18n）",href:"https://segmentfault.com/a/1190000015008808"},
+                    {id:25,title:"V8 内存浅析",href:"https://zhuanlan.zhihu.com/p/33816534"},
+                    {id:26,title:" AJAX请求真的不安全么？谈谈Web安全与AJAX的关系。",href:"https://segmentfault.com/a/1190000012693772"},
                     ]
             }
         },
@@ -112,7 +115,8 @@
 </script>
 <style scoped>
     .article-items{
-        margin:.8rem 0;
+        margin:1.1rem 0;
+        font-size: .9rem;
 
     }
     /*.article-items>a{
