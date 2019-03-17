@@ -5,6 +5,7 @@ const imageminWebp = require('imagemin-webp');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 const conf =require("./config");
+const axios = require('axios');
 
 const JPG =conf.JPEGImages;
 const PNG =conf.PNGImages;
@@ -46,5 +47,8 @@ optimiseJPEGImages()
   .then(() => convertPNGToWebp())
   .then(() => convertJPGToWebp())
   .catch(error => console.log(error));
+
+//todo: http方式上传又拍云
+// axios.put("http://v0.api.upyun.com/imagenykeecn")
 
 

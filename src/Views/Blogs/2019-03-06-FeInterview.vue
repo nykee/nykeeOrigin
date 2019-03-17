@@ -91,6 +91,8 @@
                     {id:24,title:" 如何让一个vue项目支持多语言（vue-i18n）",href:"https://segmentfault.com/a/1190000015008808"},
                     {id:25,title:"V8 内存浅析",href:"https://zhuanlan.zhihu.com/p/33816534"},
                     {id:26,title:" AJAX请求真的不安全么？谈谈Web安全与AJAX的关系。",href:"https://segmentfault.com/a/1190000012693772"},
+                    {id:27,title:" 我接触过的前端数据结构与算法",href:"https://juejin.im/post/5958bac35188250d892f5c91"},
+                    {id:28,title:" 从Chrome源码看浏览器如何构建DOM树",href:"https://fed.renren.com/2017/01/30/chrome-build-dom/"},
                     ]
             }
         },
