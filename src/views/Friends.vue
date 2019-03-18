@@ -2,13 +2,13 @@
   <div>
     <IntroHeader
       Title="Friends"
-      introHeaderClass="intro-header-photo"
+      introHeaderClass="intro-header-friends"
       subTitle=""
       :isProjectPage="false"/>
     <Row type="flex" justify="center" align="middle" class="info-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
-        <h2>欢迎各位大佬来我的小破站⁄(⁄⁄•⁄ω⁄•⁄⁄)⁄</h2>
-        <h3>##想要互换友联的就在下方留言吧，我看到会尽快回复的哦~</h3>
+        <h2 class="info-main-title">欢迎各位大佬光临我的小破站</h2>
+        <h3 class="info-main-title">##想要互换友链的大佬请在留言板按照下方格式留言，我看到会尽快回复的~~</h3>
 
         <ul class="indicator">请提供你的：
           <li class="indicator-items">1、名字</li>
@@ -29,7 +29,23 @@
 
 
     </Row>
-    <Row type="flex" justify="center" align="middle"  class="fri-xhb">
+    <Row type="flex" justify="center" align="middle"  class="fri-giant rows">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
+        <h4 class="fri-subtitle">前端大佬们</h4>
+        <Row gutter="10">
+          <i-col span="8" v-for="ge in geeks" :key="ge.id" style="margin-top: .6rem;">
+            <FriendsComp :avatar="ge.avatar" :name="ge.name" :bio="ge.bio" :site-add="ge.webSiteAdd" ></FriendsComp>
+          </i-col>
+
+        </Row>
+      </i-col>
+    </Row>
+    <Row type="flex" justify="center" align="middle"  class="fri-tools rows">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
+        <h4 class="fri-subtitle">收集的工具站点</h4>
+      </i-col>
+    </Row>
+    <Row type="flex" justify="center" align="middle"  class="fri-xhb rows">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
         <h4 class="fri-subtitle">小伙伴们</h4>
         <Row gutter="10">
@@ -65,6 +81,11 @@
                 {id:10,avatar:"https://ws1.sinaimg.cn/large/006Xmmmgly1fytpojlve9j30500500sl.jpg",bio:"可这世间疾苦照样没能放过我",webSiteAdd:"https://www.uo33.cn/",name:"林阿三"},
                 {id:11,avatar:"https://5sir.cn/logo.jpg",bio:"因为喜欢，所以折腾。",webSiteAdd:"https://5sir.cn/",name:"梁Sir blog"},
                 {id:12,avatar:"https://www.xcnte.com/Logo.png",bio:"终其一生，我们都在寻找自己",webSiteAdd:"https://www.xcnte.com/",name:"Xcnte's Blog"},
+              ],
+              geeks:[
+                {id:0,avatar:"//image.zhangxinxu.com/image/blog/zxx_240_0818.jpg",bio:"CSS大佬",webSiteAdd:"https://www.zhangxinxu.com/",name:"张鑫旭的个人博客首页"},
+                {id:0,avatar:"https://tva1.sinaimg.cn/crop.0.0.180.180.180/537f5932jw1e8qgp5bmzyj2050050aa8.jpg",bio:"JS大佬，ES6系列",webSiteAdd:"http://www.ruanyifeng.com/blog/",name:"阮一峰"},
+                {id:0,avatar:"//tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg",bio:"各种教程JS,python",webSiteAdd:"https://www.liaoxuefeng.com/",name:"廖雪峰"},
               ]
             }
         },
@@ -88,5 +109,25 @@
   .fri-subtitle{
     padding-left: 1rem;
     border-left: 4px solid #2b85e4;
+  }
+  .indicator,.example{
+    margin-top: 1rem;
+  }
+  .info-main-title{
+    line-height: 2rem;
+  }
+  .example-items,.indicator-items{
+    line-height: 1rem;
+    margin-top: .4rem;
+  }
+  .indicator-items{
+    font-weight: 800;
+    font-size: .9rem;
+  }
+  .example-items{
+    font-weight: 500;
+  }
+  .rows{
+    margin: 1rem 0;
   }
 </style>

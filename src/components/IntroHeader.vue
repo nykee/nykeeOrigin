@@ -60,7 +60,12 @@
 </script>
 <style>
 
-
+  .intro-header-friends{
+    background-image: url("https://image.nykee.cn/sydney.jpg") ;
+  }
+  .intro-header-friends-webp{
+    background-image: url("https://image.nykee.cn/sydney.webp") ;
+  }
   .intro-header-index {
     background-image: url("https://image.nykee.cn/index.jpg") ;
   }

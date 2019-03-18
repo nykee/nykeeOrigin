@@ -44,7 +44,7 @@
     <Row type="flex" justify="center" align="middle">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} style="text-align: center">
          <p class="day-count-box">
-           本站<i class="fa fa-superpowers s-icon"></i>已运行<span class="day-count">{{dayCount}}天</span>| 当前有1人在线
+           本站<i class="fa fa-superpowers s-icon fa-spin"></i>已运行<span class="day-count">{{dayCount}}天</span><!--| 当前有1人在线-->
          </p>
       </i-col>
     </Row>
