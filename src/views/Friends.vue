@@ -5,7 +5,7 @@
       introHeaderClass="intro-header-photo"
       subTitle=""
       :isProjectPage="false"/>
-    <Row type="flex" justify="center" align="middle">
+    <Row type="flex" justify="center" align="middle" class="info-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <h2>欢迎各位大佬来我的小破站⁄(⁄⁄•⁄ω⁄•⁄⁄)⁄</h2>
         <h3>##想要互换友联的就在下方留言吧，我看到会尽快回复的哦~</h3>
@@ -79,6 +79,9 @@
     }
 </script>
 <style scoped>
+  .info-row{
+    margin-top: 1.4rem;
+  }
   .fri-xhb{
     margin-top: 2rem;
   }
