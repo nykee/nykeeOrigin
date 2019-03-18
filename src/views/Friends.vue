@@ -8,7 +8,7 @@
     <Row type="flex" justify="center" align="middle" class="info-row">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <h2 class="info-main-title">欢迎各位大佬光临我的小破站</h2>
-        <h3 class="info-main-title">##想要互换友链的大佬请在留言板按照下方格式留言，我看到会尽快回复的~~</h3>
+        <h3 class="info-main-title">想要互换友链的大佬请在留言板按照下方格式留言，我看到会尽快回复的~~</h3>
 
         <ul class="indicator">请提供你的：
           <li class="indicator-items">1、名字</li>
