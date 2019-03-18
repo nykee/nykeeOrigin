@@ -1,9 +1,9 @@
 <template>
   <div>
     <IntroHeader
-            Title="See the world"
+            Title="Photos"
             introHeaderClass="intro-header-photo"
-            subTitle="With my eyes and my camera!"
+            subTitle=""
             :isProjectPage="false"/>
     <div class="flexContainer">
       <ul class="photo-intro" >

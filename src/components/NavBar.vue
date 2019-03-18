@@ -31,6 +31,9 @@
             <router-link to="/Comments">{{ $t("message.comments")}}</router-link>
           </MenuItem>
           <MenuItem name="7">
+            <router-link to="/Friends">{{ $t("message.Friends")}}</router-link>
+          </MenuItem>
+          <MenuItem name="8">
             <router-link to="/About">{{ $t("message.about")}}</router-link>
           </MenuItem>
         </i-col>
@@ -65,6 +68,9 @@
           </DropdownItem>
           <DropdownItem>
             <router-link to="/Comments" class="black-color">{{ $t("message.comments")}}</router-link>
+          </DropdownItem>
+          <DropdownItem>
+            <router-link to="/Friends" class="black-color">{{ $t("message.Friends")}}</router-link>
           </DropdownItem>
           <DropdownItem>
             <router-link to="/About" class="black-color">{{ $t("message.about")}}</router-link>

@@ -1,9 +1,9 @@
 <template>
   <div>
     <IntroHeader
-            Title="Nykee Blog"
+            Title="Blogs"
             introHeaderClass="intro-header-blogs"
-            subTitle="Talk is cheap,show me ur code~"
+            subTitle=""
             :isProjectPage="false">
     </IntroHeader>
     <router-view></router-view>

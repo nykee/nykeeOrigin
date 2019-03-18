@@ -1,9 +1,9 @@
 <template>
   <div>
     <IntroHeader
-            Title="Something"
+            Title="Comments"
             introHeaderClass="intro-header-comments"
-            subTitle="interesting or not"
+            subTitle=""
             :isProjectPage="false"/>
     <Comment/>
   </div>

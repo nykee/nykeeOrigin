@@ -1,8 +1,8 @@
 <template>
   <div>
-      <IntroHeader Title="About Me"
+      <IntroHeader Title="Nykee"
                    introHeaderClass="intro-header-index"
-                   subTitle="Life`s short,I use js"
+                   subTitle=""
                    :isProjectPage="false">
       </IntroHeader>
     <Row class="self-info-container">
