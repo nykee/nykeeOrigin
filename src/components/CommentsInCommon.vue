@@ -28,6 +28,7 @@
                      :content="com.content"
                      :avatar ="com.avatar"
                      :post-time ="com.postTime"
+
                      :browser="com.browser"
                      :os="com.os"
                      :isp="com.isp"
@@ -114,13 +115,13 @@
       <i-col :xs={span:spanXS} :sm={span:spanSM} :md={span:spanMD} :lg={span:spanLG}>
         <Row>
           <i-col span="2">
-            <Avatar icon="ios-person" size="large" :src="avatarSrc"/>
+            <Avatar  size="large" :src="avatarSrc" >{{ nickName }}</Avatar>
           </i-col>
           <i-col span="10" offset="1">
             <Input v-model="nickName" :placeholder="this.$t('message.commentsPage.placeholder_nickname')" class="comment-input-items"  @on-blur="handleOnBlur" />
           </i-col>
           <i-col span="10" offset="1">
-            <Input v-model="email" :placeholder="this.$t('message.commentsPage.placeholder_email')"  class="comment-input-items"/>
+            <Input v-model="email" :placeholder="this.$t('message.commentsPage.placeholder_email')"  class="comment-input-items" @on-blur="validateEmail"/>
           </i-col>
         </Row>
       </i-col>
@@ -132,7 +133,7 @@
     </Row>
     <Row type="flex" justify="center" align="middle" class="item-row">
       <i-col :xs={span:spanXS} :sm={span:spanSM} :md={span:spanMD} :lg={span:spanLG} class="textA-center">
-        <Button type="primary" @click="submitComments">{{$t("message.commentsPage.submit_comment")}}</Button>
+        <Button type="primary" @click="submitComments" :disabled="subBtnDisable">{{$t("message.commentsPage.submit_comment")}}</Button>
       </i-col>
     </Row>
   </div>
@@ -556,10 +557,26 @@
         origin_email:"",
         origin_name:'',
         origin_content:'',
-        location:''
+        location:'',
+        subBtnDisable:false
       }
     },
     methods: {
+      validateEmail(){
+        if(this.email.length ===0){
+          this.$Message.warning("请填写邮箱！")
+        }
+        else {
+          let  reg=/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+          if(!reg.test(this.email)){
+            this.$Message.warning("请填写有效的邮箱地址！");
+            this.subBtnDisable =true;
+          }
+          else {
+            this.subBtnDisable =false;
+          }
+        }
+      },
       isQQ:function (aQQ) {
         var bValidate = RegExp(/^[1-9][0-9]{4,9}$/).test(aQQ);
         if (bValidate) {
@@ -1001,6 +1018,11 @@
 
     },
     computed:{
+      /*BgColor:function () {
+        let colorList =['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
+        let randIdx =Math.floor(Math.random()*(colorList.length-0+1)+0);
+        return colorList[randIdx]
+      },*/
 
     },
     components: {CommentItem,Emotion,CommentEmptyStatus}

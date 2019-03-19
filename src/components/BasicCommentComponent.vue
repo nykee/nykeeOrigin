@@ -5,7 +5,7 @@
              :md={span:2}
              :sm={span:2}
              :xs={span:4}>
-        <Avatar icon="ios-person" size="large" :src="avatar"/>
+        <Avatar  size="large" :src="avatar" >{{nickName}}</Avatar>
       </i-col>
       <i-col :lg={span:18}
              :md={span:18}
@@ -57,7 +57,7 @@
   import {isMobile,isPad} from '../utils/ScreenWidth'
   import EventBus from '../utils/EventBus'
     export default {
-      props:["nickName","postTime","avatar","content","browser","os","isp","email","cmtId","parentId"],
+      props:["nickName","postTime","avatar","content","browser","os","isp","email","cmtId","parentId","BgColor"],
 
       data() {
             return {
@@ -65,7 +65,8 @@
               os_icon_src:'',
               isMobile:false,
               isReplyBtnShow:false,
-                isOwner:false
+                isOwner:false,
+
             }
         },
         methods: {
@@ -153,6 +154,7 @@
 
         },
       computed:{
+
         decodedContent:function () {
           let baseUrl = "https://image.nykee.cn/";
           //存放正则和对应的文件名称的数据结构

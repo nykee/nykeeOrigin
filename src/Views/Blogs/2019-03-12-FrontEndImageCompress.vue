@@ -16,6 +16,16 @@
           <PostTag :postTime="postTime"/>
         </section>
         <section class="main-body">
+          <p>前期图片压缩与转格式都是在tinypng和squoosh的网站在线转换的，操作比较繁琐。着实不是一种好方案啊，当时就在想能不能用代码的方式去解决它。
+          后来在知乎上读到一篇翻译的文章就是讲的图片压缩。随后实践了下，真香。需要安装几个npm包：</p>
+          <pre v-highlightjs>
+            <code class="bash" >
+              imagemin-webp //main lib
+              imagemin-webp //png/jpg转换为webp格式
+              imagemin-mozjpeg //图片jpg压缩为moz-jpeg格式
+              imagemin-pngquant //用来压缩PNG格式的图片
+            </code>
+          </pre>
           <h3>config.js</h3>
           <pre v-highlightjs>
             <code class="lang-javascript">

@@ -56,6 +56,7 @@
     padding: .8rem;
     border-radius: 20px;
     height: 8rem;
+
   }
   .fri-comp-hover{
     border: 1px solid #E8EAEC;
@@ -70,6 +71,7 @@
   .fri-avatar{
     width: 4rem;
     height: 4rem;
+    border: 2px solid rgba(124,129,134,.6);
     border-radius: 50%;
   }
   .fri-bio{
@@ -80,6 +82,7 @@
   .fri-avatar-hover{
     width: 4rem;
     height: 4rem;
+    border: 2px solid #7c8186;
     border-radius: 50%;
     transform: rotateZ(360deg);
     transition: transform 1.5s ease;
