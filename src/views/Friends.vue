@@ -42,7 +42,24 @@
     </Row>
     <Row type="flex" justify="center" align="middle"  class="fri-tools rows">
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
-        <h4 class="fri-subtitle">收集的工具站点</h4>
+        <h4 class="fri-subtitle">前端技术博客</h4>
+        <Row gutter="10">
+          <i-col span="8" v-for="blog in blogs" :key="blog.id" style="margin-top: .6rem;">
+            <FriendsComp :avatar="blog.avatar" :name="blog.name" :bio="blog.bio" :site-add="blog.webSiteAdd" ></FriendsComp>
+          </i-col>
+
+        </Row>
+      </i-col>
+    </Row>
+    <Row type="flex" justify="center" align="middle"  class="fri-tools rows">
+      <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} >
+        <h4 class="fri-subtitle">API&工具</h4>
+        <Row gutter="10">
+          <i-col span="8" v-for="tool in tools" :key="tool.id" style="margin-top: .6rem;">
+            <FriendsComp :avatar="tool.avatar" :name="tool.name" :bio="tool.bio" :site-add="tool.webSiteAdd" ></FriendsComp>
+          </i-col>
+
+        </Row>
       </i-col>
     </Row>
     <Row type="flex" justify="center" align="middle"  class="fri-xhb rows">
@@ -83,10 +100,14 @@
                 {id:12,avatar:"https://www.xcnte.com/Logo.png",bio:"终其一生，我们都在寻找自己",webSiteAdd:"https://www.xcnte.com/",name:"Xcnte's Blog"},
               ],
               geeks:[
-                {id:0,avatar:"//image.zhangxinxu.com/image/blog/zxx_240_0818.jpg",bio:"CSS大佬",webSiteAdd:"https://www.zhangxinxu.com/",name:"张鑫旭的个人博客首页"},
                 {id:0,avatar:"https://tva1.sinaimg.cn/crop.0.0.180.180.180/537f5932jw1e8qgp5bmzyj2050050aa8.jpg",bio:"JS大佬，ES6系列",webSiteAdd:"http://www.ruanyifeng.com/blog/",name:"阮一峰"},
-                {id:0,avatar:"//tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg",bio:"各种教程JS,python",webSiteAdd:"https://www.liaoxuefeng.com/",name:"廖雪峰"},
-              ]
+                {id:1,avatar:"//tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg",bio:"各种教程JS,python",webSiteAdd:"https://www.liaoxuefeng.com/",name:"廖雪峰"},
+                {id:2,avatar:"//image.zhangxinxu.com/image/blog/zxx_240_0818.jpg",bio:"CSS大佬",webSiteAdd:"https://www.zhangxinxu.com/",name:"张鑫旭的个人博客首页"},
+              ],
+              tools:[
+
+              ],
+              blogs:[]
             }
         },
         methods: {},
