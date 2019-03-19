@@ -109,7 +109,7 @@
                 {id:1,avatar:"http://image.nykee.cn/xztq.png",bio:"天气API",webSiteAdd:"https://www.seniverse.com/doc#now",name:"心知天气"},
                 {id:2,avatar:"https://caniuse.com/img/favicon-128.png",bio:"前端兼容性查询",webSiteAdd:"https://caniuse.com/",name:"caniuse"},
                 {id:3,avatar:"",bio:"网易云音乐API",webSiteAdd:"https://api.imjad.cn/cloudmusic.md",name:"网易云音乐API"},
-                {id:4,avatar:"",bio:"音乐API",webSiteAdd:"https://api.bzqll.com/",name:"音乐API"},
+                {id:4,avatar:"http://image.nykee.cn/bzqll.png",bio:"音乐API",webSiteAdd:"https://api.bzqll.com/",name:"音乐API"},
                 {id:5,avatar:"",bio:"很全很强大的官方API集合",webSiteAdd:"https://blog.csdn.net/u012562943/article/details/54613647",name:"很全很强大的官方API集合"},
                 {id:6,avatar:"",bio:"Git常用命令清单",webSiteAdd:"https://github.com/jaywcjlove/handbook/blob/master/other/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95.md#push",name:"Git常用命令清单"},
                 {id:7,avatar:"https://react.parts/static/media/logo-small.ea659c11.svg",bio:"React组件汇总",webSiteAdd:"https://react.parts/?sort=relevance",name:"React组件汇总"},

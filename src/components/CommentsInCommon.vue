@@ -735,6 +735,7 @@
           };
         if(this.nickName.length===0){
           this.$Message.warning('请填写昵称或QQ');
+          this.avatarSrc ="";
           return false
         }
         if(!this.isQQ(this.nickName)){
