@@ -64,4 +64,9 @@
     color: #fff;
     font-size: .9rem;
   }
+  @media screen and (min-width: 1900px){
+    .pager-item-info{
+      left:44%;
+    }
+  }
 </style>

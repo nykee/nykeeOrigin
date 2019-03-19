@@ -93,6 +93,12 @@
       height:24rem;
     }
   }
+  @media screen and (min-width: 1900px){
+    .img-thumb{
+      width:41rem;
+      height:26rem;
+    }
+  }
   @media screen and (min-width: 2560px){
     .img-thumb{
       width:56rem;

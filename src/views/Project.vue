@@ -5,13 +5,15 @@
             imgSrc="https://image.nykee.cn/index.jpg"
             subTitle=""
             :isProjectPage="false"/>
+    <div class="proj-box">
+      <Row type="flex" justify="center" align="middle" class="proj-row" v-for="proj in projs" v-bind:key="proj.id">
+        <i-col :xs={span:24} :sm={span:24} :md={span:16} :lg={span:12}>
+          <ProjectCard :proj-name="proj.pName" :description="proj.desc" :stack="proj.stack"
+                       :github="proj.github"></ProjectCard>
+        </i-col>
+      </Row>
+    </div>
 
-    <Row type="flex" justify="center" align="middle" class="proj-row" v-for="proj in projs" v-bind:key="proj.id">
-      <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:12}>
-        <ProjectCard :proj-name="proj.pName" :description="proj.desc" :stack="proj.stack"
-                     :github="proj.github"></ProjectCard>
-      </i-col>
-    </Row>
   </div>
 </template>
 
@@ -117,6 +119,60 @@
 </script>
 <style scoped>
   .proj-row {
-    margin-top: 3rem;
+    margin-top: 1rem;
+  }
+  .proj-box{
+    margin-top: 24rem;
+  }
+  @media screen and (min-width: 320px){
+    .proj-box{
+      margin-top: 18rem;
+    }
+  }
+  @media screen and (min-width: 375px){
+    .proj-box{
+      margin-top: 20rem;
+    }
+  }
+  @media screen and (min-width: 425px){
+    .proj-box{
+      margin-top: 22rem;
+    }
+  }
+  @media screen and (min-width: 768px){
+    .proj-box{
+      margin-top: 28rem;
+    }
+  }
+  @media screen and (min-width: 1024px){
+    .proj-box{
+      margin-top: 28rem;
+    }
+  }
+  @media screen and (min-width: 1200px){
+    .proj-box{
+      margin-top: 42rem;
+    }
+  }
+  @media screen and (min-width: 1440px){
+    .proj-box{
+      margin-top: 28rem;
+    }
+  }
+  @media screen and (min-width: 1680px){
+    .proj-box{
+      margin-top: 42rem;
+    }
+  }
+  @media screen and (min-width: 1900px){
+    .proj-box{
+      margin-top: 42rem;
+    }
+  }
+  @media screen and (min-width: 2560px){
+    .proj-box{
+      margin-top: 48rem;
+    }
+
   }
 </style>
