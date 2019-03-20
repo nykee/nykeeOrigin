@@ -20,9 +20,9 @@
         <div class="flexContainer">
           <AboutMe/>
         </div>
-        <div class="flexContainer">
+        <!--<div class="flexContainer">
           <Friends/>
-        </div>
+        </div>-->
       </i-col>
     </Row>
 

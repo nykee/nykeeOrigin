@@ -151,7 +151,7 @@
   }
   @media screen and (min-width: 1200px){
     .proj-box{
-      margin-top: 42rem;
+      margin-top: 28rem;
     }
   }
   @media screen and (min-width: 1440px){

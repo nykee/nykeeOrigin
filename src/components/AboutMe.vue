@@ -38,6 +38,7 @@
   .abm-container {
     width: 12.5rem;
     border-top: 1px solid #271111;
+    border-bottom: 1px solid #271111;
     /*margin: .5rem 0;*/
   }
 

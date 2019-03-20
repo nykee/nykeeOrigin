@@ -8,7 +8,7 @@
     <div class="fri-parent-page">
       <Row type="flex" justify="center" align="middle" class="info-row ">
         <i-col :xs={span:24} :sm={span:24} :md={span:16} :lg={span:16} class="fri-page">
-          <div class="fri-page-part">
+          <div class="">
             <h2 class="info-main-title">欢迎各位大佬光临我的小破站</h2>
             <h3 class="info-main-title">想要互换友链的大佬请在留言板按照下方格式留言，我看到会尽快回复的~~</h3>
 
@@ -87,13 +87,15 @@
                 {id:3,avatar:"https://gravatar.fghrsh.net/avatar/0c5d77513a08b8c3e38336859b53b027?s=80&d=mm&r=G",bio:"既然我无法停留，那么就飞到我再也不能飞的那一天吧。",webSiteAdd:"https://www.fghrsh.net/",name:"FGHRSH 的博客"},
                 {id:4,avatar:"https://file.heroyf.club/logo.jpg",bio:"苹果是给那些为了爱选择死亡的人的奖励",webSiteAdd:"https://heroyf.club/",name:"萌萌哒の柯基"},
                 {id:5,avatar:"https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg",bio:"一个好奇的博客",webSiteAdd:"https://www.hojun.cn/",name:"hojun"},
-                {id:6,avatar:"https://avatars3.githubusercontent.com/u/13348805?v=4",bio:"不折腾会死星人",webSiteAdd:"https://blog.woc.moe/",name:"jmglsi的博客"},
-                {id:7,avatar:"https://view.moezx.cc/images/2018/12/21/youmu.jpg",bio:"在这片充满魔力的土地下",webSiteAdd:"https://www.yooomu.com/",name:"Kong's Blog"},
+                // {id:6,avatar:"https://avatars3.githubusercontent.com/u/13348805?v=4",bio:"不折腾会死星人",webSiteAdd:"https://blog.woc.moe/",name:"jmglsi的博客"},
+                // {id:7,avatar:"https://view.moezx.cc/images/2018/12/21/youmu.jpg",bio:"在这片充满魔力的土地下",webSiteAdd:"https://www.yooomu.com/",name:"Kong's Blog"},
                 {id:8,avatar:"https://view.moezx.cc/images/2018/04/28/lsy.png",bio:"爱好摄影 的程序猿",webSiteAdd:"https://lishaoy.net/",name:"Persilee's Blog"},
                 {id:9,avatar:"https://meowqvq.files.wordpress.com/2019/01/%E5%A4%B4%E5%83%8F.jpeg",bio:"半文艺、半动漫的二次元美少女的涂鸦簿！",webSiteAdd:"https://meowqvq.wordpress.com/",name:"惡魔菌の记事簿"},
                 {id:10,avatar:"https://ws1.sinaimg.cn/large/006Xmmmgly1fytpojlve9j30500500sl.jpg",bio:"可这世间疾苦照样没能放过我",webSiteAdd:"https://www.uo33.cn/",name:"林阿三"},
                 {id:11,avatar:"https://5sir.cn/logo.jpg",bio:"因为喜欢，所以折腾。",webSiteAdd:"https://5sir.cn/",name:"梁Sir blog"},
                 {id:12,avatar:"https://www.xcnte.com/Logo.png",bio:"终其一生，我们都在寻找自己",webSiteAdd:"https://www.xcnte.com/",name:"Xcnte's Blog"},
+                {id:13,avatar:"https://file.eyuyun.com/usr/uploads/icon.ico",bio:"有格调的技术部落",webSiteAdd:"https://www.eyuyun.com/",name:"E语云博客"},
+                {id:14,avatar:"https://cdn.jsdelivr.net/gh/jerryc127/CDN@1.0/Photo/avatar.png",bio:"Never put off till tomorrow what you can do today",webSiteAdd:"http://jerryc.me/",name:"JerryC"},
               ],
               geeks:[
                 {id:0,avatar:"https://tva1.sinaimg.cn/crop.0.0.180.180.180/537f5932jw1e8qgp5bmzyj2050050aa8.jpg",bio:"JS大佬，ES6系列",webSiteAdd:"http://www.ruanyifeng.com/blog/",name:"阮一峰"},
@@ -181,6 +183,6 @@
     /*border: 1px solid #00ff00;*/
   }
   .fri-page-part{
-    margin-top:4rem;
+    margin-top:2rem;
   }
 </style>

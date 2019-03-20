@@ -93,14 +93,19 @@
 </script>
 <style scoped="scoped">
   .time {
-    font-weight: 800;
-    font-size: 0.8rem;
+    font-weight: 700;
+    font-size: 1rem;
   }
-
+  .content{
+    font-size: .9rem;
+    line-height: 1.2rem;
+    margin-top: .3rem;
+  }
   .time-line {
     margin-top: .5rem;
     padding-left: 38%;
   }
+
   @media screen and (max-width: 425px){
     .time-line {
       padding-left: 30%;
@@ -118,6 +123,7 @@
   }
   .site-intro-content{
     padding: 1rem;
+    line-height: 1.2rem;
   }
   .day-count-box{
     color: #B9B9B9;

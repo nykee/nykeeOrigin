@@ -132,7 +132,8 @@
   .site-heading-title {
     font-size: 3.75rem;
     color: #fff;
-    line-height: 1.1
+    line-height: 1.1;
+    font-family: Courgette !important;
   }
 
   .site-heading-subtitle {
