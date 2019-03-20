@@ -66,7 +66,7 @@
     border-radius: 20px;
     height: 8rem;
     margin-top:.6rem;
-    box-shadow:0 4px 6px 6px rgba(110,110,110,.5)
+    box-shadow:0 4px 4px 4px rgba(110,110,110,.5)
    /* background: #E8EAEC;
     opacity: .3;
     color: #fff !important;*/

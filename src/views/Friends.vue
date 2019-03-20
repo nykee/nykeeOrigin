@@ -7,7 +7,7 @@
       :isProjectPage="false"/>
     <div class="fri-parent-page">
       <Row type="flex" justify="center" align="middle" class="info-row ">
-        <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14} class="fri-page">
+        <i-col :xs={span:24} :sm={span:24} :md={span:16} :lg={span:16} class="fri-page">
           <div class="fri-page-part">
             <h2 class="info-main-title">欢迎各位大佬光临我的小破站</h2>
             <h3 class="info-main-title">想要互换友链的大佬请在留言板按照下方格式留言，我看到会尽快回复的~~</h3>
@@ -126,8 +126,9 @@
               blogs:[
                 {id:1,avatar:"http://jsdig.com/img/logo.svg",bio:"前端导航网",webSiteAdd:"http://jsdig.com/",name:"前端导航网"},
                 {id:2,avatar:"https://static2.cnodejs.org/public/images/cnodejs_light.svg",bio:"CNode：Node.js专业中文社区",webSiteAdd:"https://cnodejs.org/",name:"CNode"},
-                {id:3,avatar:"http://web.jobbole.com/wp-content/themes/jobboleblogv3/_assets/img/jobbole-logo.png",bio:"Web前端伯乐在线",webSiteAdd:"http://web.jobbole.com/",name:"Web前端伯乐在线"},
-                {id:3,avatar:"https://awps-assets.meituan.net/mit/blog/v20190124-1/asset/icon/android-icon-192x192.png?v=Whistle&t=20181017-1r",bio:"美团技术团队",webSiteAdd:"https://tech.meituan.com/",name:"美团技术团队"},
+                {id:3,avatar:"http://img.alicdn.com/tps/TB1Nv_wKXXXXXbmXVXXXXXXXXXX-295-195.png",bio:"淘宝前端团队（FED）",webSiteAdd:"http://taobaofed.org/",name:"淘宝前端团队（FED）"},
+                {id:4,avatar:"http://web.jobbole.com/wp-content/themes/jobboleblogv3/_assets/img/jobbole-logo.png",bio:"Web前端伯乐在线",webSiteAdd:"http://web.jobbole.com/",name:"Web前端伯乐在线"},
+                {id:5,avatar:"https://awps-assets.meituan.net/mit/blog/v20190124-1/asset/icon/android-icon-192x192.png?v=Whistle&t=20181017-1r",bio:"美团技术团队",webSiteAdd:"https://tech.meituan.com/",name:"美团技术团队"},
               ]
             }
         },
