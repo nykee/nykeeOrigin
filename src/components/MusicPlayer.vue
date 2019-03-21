@@ -14,7 +14,7 @@
           </i-col>
           <i-col :span="8" class="mPlayer-main-board-block">
             <ul>
-              <li class="mPlayer-song-name">{{currentSong.name}}</li>
+              <li class="mPlayer-song-name"><span>{{currentSong.name}}</span></li>
               <li class="mPlayer-artist">{{currentSong.singer}}</li>
             </ul>
           </i-col>
@@ -381,7 +381,8 @@
 
   .mPlayer-song-name, .mPlayer-artist {
     text-align: center;
-    font-size: .8rem;
+    font-size: .6rem !important;
+    line-height: .8rem;
   }
 
   .mPlayer-artist {
@@ -390,7 +391,7 @@
   }
 
   .mPlayer-main-board-block {
-    padding: 0 .5rem;
+    /*padding: 0 .5rem;*/
   }
 
   .mPlayer-album {
