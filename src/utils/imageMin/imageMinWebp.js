@@ -5,7 +5,7 @@ const imageminWebp = require('imagemin-webp');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 const conf =require("./config");
-const axios = require('axios');
+// const axios = require('axios');
 
 const JPG =conf.JPEGImages;
 const PNG =conf.PNGImages;
@@ -22,7 +22,7 @@ const optimiseJPEGImages = () =>
 const optimisePNGImages = () =>
   imagemin([PNG], out, {
     plugins: [
-      imageminPngquant({ quality: '65-80' })
+      imageminPngquant({ quality: [0.7,0.75] })
     ],
   });
 

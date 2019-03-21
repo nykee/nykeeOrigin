@@ -124,13 +124,19 @@
                 {id:20,avatar:"https://alpha.wallhaven.cc/images/layout/logo.png",bio:"wallhaven壁纸",webSiteAdd:"https://alpha.wallhaven.cc/",name:"wallhaven壁纸"},
                 {id:21,avatar:"http://image.nykee.cn/b.png",bio:"d3.js案例",webSiteAdd:"https://bl.ocks.org/mbostock",name:"d3.js案例"},
                 {id:22,avatar:"https://wordart.com/static/img/logo.png",bio:"wordart词云生成",webSiteAdd:"https://wordart.com/",name:"wordart词云生成"},
+                {id:23,avatar:"http://image.nykee.cn/es6.png",bio:"ECMAScript 6 入门",webSiteAdd:"http://es6.ruanyifeng.com/",name:"ECMAScript 6 入门"},
               ],
               blogs:[
                 {id:1,avatar:"http://jsdig.com/img/logo.svg",bio:"前端导航网",webSiteAdd:"http://jsdig.com/",name:"前端导航网"},
-                {id:2,avatar:"https://static2.cnodejs.org/public/images/cnodejs_light.svg",bio:"CNode：Node.js专业中文社区",webSiteAdd:"https://cnodejs.org/",name:"CNode"},
-                {id:3,avatar:"http://img.alicdn.com/tps/TB1Nv_wKXXXXXbmXVXXXXXXXXXX-295-195.png",bio:"淘宝前端团队（FED）",webSiteAdd:"http://taobaofed.org/",name:"淘宝前端团队（FED）"},
+                {id:3,avatar:"https://static2.cnodejs.org/public/images/cnodejs_light.svg",bio:"CNode：Node.js专业中文社区",webSiteAdd:"https://cnodejs.org/",name:"CNode"},
                 {id:4,avatar:"http://web.jobbole.com/wp-content/themes/jobboleblogv3/_assets/img/jobbole-logo.png",bio:"Web前端伯乐在线",webSiteAdd:"http://web.jobbole.com/",name:"Web前端伯乐在线"},
+                {id:2,avatar:"http://img.alicdn.com/tps/TB1Nv_wKXXXXXbmXVXXXXXXXXXX-295-195.png",bio:"淘宝前端团队（FED）",webSiteAdd:"http://taobaofed.org/",name:"淘宝前端团队（FED）"},
                 {id:5,avatar:"https://awps-assets.meituan.net/mit/blog/v20190124-1/asset/icon/android-icon-192x192.png?v=Whistle&t=20181017-1r",bio:"美团技术团队",webSiteAdd:"https://tech.meituan.com/",name:"美团技术团队"},
+                {id:6,avatar:"http://image.nykee.cn/dsc.png",bio:"相信技术改变世界，这里是我们的点滴思考和总结。",webSiteAdd:"http://f2e.souche.com/blog/",name:"搜车大无线团队博客"},
+                {id:7,avatar:"http://fex.baidu.com/public/images/logo.png",bio:"百度 FEX",webSiteAdd:"http://fex.baidu.com/",name:"百度 FEX"},
+                {id:8,avatar:"http://cdn.alloyteam.com/assets/img/avatar-8f3f90.png",bio:"成为地球卓越的Web团队",webSiteAdd:"http://www.alloyteam.com/",name:"腾讯AlloyTeam"},
+                {id:9,avatar:"https://75team.com/static/upload/20170409/logo.svg",bio:"奇舞团博客",webSiteAdd:"https://75team.com/post/list",name:"360奇舞团前端"},
+                {id:10,avatar:"https://aotu.io/img/o2logo.png",bio:"凹凸实验室",webSiteAdd:"https://75team.com/post/list",name:"凹凸实验室"},
               ]
             }
         },

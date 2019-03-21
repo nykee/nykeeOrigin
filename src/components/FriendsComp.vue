@@ -15,7 +15,7 @@
             </li>
           </ul></i-col>
         <i-col span="8">
-          <img :src="avatar" alt="" :class="{'fri-avatar-hover':isHover,'fri-avatar':!isHover}">
+          <img :src="avatar" alt=""  :class="{'fri-avatar-hover':isHover,'fri-avatar':!isHover}" :onerror="img404"/>
         </i-col>
       </Row>
     </a>
@@ -30,10 +30,16 @@
 
         data() {
             return {
-              isHover:false
+              isHover:false,
+              img404:"this.onerror='';this.src='https://image.nykee.cn/b.png'"
             }
         },
         methods: {
+          /*img404:function(){
+            this.$refs.avatarPic.onerror =function () {
+              this.avatar ='https://image.nykee.cn/b.png'
+            }
+          },*/
           handleMouseOver(){
             this.isHover =true;
           },
@@ -74,7 +80,7 @@
   .fri-avatar{
     width: 4rem;
     height: 4rem;
-    border: 2px solid rgba(124,129,134,.6);
+    border: 1px solid rgba(124,129,134,.4);
     border-radius: 50%;
   }
   .fri-bio{
@@ -85,7 +91,7 @@
   .fri-avatar-hover{
     width: 4rem;
     height: 4rem;
-    border: 2px solid #7c8186;
+    border: 1px solid rgba(124,129,134,.4);
     border-radius: 50%;
     transform: rotateZ(360deg);
     transition: transform 1.5s ease;
