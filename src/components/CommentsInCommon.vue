@@ -625,6 +625,8 @@
             return
           }
           else {
+            self.subBtnDisable =true;
+
             // alert(this.btitle);
             let timeStamp = new Date().getTime().toString();
             this.comments=this.utf16toEntities(this.comments);
@@ -645,6 +647,7 @@
                 .then((res)=>{
                   console.log(res.data);
                   if(String(res.data.code)==="200"){
+                    self.subBtnDisable =false;
                     self.$Message.success({
                       content: "评论成功！",
                       duration: 3
@@ -667,6 +670,7 @@
                 .then((res)=>{
                   console.log(res.data);
                   if(String(res.data.code)==="200"){
+                    self.subBtnDisable =false;
                     self.$Message.success({
                       content: "回复成功！",
                       duration: 3
@@ -693,6 +697,7 @@
           };
           axios.post("/Blog/UpdateCommentsCount",commentCountParam)
             .then((res)=>{
+
               console.log(res);
             })
             .catch((err)=>{
