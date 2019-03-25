@@ -10,7 +10,7 @@
         <i-col :xs={span:24} :sm={span:24} :md={span:16} :lg={span:16} class="fri-page">
           <div class="">
             <h2 class="info-main-title">欢迎各位大佬光临我的小破站</h2>
-            <h3 class="info-main-title">想要互换友链的大佬请在留言板按照下方格式留言，我看到会尽快回复的~~</h3>
+            <h3 class="info-main-title">想要互换友链的大佬请在最下方的留言板按照以下格式留言，我看到会尽快回复的~~</h3>
 
             <ul class="indicator">请提供你的：
               <li class="indicator-items">1、名字</li>
@@ -26,6 +26,10 @@
               <li class="example-items">Avatar: https://image.nykee.cn/nykee.png</li>
               <li class="example-items">URL: https://www.nykee.cn</li>
             </ul>
+            <h3 class="remark">
+              <!--<i class="fa fa-flash fa-2x" style="color: #F8C64B"></i>-->
+              <span class="remark-fbi">FBI WARNING</span>:请先添加本站为友链，然后再申请友链哦。死链如不进行恢复会不定期进行清除，以上！
+            </h3>
           </div>
           <div class="fri-page-part">
             <h3 class="fri-subtitle">大佬们</h3>
@@ -63,6 +67,9 @@
 
             </Row>
           </div>
+          <div>
+            <Comment :bid="b_id" :btitle="btitle"></Comment>
+          </div>
 
         </i-col>
 
@@ -77,9 +84,12 @@
 <script>
   import FriendsComp from "../components/FriendsComp"
   import IntroHeader from "../components/IntroHeader"
+  import Comment from '../components/BlogComment'
     export default {
         data() {
             return {
+              b_id:"-1",
+              btitle:"友链申请",
               friends:[
                 {id:0,avatar:"https://avatars1.githubusercontent.com/u/10057887?s=460&v=4",bio:"annwynAval",webSiteAdd:"http://annwyn.top",name:"Annwyn's BLOG"},
                 {id:1,avatar:"https://view.moezx.cc/images/2018/03/27/avatar.th.jpg",bio:" You got to put the past behind you before you can move on. ",webSiteAdd:"https://2heng.xin/",name:"樱花庄的白猫"},
@@ -96,6 +106,7 @@
                 {id:12,avatar:"https://www.xcnte.com/Logo.png",bio:"终其一生，我们都在寻找自己",webSiteAdd:"https://www.xcnte.com/",name:"Xcnte's Blog"},
                 {id:13,avatar:"https://file.eyuyun.com/usr/uploads/icon.ico",bio:"有格调的技术部落",webSiteAdd:"https://www.eyuyun.com/",name:"E语云博客"},
                 {id:14,avatar:"https://cdn.jsdelivr.net/gh/jerryc127/CDN@1.0/Photo/avatar.png",bio:"Never put off till tomorrow what you can do today",webSiteAdd:"http://jerryc.me/",name:"JerryC"},
+                {id:15,avatar:"https://blog.w3cr.com/favicon.png",bio:"专注于web开发的工具链硬件猿",webSiteAdd:"https://w3c.ink",name:"W3C王三尺"},
               ],
               geeks:[
                 {id:0,avatar:"https://tva1.sinaimg.cn/crop.0.0.180.180.180/537f5932jw1e8qgp5bmzyj2050050aa8.jpg",bio:"JS大佬，ES6系列",webSiteAdd:"http://www.ruanyifeng.com/blog/",name:"阮一峰"},
@@ -147,7 +158,7 @@
         mounted() {
 
         },
-        components: {FriendsComp,IntroHeader}
+        components: {FriendsComp,IntroHeader,Comment}
     }
 </script>
 <style scoped>
@@ -166,6 +177,13 @@
   }
   .info-main-title{
     line-height: 2rem;
+  }
+  .remark{
+    margin-top: 2rem;line-height: 1.6rem}
+  .remark-fbi{
+    background: #D72622;
+    color: #fff;
+    padding: .2rem;
   }
   .example-items,.indicator-items{
     line-height: 1rem;

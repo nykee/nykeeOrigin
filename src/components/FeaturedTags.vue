@@ -59,13 +59,13 @@
         React
         </span>
       </i-col>
-      <i-col :span="6" :offset="1">
+      <!--<i-col :span="6" :offset="1">
         <span @click="emitFromTagEvent('/Blogs/D3Learning',true ,9)"
               class="tagBtn">
           D3
         </span>
-      </i-col>
-      <i-col :span="11">
+      </i-col>-->
+      <i-col :span="11" offset="7">
         <span @click="emitFromTagEvent('/Blogs/DZDPCrawlSpider',true ,7)"
               class="tagBtn">
           {{$t("message.nodeSpider")}}
