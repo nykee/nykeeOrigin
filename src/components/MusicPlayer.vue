@@ -244,7 +244,7 @@
     mounted() {
       let self = this;
       /*ajax获取歌单数据，绑定到songLists和currentSong*/
-      axios.get("https://api.bzqll.com/music/tencent/songList?key=579621905&id=5632041384").then((res) => {
+      axios.get("https://api.bzqll.com/music/netease/songList?key=579621905&id=2520942859").then((res) => {
         for (let i = 0, len = res.data.data.songs.length; i < len; i++) {
           res.data.data.songs[i].index = i + 1;
         }

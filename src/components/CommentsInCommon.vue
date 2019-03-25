@@ -558,7 +558,14 @@
         origin_name:'',
         origin_content:'',
         location:'',
-        subBtnDisable:false
+        subBtnDisable:false,
+        randomAvatar:[
+          "https://image.nykee.cn/d-avatar(3).jpg",
+          "https://image.nykee.cn/d-avatar(4).jpg",
+          "https://image.nykee.cn/d-avatar(5).jpg",
+          "https://image.nykee.cn/d-avatar(6).jpg",
+          "https://image.nykee.cn/d-avatar(7).jpg",
+        ]
       }
     },
     methods: {
@@ -762,6 +769,13 @@
         }
         if(!this.isQQ(this.nickName)){
           // this.$Message.warning('QQ不正确');
+          if(sessionStorage.getItem("userAvatar")){
+            this.avatarSrc = sessionStorage.getItem("userAvatar")
+          }else {
+            this.avatarSrc =this.randomAvatar[Math.floor(Math.random()*(this.randomAvatar.length-0+1)+0)] ;
+            sessionStorage.setItem("userAvatar",this.avatarSrc);
+          }
+
           return false
         }else {
           axios.post("/Comment/getAvatar",params)

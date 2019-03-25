@@ -22,7 +22,7 @@
             <ul class="example">
               <li class="example-items">For Example(我提供我的)：</li>
               <li class="example-items">Name: Nykee`s blog</li>
-              <li class="example-items">Bio: 前端打杂狮</li>
+              <li class="example-items">Bio: 前端打杂狮/电音爱好者</li>
               <li class="example-items">Avatar: https://image.nykee.cn/nykee.png</li>
               <li class="example-items">URL: https://www.nykee.cn</li>
             </ul>
