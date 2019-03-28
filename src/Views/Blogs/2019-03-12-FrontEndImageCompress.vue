@@ -95,6 +95,7 @@ optimiseJPEGImages()
            </code>
          </pre>
 <h3>最后node运行一下imageMin.js就可以得到压缩好的图片文件了,so easy :滑稽</h3>
+          <ReferArticles :articles="articles"></ReferArticles>
         </section>
         <section>
           <PagerComponent
@@ -117,6 +118,7 @@ optimiseJPEGImages()
   import PagerComponent from '../../components/PagerComponent'
   import Comment from '../../components/BlogComment'
   import CustomTag from "../../components/CustomTag"
+  import ReferArticles from "../../components/ReferArticlesComp"
     export default {
         data() {
             return {
@@ -127,6 +129,20 @@ optimiseJPEGImages()
                 {id:1,name:"前端"},
                 {id:2,name:"代码"},
               ],
+              articles:[
+                {
+                  id:1,href:'https://www.jianshu.com/p/b55e951e9f03',name:'web前端优化之图片优化'
+                },
+                {
+                  id:2,href:'https://www.cnblogs.com/zhuzhenwei918/p/6935426.html?utm_source=itdadao&utm_medium=referral',name:'前端性能优化之优化图片 && 优化显示图片'
+                },
+                {
+                  id:3,href:'https://blog.csdn.net/wcslb/article/details/79559746',name:'前端性能优化之路——图片篇。'
+                },
+                {
+                  id:4,href:'https://www.photo-mark.com/notes/image-preloading/',name:'A better way to preload images for web galleries'
+                },
+              ]
             }
         },
       mounted(){
@@ -145,7 +161,8 @@ optimiseJPEGImages()
           PostTag,
           PagerComponent,
           Comment,
-          CustomTag
+          CustomTag,
+          ReferArticles
         }
     }
 </script>

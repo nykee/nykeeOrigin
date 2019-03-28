@@ -58,7 +58,7 @@
   }
   .avatar{
     /*border: 1px solid #666666;*/
-    width: 8rem;
+    width: 12rem;
     height: 8rem;
     /*border-radius: 50%;*/
   }

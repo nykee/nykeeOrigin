@@ -60,7 +60,8 @@
       <i-col :xs={span:spanXS} :sm={span:spanSM} :md={span:spanMD} :lg={span:spanLG} v-if="!isMobile">
         <Poptip   word-wrap>
           <span @click="toggleEmoji" class="emoji-toggle-contanier">
-            <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" ></i>{{$t("message.commentsPage.emoji")}}
+            <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" ></i>
+            {{$t("message.commentsPage.emoji")}}
           </span>
           <div slot="content">
             <Tabs value="baidu_emoji" class="emoj-pages">
@@ -86,7 +87,8 @@
 
       <i-col :xs={span:spanXS} :sm={span:spanSM} :md={span:spanMD} :lg={span:spanLG}  v-if="isMobile">
           <span @click="toggleEmoji" class="emoji-toggle-contanier">
-            <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" @click="toggleEmoji"></i>{{$t("message.commentsPage.emoji")}}
+            <i class="fa fa-smile-o fa-2x emoji-toggle-btn" :class="{'active-btn':isEmojShow}" ></i>
+            {{$t("message.commentsPage.emoji")}}
           </span>
       </i-col>
       <i-col :xs={span:spanXS} :sm={span:spanSM} :md={span:spanMD} :lg={span:spanLG} class="emotion-toggle-container" v-show="isEmojShow&&isMobile" >
@@ -565,7 +567,8 @@
           "https://image.nykee.cn/d-avatar(5).jpg",
           "https://image.nykee.cn/d-avatar(6).jpg",
           "https://image.nykee.cn/d-avatar(7).jpg",
-        ]
+        ],
+        isUserExist:false
       }
     },
     methods: {
@@ -582,6 +585,20 @@
           else {
             this.subBtnDisable =false;
           }
+        }
+        let param = {
+          nickname:this.nickName,
+          avatar:this.avatarSrc,
+          email:this.email
+        };
+        if(!this.isUserExist&&this.email.length!==0){
+          axios.post("/user/insertUserInfo",param)
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
         }
       },
       isQQ:function (aQQ) {
@@ -768,13 +785,46 @@
           return false
         }
         if(!this.isQQ(this.nickName)){
+
           // this.$Message.warning('QQ不正确');
-          if(sessionStorage.getItem("userAvatar")){
+          /*if(sessionStorage.getItem("userAvatar")){
             this.avatarSrc = sessionStorage.getItem("userAvatar")
           }else {
             this.avatarSrc =this.randomAvatar[Math.floor(Math.random()*(this.randomAvatar.length-0+1)+0)] ;
             sessionStorage.setItem("userAvatar",this.avatarSrc);
-          }
+          }*/
+          let par ={
+            nickname:this.nickName
+          };
+          let userCount;
+          axios.post("/user/getNicknameCount",par)
+            .then((res)=>{
+              // console.log(res.data.extendInfo);
+              userCount = res.data.extendInfo.nicknameCount;
+              if(parseInt(userCount) >0){
+                this.isUserExist =true;
+                console.log("old user!");
+                axios.post("/user/getAvatarAndEmail",par)
+                  .then((res)=>{
+                      console.log(res);
+                      let result = res.data.extendInfo.avatarAndEmail;
+                      result =JSON.parse(result);
+                      console.log(result);
+                      self.avatarSrc = result.avatar;
+                      self.email =result.email;
+                  })
+                  .catch((err)=>{
+                      console.log(err);
+                  })
+              }
+              else {
+                this.isUserExist =false;
+                this.avatarSrc =this.randomAvatar[Math.floor(Math.random()*(this.randomAvatar.length-0+1)+0)] ;
+              }
+          }).catch((err)=>{
+              console.log(err);
+          });
+
 
           return false
         }else {

@@ -48,7 +48,7 @@
         <div class="vol-ctrl">
           <i class="fa  volume-btn ctrlIcons" @click="showVSlider"
              :class="{'fa-volume-off':isMute,'fa-volume-up':!isMute}"></i>
-          <Slider v-model="volumeNum" :step="10" class="my-slider" v-if="isVolumeSliderShow"></Slider>
+          <Slider v-model="volumeNum" :step="5" class="my-slider" v-if="isVolumeSliderShow"></Slider>
         </div>
         <div class="miniBtn-container" v-if="!isMobile">
           <i class="fa   miniBtn ctrlIcons" :class="{'fa-chevron-left':!isToggle,'fa-chevron-right':isToggle}"
@@ -381,8 +381,11 @@
 
   .mPlayer-song-name, .mPlayer-artist {
     text-align: center;
-    font-size: .6rem !important;
-    line-height: .8rem;
+    font-size: .8rem !important;
+    line-height: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .mPlayer-artist {
@@ -450,7 +453,8 @@
   }
 
   .playlist-index, .playlist-songname, .playlist-artist, .playlist-cur, .ctrlIcons {
-    cursor: pointer
+    cursor: pointer;
+    /*font-size: .8rem;*/
   }
 
   .mPlayer-playlist-items {
@@ -655,4 +659,5 @@
   .mPlayer-playlist::-webkit-scrollbar-thumb:hover {
     background-color:#bbb;
   }
+
 </style>

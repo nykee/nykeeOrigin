@@ -113,10 +113,10 @@
                 <div class="title-lv1">三 总结</div>
 
                 <p class="title-lv3">为了个人网站的首屏开启速度也算是做了一点前端性能优化，
-                    从最开始的首屏加载6.2秒到最后开启了Gzip的88ms，加载速度也算是有很大的飞跃，
+                    从最开始的首屏加载6.2秒到最后开启了Gzip的605ms(0.6秒)，首屏打开速度也算是有很大的飞跃，
                     自己也是摸索了蛮多的性能优化手段，包括图片压缩、webp图片格式、CDN、前后端GZIP，
                     过程中也接触了很多现在没用到的性能优化技术，webpack dll，vue路由懒加载等，等留着以后再玩吧，EOF</p>
-
+              <ReferArticles :articles="articles"></ReferArticles>
 
             </section>
           <PagerComponent
@@ -140,6 +140,7 @@
   import Comment from '../../components/BlogComment'
   import mixin_PV from "../../mixins/index";
   import CustomTag from "../../components/CustomTag"
+  import ReferArticles from "../../components/ReferArticlesComp"
   // import store from "../../store/store"
 
 
@@ -155,6 +156,20 @@
         tags:[
           {id:1,name:"前端"},
           {id:2,name:"性能优化"},
+        ],
+        articles:[
+          {
+            id:1,href:'https://juejin.im/post/5a291092518825293b50366d',name:'Vue SPA 首屏加载优化实践'
+          },
+          {
+            id:2,href:'https://juejin.im/post/5a3251ee6fb9a0450f21f6ac',name:'Vue SPA 打包优化实践'
+          },
+          {
+            id:3,href:'https://www.cnblogs.com/wukong-holmes/p/9154437.html',name:'基于Vue的SPA如何优化页面加载速度'
+          },
+          {
+            id:4,href:'https://www.codercto.com/a/34562.html',name:'Vue SPA 项目webpack打包优化指南'
+          },
         ]
       }
     },
@@ -186,7 +201,7 @@
       });
     },
     components: {PostTag,PagerComponent,
-    Comment,CustomTag}
+    Comment,CustomTag,ReferArticles}
   }
 </script>
 <style>

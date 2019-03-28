@@ -205,4 +205,14 @@
     margin-bottom: 2rem;
   }
 
+  .ivu-slider-button-wrap{
+    top:-7px !important;
+    width: 12px!important;
+    height: 12px!important;
+  }
+  .ivu-slider-button{
+    width: 10px!important;
+    height: 10px!important;
+  }
+
 </style>

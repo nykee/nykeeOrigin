@@ -184,6 +184,24 @@
           "title":"differ",
           "time":"2019年03月12日撮影",
           "location":"上海松江"
+        },
+        {
+          "title":"Yellow",
+          "time":"2019年03月22日撮影",
+          "location":"浙江 宁波"
+        }
+      ,
+        {
+          "title":"Look!",
+          "time":"2019年03月23日撮影",
+          "location":"浙江 宁波"
+        }
+
+      ,
+        {
+          "title":"Flower",
+          "time":"2019年03月23日撮影",
+          "location":"浙江 宁波"
         }
       ]
     },
@@ -249,6 +267,7 @@
           "time": "2019.03.18",
           "activity": "友達チェーンの表示ページを増やす"
         }
+
       ]
     },
     "musicPlay":{

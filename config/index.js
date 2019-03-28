@@ -38,6 +38,11 @@ module.exports = {
         crossOrigin:true,
         changeOrigin: true,
       },
+      "/user/*":{
+        target:"http://127.0.0.1:8081/",
+        crossOrigin:true,
+        changeOrigin: true,
+      },
 
        /* "/Comment/!*":{
             target:"http://127.0.0.1:8080/",
