@@ -33,61 +33,68 @@
   export default {
     data() {
       return {
-        photoData: [
-
-        ],
-        intros:[]
+        // photoData: [],
+        // intros:[]
       }
     },
     created(){
-      this.intros =this.$t("message.photoPage.intro");
-      this.photoData =this.$t("message.photoPage.photos");
-      let photoSrc =[
-        {"webSrc":"https://image.nykee.cn/yuyuan.webp","imgSrc":"https://image.nykee.cn/yuyuan.jpg"},
-        {"webSrc":"https://image.nykee.cn/maitian.webp","imgSrc":"https://image.nykee.cn/maitian.jpg"},
-        {"webSrc":"https://image.nykee.cn/nightrain.webp","imgSrc":"https://image.nykee.cn/nightrain.jpg"},
-        {"webSrc":"https://image.nykee.cn/puppy.webp","imgSrc":"https://image.nykee.cn/puppy.jpg"},
-        {"webSrc":"https://image.nykee.cn/szmuseum.webp","imgSrc":"https://image.nykee.cn/szmuseum.jpg"},
-        {"webSrc":"https://image.nykee.cn/sakura.webp","imgSrc":"https://image.nykee.cn/sakura.jpg"},
-        {"webSrc":"https://image.nykee.cn/sea.webp","imgSrc":"https://image.nykee.cn/sea.jpg"},
-        {"webSrc":"https://image.nykee.cn/boat.webp","imgSrc":"https://image.nykee.cn/boat.jpg"},
-        {"webSrc":"https://image.nykee.cn/bird.webp","imgSrc":"https://image.nykee.cn/bird.jpg"},
-        {"webSrc":"https://image.nykee.cn/car.webp","imgSrc":"https://image.nykee.cn/car.jpg"},
-        {"webSrc":"https://image.nykee.cn/sky.webp","imgSrc":"https://image.nykee.cn/sky.jpg"},
-        {"webSrc":"https://image.nykee.cn/ayada.webp","imgSrc":"https://image.nykee.cn/ayada.jpg"},
-        {"webSrc":"https://image.nykee.cn/sunset.webp","imgSrc":"https://image.nykee.cn/sunset.jpg"},
-        {"webSrc":"https://image.nykee.cn/building.webp","imgSrc":"https://image.nykee.cn/building.jpg"},
-        {"webSrc":"https://image.nykee.cn/building2.webp","imgSrc":"https://image.nykee.cn/building2.jpg"},
-        {"webSrc":"https://image.nykee.cn/towercrane.webp","imgSrc":"https://image.nykee.cn/towercrane.jpg"},
-        {"webSrc":"https://image.nykee.cn/windmill.webp","imgSrc":"https://image.nykee.cn/windmill.jpg"},
-        {"webSrc":"https://image.nykee.cn/yellow.webp","imgSrc":"https://image.nykee.cn/yellow.jpg"},
-        {"webSrc":"https://image.nykee.cn/look.webp","imgSrc":"https://image.nykee.cn/look.jpg"},
-        {"webSrc":"https://image.nykee.cn/flower.webp","imgSrc":"https://image.nykee.cn/flower.jpg"},
-      ];
-      // this.intros =this.$t("message.photoPage.intro");
-      for(let i=0,len=this.photoData.length;i<len;i++){
-        this.photoData[i].webSrc =photoSrc[i].webSrc;
-        this.photoData[i].imgSrc =photoSrc[i].imgSrc;
-      }
-      console.log(this.photoData);
     },
     mounted(){
 
       // console.log(this.intro);
       window.addEventListener('scroll', throttle(this.handleScroll));
+      // console.log(this.intros);
+
+
+    },
+    computed:{
+      intros:function () {
+        return this.$t("message.photoPage.intro")
+      },
+      photoData:function () {
+        let photoData =this.$t("message.photoPage.photos");
+        let photoSrc =[
+          {"webSrc":"https://image.nykee.cn/yuyuan.webp","imgSrc":"https://image.nykee.cn/yuyuan.jpg"},
+          {"webSrc":"https://image.nykee.cn/maitian.webp","imgSrc":"https://image.nykee.cn/maitian.jpg"},
+          {"webSrc":"https://image.nykee.cn/nightrain.webp","imgSrc":"https://image.nykee.cn/nightrain.jpg"},
+          {"webSrc":"https://image.nykee.cn/puppy.webp","imgSrc":"https://image.nykee.cn/puppy.jpg"},
+          {"webSrc":"https://image.nykee.cn/szmuseum.webp","imgSrc":"https://image.nykee.cn/szmuseum.jpg"},
+          {"webSrc":"https://image.nykee.cn/sakura.webp","imgSrc":"https://image.nykee.cn/sakura.jpg"},
+          {"webSrc":"https://image.nykee.cn/sea.webp","imgSrc":"https://image.nykee.cn/sea.jpg"},
+          {"webSrc":"https://image.nykee.cn/boat.webp","imgSrc":"https://image.nykee.cn/boat.jpg"},
+          {"webSrc":"https://image.nykee.cn/bird.webp","imgSrc":"https://image.nykee.cn/bird.jpg"},
+          {"webSrc":"https://image.nykee.cn/car.webp","imgSrc":"https://image.nykee.cn/car.jpg"},
+          {"webSrc":"https://image.nykee.cn/sky.webp","imgSrc":"https://image.nykee.cn/sky.jpg"},
+          {"webSrc":"https://image.nykee.cn/ayada.webp","imgSrc":"https://image.nykee.cn/ayada.jpg"},
+          {"webSrc":"https://image.nykee.cn/sunset.webp","imgSrc":"https://image.nykee.cn/sunset.jpg"},
+          {"webSrc":"https://image.nykee.cn/building.webp","imgSrc":"https://image.nykee.cn/building.jpg"},
+          {"webSrc":"https://image.nykee.cn/building2.webp","imgSrc":"https://image.nykee.cn/building2.jpg"},
+          {"webSrc":"https://image.nykee.cn/towercrane.webp","imgSrc":"https://image.nykee.cn/towercrane.jpg"},
+          {"webSrc":"https://image.nykee.cn/windmill.webp","imgSrc":"https://image.nykee.cn/windmill.jpg"},
+          {"webSrc":"https://image.nykee.cn/yellow.webp","imgSrc":"https://image.nykee.cn/yellow.jpg"},
+          {"webSrc":"https://image.nykee.cn/look.webp","imgSrc":"https://image.nykee.cn/look.jpg"},
+          {"webSrc":"https://image.nykee.cn/flower.webp","imgSrc":"https://image.nykee.cn/flower.jpg"},
+        ];
+        // this.intros =this.$t("message.photoPage.intro");
+        for(let i=0,len=photoData.length;i<len;i++){
+          photoData[i].webSrc =photoSrc[i].webSrc;
+          photoData[i].imgSrc =photoSrc[i].imgSrc;
+        }
+        return photoData
+      }
 
 
     },
     methods:{
       handleScroll(){
-        let self =this;
+        /*let self =this;
         // console.log("ReachBottom");
         let scrollTop =Math.floor(document.body.scrollTop ||document.documentElement.scrollTop)
         let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
         let scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
-        console.log("clientHeight:"+clientHeight);
-        console.log("scrollTop:"+scrollTop);
-        console.log("scrollHeight:"+scrollHeight);
+        // console.log("clientHeight:"+clientHeight);
+        // console.log("scrollTop:"+scrollTop);
+        // console.log("scrollHeight:"+scrollHeight);
 
         if(scrollHeight = clientHeight+scrollTop){
 
@@ -97,15 +104,15 @@
             for(let i = startIndex;i<startIndex+limit;i++){
               console.log(i);
             }
-            /*  self.photoData.push(
+            /!*  self.photoData.push(
                 {
 
                 }
-              );*/
+              );*!/
 
           },1000)
 
-        }
+        }*/
 
 
       }

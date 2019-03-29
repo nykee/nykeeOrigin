@@ -38,7 +38,6 @@
   export default {
     data() {
       return {
-        selfIntros:this.$t(("message.selfIntro"))
       }
     },
     methods: {},
@@ -49,8 +48,13 @@
     mounted() {
 
 
+
     },
-    computed: {},
+    computed: {
+      selfIntros(){
+        return this.$t(("message.selfIntro"))
+      }
+    },
     components: {
       AboutMe, FeaturedTags, Friends, IntroHeader
     }
