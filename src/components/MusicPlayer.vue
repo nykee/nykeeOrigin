@@ -1,21 +1,31 @@
 <template>
   <div >
-    <div v-if="!isMini" :class="{'msc-player-box-mb':isMobile,'msc-player-box':!isMobile}"
-         style="top:86%;left: -320px"
+    <div v-if="!isMini" :class="{'msc-player-box':!isToggle,'msc-player-hide':isToggle}"
+         style="top:86%;"
          ref="mPlayer">
       <div class="clearfix position-relative">
         <Row id="msc-player" class="mPlayer-main-board fl" type="flex" justify="center" align="middle">
-          <i-col :span="7" class="mPlayer-main-board-block playCtrl">
+          <i-col :span="6" class="mPlayer-main-board-block playCtrl">
             <i class="fa  fa-2x playBtn ctrlIcons"
                :class="{'fa-pause':playStatus==='playing',
                'fa-play':playStatus==='paused'}" @click="changePlayStatus"></i>
             <i class="fa fa-step-backward ctrlIcons" @click="playPrev"></i>
             <i class="fa fa-step-forward ctrlIcons" @click="playNext"></i>
           </i-col>
-          <i-col :span="8" class="mPlayer-main-board-block">
+          <i-col :span="9" class="mPlayer-main-board-block">
             <ul>
-              <li class="mPlayer-song-name"><span>{{currentSong.name}}</span></li>
-              <li class="mPlayer-artist">{{currentSong.singer}}</li>
+
+                <li class="mPlayer-song-name">
+                  <Tooltip :content="currentSong.name" theme="light" placement="top" style="z-index: 1000!important;" max-width="200">
+                    {{currentSong.name}}
+                  </Tooltip>
+                </li>
+
+              <li class="mPlayer-artist">
+                <Tooltip :content="currentSong.singer" theme="light" placement="bottom">
+                  {{currentSong.singer}}
+                </Tooltip>
+              </li>
             </ul>
           </i-col>
           <i-col :span="7" class="mPlayer-main-board-block">
@@ -23,30 +33,37 @@
           </i-col>
           <i-col :span="2" class="mPlayer-main-board-block">
             <ul>
-              <li @click="changeSongListShow" class="ctrlIcons toggleListBtn">
+              <li @click="toggleSongListShow" class="ctrlIcons toggleListBtn">
                 <i class="fa " :class="{'fa-toggle-up':!isSongListShow,'fa-toggle-down':isSongListShow}"></i>
               </li>
               <li @click="changePlayMode" class="ctrlIcons">
                 <i class="fa " :class="{'fa-random':isRandom,'fa-reorder':!isRandom}"></i>
               </li>
-              <li  class="ctrlIcons" @click="toggleMobileMini"><i class="fa fa-compress"></i></li>
+              <li  class="ctrlIcons" @click="toggleMobileMini">
+                <i class="fa fa-compress"></i>
+              </li>
+              <li class="ctrlIcons" @click="toggleLyrics">
+                <i class="fa fa-newspaper-o"></i>
+              </li>
             </ul>
           </i-col>
         </Row>
         <div class="time-ctrl">
           <ul class="clearfix">
-            <li class="fl progress-bar">
+            <li class="fl progress-bar" @click="handleProgressClick">
               <i-progress :percent="playPercent"
                           hide-info
-                          :stroke-width="5" class="ivu-progress-bar"/>
+                          :stroke-width="5" class="ivu-progress-bar"
+
+              />
             </li>
             <li class="fl timeDuration">
               <span>{{cur_song_duration}}</span><span>/</span><span>{{cur_song_time_count}}</span>
             </li>
           </ul>
         </div>
-        <div class="vol-ctrl">
-          <i class="fa  volume-btn ctrlIcons" @click="showVSlider"
+        <div class="vol-ctrl" @mouseover="toggleVSlider" @mouseout="toggleVSlider">
+          <i class="fa  volume-btn ctrlIcons"
              :class="{'fa-volume-off':isMute,'fa-volume-up':!isMute}"></i>
           <Slider v-model="volumeNum" :step="5" class="my-slider" v-if="isVolumeSliderShow"></Slider>
         </div>
@@ -56,39 +73,47 @@
         </div>
       </div>
       <keep-alive>
-        <div id="mPlayer-playlist" class="mPlayer-playlist" v-if="isSongListShow">
-          <ul v-for="song in songLists" class="clearfix mPlayer-playlist-items " @click="clickToPlay(song.index)"
+        <div id="mPlayer-playlist" ref="mPlayerPlaylist" class="mPlayer-playlist" v-if="isSongListShow">
+
+           <Row v-for="song in songLists" class="mPlayer-playlist-items "
               :key="song.index">
-            <li class="fl playlist-cur " :class="{'curIdx':song.index === isPlayingIndex}"></li>
-            <li class="fl playlist-index " :class="{'playing-color':song.index === isPlayingIndex}">{{song.index}}</li>
-            <li class="fl playlist-songname" :class="{'playing-color':song.index === isPlayingIndex}">{{song.name}}</li>
-            <li class="fr playlist-artist" :class="{'playing-color':song.index === isPlayingIndex}">{{song.singer}}</li>
-          </ul>
+             <div @click="clickToPlay(song.index)">
+               <i-col  :span="1"  class=" playlist-cur " :class="{'curIdx':song.index === isPlayingIndex}"></i-col>
+               <i-col  :span="3" class="playlist-index " :class="{'playing-color':song.index === isPlayingIndex}">{{song.index}}</i-col>
+               <i-col  :span="10" class=" playlist-songname" :class="{'playing-color':song.index === isPlayingIndex}">{{song.name}}</i-col>
+               <i-col  :span="10" class=" playlist-artist" :class="{'playing-color':song.index === isPlayingIndex}">{{song.singer}}</i-col>
+             </div>
+
+          </Row>
         </div>
       </keep-alive>
     </div>
     <keep-alive>
-      <div id="mini-player" v-if="isMini">
+      <div id="mini-player" v-if="isMini" ondrag="handleMiniPlayerDrag">
 
         <div class="mini-player-box">
           <i class="fa  fa-2x playBtn-mini ctrlIcons"
              :class="{'fa-pause':playStatus==='playing',
                'fa-play':playStatus==='paused'}" @click="changePlayStatus"></i>
           <i class="fa fa-expand toggle-mini-btn" @click="toggleMobileMini"></i>
-          <!--<Tooltip content="切换正常/mini播放模式" placement="top-start"><i class="fa fa-expand toggle-mini-btn" @click="toggleMobileMini"></i></Tooltip>-->
-          <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}">
+          <img :src="currentSong.pic" alt="" class="mPlayer-album-mini" :class="{'picSpin':playStatus==='playing'}"/>
         </div>
       </div>
     </keep-alive>
 
+
     <audio :src="currentSong.url" class="mscAudio"  ref="mscAudio">
       您的浏览器不支持 audio 标签。请使用Chrome,Firefox等现代浏览器
     </audio>
+    <keep-alive>
+      <Lyrics :lyrics="lyrics" v-if="isLyricsShow"></Lyrics>
+    </keep-alive>
   </div>
 
 </template>
 
 <script>
+  import Lyrics from "../components/Lyrics"
   export default {
     data() {
       return {
@@ -100,18 +125,21 @@
         isMobile: false,     //是否为手机标志位
         isMini: true,      //是否为Mini标志位
         isPlayingIndex: 1, //当前播放歌曲的索引
-        volumeNum: 30,     //音量
+        volumeNum: 20,     //音量
         isVolumeSliderShow: false, //音量条显示标志位
         isRandom: false, //随机播放flag
         cur_song_duration: "00:00", //当前歌曲播放进度分秒
         cur_song_time_count: "00:00", //当前歌曲总分秒
-        playPercent: 0 //进度条百分比
+        playPercent: 0, //进度条百分比
+        lyrics:[],
+        isLyricsShow:false
       }
     },
     methods: {
-      changeSongListShow() {
+      toggleSongListShow() {
         /*播放列表显示标志位*/
-        this.isSongListShow = !this.isSongListShow
+        this.isSongListShow = !this.isSongListShow;
+        // if(this.isSongListShow){this.scrollPlayList()};
       },
       changePlayMode() {
         /*切换播放模式*/
@@ -123,53 +151,30 @@
       },
       toggleSide() {
         /*播放器播放器侧边模式与正常模式*/
-        let self = this;
-        // console.log(this.$refs.mPlayer);
-        let left = parseInt(this.$refs.mPlayer.style.left.slice(0, this.$refs.mPlayer.style.left.toString().indexOf("px")));
-        if (left === 0) {
-          let timer = setInterval(function () {
-            if (left <= -320) {
-              clearInterval(timer);
-              self.isToggle = true;
-              return
-            }
-            self.isSongListShow = false;
-            self.isVolumeSliderShow = false;
-            left -= 10;
-            self.$refs.mPlayer.style.left = left + "px";
-          }, 16);
-        }
-        else {
-          let timer = setInterval(function () {
-            if (left >= 0) {
-              clearInterval(timer);
-              self.isToggle = false;
-              return
-            }
-            left += 10;
-            self.$refs.mPlayer.style.left = left + "px";
-          }, 16);
-        }
+        this.isToggle = !this.isToggle;
+        // console.log(this.isToggle);
+      },
+      toggleLyrics(){
+        this.isLyricsShow = !this.isLyricsShow
       },
       toggleMobileMini() {
         /*切换mini模式标志位*/
         this.isMini = !this.isMini;
-
-
-        // this.isToggle =true;
         this.isSongListShow = false;
         if(!this.isMini){
-          console.log("切换回正常模式！");
-          this.$Message.info("切换回正常播放器！")
+
+          // console.log("切换回正常模式！");
+          this.$Message.info("切换回正常播放器！");
           this.$nextTick(()=>{
             // console.log(this.$refs.mPlayer);
-            this.toggleSide();
+            this.isToggle =false;
           })
 
 
         }
         else {
           this.$Message.info("切换至mini播放器！");
+          // this.toggleSide();
         }
       },
       changePlayStatus() {
@@ -189,7 +194,7 @@
       playPrev() {
         /*播放前一首*/
         let idx = this.currentSong.index;
-        let randIdx = Math.floor(Math.random() * (this.songLists.length - 1 + 1) + 1);
+        let randIdx = this.getRdmIndex();
         if (this.isRandom) {
           this.currentSong = this.songLists[randIdx - 1];
           this.isPlayingIndex = randIdx;
@@ -200,12 +205,34 @@
             this.currentSong = this.songLists[idx - 1];
           }
           this.isPlayingIndex = idx;
+
         }
+        if(this.playStatus ==="paused"){
+          this.$refs.mscAudio.removeAttribute("autoplay")
+        }
+        this.getLyric();
+        this.scrollPlayList();
+      },
+      getLyric(){
+        axios.get(this.currentSong.lrc)
+          .then((res) => {
+            // console.log(res.data);
+            this.lyrics = res.data.split("\n");
+           if(this.lyrics ==="[00:00.00] 暂无歌词"){this.lyrics ="暂无歌词"}
+
+          })
+          .catch((err)=>{
+            console.log(err);
+          })
+      },
+      getRdmIndex(){
+        return Math.floor(Math.random() * (this.songLists.length - 1 + 1) + 1)
       },
       playNext() {
         /*播放下一首*/
+        // console.log(this.playStatus);
         let idx = this.currentSong.index;
-        let randIdx = Math.floor(Math.random() * (this.songLists.length - 1 + 1) + 1);
+        let randIdx = this.getRdmIndex();
         if (this.isRandom) {
           this.currentSong = this.songLists[randIdx - 1];
         }
@@ -218,19 +245,59 @@
           }
         }
         this.isPlayingIndex = this.currentSong.index;
+
+        if(this.playStatus ==="paused"){
+          this.$refs.mscAudio.removeAttribute("autoplay")
+        }
+        this.getLyric();
+        this.scrollPlayList();
+      },
+      scrollPlayList(){
+        // console.log(this.isPlayingIndex);
+        if(this.isSongListShow){
+          // console.log(this.$refs.mPlayerPlaylist.scrollTop);
+          // console.log(this.$refs.mPlayerPlaylist.scrollHeight);
+          let scrollHeight = this.$refs.mPlayerPlaylist.scrollHeight;
+          // console.log((this.isPlayingIndex/this.songLists.length)*scrollHeight);
+          let topScroll = parseInt(((this.isPlayingIndex-1)/this.songLists.length)*(scrollHeight));
+          // console.log(topScroll);
+          // console.log(window.getComputedStyle(this.$refs.mPlayerPlaylist).offsetHeight);
+          this.$refs.mPlayerPlaylist.scrollTop = topScroll;
+        }
+
       },
       clickToPlay(index) {
+        this.$nextTick(()=>{
+          console.log(index);
+        });
         /*点击播放列表播放对于的歌曲*/
         this.$refs.mscAudio.setAttribute("autoplay", "autoplay");
         this.currentSong = this.songLists[index - 1];
         this.playStatus = "playing";
         this.$refs.mscAudio.play();
         this.isPlayingIndex = index;
+        this.getLyric();
       },
-      showVSlider() {
+      toggleVSlider() {
         /*切换音量调整条 的显示*/
         this.isVolumeSliderShow = !this.isVolumeSliderShow
       },
+      handleProgressClick(e){
+        /*快进功能*/
+        e= event || window.event;
+        //获得鼠标事件的clientX(相对dom元素的x轴坐标)
+        console.log(e.clientX);
+        let prog_x =e.clientX;
+        //超出100按100取整
+        prog_x = prog_x>=100? 100 :prog_x;
+        this.playPercent =prog_x;
+        //设置auido元素的current为百分比乘以audio中的媒体元素的总时间
+        this.$refs.mscAudio.currentTime = this.$refs.mscAudio.duration * this.playPercent/100
+      },
+      handleMiniPlayerDrag(){
+
+      }
+
     },
     computed: {
       isMute() {
@@ -249,10 +316,14 @@
           res.data.data.songs[i].index = i + 1;
         }
         this.songLists = res.data.data.songs;
-        this.currentSong = res.data.data.songs[0]
+        this.currentSong = res.data.data.songs[0];
+        console.log(this.currentSong);
+
       }).catch((err) => {
         console.warn(err)
       });
+
+
       /*设置音量*/
       this.$refs.mscAudio.volume = parseFloat(parseInt(this.volumeNum) / 100);
       /*屏幕大小小于425则为手机页面*/
@@ -298,7 +369,9 @@
           this.cur_song_duration = min + colon + sec;
         }
       });
-
+      /*this.$refs.mscAudio.addEventListener("durationchange", (e) => {
+        console.log("durationchange");
+      })*/
 
 
       /*监听键盘事件，切歌*/
@@ -354,7 +427,7 @@
 
 
     },
-    components: {},
+    components: {Lyrics},
     watch: {
       /*监听音乐变化设置audio音量*/
       volumeNum() {
@@ -367,6 +440,16 @@
   .msc-player-box {
     z-index: 8;
     position: fixed;
+    top:86%;
+    transition: transform ease .9s;
+    transform: translateX(0);
+  }
+  .msc-player-hide{
+    z-index: 8;
+    top:86%;
+    position: fixed;
+    transition: transform ease .9s;
+    transform: translateX(-100%);
   }
 
   .mPlayer-main-board {
@@ -417,6 +500,7 @@
     background-color: rgba(137, 137, 137, .75);
     border-radius: 2px;
     text-align: center;
+    z-index: 2;
   }
 
   .playCtrl > i {
@@ -437,6 +521,7 @@
     overflow-x: hidden;
     overflow-y:scroll;
     font-size: .8rem;
+    z-index: 8;
   }
 
   .playlist-index {
@@ -456,7 +541,11 @@
     cursor: pointer;
     /*font-size: .8rem;*/
   }
-
+  .playlist-songname{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .mPlayer-playlist-items {
     margin-top: .3rem;
     padding: .2rem 0;
@@ -491,6 +580,7 @@
 
   .playBtn {
     width: 2rem;
+    /*margin-right: .4rem;*/
   }
 
   .toggleListBtn {
@@ -501,11 +591,7 @@
     display: none;
   }
 
-  .msc-player-box-mb {
-    position: fixed;
-    top: 84% !important;
-    left: 0 !important;
-  }
+
 
   .mini-player-box {
     width: 5rem;
@@ -659,5 +745,9 @@
   .mPlayer-playlist::-webkit-scrollbar-thumb:hover {
     background-color:#bbb;
   }
+  .progress-bar{
+    cursor: pointer;
+  }
+
 
 </style>

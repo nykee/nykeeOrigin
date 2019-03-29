@@ -287,6 +287,11 @@
       "placeholder_comment":"ただ何か書く",
       "notRobot":"ドロップ、古いドライバーカード",
       "submit_comment":"メッセージを残す"
+    },
+    "blogPage":{
+      "postAt":"posted at",
+      "views":"views",
+      "comments":"comments"
     }
   }
 }

@@ -9,6 +9,7 @@
     "photograph": "PHOTO",
     "aboutMe": "About Me",
     "Friends":"FRIENDS",
+
     "selfIntro": [
       " Hi,my name is nykee .And i am interested in Web front-end!I am working at a start-up company as a web developer",
       "My skills about web development are as followed： ",
@@ -284,6 +285,11 @@
       "placeholder_comment":"Just type something u wanna say~",
       "notRobot":"prove you are not a robot",
       "submit_comment":"comment"
+    },
+    "blogPage":{
+      "postAt":"posted at",
+      "views":"views",
+      "comments":"comments"
     }
   }
 }
