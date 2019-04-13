@@ -165,7 +165,12 @@
     max-width: 100%;
     display: block;
   }
-
+  .commonBlogImg{
+    /*width: 50rem;*/
+    /*height: 37.5rem;*/
+    max-width: 100%;
+    max-height: 100%;
+  }
 
 
 

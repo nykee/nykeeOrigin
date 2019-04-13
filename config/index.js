@@ -29,17 +29,17 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/Comment/*":{
-        target:"http://127.0.0.1:8081/",
+        target:"http://127.0.0.1:8080/",
         crossOrigin:true,
         changeOrigin: true,
       },
       "/Blog/*":{
-        target:"http://127.0.0.1:8081/",
+        target:"http://127.0.0.1:8080/",
         crossOrigin:true,
         changeOrigin: true,
       },
       "/user/*":{
-        target:"http://127.0.0.1:8081/",
+        target:"http://127.0.0.1:8080/",
         crossOrigin:true,
         changeOrigin: true,
       },

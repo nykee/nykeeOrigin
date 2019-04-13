@@ -139,16 +139,17 @@
 
 
         },
-        components: {PostTag,CustomPicture,PagerComponent,Comment,CustomTag}
+        components: {
+          PostTag,
+            CustomPicture,
+            PagerComponent,
+            Comment,
+            CustomTag
+      }
     }
 </script>
 <style>
-    .commonBlogImg{
-        /*width: 50rem;*/
-        /*height: 37.5rem;*/
-        max-width: 100%;
-        max-height: 100%;
-    }
+
     .photo-title{
         margin-bottom:.4rem;
         margin-top:1rem;

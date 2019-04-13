@@ -74,6 +74,9 @@
           {"webSrc":"https://image.nykee.cn/yellow.webp","imgSrc":"https://image.nykee.cn/yellow.jpg"},
           {"webSrc":"https://image.nykee.cn/look.webp","imgSrc":"https://image.nykee.cn/look.jpg"},
           {"webSrc":"https://image.nykee.cn/flower.webp","imgSrc":"https://image.nykee.cn/flower.jpg"},
+          {"webSrc":"https://image.nykee.cn/IMG_2297.webp","imgSrc":"https://image.nykee.cn/IMG_2297.jpg"},
+          {"webSrc":"https://image.nykee.cn/IMG_2481.webp","imgSrc":"https://image.nykee.cn/IMG_2481.jpg"},
+          {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/IMG_2484.jpg"},
         ];
         // this.intros =this.$t("message.photoPage.intro");
         for(let i=0,len=photoData.length;i<len;i++){
