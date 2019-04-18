@@ -109,9 +109,10 @@
                 {id:15,avatar:"https://blog.w3cr.com/favicon.png",bio:"专注于web开发的工具链硬件猿",webSiteAdd:"https://w3c.ink",name:"W3C王三尺"},
               ],
               geeks:[
-                {id:0,avatar:"https://tva1.sinaimg.cn/crop.0.0.180.180.180/537f5932jw1e8qgp5bmzyj2050050aa8.jpg",bio:"JS大佬，ES6系列",webSiteAdd:"http://www.ruanyifeng.com/blog/",name:"阮一峰"},
-                {id:1,avatar:"//tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg",bio:"各种教程JS,python",webSiteAdd:"https://www.liaoxuefeng.com/",name:"廖雪峰"},
-                {id:2,avatar:"//image.zhangxinxu.com/image/blog/zxx_240_0818.jpg",bio:"CSS大佬",webSiteAdd:"https://www.zhangxinxu.com/",name:"张鑫旭"},
+                {id:0,avatar:"https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg",bio:"Overreacted",webSiteAdd:"https://overreacted.io/",name:"Dan Abramov"},
+                {id:1,avatar:"https://tva1.sinaimg.cn/crop.0.0.180.180.180/537f5932jw1e8qgp5bmzyj2050050aa8.jpg",bio:"JS大佬，ES6系列",webSiteAdd:"http://www.ruanyifeng.com/blog/",name:"阮一峰"},
+                {id:2,avatar:"//tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg",bio:"各种教程JS,python",webSiteAdd:"https://www.liaoxuefeng.com/",name:"廖雪峰"},
+                {id:3,avatar:"//image.zhangxinxu.com/image/blog/zxx_240_0818.jpg",bio:"CSS大佬",webSiteAdd:"https://www.zhangxinxu.com/",name:"张鑫旭"},
               ],
               tools:[
                 {id:0,avatar:"http://www.weatherdt.com/images/index/u152.png",bio:"天气API",webSiteAdd:"http://www.weatherdt.com/",name:"智慧气象服务云平台"},
