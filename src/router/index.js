@@ -4,6 +4,7 @@ import Index from '../views/Index.vue'
 import Blogs from '../views/Blogs.vue'
 import Project from '../views/Project.vue'
 import Photo from '../views/Photo.vue'
+import PhotoNew from '../views/Photo_New.vue'
 import About from '../views/About.vue'
 import Friends from '../views/Friends.vue'
 import Comments from '../views/Comments.vue'
@@ -131,6 +132,11 @@ const router = new VueRouter({
       name: 'Photo',
       component: Photo
     },
+      {
+          path: '/Photo',
+          name: 'Photo_new',
+          component: PhotoNew
+      },
     {
       path: '/About',
       name: 'About',
