@@ -16,14 +16,14 @@
             <ul>
 
                 <li class="mPlayer-song-name">
-                  <Tooltip :content="currentSong.name" theme="light" placement="top" style="z-index: 1000!important;" max-width="200">
-                    {{currentSong.name}}
+                  <Tooltip :content="currentSong.title" theme="light" placement="top" style="z-index: 1000!important;" max-width="200">
+                    {{currentSong.title}}
                   </Tooltip>
                 </li>
 
               <li class="mPlayer-artist">
                 <Tooltip :content="currentSong.singer" theme="light" placement="bottom">
-                  {{currentSong.singer}}
+                  {{currentSong.author}}
                 </Tooltip>
               </li>
             </ul>
@@ -55,7 +55,7 @@
                           hide-info
                           :stroke-width="5" class="ivu-progress-bar"
 
-              />
+              ></i-progress>
             </li>
             <li class="fl timeDuration">
               <span>{{cur_song_duration}}</span><span>/</span><span>{{cur_song_time_count}}</span>
@@ -78,10 +78,10 @@
            <Row v-for="song in songLists" class="mPlayer-playlist-items "
               :key="song.index">
              <div @click="clickToPlay(song.index)">
-               <i-col  :span="1"  class=" playlist-cur " :class="{'curIdx':song.index === isPlayingIndex}"></i-col>
-               <i-col  :span="3" class="playlist-index " :class="{'playing-color':song.index === isPlayingIndex}">{{song.index}}</i-col>
-               <i-col  :span="10" class=" playlist-songname" :class="{'playing-color':song.index === isPlayingIndex}">{{song.name}}</i-col>
-               <i-col  :span="10" class=" playlist-artist" :class="{'playing-color':song.index === isPlayingIndex}">{{song.singer}}</i-col>
+               <i-col  :span="1"  class=" playlist-cur "     :class="{'curIdx':song.index === isPlayingIndex}"></i-col>
+               <i-col  :span="3"  class="playlist-index "    :class="{'playing-color':song.index === isPlayingIndex}">{{song.index}}</i-col>
+               <i-col  :span="10" class=" playlist-songname" :class="{'playing-color':song.index === isPlayingIndex}">{{song.title}}</i-col>
+               <i-col  :span="10" class=" playlist-artist"   :class="{'playing-color':song.index === isPlayingIndex}">{{song.author}}</i-col>
              </div>
 
           </Row>
@@ -311,13 +311,18 @@
     mounted() {
       let self = this;
       /*ajax获取歌单数据，绑定到songLists和currentSong*/
-      axios.get("https://api.bzqll.com/music/netease/songList?key=579621905&id=2520942859").then((res) => {
-        for (let i = 0, len = res.data.data.songs.length; i < len; i++) {
-          res.data.data.songs[i].index = i + 1;
-        }
-        this.songLists = res.data.data.songs;
-        this.currentSong = res.data.data.songs[0];
-        console.log(this.currentSong);
+      axios.get("https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=songlist&id=2520942859").then((res) => {
+          console.log(res.data);
+          if(res.data.Code === "OK"){
+              for (let i = 0, len = res.data.Body.length; i < len; i++) {
+                  res.data.Body[i].index = i + 1;
+              }
+              this.songLists = res.data.Body;
+              this.currentSong = res.data.Body[0];
+              console.log(this.songLists);
+              console.log(this.currentSong);
+          }
+
 
       }).catch((err) => {
         console.warn(err)

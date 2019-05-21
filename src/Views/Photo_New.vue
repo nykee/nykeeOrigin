@@ -4,7 +4,7 @@
                 Title="Photos"
                 introHeaderClass="intro-header-photo"
                 subTitle=""
-                :isProjectPage="false"/>
+                :isProjectPage="false"></IntroHeader>
         <Row type="flex" justify="center" align="middle" class="code-row-bg">
             <i-col span="18">
                 <ul class="photo-intro" >
@@ -12,28 +12,63 @@
                 </ul>
             </i-col>
         </Row>
+        <Row type="flex" justify="center" align="middle" class="photo-box">
+            <i-col span="18">
+                <Row>
+                    <PhotoComp v-for="photo in photos" :key="photo.id" :imgSrc="photo.imgSrc"></PhotoComp>
+                </Row>
+
+            </i-col>
+        </Row>
 
     </div>
 </template>
 <script>
     import IntroHeader from "../components/IntroHeader"
+    import PhotoComp from "../components/Photo/PhotoComp.vue"
     export default {
         data() {
-            return {}
+            return {
+                photos:[
+                    {"webSrc":"https://image.nykee.cn/yuyuan.webp","imgSrc":"https://image.nykee.cn/yuyuan.jpg"},
+                    {"webSrc":"https://image.nykee.cn/maitian.webp","imgSrc":"https://image.nykee.cn/maitian.jpg"},
+                    {"webSrc":"https://image.nykee.cn/nightrain.webp","imgSrc":"https://image.nykee.cn/nightrain.jpg"},
+                    {"webSrc":"https://image.nykee.cn/puppy.webp","imgSrc":"https://image.nykee.cn/puppy.jpg"},
+                    {"webSrc":"https://image.nykee.cn/szmuseum.webp","imgSrc":"https://image.nykee.cn/szmuseum.jpg"},
+                    {"webSrc":"https://image.nykee.cn/sakura.webp","imgSrc":"https://image.nykee.cn/sakura.jpg"},
+                    {"webSrc":"https://image.nykee.cn/sea.webp","imgSrc":"https://image.nykee.cn/sea.jpg"},
+                    {"webSrc":"https://image.nykee.cn/boat.webp","imgSrc":"https://image.nykee.cn/boat.jpg"},
+                    {"webSrc":"https://image.nykee.cn/bird.webp","imgSrc":"https://image.nykee.cn/bird.jpg"},
+                    {"webSrc":"https://image.nykee.cn/car.webp","imgSrc":"https://image.nykee.cn/car.jpg"},
+                    {"webSrc":"https://image.nykee.cn/sky.webp","imgSrc":"https://image.nykee.cn/sky.jpg"},
+                    {"webSrc":"https://image.nykee.cn/ayada.webp","imgSrc":"https://image.nykee.cn/ayada.jpg"},
+                    {"webSrc":"https://image.nykee.cn/sunset.webp","imgSrc":"https://image.nykee.cn/sunset.jpg"},
+                    {"webSrc":"https://image.nykee.cn/building.webp","imgSrc":"https://image.nykee.cn/building.jpg"},
+                    {"webSrc":"https://image.nykee.cn/building2.webp","imgSrc":"https://image.nykee.cn/building2.jpg"},
+                    {"webSrc":"https://image.nykee.cn/towercrane.webp","imgSrc":"https://image.nykee.cn/towercrane.jpg"},
+                    {"webSrc":"https://image.nykee.cn/windmill.webp","imgSrc":"https://image.nykee.cn/windmill.jpg"},
+                    {"webSrc":"https://image.nykee.cn/yellow.webp","imgSrc":"https://image.nykee.cn/yellow.jpg"},
+                    {"webSrc":"https://image.nykee.cn/look.webp","imgSrc":"https://image.nykee.cn/look.jpg"},
+                    {"webSrc":"https://image.nykee.cn/flower.webp","imgSrc":"https://image.nykee.cn/flower.jpg"},
+                    {"webSrc":"https://image.nykee.cn/IMG_2297.webp","imgSrc":"https://image.nykee.cn/IMG_2297.jpg"},
+                    {"webSrc":"https://image.nykee.cn/IMG_2481.webp","imgSrc":"https://image.nykee.cn/IMG_2481.jpg"},
+                    {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/IMG_2484.jpg"},
+                ]
+            }
         },
         computed:{
             intros:function () {
                 return this.$t("message.photoPage.intro")
             },
         },
-        components: {IntroHeader}
+        components: {IntroHeader,PhotoComp}
     }
 </script>
 <style lang="sass">
     .photo-intro
         text-align: left
         margin-top: 1.5rem
-        width: 80%
+        width:  80%
         border: 1px solid #E9EBED
         padding: 1rem 1rem
         -webkit-border-radius: 2px
@@ -44,5 +79,6 @@
     .photo-intro-items
         margin-top: .3rem
         /*padding: .2rem;*/
-
+    .photo-box
+        margin-top: 2rem
 </style>

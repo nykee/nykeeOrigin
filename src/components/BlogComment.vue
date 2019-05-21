@@ -22,8 +22,8 @@
     },
     mounted() {
 
-      console.log(this.bid);
-      console.log(this.btitle);
+//      console.log(this.bid);
+//      console.log(this.btitle);
     },
     computed:{
 
