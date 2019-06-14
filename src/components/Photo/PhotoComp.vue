@@ -21,12 +21,12 @@
     }
 </script>
 <style lang="sass" >
-    .img-container
-        over-flow: hidden
-    img
-        height: 16rem
-        with: 100%
-    img:hover
-        scale(1.2)
+    /*.img-container*/
+        /*over-flow: hidden*/
+        /*img*/
+            /*height: 16rem*/
+            /*with: 100%*/
+        /*img:hover*/
+            /*scale(1.2)*/
 
 </style>
