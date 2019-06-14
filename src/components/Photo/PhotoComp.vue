@@ -3,7 +3,7 @@
             <i-col :lg="{span:8}"
                    :md="{span:8}"
                    :sm="{span:8}"
-                   :xs="{span:8}" class="img-container">
+                   :xs="{span:24}" class="img-container cur-po">
                 <img :src="imgSrc" alt="">
             </i-col>
 
@@ -20,13 +20,20 @@
         }
     }
 </script>
-<style lang="sass" >
-    /*.img-container*/
-        /*over-flow: hidden*/
-        /*img*/
-            /*height: 16rem*/
-            /*with: 100%*/
-        /*img:hover*/
-            /*scale(1.2)*/
+<style lang="scss" scoped="scoped">
+    .img-container {
+        overflow: hidden;
+        img{
+            height: 16rem;
+            width: 100%
+        }
+        img:hover{
+         transition: all .2s ease-in-out;
+            transform: scale(1.2);
+         }
+    }
+
+
+
 
 </style>

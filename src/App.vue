@@ -117,6 +117,9 @@
     content: '.';
     font-size: 0
   }
+  .cur-po{
+    cursor: pointer;
+  }
 
   /*修改pre不换行的样式*/
   pre {

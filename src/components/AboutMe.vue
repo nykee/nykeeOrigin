@@ -6,9 +6,11 @@
         <source type="image/webp" srcset="https://image.nykee.cn/nykee.webp" class="avatar">
         <img src="https://image.nykee.cn/nykee.png" class="avatar"/>
       </picture>
-      <p class="slogan">
-        {{$t("message.aboutMeSlogan")}}
-      </p>
+      <ul class="slogan">
+        <li v-for="s in aboutMeSlogan">
+          {{s}}
+        </li>
+      </ul>
     </div>
     <ContactIcons class="fTags"/>
   </div>
@@ -28,6 +30,11 @@
     mounted() {
 
     },
+      computed:{
+          aboutMeSlogan(){
+              return this.$t("message.aboutMeSlogan")
+          }
+      },
     components: {
       ContactIcons,
       commonTitle,

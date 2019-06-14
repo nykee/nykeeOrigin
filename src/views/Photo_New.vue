@@ -68,7 +68,7 @@
     .photo-intro
         text-align: left
         margin-top: 1.5rem
-        width:  80%
+        width:  100%
         border: 1px solid #E9EBED
         padding: 1rem 1rem
         -webkit-border-radius: 2px

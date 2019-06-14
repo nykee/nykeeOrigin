@@ -20,7 +20,7 @@
     ],
     "friendsLinks": "友情リンク",
     "featuredTags": "特色ラベル",
-    "aboutMeSlogan": "Talk is cheap. Show me the code.",
+    "aboutMeSlogan": ["Talk is cheap. Show me the code."],
     "selfIntroSlogan": "Stay hungry,Stay foolish",
     "baiduMap": "BaiduMap",
     "nodeSpider": "nodeSpider",
