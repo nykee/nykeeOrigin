@@ -20,7 +20,7 @@
     ],
     "friendsLinks": "友情リンク",
     "featuredTags": "特色ラベル",
-    "aboutMeSlogan": "Talk is cheap. Show me the code.",
+    "aboutMeSlogan": ["Talk is cheap. Show me the code."],
     "selfIntroSlogan": "Stay hungry,Stay foolish",
     "baiduMap": "BaiduMap",
     "nodeSpider": "nodeSpider",
@@ -282,6 +282,11 @@
         {
           "time": "2019.03.18",
           "activity": "友達チェーンの表示ページを増やす"
+        }
+      ,
+        {
+          "time": "2019.06.15",
+          "activity": "ページのレイアウトを更新する"
         }
 
       ]

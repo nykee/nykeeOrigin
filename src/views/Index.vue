@@ -53,7 +53,7 @@
     computed: {
       selfIntros(){
         return this.$t(("message.selfIntro"))
-      }
+      },
     },
     components: {
       AboutMe, FeaturedTags, Friends, IntroHeader
@@ -94,6 +94,7 @@
   }
   .self-intro-slogan{
     margin-top: 2.8rem;
+    margin-bottom:.8rem;
   }
 
 

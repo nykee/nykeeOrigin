@@ -53,6 +53,8 @@
                     {"webSrc":"https://image.nykee.cn/IMG_2297.webp","imgSrc":"https://image.nykee.cn/IMG_2297.jpg"},
                     {"webSrc":"https://image.nykee.cn/IMG_2481.webp","imgSrc":"https://image.nykee.cn/IMG_2481.jpg"},
                     {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/IMG_2484.jpg"},
+                    {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/disney.jpg"},
+                    {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/chj01.jpg"},
                 ]
             }
         },
@@ -68,7 +70,7 @@
     .photo-intro
         text-align: left
         margin-top: 1.5rem
-        width:  80%
+        width:  100%
         border: 1px solid #E9EBED
         padding: 1rem 1rem
         -webkit-border-radius: 2px

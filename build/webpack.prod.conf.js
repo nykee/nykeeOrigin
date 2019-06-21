@@ -20,19 +20,6 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
 
   },
-    externals: {
-        'vue': 'Vue',
-        'vue-router': 'VueRouter',
-        'vuex': 'Vuex',
-        'iview':'iView',
-        'vue-lazyload': 'VueLazyload',
-        'vue-i18n':'VueI18n',
-        "particles":"particles.js",
-        "axios":"axios",
-        "moment":"moment",
-        // "vue-highlightjs":"VueHighlightJS",
-        "highlight.js":"hljs"
-    },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
@@ -107,7 +94,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.index,
-      template: 'index.prod.html',
+      template: 'index.html',
       inject: true,
       minify: {
         removeComments: true,

@@ -1,6 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
+// import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store/store'
@@ -9,18 +9,15 @@ import {
   DropdownItem, LoadingBar, Modal, Card, Drawer, Slider,Progress,Message,Time
 } from 'iview'
 import vueI18n from 'vue-i18n';
-import hljs from "highlight.js"
+// import hljs from "highlight.js"
 
-import Axios from 'axios';
-Vue.prototype.$http =Axios;
+// import Axios from 'axios';
+// Vue.prototype.$http =Axios;
 const hljs =require("highlight.js");
 
 Vue.config.productionTip = false;
-// if(process.env.NODE_ENV === 'development'){Vue.use(iview)}
-
+// Vue.use(iview);
 Vue.use(store);
-
-
 // Vue.use(VueLazyload,{
 //   preLoad: 1.3,
 //   loading:'../static/img/loading.gif',
@@ -98,18 +95,18 @@ function easeScroll(ms) {
 
 
 
-Vue.filter('fomatTime', function ( valueTime:String) {
+Vue.filter('fomatTime', function (valueTime) {
 
   if(valueTime){
     var newData =  Date.parse(new Date());
     var diffTime = Math.abs(newData-valueTime);
     if (diffTime > 7 * 24 * 3600 * 1000) {
-        let date = new Date(valueTime);
-        let y = date.getFullYear();
-        let m = date.getMonth() + 1;
-        m = m < 10 ? ('0' + m) : m;
-        let d = date.getDate();
-        d = d < 10 ? ('0' + d) : d;
+      var date = new Date(valueTime);
+      var y = date.getFullYear();
+      var m = date.getMonth() + 1;
+      m = m < 10 ? ('0' + m) : m;
+      var d = date.getDate();
+      d = d < 10 ? ('0' + d) : d;
       var h = date.getHours();
       h = h < 10 ? ('0' + h) : h;
       var minute = date.getMinutes();

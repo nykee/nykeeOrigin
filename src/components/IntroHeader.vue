@@ -109,8 +109,8 @@
   .intro-header-comments-webp{background-image: url("https://image.nykee.cn/HK.webp");}
 
   .intro-container {
-      background-repeat: no-repeat;
-      background-position: center center;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-attachment: scroll;
     background-color: #ccc;
     background-size: cover;
@@ -118,6 +118,9 @@
     height: 25rem;
     /*margin-bottom: .4rem;*/
     /*background-image: url("https://image.nykee.cn/HK.jpg");*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .proj-container{
       /*width: 100%;*/
@@ -167,8 +170,6 @@
 
     .site-heading {
       width: 14rem;
-      top: 14%;
-      left: 17%;
     }
 
     .intro-container, #particles {
@@ -187,8 +188,6 @@
 
     .site-heading {
       width: 18rem;
-      top: 16%;
-      left: 12%;
     }
 
     .intro-container, #particles {
@@ -207,8 +206,6 @@
 
     .site-heading {
       width: 20rem;
-      top: 16%;
-      left: 13%;
     }
 
     .intro-container, #particles {
@@ -227,8 +224,6 @@
 
     .site-heading {
       width: 25rem;
-      top: 22%;
-      left: 27%;
     }
   }
 
@@ -243,16 +238,12 @@
 
     .site-heading {
       width: 25rem;
-      top: 20%;
-      left: 30%;
     }
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1440px ) {
     .site-heading {
       width: 28rem;
-      top: 18%;
-      left: 35%;
     }
   }
 
@@ -268,10 +259,6 @@
 
     .site-heading {
       width: 35rem;
-
-      top: 28%;
-
-      left: 35%;
     }
 
     .intro-container, #particles {
@@ -290,10 +277,6 @@
 
     .site-heading {
       width: 35rem;
-
-      top: 28%;
-
-      left: 35%;
     }
 
     .intro-container, #particles {
@@ -313,9 +296,6 @@
     .site-heading {
       width: 40rem;
 
-      top: 16%;
-
-      left: 42%;
     }
 
     .intro-container, #particles {
@@ -329,10 +309,6 @@
     }*/
     .site-heading {
       width: 35rem;
-
-      top: 20%;
-
-      left: 40%;
     }
   }
 </style>
