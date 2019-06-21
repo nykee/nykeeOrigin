@@ -128,7 +128,7 @@
             prvBlogTitle="阿雅达蜜月之旅"
           >
           </PagerComponent>
-          <Comment :bid="b_id" :btitle="btitle"></Comment>
+            <BlogComments></BlogComments>
         </i-col>
 
     </Row>

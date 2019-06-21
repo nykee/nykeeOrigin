@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pager-box">
     <section>
       <Divider dashed></Divider>
     </section>
@@ -55,5 +55,7 @@
     }
 </script>
 <style>
-
+  .pager{
+    margin-top:3rem;
+  }
 </style>

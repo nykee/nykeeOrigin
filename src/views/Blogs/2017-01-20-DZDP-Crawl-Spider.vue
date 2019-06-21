@@ -40,6 +40,7 @@
 <script>
   import PostTag from '../../components/PostTag.vue'
   import PagerComponent from '../../components/PagerComponent'
+//  import BlogComments from '../../components/BlogComments.vue'
   import mixin_PV from "../../mixins/index";
   import Comment from '../../components/BlogComment'
   import CustomTag from "../../components/CustomTag"

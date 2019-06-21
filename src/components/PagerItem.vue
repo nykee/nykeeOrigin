@@ -31,13 +31,15 @@
     }
 </script>
 <style>
-  .pager-item-box{
+  /*.pager-item-box{
     position: relative;
+    opacity: .6;
+
   }
   .pager-item-box:hover{
     cursor: pointer;
-    opacity: .8;
-  }
+    opacity: .9;
+  }*/
   .pager-item-bg{
     display: inline-block;
     height: 12rem;
@@ -46,7 +48,14 @@
   .pager-item-bg-img{
     height: 100%;
     width: 100%;
-    object-fit:fill;
+    opacity: .9;
+    /*object-fit:fill;*/
+    /*background-size: cover;*/
+  }
+  .pager-item-bg-img:hover{
+    cursor: pointer;
+    opacity: .6;
+
   }
   .pager-item-info{
     position: absolute;
