@@ -15,17 +15,19 @@
         <Row type="flex" justify="center" align="middle" class="photo-box">
             <i-col span="18">
                 <Row>
-                    <PhotoComp v-for="photo in photos" :key="photo.id" :imgSrc="photo.imgSrc"></PhotoComp>
+                    <PhotoComp v-for="photo in photos" :key="photo.id" :imgSrc="photo.imgSrc" @PhotoPreview="PhotoPreview"></PhotoComp>
                 </Row>
 
             </i-col>
         </Row>
+        <PhotoPreview :previewImgSrc="previewImgSrc"></PhotoPreview>
 
     </div>
 </template>
 <script>
     import IntroHeader from "../components/IntroHeader"
     import PhotoComp from "../components/Photo/PhotoComp.vue"
+    import PhotoPreview from "../components/Photo/PhotoPreview.vue"
     export default {
         data() {
             return {
@@ -55,7 +57,14 @@
                     {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/IMG_2484.jpg"},
                     {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/disney.jpg"},
                     {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/chj01.jpg"},
-                ]
+                ],
+                previewImgSrc:''
+            }
+        },
+        methods:{
+            PhotoPreview(data){
+//                console.log(data);
+                this.previewImgSrc = data;
             }
         },
         computed:{
@@ -63,7 +72,7 @@
                 return this.$t("message.photoPage.intro")
             },
         },
-        components: {IntroHeader,PhotoComp}
+        components: {IntroHeader,PhotoComp,PhotoPreview}
     }
 </script>
 <style lang="sass">

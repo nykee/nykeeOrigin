@@ -166,7 +166,7 @@
           // console.log("切换回正常模式！");
           this.$Message.info("切换回正常播放器！");
           this.$nextTick(()=>{
-            // console.log(this.$refs.mPlayer);
+            // console.y(this.$refs.mPlayer);
             this.isToggle =false;
           })
 
@@ -268,7 +268,7 @@
       },
       clickToPlay(index) {
         this.$nextTick(()=>{
-          console.log(index);
+//          console.log(index);
         });
         /*点击播放列表播放对于的歌曲*/
         this.$refs.mscAudio.setAttribute("autoplay", "autoplay");
@@ -286,7 +286,7 @@
         /*快进功能*/
         e= event || window.event;
         //获得鼠标事件的clientX(相对dom元素的x轴坐标)
-        console.log(e.clientX);
+//        console.log(e.clientX);
         let prog_x =e.clientX;
         //超出100按100取整
         prog_x = prog_x>=100? 100 :prog_x;
@@ -312,15 +312,15 @@
       let self = this;
       /*ajax获取歌单数据，绑定到songLists和currentSong*/
       axios.get("https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=songlist&id=2520942859").then((res) => {
-          console.log(res.data);
+//          console.log(res.data);
           if(res.data.Code === "OK"){
               for (let i = 0, len = res.data.Body.length; i < len; i++) {
                   res.data.Body[i].index = i + 1;
               }
               this.songLists = res.data.Body;
               this.currentSong = res.data.Body[0];
-              console.log(this.songLists);
-              console.log(this.currentSong);
+//              console.log(this.songLists);
+//              console.log(this.currentSong);
           }
 
 
@@ -388,7 +388,7 @@
         if(ctrlKey&& key ===37){
           evn.preventDefault();
           self.playPrev();
-          console.log(self.currentSong);
+//          console.log(self.currentSong);
           self.$Notice.info({
             title: "切换上一首",
             desc:"当前:"+self.currentSong.singer+"--"+self.currentSong.name

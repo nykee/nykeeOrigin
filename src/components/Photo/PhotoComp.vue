@@ -1,12 +1,12 @@
 <template>
-
+        <div @click="showPreviewModal">
             <i-col :lg="{span:8}"
                    :md="{span:8}"
                    :sm="{span:8}"
-                   :xs="{span:24}" class="img-container cur-po">
+                   :xs="{span:24}" class="img-container cur-po" >
                 <img :src="imgSrc" alt="">
             </i-col>
-
+        </div>
 </template>
 <script>
 
@@ -14,6 +14,11 @@
         props:["imgSrc"],
         data() {
             return {}
+        },
+        methods:{
+            showPreviewModal(){
+                this.$emit("PhotoPreview",this.imgSrc)
+            }
         },
         components: {
 
