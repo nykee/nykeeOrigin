@@ -9,15 +9,16 @@
         </div>
 </template>
 <script>
-
+    import EventBus from "../../utils/EventBus";
     export default {
+
         props:["imgSrc"],
         data() {
             return {}
         },
         methods:{
             showPreviewModal(){
-                this.$emit("PhotoPreview",this.imgSrc)
+                EventBus.$emit("PhotoPreview",this.imgSrc)
             }
         },
         components: {

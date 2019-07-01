@@ -20,7 +20,7 @@
 
             </i-col>
         </Row>
-        <PhotoPreview :previewImgSrc="previewImgSrc"></PhotoPreview>
+        <PhotoPreview :previewImgSrc="previewImgSrc" v-if="isPreviewShow"></PhotoPreview>
 
     </div>
 </template>
@@ -28,6 +28,7 @@
     import IntroHeader from "../components/IntroHeader"
     import PhotoComp from "../components/Photo/PhotoComp.vue"
     import PhotoPreview from "../components/Photo/PhotoPreview.vue"
+    import EventBus from "../utils/EventBus";
     export default {
         data() {
             return {
@@ -58,7 +59,8 @@
                     {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/disney.jpg"},
                     {"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/chj01.jpg"},
                 ],
-                previewImgSrc:''
+                previewImgSrc:'',
+                isPreviewShow:false
             }
         },
         methods:{
@@ -66,6 +68,14 @@
 //                console.log(data);
                 this.previewImgSrc = data;
             }
+        },
+        mounted(){
+            EventBus.$on('PhotoPreview',()=>{
+                this.isPreviewShow = true;
+            });
+            EventBus.$on('imgPreClose',()=>{
+                this.isPreviewShow = false;
+            })
         },
         computed:{
             intros:function () {
