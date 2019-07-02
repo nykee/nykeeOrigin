@@ -12,14 +12,16 @@
     import EventBus from "../../utils/EventBus";
     export default {
 
-        props:["imgSrc"],
+        props:["imgSrc","imgIndex"],
         data() {
             return {}
         },
         methods:{
             showPreviewModal(){
-                EventBus.$emit("PhotoPreview",this.imgSrc)
+                EventBus.$emit("PhotoPreview",{imgSrc:this.imgSrc,imgIndex:this.imgIndex})
             }
+        },
+        mounted(){
         },
         components: {
 
