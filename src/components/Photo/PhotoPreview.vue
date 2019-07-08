@@ -28,6 +28,10 @@
             EventBus.$on('PhotoPreview',(data)=>{
                 this.imgIndex = data.imgIndex;
             });
+            window.document.body.addEventListener("scroll",function (e) {
+                e.preventDefault()
+                return false
+            })
 
         },
         methods:{
