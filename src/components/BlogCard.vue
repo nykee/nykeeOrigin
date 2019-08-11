@@ -26,7 +26,7 @@
           </i-col>
           <i-col :lg="{span:14}" :md="{span:15}" :sm="{span:14}" :xs="{span:24}" :order="imgOrder">
             <div class="img-container">
-              <img :src="thumbPicSrc" alt="" class="img-thumb" :class="{'isHover':isHover}">
+              <img v-lazy="thumbPicSrc" alt="" class="img-thumb" :class="{'isHover':isHover}">
             </div>
 
           </i-col>

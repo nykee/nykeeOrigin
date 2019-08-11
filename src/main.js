@@ -18,13 +18,13 @@ const hljs =require("highlight.js");
 Vue.config.productionTip = false;
 // Vue.use(iview);
 Vue.use(store);
-// Vue.use(VueLazyload,{
-//   preLoad: 1.3,
-//   loading:'../static/img/loading.gif',
-//   attempt: 1,
-//   // the default is ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend']
-//   listenEvents: [ 'scroll' ]
-// });
+Vue.use(VueLazyload,{
+  preLoad: 1.3,
+  loading:'../static/img/loading.gif',
+  attempt: 1,
+  // the default is ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend']
+  listenEvents: [ 'scroll' ]
+});
 /*组成iview组件*/
 Vue.component("Row", Row);
 Vue.component("Col", Col);
@@ -64,7 +64,6 @@ Vue.directive('highlightjs',function (el) {
 
 
 router.beforeEach((from, to, next) => {
-  // window.scrollTo(0,0);
   easeScroll(16);
   LoadingBar.start();
   next();
@@ -77,7 +76,6 @@ router.afterEach(route => {
 function easeScroll(ms) {
   let scrollY = window.scrollY,
     step = 100;
-  // console.log(scrollY);;
 
   let timer = setInterval(function () {
     if (scrollY > 0) {

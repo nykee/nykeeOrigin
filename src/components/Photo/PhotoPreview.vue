@@ -1,17 +1,17 @@
 <template>
     <div class="preview-wrapper" >
-        <div class="img-slider">
+        <div class="img-slider" >
             <div class="slider-img">
-                <img :src="previewImgSrc" alt=""/>
+                <img v-lazy="previewImgSrc" alt=""/>
             </div>
         </div>
         <span class="prev" @click="showPrev">
-            <i class="fa fa-chevron-left fa-4x"></i></span>
+            <i :class="arrowLeftSize"></i></span>
         <span class="next" @click="showNext">
-            <i class="fa fa-chevron-right fa-4x"></i>
+            <i :class="arrowRightSize"></i>
         </span>
         <span class="cls-btn" @click="closeModal">
-            <i class="fa fa-close fa-3x"></i>
+            <i :class="clsBtnSize"></i>
         </span>
     </div>
 </template>
@@ -19,18 +19,32 @@
     import EventBus from '../../utils/EventBus'
     export default {
         props:["previewImgSrc","photos"],
+        inject:['isMobile'],
         data() {
             return {
-                imgIndex:0
+                imgIndex:0,
+                size:this.isMobile?"fa-2x":'fa-4x'
             }
         },
         mounted(){
+            let  self  = this;
             EventBus.$on('PhotoPreview',(data)=>{
                 this.imgIndex = data.imgIndex;
             });
             window.document.body.addEventListener("scroll",function (e) {
                 e.preventDefault();
                 return false
+            });
+            window.document.body.addEventListener("keyup",function (e) {
+                if(e.keyCode ===27){
+                    self.closeModal();
+                }
+                else if(e.keyCode ===37){
+                    self.showPrev();
+                }
+                else if(e.keyCode ===39){
+                    self.showNext();
+                }
             })
 
         },
@@ -40,7 +54,6 @@
             },
             showNext(){
                 this.imgIndex++;
-                console.log(this.imgIndex);
                 if(this.imgIndex === this.photos.length){
                     this.imgIndex = 1;
                 }
@@ -48,7 +61,6 @@
             },
             showPrev(){
                 this.imgIndex--;
-                console.log(this.imgIndex);
                 if(this.imgIndex <0){
                     this.imgIndex = this.photos.length;
                 }
@@ -56,7 +68,15 @@
             }
         },
         computed:{
-
+            arrowLeftSize:function () {
+               return "fa fa-chevron-left "+this.size;
+            },
+            arrowRightSize:function () {
+                return "fa fa-chevron-right "+this.size;
+            },
+            clsBtnSize:function () {
+                return "fa fa-close "+this.size;
+            }
         },
         components: {}
     }
@@ -88,16 +108,19 @@
         .cls-btn{
             position: absolute;
             right: 50px;
-            top: 30px;
+            top: 10px;
         }
         .img-slider{
             width: 70%;
             margin: auto;
         }
+        @media screen and(max-width: 425px){
+            .img-slider{
+                width: 98%;
+                margin: auto;
+            }
+        }
         .slider-img{
-
-
-
             img{
                 max-width: 100%;
                 max-height: 100%;

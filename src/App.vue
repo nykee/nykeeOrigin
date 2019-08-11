@@ -22,9 +22,14 @@
   // hljs.registerLanguage('javascript', javascript);
 
   export default {
+      provide:{
+          isMobile:window.screen.width < 769
+      },
 
     data() {
-      return {}
+      return {
+
+      }
     },
     methods: {
       /*highlightCode:() => {

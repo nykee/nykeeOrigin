@@ -4,7 +4,7 @@
                    :md="{span:8}"
                    :sm="{span:8}"
                    :xs="{span:24}" class="img-container cur-po" >
-                <img :src="imgSrc" alt="">
+                <img v-lazy="imgSrc" alt="">
             </i-col>
         </div>
 </template>
