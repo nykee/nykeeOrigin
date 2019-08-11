@@ -218,4 +218,48 @@
     height: 10px!important;
   }
 
+  .shake-shake{
+    animation: uk-text-shadow-glitch .95s cubic-bezier(1,-1.91,0,2.79) 0s infinite normal both running;
+  }
+  @keyframes uk-text-shadow-glitch {
+    0% {
+      text-shadow: none
+    }
+    25% {
+      text-shadow: -1px -1px 0 #ff0048,1px 1px 0 #3234ff
+    }
+    50% {
+      text-shadow: 1px -1px 0 #ff0048,-1px 1px 0 #3234ff
+    }
+    75% {
+      text-shadow: -1px 1px 0 #ff0048,1px -1px 0 #3234ff
+    }
+    100% {
+      text-shadow: 1px 1px 0 #ff0048,-1px -1px 0 #3234ff
+    }
+  }
+  @keyframes uk-flicker {
+    0% {
+      opacity: 0
+    }
+    10% {
+      opacity: .6;
+      transform: scale(.8)
+    }
+    20% {
+      opacity: 0
+    }
+    40% {
+      opacity: 1
+    }
+    50% {
+      opacity: .2;
+      transform: scale(1.1)
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1)
+    }
+  }
+
 </style>

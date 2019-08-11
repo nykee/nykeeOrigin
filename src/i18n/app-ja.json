@@ -219,6 +219,7 @@
           "time":"拍摄于2019年04月06日",
           "location":"上海 上生新所"
         }
+
       ]
     },
     "aboutPage": {
@@ -287,6 +288,11 @@
         {
           "time": "2019.06.15",
           "activity": "ページのレイアウトを更新する"
+        }
+      ,
+        {
+          "time": "2019.08.11",
+          "activity": "add tik-tok text style"
         }
 
       ]

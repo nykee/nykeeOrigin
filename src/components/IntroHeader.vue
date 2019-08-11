@@ -2,13 +2,13 @@
     <header >
       <div class="intro-container" :class="introHeaderClass" v-if="!isProj">
         <div class="site-heading">
-          <h1 class="site-heading-title">{{Title}}</h1>
+          <h1 :class="siteHeadTitleClass" @mouseenter="addShake" @mouseleave="removeShake">{{Title}}</h1>
           <span class="site-heading-subtitle">{{subTitle}}</span>
         </div>
       </div>
       <div  class="proj-container" v-if="isProj">
         <div class="site-heading">
-          <h1 class="site-heading-title">{{Title}}</h1>
+          <h1 :class="siteHeadTitleClass">{{Title}}</h1>
           <span class="site-heading-subtitle">{{subTitle}}</span>
         </div>
         <div id="particles" ></div>
@@ -25,6 +25,7 @@
     data() {
       return {
         isProj:false,
+          siteHeadTitleClass:'site-heading-title'
         /*canUseWebp: false,
         isIndex: true,
         isBlogs: false,
@@ -35,6 +36,12 @@
       }
     },
     methods: {
+        addShake(){
+          this.siteHeadTitleClass = "site-heading-title shake-shake"
+        },
+        removeShake(){
+            this.siteHeadTitleClass = "site-heading-title";
+        },
 
       myParticles() {
 //          console.log(particlesJS)
@@ -133,6 +140,7 @@
   }
 
   .site-heading-title {
+    cursor: pointer;
     font-size: 3.75rem;
     color: #fff;
     line-height: 1.1;

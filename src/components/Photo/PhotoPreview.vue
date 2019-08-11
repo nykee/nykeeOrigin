@@ -29,7 +29,7 @@
                 this.imgIndex = data.imgIndex;
             });
             window.document.body.addEventListener("scroll",function (e) {
-                e.preventDefault()
+                e.preventDefault();
                 return false
             })
 
