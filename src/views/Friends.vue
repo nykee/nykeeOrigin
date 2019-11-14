@@ -107,6 +107,7 @@
                 {id:13,avatar:"https://file.eyuyun.com/usr/uploads/icon.ico",bio:"有格调的技术部落",webSiteAdd:"https://www.eyuyun.com/",name:"E语云博客"},
                 {id:14,avatar:"https://cdn.jsdelivr.net/gh/jerryc127/CDN@1.0/Photo/avatar.png",bio:"Never put off till tomorrow what you can do today",webSiteAdd:"http://jerryc.me/",name:"JerryC"},
                 {id:15,avatar:"https://blog.w3cr.com/favicon.png",bio:"专注于web开发的工具链硬件猿",webSiteAdd:"https://w3c.ink",name:"W3C王三尺"},
+                {id:16,avatar:"https://lzyz.fun/wp-content/uploads/headImg.jpg",bio:"– DEBUG THE WORLD",webSiteAdd:"https://lzyz.fun/",name:"惊鸿"},
               ],
               geeks:[
                 {id:0,avatar:"https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg",bio:"Overreacted",webSiteAdd:"https://overreacted.io/",name:"Dan Abramov"},
