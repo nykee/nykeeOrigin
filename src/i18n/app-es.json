@@ -1,20 +1,23 @@
 {
   "message": {
-    "home": "首页",
+    "home": "Inicio",
     "projects": "项目",
-    "nykee": "Nykee的博客",
-    "blog":"博客",
-    "about":"关于",
-    "photograph":"随拍",
-    "comments":"留言",
-    "aboutMe":"个人简介",
-    "Friends":"友链",
+    "nykee": "Blog de Nykee",
+    "blog":"blog",
+    "about":"Acerca de",
+    "photograph":"Fotografía",
+    "comments":"comentarios",
+    "aboutMe":"Introduccion",
+    "Friends":"Amigos",
 
-    "postAt":"发布于",
+    "postAt":"Publicado en",
     "selfIntro":[
-      "Hi，我是nykee，魔都土著一枚，曾经是个追风自行车手，现在是枚大叔(逃，热爱前端开发，喜欢所见即所得的感觉。",
-      "喜欢用手机随手记录生活，目前手头就一个大法的A5000+狗头",
-      "喜欢听歌，比较杂食，偶尔喜欢民谣，偶尔喜欢流行，大部分的时候喜欢听电音",
+      "Hi，我是nykee，魔都土著一枚，曾经是个追风自行车手，现在是枚大叔(逃，热爱前端开发，喜欢所见即所得的感觉。目前在一家创业公司，作为该公司云平台项目的负责人。",
+      "目前的项目下来，累积的经验有： ",
+      "1、熟悉前端常用框架Vue、React",
+      "2、对前端数据可视化感兴趣且有一定经验",
+      "3、了解一点JAVA后端（SSM、Mysql）",
+      "4、可以独立得完成一个项目（后端到前端）",
       "喜欢喝着咖啡，听着电音，敲代码(ﾉ´▽｀)ﾉ♪"
     ],
     "selfIntroSlogan":"希望养恶鬼，热情喂狂风",
@@ -23,8 +26,8 @@
       "电音爱好者",
       "曾经的骑游党"
     ],
-    "friendsLinks":"友情链接",
-    "featuredTags":"标签",
+    "friendsLinks":"Enlace amigable",
+    "featuredTags":"Etiquetas",
     "baiduMap":"百度地图",
     "nodeSpider":"node爬虫",
     "webFE":"前端",
@@ -239,77 +242,77 @@
 
     },
     "aboutPage":{
-      "aboutSite":"关于本站",
-      "aboutSiteContent":"个人小站，瞎玩玩，倒腾倒腾，随便写点什么。前期使用了github pages，用的别人的主题改了改，无奈markdown写着不顺手，想想自己是个web开发，干脆动手撸个网站好了。前端使用了Vue全家桶开发,UI库使用iView,弄了下i18n国际化。后端套用了以前搭的SSM框架。部署在阿里云，以上",
-      "timeLine":"更新日志",
+      "aboutSite":"Sobre este sitio",
+      "aboutSiteContent":"Soporte personal, jugar a ciegas, enojarse, escribir algo casualmente. Utilicé páginas de github en los primeros días y cambié el tema de los demás. Indefenso, Markdown escribió que no fue fácil. Piensa en ti mismo como desarrollador web. Simplemente inicia un sitio web. El front-end utiliza el desarrollo familiar de Vue, y la biblioteca UI usa iView para obtener la internacionalización i18n. El back-end usa el marco SSM previamente formado. Desplegado en Alibaba Cloud, arriba",
+      "timeLine":"Cambiar registro",
       "timeLineItems":[
         {
           "time":"2017.09.26",
-          "activity":"初版开始编写，git仓库初始化"
+          "activity":"La versión inicial comenzó a escribir, el repositorio de git se inicializó"
         },
         {
           "time":"2018.11.06",
-          "activity":"添加i18n国际化适配"
+          "activity":"Añadir i18n adaptación internacional"
         },
         {
           "time":"2018.11.12",
-          "activity":"迁移至阿里云"
+          "activity":"Migración a Alibaba Cloud"
         },
         {
           "time":"2018.11.13",
-          "activity":"添加Vue-lazyload"
+          "activity":"Añadir Vue-lazyload"
         },
         {
           "time":"2018.11.15",
-          "activity":"完成ICP备案"
+          "activity":"Presentación completa de ICP"
         },
         {
           "time":"2018.11.15",
-          "activity":"前端性能优化：首屏加载优化及图片优化"
+          "activity":"Optimización de rendimiento front-end: optimización de carga de primera pantalla y optimización de imagen"
         },
         {
           "time":"2018.11.22",
-          "activity":"加入音乐播放功能"
+          "activity":"Agregar función de reproducción de música"
         }
       ,
         {
           "time": "2018.12.13",
-          "activity": "启用HTTPS访问"
+          "activity": "Habilitar acceso HTTPS"
         }
       ,
         {
           "time": "2018.12.18",
-          "activity": "增加留言板功能"
+          "activity": "Agregar función de tablero de mensajes"
         }
       ,
         {
           "time": "2019.01.31",
-          "activity": "播放器添加快捷键音量控制"
+          "activity": "El jugador agrega el control de volumen de la tecla de acceso directo"
         }
       ,
         {
           "time": "2019.02.18",
-          "activity": "更改博客页面布局方式"
+          "activity": "Cambiar el diseño de la página del blog"
         }
       ,
         {
           "time": "2019.03.11",
-          "activity": "博客页面增加评论功能"
+          "activity": "Función de comentario agregada en la página del blog"
         }
       ,
         {
           "time": "2019.03.18",
-          "activity": "增加友链展示页面"
+          "activity": "Agregar página de visualización de cadena de amigos"
         }
       ,
         {
           "time": "2019.06.15",
-          "activity": "更新随拍页面布局"
+          "activity": "Actualice el diseño de la página de instantánea"
         }
       ,
         {
           "time": "2019.08.11",
-          "activity": "页面标题增加抖音文字效果"
+          "activity": "El título de la página agrega efecto de texto vibrato"
         }
       ]
     },
@@ -320,21 +323,21 @@
       }
     },
     "commentsPage":{
-      "commentCountDesc":"条评论",
-      "reply":"回复",
-      "postAt":"发布于",
-      "fromWhat":"来自：",
-      "emoji":"表情",
-      "placeholder_nickname":"昵称或QQ号码",
-      "placeholder_email":"邮箱",
-      "placeholder_comment":"随便写点什么吧...",
-      "notRobot":"滴，老司机卡",
-      "submit_comment":"留言"
+      "commentCountDesc":"Comentarios",
+      "reply":"Responder",
+      "postAt":"Publicado en",
+      "fromWhat":"De：",
+      "emoji":"emoji",
+      "placeholder_nickname":"Apodo",
+      "placeholder_email":"Buzón",
+      "placeholder_comment":"Solo escribe algo...",
+      "notRobot":"Demuestra que no eres un robot",
+      "submit_comment":"Deja un mensaje"
     },
     "blogPage":{
-      "postAt":"发布于",
-      "views":"热度",
-      "comments":"条评论"
+      "postAt":"Publicado en",
+      "views":"Vistas de página",
+      "comments":"Comentarios"
     }
 
 

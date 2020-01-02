@@ -1,8 +1,8 @@
 <template>
     <div class="preview-wrapper" >
         <div class="img-slider" >
-            <div class="slider-img">
-                <img v-lazy="previewImgSrc" alt=""/>
+            <div class="slider-img" id="slider-img">
+                <img v-lazy="previewImgSrc" alt="" id="slider-img-img" :style="imgMarginTop"/>
             </div>
         </div>
         <span class="prev" @click="showPrev">
@@ -23,10 +23,14 @@
         data() {
             return {
                 imgIndex:0,
-                size:this.isMobile?"fa-2x":'fa-4x'
+                size:this.isMobile?"fa-2x":'fa-3x',
+                imgMarginTop:{
+                    'margin-top':'0px'
+                }
             }
         },
         mounted(){
+            console.log("AA");
             let  self  = this;
             EventBus.$on('PhotoPreview',(data)=>{
                 this.imgIndex = data.imgIndex;
@@ -45,10 +49,36 @@
                 else if(e.keyCode ===39){
                     self.showNext();
                 }
-            })
+            });
+            self.adjustImgMargin();
+
+//            console.log(style_silderimg_box.height);
+
 
         },
         methods:{
+            adjustImgMargin(){
+                let self = this;
+                let silderimg_box = document.getElementById("slider-img");
+                let slider_img_img = document.getElementById("slider-img-img");
+                let style_silderimg_box = window.getComputedStyle(silderimg_box, null);
+                let style_slider_img;
+                slider_img_img.onload=function () {
+                    let container_height = style_silderimg_box.height;
+                    container_height = container_height.slice(0,container_height.lastIndexOf('px'));
+                    style_slider_img = window.getComputedStyle(slider_img_img, null);
+                    let ele_height = style_slider_img.height;
+                    ele_height = ele_height.slice(0,ele_height.lastIndexOf('px'));
+                    let mt = (container_height-ele_height)/2;
+//                    console.log(mt);
+                    self.imgMarginTop.marginTop =mt+'px';
+//                    console.log(self.imgMarginTop)
+                    console.log("adjust")
+
+//                console.log(style_slider_img.height);
+                };
+
+            },
             closeModal(){
                 EventBus.$emit('imgPreClose')
             },
@@ -58,6 +88,7 @@
                     this.imgIndex = 1;
                 }
                 this.previewImgSrc = this.photos[this.imgIndex-1].imgSrc;
+                this.adjustImgMargin();
             },
             showPrev(){
                 this.imgIndex--;
@@ -65,6 +96,7 @@
                     this.imgIndex = this.photos.length;
                 }
                 this.previewImgSrc = this.photos[this.imgIndex-1].imgSrc;
+                this.adjustImgMargin();
             }
         },
         computed:{
@@ -110,17 +142,21 @@
             right: 50px;
             top: 10px;
         }
-        .img-slider{
-            width: 70%;
-            margin: auto;
-        }
-        @media screen and(max-width: 425px){
-            .img-slider{
-                width: 98%;
-                margin: auto;
-            }
-        }
+        /*.img-slider{*/
+            /*width: 70%;*/
+            /*margin: auto;*/
+        /*}*/
+        /*@media screen and(max-width: 425px){*/
+            /*.img-slider{*/
+                /*width: 98%;*/
+                /*margin: auto;*/
+            /*}*/
+        /*}*/
         .slider-img{
+            width: 70%;
+            margin: 0 auto;
+            height: 100%;
+            text-align: center;
             img{
                 max-width: 100%;
                 max-height: 100%;

@@ -4,7 +4,7 @@
       <p class="copyright-content">Copyright © Nykee 2017-{{yearCurrent}} </p>
     </Row>
     <Row type="flex" justify="center" align="middle" class="beian">
-      <p class="beian-content">沪ICP备18042752号</p>
+      <p class="beian-content" ><a href="//www.beian.miit.gov.cn/">沪ICP备18042752号</a></p>
     </Row>
     <Row type="flex" justify="center" align="middle" class="supporter" >
       <picture>
@@ -45,9 +45,10 @@
     font-size: 1rem;
     margin-bottom: .5rem;
   }
-  .copyright-content,.beian-content{
-    color:#B9B9B9
+  .copyright-content,.beian-content a{
+    color:#B9B9B9 !important;
   }
+
   .logo-ypy{
     width: 8rem;
   }

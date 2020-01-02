@@ -266,5 +266,26 @@
       transform: scale(1)
     }
   }
+  .fs-14{
+    font-size: 14px;
+  }
+  .fs-16{
+    font-size: 16px;
+  }
+  .fs-18{
+    font-size: 18px;
+  }
+  .fs-20{
+    font-size: 20px;
+  }
+  .lh-22{
+    line-height: 22px;
+  }
+  .lh-24{
+    line-height: 24px;
+  }
+  .lh-26{
+    line-height: 26px;
+  }
 
 </style>

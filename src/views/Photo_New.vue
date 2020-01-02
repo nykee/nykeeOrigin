@@ -58,6 +58,8 @@
                     {id:23,"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/IMG_2484.jpg"},
                     {id:24,"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/disney.jpg"},
                     {id:25,"webSrc":"https://image.nykee.cn/IMG_2484.webp","imgSrc":"https://image.nykee.cn/chj01.jpg"},
+                    {id:25,"webSrc":"https://image.nykee.cn/Snapseed 2.jpg","imgSrc":"https://image.nykee.cn/Snapseed 2.jpg"},
+                    {id:25,"webSrc":"https://image.nykee.cn/Snapseed.jpg","imgSrc":"https://image.nykee.cn/Snapseed.jpg"},
                 ],
                 previewImgSrc:'',
                 isPreviewShow:false,

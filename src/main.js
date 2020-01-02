@@ -51,6 +51,7 @@ const i18n = new vueI18n({
     zh: require('./i18n/app-zh.json'),
     en: require('./i18n/app-en.json'),
     ja: require('./i18n/app-ja.json'),
+    es: require('./i18n/app-es.json')
 
   }
 });

@@ -111,6 +111,10 @@
             value: 'Japanese',
             label: '日本語'
           },
+          {
+            value: 'Espanol',
+            label: 'Espanol'
+          },
         ],
         // isSticky:false
         // scroll:0
@@ -148,6 +152,10 @@
           case "Japanese":
             this.$i18n.locale = "ja";
             window.sessionStorage.setItem("locale", "ja");
+            break;
+          case "Espanol":
+            this.$i18n.locale = "es";
+            window.sessionStorage.setItem("locale", "es");
             break;
           default:
             this.$i18n.locale = "zh";

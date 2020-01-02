@@ -24,6 +24,7 @@ import BlogsIndex from '../views/Blogs/BlogsIndex.vue'
 import FeInterview from '../views/Blogs/2019-03-06-FeInterview.vue'
 import ImgComp from '../views/Blogs/2019-03-12-FrontEndImageCompress.vue'
 import CtripConf from '../views/Blogs/2019-03-30-Ctrip.vue'
+import EndOf2019 from '../views/Blogs/2019-12-31-EndOf2019.vue'
 
 
 // Vue.use(VueRouter);
@@ -119,6 +120,10 @@ const router = new VueRouter({
             {
                 path: 'CtripConf',
                 component: CtripConf
+            },
+            {
+                path: 'EndOf2019',
+                component: EndOf2019
             },
         ]
     },

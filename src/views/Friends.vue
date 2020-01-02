@@ -100,7 +100,7 @@
                 // {id:6,avatar:"https://avatars3.githubusercontent.com/u/13348805?v=4",bio:"不折腾会死星人",webSiteAdd:"https://blog.woc.moe/",name:"jmglsi的博客"},
                 // {id:7,avatar:"https://view.moezx.cc/images/2018/12/21/youmu.jpg",bio:"在这片充满魔力的土地下",webSiteAdd:"https://www.yooomu.com/",name:"Kong's Blog"},
                 {id:8,avatar:"https://view.moezx.cc/images/2018/04/28/lsy.png",bio:"爱好摄影 的程序猿",webSiteAdd:"https://lishaoy.net/",name:"Persilee's Blog"},
-                {id:9,avatar:"https://meowqvq.files.wordpress.com/2019/01/%E5%A4%B4%E5%83%8F.jpeg",bio:"半文艺、半动漫的二次元美少女的涂鸦簿！",webSiteAdd:"https://meowqvq.wordpress.com/",name:"惡魔菌の记事簿"},
+                {id:9,avatar:"https://meowqvq.files.wordpress.com/2019/01/%E5%A4%B4%E5%83%8F.jpeg",bio:"半文艺、半动漫的二次元美少女的涂鸦簿！",webSiteAdd:"https://meow3.family.blog/",name:"惡魔菌の记事簿"},
                 {id:10,avatar:"https://ws1.sinaimg.cn/large/006Xmmmgly1fytpojlve9j30500500sl.jpg",bio:"可这世间疾苦照样没能放过我",webSiteAdd:"https://www.uo33.cn/",name:"林阿三"},
                 {id:11,avatar:"https://5sir.cn/logo.jpg",bio:"因为喜欢，所以折腾。",webSiteAdd:"https://5sir.cn/",name:"梁Sir blog"},
                 {id:12,avatar:"https://www.xcnte.com/Logo.png",bio:"终其一生，我们都在寻找自己",webSiteAdd:"https://www.xcnte.com/",name:"Xcnte's Blog"},

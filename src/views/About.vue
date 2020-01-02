@@ -14,7 +14,7 @@
 
       </i-col>
       <i-col :xs={span:24} :sm={span:24} :md={span:12} :lg={span:14}>
-        <div class="site-intro-content ">
+        <div class="site-intro-content fs-18">
           {{$t("message.aboutPage.aboutSiteContent")}}
         </div>
         <Divider dashed />

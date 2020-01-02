@@ -602,12 +602,8 @@
         }
       },
       isQQ:function (aQQ) {
-        var bValidate = RegExp(/^[1-9][0-9]{4,9}$/).test(aQQ);
-        if (bValidate) {
-          return true;
-        }
-        else
-          return false;
+        let  bValidate = new RegExp(/^[1-9][0-9]{4,9}$/).test(aQQ);
+        return bValidate;
       },
       QueryCommentsInitial:function(){
         let self = this;
@@ -629,7 +625,7 @@
           .catch((err)=>{
             console.warn(err);
           });
-        console.log(self.commentSFromDB);
+//        console.log(self.commentSFromDB);
       },
       submitComments:function(){
         let self= this;
@@ -637,16 +633,16 @@
         let os = this.getOsInfo();
         if(!this.isHuman){
           this.$Message.warning('请刷老司机卡上车');
-          return;
+          return false;
         }
         else {
           if(this.comments.length ===0){
             this.$Message.warning('不允许空评论噢！');
-            return
+            return false;
           }
           else if(this.nickName.length ===0||this.email.length ===0){
             this.$Message.warning('昵称或邮箱必填噢！');
-            return
+            return false;
           }
           else {
             self.subBtnDisable =true;
@@ -692,7 +688,7 @@
 
               axios.post("/Comment/insertNewReply",params)
                 .then((res)=>{
-                  console.log(res.data);
+//                  console.log(res.data);
                   if(String(res.data.code)==="200"){
                     self.subBtnDisable =false;
                     self.$Message.success({
@@ -827,7 +823,8 @@
 
 
           return false
-        }else {
+        }
+        else {
           axios.post("/Comment/getAvatar",params)
             .then(
               (res)=>{
