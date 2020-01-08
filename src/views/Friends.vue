@@ -67,9 +67,9 @@
 
             </Row>
           </div>
-          <div>
-            <Comment :bid="b_id" :btitle="btitle"></Comment>
-          </div>
+          <!--<div>-->
+            <!--<Comment :bid="b_id" :btitle="btitle"></Comment>-->
+          <!--</div>-->
 
         </i-col>
 
