@@ -248,71 +248,87 @@
       "timeLineItems":[
         {
           "time":"2017.09.26",
-          "activity":"La versión inicial comenzó a escribir, el repositorio de git se inicializó"
+          "activity":"La versión inicial comenzó a escribir, el repositorio de git se inicializó",
+          "color":"green",
+          "icon":"ios-trophy"
         },
         {
           "time":"2018.11.06",
-          "activity":"Añadir i18n adaptación internacional"
+          "activity":"Añadir i18n adaptación internacional",
+          "icon":"ios-globe"
         },
         {
           "time":"2018.11.12",
-          "activity":"Migración a Alibaba Cloud"
+          "activity":"Migración a Alibaba Cloud",
+          "icon":"ios-cloud"
         },
         {
           "time":"2018.11.13",
-          "activity":"Añadir Vue-lazyload"
+          "activity":"Añadir Vue-lazyload",
+          "icon":"ios-image"
         },
         {
           "time":"2018.11.15",
-          "activity":"Presentación completa de ICP"
+          "activity":"Presentación completa de ICP",
+          "icon":"ios-cog"
         },
         {
           "time":"2018.11.15",
-          "activity":"Optimización de rendimiento front-end: optimización de carga de primera pantalla y optimización de imagen"
+          "activity":"Optimización de rendimiento front-end: optimización de carga de primera pantalla y optimización de imagen",
+          "icon":"ios-jet"
         },
         {
           "time":"2018.11.22",
-          "activity":"Agregar función de reproducción de música"
+          "activity":"Agregar función de reproducción de música",
+          "icon":"ios-musical-notes"
         }
       ,
         {
           "time": "2018.12.13",
-          "activity": "Habilitar acceso HTTPS"
+          "activity": "Habilitar acceso HTTPS",
+          "icon":"md-glasses"
         }
       ,
         {
           "time": "2018.12.18",
-          "activity": "Agregar función de tablero de mensajes"
+          "activity": "Agregar función de tablero de mensajes",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "2019.01.31",
-          "activity": "El jugador agrega el control de volumen de la tecla de acceso directo"
+          "activity": "El jugador agrega el control de volumen de la tecla de acceso directo",
+          "icon":"ios-musical-notes"
         }
       ,
         {
           "time": "2019.02.18",
-          "activity": "Cambiar el diseño de la página del blog"
+          "activity": "Cambiar el diseño de la página del blog",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "2019.03.11",
-          "activity": "Función de comentario agregada en la página del blog"
+          "activity": "Función de comentario agregada en la página del blog",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "2019.03.18",
-          "activity": "Agregar página de visualización de cadena de amigos"
+          "activity": "Agregar página de visualización de cadena de amigos",
+          "icon":"ios-contacts"
         }
       ,
         {
           "time": "2019.06.15",
-          "activity": "Actualice el diseño de la página de instantánea"
+          "activity": "Actualice el diseño de la página de instantánea",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "2019.08.11",
-          "activity": "El título de la página agrega efecto de texto vibrato"
+          "activity": "El título de la página agrega efecto de texto vibrato",
+          "icon":"ios-cog"
         }
       ]
     },

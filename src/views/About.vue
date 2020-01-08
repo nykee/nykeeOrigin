@@ -31,7 +31,8 @@
       </i-col>
       <i-col :xs={span:24} :sm={span:24} :md={span:14} :lg={span:14}>
         <Timeline class="time-line" >
-          <TimelineItem  v-for="item in items" :key="item.activity">
+          <TimelineItem  v-for="item in items" :key="item.activity" :color="item.color">
+            <Icon :type="item.icon" slot="dot" size="22"></Icon>
             <p class="time">{{item.time}}</p>
             <p class="content">{{item.activity}}</p>
           </TimelineItem>

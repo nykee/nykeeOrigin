@@ -228,69 +228,85 @@
       "timeLineItems": [
         {
           "time": "September 26, 2017",
-          "activity": "Git repository initialized and started to write the first version of website"
+          "activity": "Git repository initialized and started to write the first version of website",
+          "color":"green",
+          "icon":"ios-trophy"
         },
         {
           "time": "November 06, 2018",
-          "activity": "Add i18n international adaptation"
+          "activity": "Add i18n international adaptation",
+          "icon":"ios-globe"
         },
         {
           "time": "November 12, 2018",
-          "activity": "Migrate to Alibaba Cloud"
+          "activity": "Migrate to Alibaba Cloud",
+          "icon":"ios-cloud"
         },
         {
           "time": "November 13, 2018",
-          "activity": "Add Vue-lazyload"
+          "activity": "Add Vue-lazyload",
+          "icon":"ios-image"
         },
         {
           "time": "November 15, 2018",
-          "activity": "Complete ICP filing"
+          "activity": "Complete ICP filing",
+          "icon":"ios-cog"
         },
         {
           "time": "November 15, 2018",
-          "activity": "Front-end performance optimization: first-screen loading optimization and image optimization"
+          "activity": "Front-end performance optimization: first-screen loading optimization and image optimization",
+          "icon":"ios-jet"
         },
         {
           "time": "November 22, 2018",
-          "activity": "Add music play function"
+          "activity": "Add music play function",
+          "icon":"ios-musical-notes"
         }
       ,
         {
           "time": "December 13, 2018",
-          "activity": "update website to https "
+          "activity": "update website to https ",
+          "icon":"md-glasses"
         }
       ,
         {
           "time": "December 18, 2018",
-          "activity": "add comments page "
+          "activity": "add comments page ",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "January 31, 2019",
-          "activity": "add volume by keyboard to music player "
+          "activity": "add volume by keyboard to music player ",
+          "icon":"ios-musical-notes"
         } ,
         {
           "time": "February 18, 2019",
-          "activity": "Change the layout of blog page"
+          "activity": "Change the layout of blog page",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "March 11, 2019",
-          "activity": "Add comment function to blog page "
+          "activity": "Add comment function to blog page ",
+          "icon":"ios-chatbubbles"
         },
         {
           "time": "March 18, 2019",
-          "activity": "add friendly links display page "
+          "activity": "add friendly links display page ",
+          "icon":"ios-contacts"
         }
       ,
         {
           "time": "June 15, 2019",
-          "activity": "Update the layout of the photo page"
+          "activity": "Update the layout of the photo page",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "Aug 11, 2019",
-          "activity": "add tik-tok text style"
+          "activity": "add tik-tok text style",
+          "icon":"ios-cog"
         }
       ]
     },

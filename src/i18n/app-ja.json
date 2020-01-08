@@ -229,70 +229,86 @@
       "timeLineItems": [
         {
           "time": "2017.09.26",
-          "activity": "最初のバージョンが書かれ始め、gitリポジトリの初期化"
+          "activity": "最初のバージョンが書かれ始め、gitリポジトリの初期化",
+          "color":"green",
+          "icon":"ios-trophy"
         },
         {
           "time": "2018.11.06",
-          "activity": "i18n国際適応を追加する"
+          "activity": "i18n国際適応を追加する",
+          "icon":"ios-globe"
         },
         {
           "time": "2018.11.12",
-          "activity": "Alibaba Cloudの移行"
+          "activity": "Alibaba Cloudの移行",
+          "icon":"ios-cloud"
         },
         {
           "time": "2018.11.13",
-          "activity": "Vue-lazyloadを追加"
+          "activity": "Vue-lazyloadを追加",
+          "icon":"ios-image"
         },
         {
           "time": "2018.11.15",
-          "activity": "ICP出願の完了"
+          "activity": "ICP出願の完了",
+          "icon":"ios-cog"
         },
         {
           "time": "2018.11.15",
-          "activity": "フロントエンドのパフォーマンスの最適化：第1画面の読み込みの最適化と画像の最適化"
+          "activity": "フロントエンドのパフォーマンスの最適化：第1画面の読み込みの最適化と画像の最適化",
+          "icon":"ios-jet"
         },
         {
           "time": "2018.11.20",
-          "activity": "音楽再生を追加する"
+          "activity": "音楽再生を追加する",
+          "icon":"ios-musical-notes"
         }
       ,
         {
           "time": "2018.12.13",
-          "activity": "ウェブサイトをhttpsに更新する"
+          "activity": "ウェブサイトをhttpsに更新する",
+          "icon":"md-glasses"
         }
       ,
         {
           "time": "2018.12.18",
-          "activity": "メッセージボード機能を追加する"
+          "activity": "メッセージボード機能を追加する",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "2019.01.31",
-          "activity": "プレーヤーはショートカットキーの音量調節を追加します"
+          "activity": "プレーヤーはショートカットキーの音量調節を追加します",
+          "icon":"ios-musical-notes"
         },
         {
           "time": "2019.02.18",
-          "activity": "ブログページのレイアウト方法を変更する"
+          "activity": "ブログページのレイアウト方法を変更する",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "2019.03.11",
-          "activity": "顧客ページの追加コメント機能"
+          "activity": "顧客ページの追加コメント機能",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "2019.03.18",
-          "activity": "友達チェーンの表示ページを増やす"
+          "activity": "友達チェーンの表示ページを増やす",
+          "icon":"ios-contacts"
         }
       ,
         {
           "time": "2019.06.15",
-          "activity": "ページのレイアウトを更新する"
+          "activity": "ページのレイアウトを更新する",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "2019.08.11",
-          "activity": "add tik-tok text style"
+          "activity": "add tik-tok text style",
+          "icon":"ios-cog"
         }
 
       ]

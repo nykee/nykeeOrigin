@@ -245,71 +245,87 @@
       "timeLineItems":[
         {
           "time":"2017.09.26",
-          "activity":"初版开始编写，git仓库初始化"
+          "activity":"初版开始编写，git仓库初始化",
+          "color":"green",
+          "icon":"ios-trophy"
         },
         {
           "time":"2018.11.06",
-          "activity":"添加i18n国际化适配"
+          "activity":"添加i18n国际化适配",
+          "icon":"ios-globe"
         },
         {
           "time":"2018.11.12",
-          "activity":"迁移至阿里云"
+          "activity":"迁移至阿里云",
+          "icon":"ios-cloud"
         },
         {
           "time":"2018.11.13",
-          "activity":"添加Vue-lazyload"
+          "activity":"添加Vue-lazyload",
+          "icon":"ios-image"
         },
         {
           "time":"2018.11.15",
-          "activity":"完成ICP备案"
+          "activity":"完成ICP备案",
+          "icon":"ios-cog"
         },
         {
           "time":"2018.11.15",
-          "activity":"前端性能优化：首屏加载优化及图片优化"
+          "activity":"前端性能优化：首屏加载优化及图片优化",
+          "icon":"ios-jet"
         },
         {
           "time":"2018.11.22",
-          "activity":"加入音乐播放功能"
+          "activity":"加入音乐播放功能",
+          "icon":"ios-musical-notes"
         }
       ,
         {
           "time": "2018.12.13",
-          "activity": "启用HTTPS访问"
+          "activity": "启用HTTPS访问",
+          "icon":"md-glasses"
         }
       ,
         {
           "time": "2018.12.18",
-          "activity": "增加留言板功能"
+          "activity": "增加留言板功能",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "2019.01.31",
-          "activity": "播放器添加快捷键音量控制"
+          "activity": "播放器添加快捷键音量控制",
+          "icon":"ios-musical-notes"
         }
       ,
         {
           "time": "2019.02.18",
-          "activity": "更改博客页面布局方式"
+          "activity": "更改博客页面布局方式",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "2019.03.11",
-          "activity": "博客页面增加评论功能"
+          "activity": "博客页面增加评论功能",
+          "icon":"ios-chatbubbles"
         }
       ,
         {
           "time": "2019.03.18",
-          "activity": "增加友链展示页面"
+          "activity": "增加友链展示页面",
+          "icon":"ios-contacts"
         }
       ,
         {
           "time": "2019.06.15",
-          "activity": "更新随拍页面布局"
+          "activity": "更新随拍页面布局",
+          "icon":"ios-cog"
         }
       ,
         {
           "time": "2019.08.11",
-          "activity": "页面标题增加抖音文字效果"
+          "activity": "页面标题增加抖音文字效果",
+          "icon":"ios-cog"
         }
       ]
     },
