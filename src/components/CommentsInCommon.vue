@@ -571,7 +571,8 @@
           "https://image.nykee.cn/d-avatar(6).jpg",
           "https://image.nykee.cn/d-avatar(7).jpg",
         ],
-        isUserExist:false
+        isUserExist:false,
+          isCommentInserting:false,
       }
     },
     methods: {
@@ -666,11 +667,13 @@
               btitle:this.btitle
             };
             if(!this.isReplyMode ){
+                this.isCommentInserting = true;
               axios.post("/Comment/insertNewComment",params)
                 .then((res)=>{
                   console.log(res.data);
                   if(String(res.data.code)==="200"){
                     self.subBtnDisable =false;
+                    self.isCommentInserting = false;
                     self.$Message.success({
                       content: "评论成功！",
                       duration: 3
