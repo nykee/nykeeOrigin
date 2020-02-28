@@ -108,6 +108,8 @@
                 {id:14,avatar:"https://cdn.jsdelivr.net/gh/jerryc127/CDN@1.0/Photo/avatar.png",bio:"Never put off till tomorrow what you can do today",webSiteAdd:"http://jerryc.me/",name:"JerryC"},
                 {id:15,avatar:"https://blog.w3cr.com/favicon.png",bio:"专注于web开发的工具链硬件猿",webSiteAdd:"https://w3c.ink",name:"W3C王三尺"},
                 {id:16,avatar:"https://lzyz.fun/wp-content/uploads/headImg.jpg",bio:"– DEBUG THE WORLD",webSiteAdd:"https://lzyz.fun/",name:"惊鸿"},
+                {id:17,avatar:"https://i.loli.net/2020/02/15/9iqI5Ug8W2tJBTo.jpg",bio:"没有行动的梦想都是妄想~",webSiteAdd:"https://lilu.org.cn/",name:"向日葵的自我修养"},
+                {id:18,avatar:"http://img-xjjsbk.cn-bj.ufileos.com/other/head.jpg",bio:"又一个互联网爱好者！",webSiteAdd:"https://www.xjjsbk.com/",name:"寻街技术博客"},
               ],
               geeks:[
                 {id:0,avatar:"https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg",bio:"Overreacted",webSiteAdd:"https://overreacted.io/",name:"Dan Abramov"},

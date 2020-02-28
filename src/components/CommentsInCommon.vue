@@ -138,6 +138,9 @@
         <Button type="primary" @click="submitComments" :disabled="subBtnDisable">{{$t("message.commentsPage.submit_comment")}}</Button>
       </i-col>
     </Row>
+    <Row type="flex" justify="center" align="middle" class="item-row">
+      <Spin size="large"></Spin>
+    </Row>
   </div>
 </template>
 
@@ -688,7 +691,6 @@
 
               axios.post("/Comment/insertNewReply",params)
                 .then((res)=>{
-//                  console.log(res.data);
                   if(String(res.data.code)==="200"){
                     self.subBtnDisable =false;
                     self.$Message.success({
@@ -1075,10 +1077,10 @@
         this.origin_content =data.content;
         this.origin_name = data.nickName;
         this.location = data.location;
-        console.log(data.email);
-        console.log(data.content);
-        console.log(data.nickName);
-        console.log(data.location);
+//        console.log(data.email);
+//        console.log(data.content);
+//        console.log(data.nickName);
+//        console.log(data.location);
         // console.log(data);
       });
 

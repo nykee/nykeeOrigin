@@ -11,7 +11,7 @@
             </li>
 
             <li class="fri-bio">
-              <Tooltip :content="bio"  theme="light"><span >{{bio}}</span></Tooltip>
+              <Tooltip :content="bio"  theme="light" max-width=400 transfer="true"><span >{{bio}}</span></Tooltip>
             </li>
           </ul></i-col>
         <i-col span="8">
