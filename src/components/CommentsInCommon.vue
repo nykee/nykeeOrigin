@@ -138,9 +138,9 @@
         <Button type="primary" @click="submitComments" :disabled="subBtnDisable">{{$t("message.commentsPage.submit_comment")}}</Button>
       </i-col>
     </Row>
-    <Row type="flex" justify="center" align="middle" class="item-row">
-      <Spin size="large"></Spin>
-    </Row>
+    <!--<Row type="flex" justify="center" align="middle" class="item-row">-->
+      <!--<Spin size="large"></Spin>-->
+    <!--</Row>-->
   </div>
 </template>
 
@@ -577,6 +577,17 @@
     },
     methods: {
       validateEmail(){
+          /**
+           * @file: CommentsInCommon.vue
+           * @method validateEmail
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @return {type} argName - description
+           * @description: 
+           * @author: admin
+           * @date: 2020/3/1
+           */
         if(this.email.length ===0){
           this.$Message.warning("请填写邮箱！")
         }
@@ -610,6 +621,17 @@
         return bValidate;
       },
       QueryCommentsInitial:function(){
+          /**
+           * @file: CommentsInCommon.vue
+           * @method QueryCommentsInitial
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @return {type} argName - description
+           * @description: 
+           * @author: admin
+           * @date: 2020/3/1
+           */
         let self = this;
         this.isEmpty = this.commentsAndReplySum ===0;
         this.spinShow =true;
@@ -632,6 +654,17 @@
 //        console.log(self.commentSFromDB);
       },
       submitComments:function(){
+/**
+ * @file: CommentsInCommon.vue
+ * @method submitComments
+ * @param {type} argName - description 
+ * @param {type} argName - description 
+ * @param {type} argName - description 
+ * @return {type} argName - description
+ * @description: 
+ * @author: admin
+ * @date: 2020/3/1
+ */
         let self= this;
         let browser = this.getBrowserInfo();
         let os = this.getOsInfo();
@@ -739,7 +772,17 @@
         this.comments+=code;
       },
       handlePageChange:function(page){
-        // console.log(page);
+          /**
+           * @file: CommentsInCommon.vue
+           * @method handlePageChange
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @return {type} argName - description
+           * @description: 
+           * @author: admin
+           * @date: 2020/3/1
+           */
         let index = (page-1)*10,
           rowLimit =10,
           self=this,
@@ -774,6 +817,17 @@
         this.isEmojShow = !this.isEmojShow;
       },
       handleOnBlur(){
+          /**
+           * @file: CommentsInCommon.vue
+           * @method handleOnBlur
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @param {type} argName - description 
+           * @return {type} argName - description
+           * @description: 
+           * @author: admin
+           * @date: 2020/3/1
+           */
         let qqNum = this.nickName;
         let self=this,
           params ={
@@ -850,6 +904,17 @@
 
       },
       getOsInfo(){
+          /**
+           * @file: CommentsInCommon.vue
+           * @method getOsInfo
+           * @param {type} argName - description
+           * @param {type} argName - description
+           * @param {type} argName - description
+           * @return {type} argName - description
+           * @description:
+           * @author: admin
+           * @date: 2020/3/1
+           */
         let sUserAgent = navigator.userAgent;
 
         let isWin = (navigator.platform === "Win32") || (navigator.platform === "Windows");
@@ -989,10 +1054,20 @@
         return broName
       },
       utf16toEntities: function(str) {
-        //检测utf16emoji表情 转换为实体字符以供后台存储
-        var patt=/[\ud800-\udbff][\udc00-\udfff]/g;
+          /**
+           * @file: CommentsInCommon.vue
+           * @method utf16toEntities
+           * @param {type} argName - description
+           * @param {type} argName - description
+           * @param {type} argName - description
+           * @return {type} argName - description
+           * @description: 检测utf16emoji表情 转换为实体字符以供后台存储
+           * @author: admin
+           * @date: 2020/3/1
+           */
+        let patt=/[\ud800-\udbff][\udc00-\udfff]/g;
         str = str.replace(patt, function(char){
-          var H, L, code;
+          let H, L, code;
           if (char.length===2) {   //辅助平面字符（我们需要做处理的一类）
             H = char.charCodeAt(0); // 取出高位
             L = char.charCodeAt(1); // 取出低位
@@ -1015,8 +1090,18 @@
       // console.log(this.btitle);
       this.isEmpty = this.commentsAndReplySum ===0;
       this.isMobile =isMobile();
+
       this.uIP=  returnCitySN["cip"];
       // console.log(this.uIP);
+//        axios.get("/Comment/getCip").then((res)=>{
+////          console.log(res.data.extendInfo.Cip);
+//          let idx1 = res.data.extendInfo.Cip.indexOf(":");
+//          let idx2 = res.data.extendInfo.Cip.indexOf(",");
+////          console.log(res.data.extendInfo.Cip.indexOf(":"));
+////          console.log(res.data.extendInfo.Cip.indexOf(","));
+////            console.log(cip)
+//         this.uIP=  res.data.extendInfo.Cip.slice(idx1, idx2).replace(":", "").replace('"', '').replace('"', '');
+//      });
       let self = this;
       this.spinShow =true;
       axios.get("/Comment/QueryCommentsCount",{params:{parentBlogId:self.bid}})
@@ -1054,17 +1139,18 @@
         .then((res)=>{
           // console.log(res.data.extendInfo.ipinfo);
           let result = JSON.parse(res.data.extendInfo.ipinfo);
+//            console.log(result)
           // console.log(result);
-          let country =result.data.country; //国家
-          let region =result.data.region;  //地区
-          let city =result.data.city;      //城市
-          let isp =result.data.isp;      //宽带供应商
+          let country =result.result.ad_info.nation; //国家
+          let region =result.result.ad_info.district;  //地区
+          let city =result.result.ad_info.city;      //城市
+//          let isp =result.result.ad_info.isp;      //宽带供应商
           // console.log(city);
           if(country ==="中国"){
-            self.ispInfo = (region ===city)? city+isp: region+city+isp;
+            self.ispInfo = (region ===city)? city: city+region;
           }
           else {
-            self.ispInfo = country+region+city+isp;
+            self.ispInfo = country+city+region;
           }
         })
         .catch((err)=>{
@@ -1080,20 +1166,10 @@
         this.origin_content =data.content;
         this.origin_name = data.nickName;
         this.location = data.location;
-//        console.log(data.email);
-//        console.log(data.content);
-//        console.log(data.nickName);
-//        console.log(data.location);
-        // console.log(data);
       });
 
     },
     computed:{
-      /*BgColor:function () {
-        let colorList =['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
-        let randIdx =Math.floor(Math.random()*(colorList.length-0+1)+0);
-        return colorList[randIdx]
-      },*/
 
     },
     components: {CommentItem,Emotion,CommentEmptyStatus}
