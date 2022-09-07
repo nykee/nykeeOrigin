@@ -1,23 +1,38 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <div class="index-page">
+    <div class="intro-wrapper">
+      <h1 class="c-fff">Nykee</h1>
+      <h3 class="c-fff">contact me :
+        <div><a class="a-link" href="https://www.zhihu.com/people/LighteningFE" target="_blank">知乎</a></div>
+        <div><a class="a-link" href="mailto:nykee@sina.com" >nykee@sina.com</a></div>
+      </h3>
+    </div>
 
+  </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style scoped lang="scss">
+  .index-page{
+    background: url("./assets/index.webp") no-repeat center center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    .intro-wrapper{
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top:40%;
+      left:40%;
+      .a-link{
+        color: #fff;
+      }
+      .c-fff{
+        color: #fff;
+      }
+    }
+  }
 </style>
